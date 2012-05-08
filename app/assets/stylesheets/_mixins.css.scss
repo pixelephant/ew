@@ -1,0 +1,36 @@
+@mixin font-pt{
+  font-family: 'PT Sans', sans-serif;
+  font-weight: 400;
+}
+
+@mixin font-lobster{
+  font-family: 'Lobster Two', cursive;
+}
+
+@mixin font-bree{
+  font-family: 'Bree Serif', serif;
+}
+
+@mixin border_radius($tl: 5px, $tr: 5px, $br: 5px, $bl: 5px) {
+  -moz-border-radius: $tl $tr $br $bl;
+  -webkit-border-top-left-radius: $tl;
+  -webkit-border-top-right-radius: $tr;
+  -webkit-border-bottom-right-radius: $br;
+  -webkit-border-bottom-left-radius: $bl;
+  border-radius: $tl $tr $br $bl;
+}
+
+@mixin background-gradient($startColor: #3C3C3C, $endColor: #999999, $image: none) {
+    background: $startColor;
+    background: $image, -webkit-gradient(linear, left top, left bottom, from($startColor), to($endColor));
+    background: $image, -webkit-linear-gradient(top, $startColor, $endColor);
+    background: $image,   -moz-linear-gradient(top, $startColor, $endColor);
+    background: $image,    -ms-linear-gradient(top, $startColor, $endColor);
+    background: $image,     -o-linear-gradient(top, $startColor, $endColor);
+    background: $image,        linear-gradient(top, $startColor, $endColor);
+}
+
+
+@mixin dark-blue-gradient{
+  @include background-gradient(#586390,#303f76);
+}

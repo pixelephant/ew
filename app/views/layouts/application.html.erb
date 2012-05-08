@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]> <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
+<!--[if IE 7]>    <html class="no-js lt-ie9 lt-ie8" lang="en"> <![endif]-->
+<!--[if IE 8]>    <html class="no-js lt-ie9" lang="en"> <![endif]-->
+<!-- Consider adding a manifest.appcache: h5bp.com/d/Offline -->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="description" content="">
+  <title>East-West Utazási és Sport Iroda</title>
+  <%= stylesheet_link_tag    "application", controller_name %>
+  <link href='http://fonts.googleapis.com/css?family=PT+Sans:400,700,400italic,700italic|Lobster+Two:700italic|Bree+Serif&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+  <%= javascript_include_tag "modernizr-2.5.3.min.js" %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+<section id="header">
+	<nav class="clearfix">
+		<div id="logo" class=""><a href="/"></a></div>
+		<div id="ul-wrap">
+			<ul id="primary-nav">
+				<li><a href="#">Last minute</a></li>
+				<li><a href="#">Külföldi utazások</a></li>
+				<li><a href="#">Belföldi utazások</a></li>
+				<li><a href="#">Síelés</a></li>
+				<li><a href="#">Akciós utak</a></li>
+				<li><a href="#">Egzotikus utak</a></li>
+				<li><a href="#">Körutazások</a></li>
+				<li><a href="#">Sportutak</a></li>
+			</ul>
+			<ul id="secondary-nav">
+				<li><a href="#">Nászutak</a></li>
+				<li><a href="#">Hajóutak</a></li>
+				<li><a href="#">Városlátogatások</a></li>
+				<span> | </span>
+				<li><a href="#">Kapcsolat</a></li>
+				<li><a href="#">Rólunk</a></li>
+				<li><a href="#">Utasbiztosítás</a></li>
+			</ul>
+			<a class="animated bounceIn" href="#" id="search-button">Útkereső</a>
+		</div>
+	</nav>
+</section>
+<section id="search">
+	<div id="inner-search">
+		<form id="advanced-search" action="#">
+			<h2>Összetett keresés</h2>
+			<fieldset>
+				<legend>Utazás időpontja</legend>
+				<div class="row">
+					<div class="group">
+						<label for="arrival">Érkezés</label>
+						<input type="date" name="arrival" id="arrival" class="datepicker" value="2012-05-14">
+					</div>
+					<div class="group">
+						<label for="departure">Távozás</label>
+						<input type="date" name="departure" id="departure" class="datepicker" value="2012-05-21">
+					</div>
+					<div class="group">
+						<label for="flexibility">Rugalmasság</label>
+						<select name="flexibility" id="flexibility">
+							<option value="1">+/- 1 nap</option>
+							<option value="3">+/- 3 nap</option>
+							<option value="7">+/- 1 hét</option>
+							<option value="0">Nincs</option>
+						</select>
+					</div>
+				</div>
+			</fieldset>
+			<fieldset>
+					<legend>Úticél</legend>
+					<div class="row">
+						<div class="group">
+							<label for="country">Ország</label>
+							<select name="country" id="country">
+								<option value="0">-- Mindegy --</option>
+							</select>
+						</div>
+						<div class="group">
+							<label for="region">Régió</label>
+							<select name="region" id="region">
+								<option value="0">-- Mindegy --</option>
+							</select>
+						</div>
+						<div class="group">
+							<label for="type">Típus</label>
+							<select name="type" id="type">
+								<option value="0">-- Mindegy --</option>
+							</select>
+						</div>
+					</div>
+				</fieldset>
+				<fieldset>
+					<legend>Utazás ára/fő</legend>
+					
+					<div class="row">
+						<label for="max-price">Maximális ár/fő</label>
+						<input id="max-price" type ="range" min ="50000" max="500000" step ="20000" value ="120000" data-textbox="max-price-text"/>
+						<input type="text" name="max-price-text" id="max-price-text" value="120 000">Ft
+					</div>
+				</fieldset>
+				<fieldset>
+					<div class="row">
+						<input type="submit" value="Keresés"> (kb. 38 út felel meg)
+					</div>
+				</fieldset>
+		</form>
+		<form id="simple-search" action="#">
+			<h2>Egyszerű keresés</h2>
+			<fieldset>
+				<small>Keresés az utazások és az oldal szövegében</small>
+				<div class="row">
+					<input type="search" name="query" id="query">
+				</div>
+				<div class="row">
+					<input type="submit" value="Keresés">
+				</div>
+			</fieldset>
+		</form>
+	</div>
+</section>
+
+<%= yield %>
+
+<footer>
+	<div id="footer-inner">
+		<div class="three">
+			<h3>Partnereink</h3>
+		</div>
+		<div class="three">
+			<h3>Kapcsolat</h3>
+		</div>
+		<div class="three">
+			<h3>Utazások</h3>
+		</div>
+	</div>
+</footer>
+
+<%= javascript_include_tag "application" %>
+<%= javascript_include_tag controller_name %>
+<!-- Asynchronous Google Analytics snippet. Change UA-XXXXX-X to be your site's ID.
+       mathiasbynens.be/notes/async-analytics-snippet -->
+  <script>
+    var _gaq=[['_setAccount','UA-XXXXX-X'],['_trackPageview']];
+    (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
+    g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
+    s.parentNode.insertBefore(g,s)}(document,'script'));
+  </script>
+</body>
+</html>
