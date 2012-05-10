@@ -12,6 +12,7 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require jquery-ui
 
 function FormatNumberBy3(num, decpoint, sep) {
   // check for missing parameters and use defaults if so
@@ -50,7 +51,63 @@ function FormatNumberBy3(num, decpoint, sep) {
   return x;
 }
 
+jQuery(function($){
+  $.datepicker.regional['hu'] = {
+    closeText: 'bezár',
+    prevText: 'vissza',
+    nextText: 'előre',
+    currentText: 'ma',
+    monthNames: ['Január', 'Február', 'Március', 'Április', 'Május', 'Június',
+    'Július', 'Augusztus', 'Szeptember', 'Október', 'November', 'December'],
+    monthNamesShort: ['Jan', 'Feb', 'Már', 'Ápr', 'Máj', 'Jún',
+    'Júl', 'Aug', 'Szep', 'Okt', 'Nov', 'Dec'],
+    dayNames: ['Vasárnap', 'Hétfő', 'Kedd', 'Szerda', 'Csütörtök', 'Péntek', 'Szombat'],
+    dayNamesShort: ['Vas', 'Hét', 'Ked', 'Sze', 'Csü', 'Pén', 'Szo'],
+    dayNamesMin: ['V', 'H', 'K', 'Sze', 'Cs', 'P', 'Szo'],
+    weekHeader: 'Hét',
+    dateFormat: 'yy.mm.dd.',
+    firstDay: 1,
+    isRTL: false,
+    showMonthAfterYear: true,
+    yearSuffix: ''};
+  $.datepicker.setDefaults($.datepicker.regional['hu']);
+});
+
+
 $(document).ready(function(){
+
+
+  var dates = $( "#arrival, #departure" ).datepicker({
+      changeMonth: true,
+      changeYear: true,
+      showButtonPanel: true,
+      minDate: 0,
+      dateFormat : "yy-mm-dd",
+      defaultDate: "+1w",
+      onSelect: function( selectedDate ) {
+        var d1=new Date($("#arrival").val());
+        var d2=new Date($('#departure').val());
+        $('#between').html((Math.abs((d2-d1)/86400000))-1);
+
+        var option = this.id == "arrival" ? "minDate" : "maxDate",
+          instance = $( this ).data( "datepicker" ),
+          date = $.datepicker.parseDate(
+            instance.settings.dateFormat ||
+            $.datepicker._defaults.dateFormat,
+            selectedDate, instance.settings );
+        dates.not( this ).datepicker( "option", option, date );
+      }
+    });
+
+
+  $("#advanced-search :input,advanced-search select").change(function(){
+    var formData = $("#advanced-search").serialize();
+    $.post("/search",{
+      data : formData
+    },function(resp){
+      $("#estiamte").html(resp);
+    })
+  });
 
 	 $("#search-button").toggle(function(){
 	 	$("#search").stop().animate({
@@ -74,5 +131,19 @@ $(document).ready(function(){
 	 	var id = $(this).data("textbox");
 	 	$("#" + id).val(FormatNumberBy3($(this).val(),"."," "));
 	 });
+
+   $("#no-date").change(function(){
+      var checked = $(this).is(":checked");
+      if(checked){
+        $("#precise-row").slideUp("300",function(){
+          $("#imprecise-row").slideDown();
+        });
+      }
+      else{
+        $("#imprecise-row").slideUp("300",function(){
+          $("#precise-row").slideDown();
+        });
+      }
+   });
 
 });

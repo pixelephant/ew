@@ -13,6 +13,7 @@
 
 @import "normalize.css";
 @import "_mixins.css.scss";
+@import "ui-lightness/style.css";
 
 html,body{
 	width:100%;
@@ -117,7 +118,49 @@ html,body{
 		float:left;
 		height:390px;
 		padding-top:10px;
+		h2{
+			@include font-bree;
+			color:white;
+		}
+		legend{
+			@include font-pt;
+			color:white;
+			font-style:italic;
+			font-weight:bold;
+		}
+		label{
+			color:white;
+			float:left;
+			margin-right:10px;
+		}
+		input[type="text"],input[type="date"],input[type="range"],input[type="checkbox"],select{
+			float:left;
+		}
+		input[type="date"]{
+			width:100px;
+		}
+		.group{
+			float:left;
+			overflow:hidden;
+			margin-right:10px;
+		}
+		.left{
+			float:left;
+			color:white;
+			font-size:12px;
+		}
+		.row{
+			overflow:hidden;
+		}
+		fieldset{
+			margin:10px 0;
+		}
 	}
+
+#max-price-text{
+	width:65px;
+	margin-left:10px;
+}
 
 #advanced-search{
 	position:relative;
@@ -135,6 +178,10 @@ html,body{
 	border-left:1px solid #9476ac;
 }
 
+#imprecise-row{
+	display:none;
+}
+
 #content{
 	width:980px;
 	margin:0 auto;
@@ -142,6 +189,7 @@ html,body{
 
 #content h2{
 	@include font-lobster;
+	color:$orange;
 }
 
 #content h3,footer h3{

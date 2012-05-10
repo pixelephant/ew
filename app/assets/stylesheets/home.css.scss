@@ -8,13 +8,13 @@
 #promo-slider{
 	width:100%;
 	height:380px;
+	border-bottom:1px solid #bf1e2e
 }
 
 #slide-wrap{
 	width:980px;
 	height:380px;	
 	margin:0 auto;
-
 	
 	text-align:center;
 	line-height:380px;
@@ -58,6 +58,8 @@
 
 #popular-destinations a{
 	display:block;
+	color:$text-blue;
+	@include font-pt;
 }
 
 
@@ -84,7 +86,7 @@
 			color:#fff;
 			position:absolute;
 			top:0;
-			background:orange;
+			background:$orange;
 		}
 	}
 	&.half{
@@ -95,7 +97,7 @@
 			color:#fff;
 			position:absolute;
 			top:0;
-			background:orange;
+			background:$orange;
 		}
 	}
 	&.full{
