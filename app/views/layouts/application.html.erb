@@ -17,10 +17,10 @@
 <body>
 <section id="header">
 	<nav class="clearfix">
-		<div id="logo" class=""><a href="/"></a></div>
+		<div id="logo" class=""><a href="/"><%= image_tag "logo.png", :alt => "East-West Utazási és Sport Iroda" %></a></div>
 		<div id="ul-wrap">
 			<ul id="primary-nav">
-				<li><a href="#">Last minute</a></li>
+				<li class="active"><a href="#">Last minute</a></li>
 				<li><a href="#">Külföldi utazások</a></li>
 				<li><a href="#">Belföldi utazások</a></li>
 				<li><a href="#">Síelés</a></li>
@@ -72,8 +72,15 @@
 					<div class="group">
 						<label for="imprecise">Körülbelül mikor utaznék</label>
 						<select name="imprecise" id="imprecise">
-							<option value="0">Nem tudom</option>
-							<option value="1">Nyáron</option>
+							<optgroup label="Hónapok">
+								<option value="0">Január</option>
+								<option value="1">Február</option>
+							</optgroup>
+							<optgroup label="Időszakok">
+								<option value="2">Tavasz szünet</option>
+								<option value="3">Nyáron</option>
+							</optgroup>
+							<option value="3">Nem tudom</option>
 						</select>
 					</div>
 				</div>
@@ -129,7 +136,7 @@
 			<fieldset>
 				<small>Keresés az utazások és az oldal szövegében</small>
 				<div class="row">
-					<input type="search" name="query" id="query">
+					<input type="search" name="query" id="query" placeholder="pl.: előfoglalás">
 				</div>
 				<div class="row">
 					<input type="submit" value="Keresés">
@@ -145,12 +152,44 @@
 	<div id="footer-inner">
 		<div class="three">
 			<h3>Partnereink</h3>
+			<a href="#"><img src="http://placehold.it/50x50" alt=""></a>
+			<a href="#"><img src="http://placehold.it/50x50" alt=""></a>
+			<a href="#"><img src="http://placehold.it/50x50" alt=""></a>
+			<a href="#"><img src="http://placehold.it/50x50" alt=""></a>
+			<a href="#"><img src="http://placehold.it/50x50" alt=""></a>
+
+			<a style="margin-top:20px;display:block;" href="#"><img src="http://placehold.it/300x100" alt=""></a>
 		</div>
 		<div class="three">
 			<h3>Kapcsolat</h3>
+			<p>EW UTAZÁSI ÉS SPORT IRODA KFT</p>
+			<p><a href="http://g.co/maps/xm354">1126. BUDAPEST, DOLGOS UTCA 2/2., (MOM PARK MELLETTI SÉTÁNY)</a></p>
+			<p>TEL.: + 36 / 1 / 225 13 45, FAX: + 36 / 1 / 225 13 46</p>
+			<p>, MOBIL: + 36 / 30 / 9 147 157, + 36 / 30 / 9 400 679</p>
 		</div>
 		<div class="three">
 			<h3>Utazások</h3>
+			<ul id="">
+				<li><a href="#">Last minute</a></li>
+				<li><a href="#">Külföldi utazások</a></li>
+				<li><a href="#">Belföldi utazások</a></li>
+				<li><a href="#">Síelés</a></li>
+				<li><a href="#">Akciós utak</a></li>
+				<li><a href="#">Egzotikus utak</a></li>
+				<li><a href="#">Körutazások</a></li>
+				<li><a href="#">Sportutak</a></li>
+			</ul>
+			<ul id="">
+				<li><a href="#">Nászutak</a></li>
+				<li><a href="#">Hajóutak</a></li>
+				<li><a href="#">Városlátogatások</a></li>
+			</ul>
+		</div>
+		<div id="misc-links">
+			<a href="#">Kapcsolat</a>
+			<a href="#">Rólunk</a>
+			<a href="#">Utasbiztosítás</a>
+			<a href="#">Adatvédelem</a>
 		</div>
 	</div>
 </footer>

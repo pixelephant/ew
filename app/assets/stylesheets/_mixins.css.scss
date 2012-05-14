@@ -1,5 +1,5 @@
 $text-blue: #3fa1ca;
-$orange: #eb5300;
+$orange: #fa7602;
 
 @mixin font-pt{
   font-family: 'PT Sans', sans-serif;
@@ -32,7 +32,6 @@ $orange: #eb5300;
     background: $image,     -o-linear-gradient(top, $startColor, $endColor);
     background: $image,        linear-gradient(top, $startColor, $endColor);
 }
-
 
 @mixin dark-blue-gradient{
   @include background-gradient(#586390,#303f76);

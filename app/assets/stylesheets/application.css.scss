@@ -20,12 +20,16 @@ html,body{
 	height:100%;
 }
 
+body{
+	background: url("noise.jpg") repeat white;
+}
+
 #header{
 	-webkit-box-shadow: 0px 10px 15px rgba(50, 50, 50, 0.74);
 	-moz-box-shadow:    0px 10px 15px rgba(50, 50, 50, 0.74);
 	box-shadow:         0px 10px 15px rgba(50, 50, 50, 0.74);
 	width:100%;
-	height:65px;
+	height:75px;
 	position:relative;
 	z-index:2;
 	@include font-pt;
@@ -35,8 +39,8 @@ html,body{
 		margin:0 auto;
 	}
 	ul{
-		height:30.5px;
-		line-height:32.5px;
+		height:35.5px;
+		line-height:37.5px;
 		display: block;
 		overflow: hidden;
 		width:870px;
@@ -45,15 +49,29 @@ html,body{
 			display:block;
 			float:left;
 			margin:0 5px;
+			&.active{
+				a{
+					@include border-radius(20px,20px,20px,20px);
+					@include background-gradient(#5a6592, #313f76);
+					border-bottom:1px solid #7d829c;
+					border-left:1px solid #7d829c;
+					border-top:1px solid #303e76;
+					border-right:1px solid #303e76;
+				}
+			}
 			a{
 				color:white;
 				text-decoration:none;
 				border: 1px solid transparent;
-				padding: 1px 5px;
+				padding: 2px 5px;
 			}
 			&:hover a{
-				border: 1px solid white;
 				@include border-radius(20px,20px,20px,20px);
+				@include background-gradient(#5a6592, #838cad);
+				border-top:1px solid #7d829c;
+				border-right:1px solid #7d829c;
+				border-bottom:1px solid #303e76;
+				border-left:1px solid #303e76;
 			}
 		}
 		span{
@@ -74,10 +92,9 @@ html,body{
 #logo{
 	float:left;
 	position:absolute;
-	bottom:-10px;
+	top:5px;
 	width:100px;
 	height:70px;
-	background:pink;
 }
 
 #primary-nav{
@@ -93,10 +110,17 @@ html,body{
 #search-button{
 	position:absolute;
 	right:0;
+	bottom:0px;
 	text-decoration:none;
 	background:orange;
 	color:white;
-	font-size:20px;
+	font-size:16px;
+	@include font-bree;
+	@include background-gradient(#ff6300, #ff8500, url("mag.png") no-repeat 85px center);
+	@include border-radius(20px,20px,20px,20px);
+	padding:5px 10px;
+	padding-right:35px;
+	border:1px solid #be1e2d;
 }
 
 #search{
@@ -190,6 +214,8 @@ html,body{
 #content h2{
 	@include font-lobster;
 	color:$orange;
+	text-shadow:#7e579a 1px 1px 0px;
+	font-size:40px;
 }
 
 #content h3,footer h3{
@@ -217,4 +243,10 @@ footer{
 #footer-inner{
 	width:980px;
 	margin:0 auto;
+}
+
+#misc-links{
+	text-align:center;
+	border-top:1px solid;
+	clear:both;
 }
