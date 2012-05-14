@@ -25,9 +25,9 @@ body{
 }
 
 #header{
-	-webkit-box-shadow: 0px 10px 15px rgba(50, 50, 50, 0.74);
-	-moz-box-shadow:    0px 10px 15px rgba(50, 50, 50, 0.74);
-	box-shadow:         0px 10px 15px rgba(50, 50, 50, 0.74);
+	-webkit-box-shadow: 0px 10px 15px rgba(50, 50, 50, 0.24);
+	-moz-box-shadow:    0px 10px 15px rgba(50, 50, 50, 0.24);
+	box-shadow:         0px 10px 15px rgba(50, 50, 50, 0.24);
 	width:100%;
 	height:75px;
 	position:relative;
@@ -52,11 +52,8 @@ body{
 			&.active{
 				a{
 					@include border-radius(20px,20px,20px,20px);
-					@include background-gradient(#5a6592, #313f76);
-					border-bottom:1px solid #7d829c;
-					border-left:1px solid #7d829c;
-					border-top:1px solid #303e76;
-					border-right:1px solid #303e76;
+					@include background-gradient(#313f76, #5a6591);
+					border: 1px solid #313f76;
 				}
 			}
 			a{
@@ -67,11 +64,13 @@ body{
 			}
 			&:hover a{
 				@include border-radius(20px,20px,20px,20px);
-				@include background-gradient(#5a6592, #838cad);
-				border-top:1px solid #7d829c;
-				border-right:1px solid #7d829c;
-				border-bottom:1px solid #303e76;
-				border-left:1px solid #303e76;
+				@include background-gradient(#5a6591, #313f76);
+				border: 1px solid #313f76;
+			}
+			&:active a{
+				@include border-radius(20px,20px,20px,20px);
+				@include background-gradient(#313f76, #5a6591);
+				border: 1px solid #313f76;
 			}
 		}
 		span{
@@ -110,7 +109,7 @@ body{
 #search-button{
 	position:absolute;
 	right:0;
-	bottom:0px;
+	bottom:2px;
 	text-decoration:none;
 	background:orange;
 	color:white;
@@ -118,7 +117,7 @@ body{
 	@include font-bree;
 	@include background-gradient(#ff6300, #ff8500, url("mag.png") no-repeat 85px center);
 	@include border-radius(20px,20px,20px,20px);
-	padding:5px 10px;
+	padding:3px 10px;
 	padding-right:35px;
 	border:1px solid #be1e2d;
 }
@@ -214,7 +213,7 @@ body{
 #content h2{
 	@include font-lobster;
 	color:$orange;
-	text-shadow:#7e579a 1px 1px 0px;
+	text-shadow:rgba(0,0,0,0.5) -1px -1px 0px;
 	font-size:40px;
 }
 
