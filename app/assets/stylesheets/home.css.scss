@@ -8,7 +8,7 @@
 #promo-slider{
 	width:100%;
 	height:380px;
-	border-bottom:1px solid #bf1e2e;
+	border-bottom:1px solid $red;
 	background:rgba(0,0,0,0.2);
 }
 
@@ -107,9 +107,8 @@
 	position:absolute;
 	text-indent:-9999em;
 	width:22px;
-	height:45px;
+	height:100%;
 	z-index:4;
-	top:150px;
 	background: url(arrow_sprite.png) no-repeat;
 	opacity:0.6;
 		  -webkit-transition: all 0.4s ease;  /* Saf3.2+, Chrome */
@@ -124,7 +123,7 @@
 
 #prev-slide{
 	left:0;
-	background-position:0 0px;
+	background-position:0 center;
 	&:active{
 		left: -3px;
 	}
@@ -132,7 +131,7 @@
 
 #next-slide{
 	right:0;
-	background-position:-22px 0;
+	background-position:-22px center;
 	&:active{
 		right: -3px;
 	}
@@ -140,10 +139,18 @@
 
 #popular-destinations a{
 	display:block;
-	color:$text-blue;
+	color:$blue;
 	@include font-pt;
 }
 
+#special-offers{
+	overflow:hidden;
+}
+
+#about-us h3{
+	margin-top:-35px;
+	color:$purple;
+}
 
 .box-wrap.third{
 	float:left;
@@ -157,6 +164,10 @@
 }
 
 .box{
+	@include t-04;
+	&:hover{
+			@include scale(1.04);
+	}
 	background:white;
 	box-shadow: 3px 3px 11px 1px rgba(221,221,221,1);
 	-webkit-box-shadow: 3px 3px 11px 1px rgba(221,221,221,1);
@@ -176,35 +187,55 @@
 	&.quarter{
 		width:120px;
 		.ribbon{
-			width:120px;
+			text-align:center;
+			font-size:18px;
+			padding:5px;
+			border:1px solid $red;
+			width:108px;
 			@include font-bree;
 			color:#fff;
 			position:absolute;
 			top:0;
-			background:$orange;
+			@include background-gradient(#d33301,#ea5d32);
 		}
 	}
 	&.half{
 		width:280px;
 		.ribbon{
-			width:280px;
+			border:1px solid $red;
+			text-align:center;
+			font-size:18px;
+			padding:5px;
+			width:268px;
 			@include font-bree;
 			color:#fff;
 			position:absolute;
 			top:0;
-			background:$orange;
+			@include background-gradient(#d33301,#ea5d32);
 		}
 	}
 	&.full{
 		width:280px;
 		.ribbon{
-			width:280px;
-			@include font-bree;
+			@include t-shadow;
+			width:140px;
+			margin: 0 auto;
+			left:70px;
+			@include font-lobster;
 			color:#fff;
 			position:absolute;
-			top:120px;
+			top:60px;
 			text-align:center;
-			font-size:20px;
+			font-size:40px;
+			font-style:italic;
+			.price{
+				font-style:normal;
+				display:block;
+				font-size:20px;
+				@include font-bree;
+				border-top: 1px solid white;
+				border-bottom: 1px solid white;
+			}
 		}
 	}
 	.inner{

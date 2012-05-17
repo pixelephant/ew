@@ -1,0 +1,174 @@
+@import "_mixins.css.scss";
+
+#content{
+	overflow:hidden;
+}
+
+#page-header{
+	height:260px;
+	width:100%;
+	background:$blue;
+	border-bottom:1px solid $red;
+}
+
+#page-header-inner{
+	width:980px;
+	height:230px;
+	padding-top:30px;
+	margin:0 auto;
+	h1{
+		margin:0;
+		color:white;
+		font-size:40px;
+		@include font-lobster;
+		font-style:italic;
+		@include t-shadow;
+	}
+}
+
+aside{
+	width:240px;
+	float:left;
+	h2{
+		margin:0 !important;
+		color:$purple;
+		@include font-bree-i;
+		font-size:20px !important;
+		height:50px !important;
+		line-height:50px !important;
+		padding:0 20px !important;
+		text-shadow:none !important;
+	}
+}
+
+#filter-form{
+	height:2409px;
+	fieldset{
+		padding:0;
+		padding-top:15px;
+	}
+	border:1px solid $gray;
+	border-right:none;
+	width:199px;
+	padding:0 20px;
+	background:white;
+	color:#5b5b5b;
+	legend,.legend{
+		color:#5b5b5b;
+		font-style:italic;
+		font-size:18px;
+	}
+	h3{
+		color:$purple;
+		@include font-bree-i;
+		font-size:16px !important;
+	}
+	label{
+		color:#5b5b5b;
+		float:none;
+		display:block;
+	}
+	div{
+		margin-bottom:10px;
+	}
+	input,select{
+		float:none;
+	}
+	.left{
+		float:none;
+		color:#5b5b5b;
+	}
+	.collapsible{
+		.legend{
+			border-bottom:1px solid $gray;
+			a{
+				float:right;
+			}
+		}
+	}
+	.collapse{
+		display:none;
+	}
+}
+
+#filter-imprecise-row{
+	display:none;
+}
+
+#filter-between{
+	font-size:12px;
+}
+
+#totop{
+	padding-left:20px;
+	height:50px;
+	line-height:50px;
+}
+
+#list-wrap{
+	float:left;
+	width:740px;
+	.pagination{
+		height:50px;
+		line-height:50px;
+		padding:0 10px;
+	}
+}
+
+.trip{
+	width:700px;
+	padding:30px 20px;
+	border-left:1px solid $gray;
+	border-top:1px solid $gray;
+	overflow:hidden;
+	.thumbnail{
+		float:left;
+		width:140px;
+		height:140px;
+		border:1px solid $gray;
+		margin-right:20px;
+	}
+	.data{
+		float:left;
+		width:538px;
+	}
+	h3{
+		color:$purple;
+		margin-top:0;
+		float:left;
+		font-size:26px;
+		margin-right:10px;
+	}
+	.row{
+		overflow:hidden;
+		height:30px;
+		line-height:30px;
+		width:538px;
+	}
+	.dates{
+		float:left;
+		color:$blue;
+		padding-top:7px;
+		font-size:14px;
+	}
+	.price{
+		color:$blue;
+		font-weight:bold;
+		font-style:italic;
+		float:right;
+		padding-top:7px;
+	}
+	p{
+
+	}
+	.icons{
+		float:left;
+	}
+	.view{
+		float:right;
+	}
+}
+
+#pagi-b{
+	border-top:1px solid $gray;
+}

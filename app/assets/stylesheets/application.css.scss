@@ -22,6 +22,12 @@ html,body{
 
 body{
 	background: url("noise.jpg") repeat white;
+	color:#5b5b5b;
+	@include font-pt;
+}
+
+a:visited{
+	color:darken($blue,30%);
 }
 
 #header{
@@ -84,16 +90,19 @@ body{
 #ul-wrap{
 	float:left;
 	width:870px;
-	padding-left:110px;
+	padding-left:10px;
 	position:relative;
 }
 
 #logo{
 	float:left;
-	position:absolute;
+	position:relative;
 	top:5px;
 	width:100px;
 	height:70px;
+	a{
+		display:block;
+	}
 }
 
 #primary-nav{
@@ -124,9 +133,12 @@ body{
 
 #search{
 	width:100%;
-	height:400px;
-	background:#7e579a;
-	margin-top:-400px;
+	height:500px;
+	background:url("purple-textile.jpg") repeat #7e579a;
+	margin-top:-500px;
+	-webkit-box-shadow: inset 0px -10px 15px rgba(50, 50, 50, 0.24);
+	-moz-box-shadow:    inset 0px -10px 15px rgba(50, 50, 50, 0.24);
+	box-shadow:         inset 0px -10px 15px rgba(50, 50, 50, 0.24);
 }
 
 #inner-search{
@@ -139,22 +151,26 @@ body{
 	}
 	form{
 		float:left;
-		height:390px;
+		height:490px;
 		padding-top:10px;
+		color:white;
 		h2{
 			@include font-bree;
 			color:white;
+			margin-bottom:25px;
 		}
 		legend{
 			@include font-pt;
 			color:white;
 			font-style:italic;
 			font-weight:bold;
+			font-size:18px;
 		}
 		label{
 			color:white;
 			float:left;
 			margin-right:10px;
+			font-size:14px;
 		}
 		input[type="text"],input[type="date"],input[type="range"],input[type="checkbox"],select{
 			float:left;
@@ -166,6 +182,7 @@ body{
 			float:left;
 			overflow:hidden;
 			margin-right:10px;
+			margin-bottom:12px;
 		}
 		.left{
 			float:left;
@@ -174,11 +191,16 @@ body{
 		}
 		.row{
 			overflow:hidden;
+			padding-left:15px;
 		}
 		fieldset{
-			margin:10px 0;
+			padding:15px 0 25px 15px;
 		}
 	}
+
+#submit-set{
+	padding-top:0;
+}	
 
 #max-price-text{
 	width:65px;
@@ -189,7 +211,7 @@ body{
 	position:relative;
 	z-index:1;
 
-	border-right:1px solid #64467c;
+	border-right:1px solid #583D6C;
 	width:724px;
 }
 
@@ -198,7 +220,7 @@ body{
 	z-index:1;
 
 	width:254px;
-	border-left:1px solid #9476ac;
+	border-left:1px solid #826797;
 }
 
 #imprecise-row{
@@ -212,9 +234,14 @@ body{
 
 #content h2{
 	@include font-lobster;
-	color:$orange;
 	text-shadow:rgba(0,0,0,0.5) -1px -1px 0px;
 	font-size:40px;
+	&.orange{
+		color:$orange;
+	}
+	&.blue{
+		color:$blue;
+	}
 }
 
 #content h3,footer h3{
@@ -229,23 +256,39 @@ body{
 }
 
 
-footer{
-	min-height:200px;
-
+footer{	
+	border-top:2px solid $blue;
+	margin-top:40px;
 	width:100%;
 	box-shadow: 1px 12px 30px 15px rgba(221,221,221,1);
 	-webkit-box-shadow: 1px 12px 30px 15px rgba(221,221,221,1);
 	-moz-box-shadow: 1px 12px 30px 15px rgba(221,221,221,1);
-
+	background:#d9ecf3;
+	a{
+			color:$blue;
+		}
+	ul{
+		padding-left:0;
+	}
+	li{
+		list-style:none;
+	}
+	strong{
+		display:block;
+	}
 }
 
 #footer-inner{
 	width:980px;
 	margin:0 auto;
+	h3{
+		color:$purple;
+	}
 }
 
 #misc-links{
 	text-align:center;
-	border-top:1px solid;
+	border-top:1px solid white;
 	clear:both;
+	padding:10px 0;
 }

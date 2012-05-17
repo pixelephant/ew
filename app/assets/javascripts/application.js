@@ -99,6 +99,29 @@ $(document).ready(function(){
       }
     });
 
+  var dates = $( "#filter-arrival, #filter-departure" ).datepicker({
+      changeMonth: true,
+      changeYear: true,
+      showButtonPanel: true,
+      minDate: 0,
+      dateFormat : "yy-mm-dd",
+      defaultDate: "+1w",
+      onSelect: function( selectedDate ) {
+        var d1=new Date($("#filter-arrival").val());
+        var d2=new Date($('#filter-departure').val());
+        $('#filter-between').html((Math.abs((d2-d1)/86400000))-1);
+
+        var option = this.id == "filter-arrival" ? "minDate" : "maxDate",
+          instance = $( this ).data( "datepicker" ),
+          date = $.datepicker.parseDate(
+            instance.settings.dateFormat ||
+            $.datepicker._defaults.dateFormat,
+            selectedDate, instance.settings );
+        dates.not( this ).datepicker( "option", option, date );
+      }
+    });
+
+
 
   $("#advanced-search :input,advanced-search select").change(function(){
     var formData = $("#advanced-search").serialize();
@@ -108,6 +131,8 @@ $(document).ready(function(){
       $("#estiamte").html(resp);
     })
   });
+
+  var searchHeight = $("#search").height();
 
 	 $("#search-button").toggle(function(){
 	 	$("#search").stop().animate({
@@ -122,7 +147,7 @@ $(document).ready(function(){
 	 		opacity: 0
 	 	},"normal",function(){
 	 		$("#search").animate({
-	 			marginTop:-400
+	 			marginTop:-searchHeight
 	 		},"slow");
 	 	});
 	 });

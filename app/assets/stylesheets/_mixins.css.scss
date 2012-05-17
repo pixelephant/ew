@@ -1,5 +1,8 @@
-$text-blue: #3fa1ca;
+$blue: #3fa1ca;
 $orange: #fa7602;
+$red: #b4303d;
+$purple: #7b5699;
+$gray: #d1d3d2;
 
 @mixin font-pt{
   font-family: 'PT Sans', sans-serif;
@@ -12,6 +15,32 @@ $orange: #fa7602;
 
 @mixin font-bree{
   font-family: 'Bree Serif', serif;
+}
+
+@mixin font-bree-i{
+  font-family: 'Bree Serif', serif !important;
+}
+
+@mixin t-shadow{
+  text-shadow:rgba(0,0,0,0.5) 1px 1px 3px;
+}
+
+@mixin t-04{
+    -webkit-transition: all 0.4s ease;
+     -moz-transition: all 0.4s ease;  
+      -ms-transition: all 0.4s ease;  
+       -o-transition: all 0.4s ease;  
+          transition: all 0.4s ease;
+}
+
+@mixin scale($size: 1.01){
+  -webkit-perspective: 1000;
+  -webkit-backface-visibility: hidden;
+  -webkit-transform: scale($size);  
+     -moz-transform: scale($size);  
+      -ms-transform: scale($size);  
+       -o-transform: scale($size);  
+          transform: scale($size);
 }
 
 @mixin border_radius($tl: 5px, $tr: 5px, $br: 5px, $bl: 5px) {
