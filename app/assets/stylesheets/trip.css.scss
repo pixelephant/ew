@@ -1,0 +1,306 @@
+@import "_mixins.css.scss";
+
+#content{
+	overflow:hidden;
+}
+
+#page-header{
+	height:260px;
+	width:100%;
+	background:$blue;
+	border-bottom:1px solid $red;
+}
+
+#page-header-inner{
+	width:980px;
+	height:230px;
+	padding-top:30px;
+	margin:0 auto;
+	h1{
+		margin:0;
+		color:white;
+		font-size:40px;
+		@include font-lobster;
+		font-style:italic;
+		@include t-shadow;
+	}
+}
+
+#main{
+	overflow:hidden;
+	margin-top:30px;
+	padding-bottom:10px;
+}
+
+#trip-images{
+	width:380px;
+	float:left;
+	a{
+		float:left;
+		display:block;
+		background-color:white;
+		box-shadow: 3px 3px 11px 1px rgba(221,221,221,1);
+		-webkit-box-shadow: 3px 3px 11px 1px rgba(221,221,221,1);
+		-moz-box-shadow: 3px 3px 11px 1px rgba(221,221,221,1);
+		padding:10px;
+	}
+	#curr{
+		background: url(loader.gif) no-repeat center white;
+		width:360px;
+		height:280px;
+		img{
+			//display:none;
+		}
+	}
+	.thumb{
+		@include t-04;
+		&:hover{
+			@include scale(1.04);
+		}
+		margin-top:20px;
+		padding:5px;
+		margin-right:20px;
+		&.last{
+			margin-right:0;
+		}
+		&.active{
+			background:$blue;
+		}
+	}
+}
+
+.arrow_box {
+	position: relative;
+	background: $blue;
+}
+.arrow_box:after {
+	bottom: 100%;
+	border: solid transparent;
+	content: " ";
+	height: 0;
+	width: 0;
+	position: absolute;
+	pointer-events: none;
+}
+
+.arrow_box:after {
+	border-bottom-color: $blue;
+	border-width: 8px;
+	left: 50%;
+	margin-left: -8px;
+}
+
+#trip-details{
+	height:380px;
+	width:580px;
+	position:relative;
+	float:left;
+	padding-left:20px;
+	h2{
+		margin-top:0;
+		color:$orange;
+	}
+	ul{
+		margin:0;
+		padding:0;
+		list-style:none;
+	}
+	strong{
+		font-style:italic;
+		color:$blue;
+	}
+	li{
+		line-height:1.5;
+	}
+}
+
+#full-price{
+	color:$purple;
+}
+
+#book-wrap{
+	height:60px;
+	line-height:60px;
+	position:absolute;
+	bottom:0;
+	.view{
+		@include big-red;
+		margin-right:20px;
+		font-size:20px;
+	}
+}
+
+#additional-time{
+	margin-bottom:40px;
+	h2{
+		color:$blue;
+	}
+	table{
+		width:100%;
+		border-top:1px solid $gray;
+		border-bottom:1px solid $gray;
+	}
+	tfoot{
+		font-style:italic;
+		font-size:14px;
+		td{
+			padding:5px 15px;
+		}
+	}
+	thead{
+		text-align:left;
+		@include font-bree;
+		color:$purple;
+		font-size:24px;
+		border-bottom:1px solid $gray;
+		th{
+			padding:15px;
+		}
+	}
+	tbody{
+		a{
+			@include small-blue;
+		}
+		tr{
+			border-bottom: 1px solid $gray;
+		}
+		td{
+			padding:15px;
+			&.price{
+				color:$purple;
+				font-weight:bold;
+			} 
+		}
+	}	
+}
+
+#trip-description{
+	overflow:hidden;
+}
+
+#text{
+	float:left;
+	width:610px;
+	margin-right:40px;
+	h3{
+		color:$purple;
+		font-size:24px;
+	}
+}
+
+#side{
+	width:330px;
+	float:left;
+}
+
+.sidebox{
+	margin:20px 0;
+	background:#f1f3f2;
+	border:2px dashed #e7e7e7;
+	width:326px;
+	h3{
+		color:$purple;
+		text-align:center;
+	}
+}
+
+#services{
+	height:200px;
+	ul{
+		font-size:14px;
+		color:$blue;
+	}
+	li{
+		float:left;
+		margin-right:60px;
+		list-style-position:outside;
+	}
+}
+
+#sights{
+	height:170px;
+	.wrap{
+		overflow:hidden;
+		margin:0 auto;
+		width:240px;
+	}
+	a{
+		float:left;
+		margin:0 10px;
+		text-align:center;
+		color:$purple;
+			font-style:italic;
+			font-size:14px;
+			text-decoration:none;
+	}
+	div div{
+		display:block;
+		background-color:white;
+		box-shadow: 3px 3px 11px 1px rgba(221,221,221,1);
+		-webkit-box-shadow: 3px 3px 11px 1px rgba(221,221,221,1);
+		-moz-box-shadow: 3px 3px 11px 1px rgba(221,221,221,1);
+		padding:5px;
+	}
+	span{
+			display:block;
+			text-align:center;
+			width:60px;
+			padding-top:5px;
+		}
+}
+
+#tri-wrap{
+	overflow:hidden;
+}
+
+.tri{
+	width:33.3%;
+	float:left;
+	h3{
+		color:$purple;
+	}
+	ul{
+		color:$blue;
+		padding:0;
+	}
+	li{
+		list-style:disc inside;
+	}
+}
+
+#similar{
+	h3{
+		color:$orange;
+		font-size:24px;
+	}
+	overflow:hidden;
+	padding-bottom:10px;
+	a{
+		@include t-04;
+		&:hover,&:focus{
+			@include scale(1.04);
+		}
+		position:relative;
+		margin:0 12px;
+		float:left;
+		display:block;
+		background-color:white;
+		box-shadow: 3px 3px 11px 1px rgba(221,221,221,1);
+		-webkit-box-shadow: 3px 3px 11px 1px rgba(221,221,221,1);
+		-moz-box-shadow: 3px 3px 11px 1px rgba(221,221,221,1);
+		padding:10px;
+		.ribbon{
+			text-align:center;
+			font-size:18px;
+			padding:5px;
+			border:1px solid $red;
+			width:108px;
+			@include font-bree;
+			color:#fff;
+			position:absolute;
+			top:10px;
+			width:188px;
+			@include background-gradient(#d33301,#ea5d32);
+		}
+	}
+}

@@ -103,6 +103,7 @@ aside{
 	padding-left:20px;
 	height:50px;
 	line-height:50px;
+	color:$blue;
 }
 
 #list-wrap{
@@ -112,6 +113,26 @@ aside{
 		height:50px;
 		line-height:50px;
 		padding:0 10px;
+	}
+}
+
+.pagination{
+	a.pill{
+		text-decoration:none;
+		border:1px solid $gray;
+		@include border-radius(20px,20px,20px,20px);
+		@include background-gradient(#fefefe,#f2f4f3);
+		color:#5B5B5B;
+		padding:5px 10px;
+		-webkit-box-shadow: 0px 0px 4px 0px #aaa;
+        box-shadow: 0px 0px 4px 0px #aaa;	
+		&:hover{
+			@include background-gradient(#f2f4f3,#fefefe);
+		}
+		&:active,&.active{
+			-webkit-box-shadow: inset 0px 0px 4px 0px #aaa;
+          	box-shadow: inset 0px 0px 4px 0px #aaa;	
+		}
 	}
 }
 
@@ -166,9 +187,17 @@ aside{
 	}
 	.view{
 		float:right;
+		@include big-red;
 	}
 }
 
 #pagi-b{
 	border-top:1px solid $gray;
+}
+
+.pagi{
+	float:right;
+	a{
+		color:$blue;
+	}
 }

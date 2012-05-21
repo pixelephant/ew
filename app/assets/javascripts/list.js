@@ -16,7 +16,7 @@ $("#filter-no-date").change(function(){
 
 $(".only").change(function(){
   var checked = $(this).is(":checked");
-  var boxes = $(this).parent().parent().next().find("input[type='checkbox']");
+  var boxes = $(this).parent().parent ().next().find("input[type='checkbox']");
 
   if(checked){
     boxes.removeAttr("disabled");
@@ -34,8 +34,10 @@ $(".all").change(function(){
 
 $(".collapsible a").toggle(function(){
   $(this).parent().next().slideDown();
+  $(this).html("&uarr;")
 },function(){
   $(this).parent().next().slideUp();
+  $(this).html("&darr;")
 });
 
 $("#totop").click(function(){

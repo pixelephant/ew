@@ -165,7 +165,7 @@
 
 .box{
 	@include t-04;
-	&:hover{
+	&:hover,&:focus{
 			@include scale(1.04);
 	}
 	background:white;
