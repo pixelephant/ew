@@ -1,4 +1,5 @@
 @import "_mixins.css.scss";
+@import "jquery.fancybox.css";
 
 #content{
 	overflow:hidden;
@@ -18,10 +19,12 @@
 	margin:0 auto;
 	h1{
 		margin:0;
-		color:white;
+		color:$orange;
 		font-size:40px;
 		@include font-lobster;
 		font-style:italic;
+		@include t-shadow;
+		@include t-shadow;
 		@include t-shadow;
 	}
 }
@@ -92,10 +95,10 @@
 
 #trip-details{
 	height:380px;
-	width:580px;
+	width:560px;
 	position:relative;
 	float:left;
-	padding-left:20px;
+	padding-left:40px;
 	h2{
 		margin-top:0;
 		color:$orange;
@@ -111,11 +114,17 @@
 	}
 	li{
 		line-height:1.5;
+		font-size:18px;
 	}
 }
 
 #full-price{
 	color:$purple;
+	margin-top:10px;
+	span{
+		font-weight:bold;
+		font-size:24px;
+	}
 }
 
 #book-wrap{
@@ -218,15 +227,19 @@
 }
 
 #sights{
-	height:170px;
+	height:250px;
 	.wrap{
 		overflow:hidden;
 		margin:0 auto;
 		width:240px;
 	}
 	a{
+		@include t-04;
+		&:hover,&:focus{
+			@include scale(1.04);
+		}
 		float:left;
-		margin:0 10px;
+		margin:10px;
 		text-align:center;
 		color:$purple;
 			font-style:italic;
@@ -247,6 +260,10 @@
 			width:60px;
 			padding-top:5px;
 		}
+	img{
+		width:50px;
+		height:50px;
+	}
 }
 
 #tri-wrap{

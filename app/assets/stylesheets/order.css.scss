@@ -1,0 +1,112 @@
+@import "_mixins.css.scss";
+
+#content{
+	overflow:hidden;
+	min-height:400px;
+}
+
+h2{
+	color:$orange;
+}
+
+#order-form,#personalized-form{
+	float:left;
+	width:610px;
+	margin-right:40px;
+	color:#5B5B5B;
+	overflow:hidden;
+	label{
+		color:#5B5B5B;
+		font-size:18px;
+		display:block;
+		float:none;
+		margin-bottom:5px;
+	}
+	input{
+		float:none !important;
+	}
+
+	fieldset{
+		width:290px;
+		float:left;
+		height:305px;
+	}
+	input[type="submit"]{
+		@include big-red;
+		margin-left:10px;
+	}
+}
+
+#personalized-form fieldset{
+	height:255px;
+}
+
+.r{
+	margin: 20px 0;
+}
+
+#prefix{
+	width:25px;
+}
+
+#head{
+	width:35px;
+}
+
+#number{
+	width:85px;
+}
+
+#order-form .row{
+	overflow:hidden;
+			height:30px;
+		line-height:30px;
+	h3{
+		float:left;
+		color:$purple;
+		margin:0;
+		margin-right:10px;
+		font-size:24px;
+	}
+	.dates{
+		float:left;
+		color:$blue;
+		padding-top:7px;
+		font-size:14px;
+	}
+	.price{
+		color:$blue;
+		font-weight:bold;
+		font-style:italic;
+		float:right;
+		padding-top:7px;
+	}
+
+}
+
+
+#comment{
+		width:330px;
+		float:left;
+}
+
+.sidebox{
+		margin:20px 0;
+		background:#f1f3f2;
+		border:2px dashed #e7e7e7;
+		width:306px;
+		padding:0 10px;
+		h3{
+			color:$purple;
+			text-align:center;
+		}
+	}
+
+.box{
+	background:white;
+	box-shadow: 3px 3px 11px 1px rgba(221,221,221,1);
+	-webkit-box-shadow: 3px 3px 11px 1px rgba(221,221,221,1);
+	-moz-box-shadow: 3px 3px 11px 1px rgba(221,221,221,1);
+	padding:10px;
+	margin:10px;
+}

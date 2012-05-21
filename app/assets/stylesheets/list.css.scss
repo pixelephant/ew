@@ -83,6 +83,12 @@ aside{
 			border-bottom:1px solid $gray;
 			a{
 				float:right;
+				@include small-gray;
+				font-style:normal;
+				padding:3px 10px;
+				margin-top:-5px;
+				@include border-radius(3px,3px,3px,3px);
+				font-size:14px;
 			}
 		}
 	}
@@ -118,25 +124,24 @@ aside{
 
 .pagination{
 	a.pill{
-		text-decoration:none;
-		border:1px solid $gray;
-		@include border-radius(20px,20px,20px,20px);
-		@include background-gradient(#fefefe,#f2f4f3);
-		color:#5B5B5B;
-		padding:5px 10px;
-		-webkit-box-shadow: 0px 0px 4px 0px #aaa;
-        box-shadow: 0px 0px 4px 0px #aaa;	
-		&:hover{
-			@include background-gradient(#f2f4f3,#fefefe);
+		@include small-gray;
+
 		}
-		&:active,&.active{
-			-webkit-box-shadow: inset 0px 0px 4px 0px #aaa;
-          	box-shadow: inset 0px 0px 4px 0px #aaa;	
-		}
-	}
 }
 
 .trip{
+	&.alert{
+		text-align:center;
+		background:rgba(244,213,33,0.2);
+		p{
+			font-size:18px;
+			font-style:italic;
+			color:$purple;
+			a{
+				color:$blue;
+			}
+		}
+	}
 	width:700px;
 	padding:30px 20px;
 	border-left:1px solid $gray;
@@ -180,7 +185,7 @@ aside{
 		padding-top:7px;
 	}
 	p{
-
+		color:#5B5B5B;
 	}
 	.icons{
 		float:left;

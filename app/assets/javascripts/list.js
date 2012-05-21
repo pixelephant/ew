@@ -1,4 +1,9 @@
+
+
 $(document).ready(function(){
+
+
+
 
 $("#filter-no-date").change(function(){
       var checked = $(this).is(":checked");
