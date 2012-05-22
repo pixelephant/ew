@@ -187,6 +187,7 @@
 	&.quarter{
 		width:120px;
 		.ribbon{
+			-webkit-transform-style: preserve-3d;
 			text-align:center;
 			font-size:18px;
 			padding:5px;
@@ -202,6 +203,7 @@
 	&.half{
 		width:280px;
 		.ribbon{
+			-webkit-transform-style: preserve-3d;
 			border:1px solid $red;
 			text-align:center;
 			font-size:18px;
@@ -217,6 +219,7 @@
 	&.full{
 		width:280px;
 		.ribbon{
+			-webkit-transform-style: preserve-3d;
 			@include t-shadow;
 			width:140px;
 			margin: 0 auto;
