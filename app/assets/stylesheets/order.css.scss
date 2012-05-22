@@ -1,10 +1,5 @@
 @import "_mixins.css.scss";
 
-#content{
-	overflow:hidden;
-	min-height:400px;
-}
-
 h2{
 	color:$orange;
 }
@@ -57,7 +52,11 @@ h2{
 	width:85px;
 }
 
-#order-form .row{
+#order-form{
+	fieldset,.row{
+		padding-left:0;
+	}
+	.row{
 	overflow:hidden;
 			height:30px;
 		line-height:30px;
@@ -83,7 +82,17 @@ h2{
 	}
 
 }
+}
 
+
+#order-form,#personalized-form{
+	fieldset,.row{
+		padding-left:0;
+	}
+	input[type="submit"]{
+		margin-left:0;
+	}
+}
 
 #comment{
 		width:330px;
@@ -92,7 +101,7 @@ h2{
 
 .sidebox{
 		margin:20px 0;
-		background:#f1f3f2;
+		background:#FFF8D1;
 		border:2px dashed #e7e7e7;
 		width:306px;
 		padding:0 10px;

@@ -13,8 +13,16 @@
   <link href='http://fonts.googleapis.com/css?family=PT+Sans:400,700,400italic,700italic|Lobster+Two:700italic|Bree+Serif&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
   <%= javascript_include_tag "modernizr-2.5.3.min.js" %>
   <%= csrf_meta_tags %>
+  <!--[if !IE 7]>
+	<style type="text/css">
+		#wrap {display:table;height:100%}
+	</style>
+<![endif]-->
+
 </head>
 <body>
+<div id="wrap">
+		
 <section id="header">
 	<nav class="clearfix">
 		<div id="logo" class=""><a href="/"><%= image_tag "logo.png", :alt => "East-West Utazási és Sport Iroda" %></a></div>
@@ -146,7 +154,7 @@
 </section>
 
 <%= yield %>
-
+</div>
 <footer>
 	<div id="footer-inner">
 		<div class="three">

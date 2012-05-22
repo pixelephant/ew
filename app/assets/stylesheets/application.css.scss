@@ -26,6 +26,18 @@ body{
 	@include font-pt;
 }
 
+#wrap {min-height: 100%;}
+
+#content {overflow:auto;
+	padding-bottom: 410px;}
+
+footer{
+	position: relative;
+	margin-top: -372px; 
+	height: 372px;
+	clear:both;
+}
+
 label,p,span{
 	-webkit-transform-style: preserve-3d;
 }
@@ -59,7 +71,7 @@ a:visited{
 			text-align:center;
 			display:block;
 			float:left;
-			margin:0 3px;
+			margin:0 2px;
 			&.active{
 				a{
 					@include border-radius(20px,20px,20px,20px);
@@ -250,6 +262,11 @@ a:visited{
 		}
 	}
 
+.datepicker{
+	background:url(icons/icons_calendar.png) no-repeat center right white;
+	padding-right:10px;
+}
+
 #submit-set{
 	padding-top:0;
 }	
@@ -326,8 +343,8 @@ a:visited{
 
 
 footer{	
+	height:370px;
 	border-top:2px solid $blue;
-	margin-top:40px;
 	width:100%;
 	box-shadow: 1px 12px 30px 15px rgba(221,221,221,1);
 	-webkit-box-shadow: 1px 12px 30px 15px rgba(221,221,221,1);
