@@ -2,7 +2,7 @@ class ListController < ApplicationController
 	layout "application"
 
 	def index
-		@traveloffers = TravelOffer.all
+		@traveloffers = TravelOffer.page(params[:page]).per(3)
 		render "index"
 	end
 

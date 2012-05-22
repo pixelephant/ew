@@ -18,12 +18,7 @@
 			<a class="pill" href="#">Ár &darr;</a>
 			<a class="pill" href="#">A-Z</a>
 			<div class="pagi">
-				<a href="#">Előző</a>
-				<a href="#">1</a>
-				<a href="#">2</a>
-				<a href="#">...</a>
-				<a href="#">10</a>
-				<a href="#">Következő</a>
+				<%= paginate @traveloffers, :window => 2 %>
 			</div>
 		</div>
 		<div id="list">
@@ -31,7 +26,7 @@
 			<div class="trip">
 				<a href="/trip">
 					<div class="thumbnail">
-						<%= image_tag traveloffer.gallery_url + traveloffer.images.first.file_name, :height => 140, :width => 140, :alt => traveloffer.travel_name %>
+						<%= (image_tag traveloffer.gallery_url + traveloffer.images.first.file_name, :height => 140, :width => 140, :alt => traveloffer.travel_name) if traveloffer.images.any? %>
 					</div>
 					<div class="data">
 						<div class="row">
@@ -39,7 +34,7 @@
 							<span class="dates">2012-02-11 - 2012-02-15</span>
 							<span class="price">119 000 Ft-tól</span>
 						</div>
-						<p>A Német Szövetségi Köztársaság (németül Bundesrepublik Deutschland; nemzetközi szerződésekben, okmányokban, hivatalos fórumokon a Németországi Szövetségi Köztársaság megnevezés szerepel hivatalos országnévként) Európa vezető, s a világ negyedik legnagyobb...</p>
+						<p><%= (strip_tags(truncate(traveloffer.descriptions.where(:name => "Fekvese").first.description, :length => 255))) if traveloffer.descriptions.any? %></p>
 					</div>
 					<div class="icons">
 						<img src="http://www.placehold.it/30x30" alt="">
