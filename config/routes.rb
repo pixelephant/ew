@@ -1,5 +1,6 @@
 Ewutazas::Application.routes.draw do
 
+  match 'order' => 'order#index'
   match ':id' => 'list#index'
 
   # The priority is based upon order of creation:

@@ -12,11 +12,11 @@
 	</aside>
 	<div id="list-wrap">
 		<div class="pagination" id="pagi-t">
-			<a class="pill" href="#">Legnépszerűbbek</a>
-			<a class="pill" href="#">Legújabbak</a>
-			<a class="pill" href="#">Ár &uarr;</a>
-			<a class="pill" href="#">Ár &darr;</a>
-			<a class="pill" href="#">A-Z</a>
+			<%= link_to 'Legnépszerűbbek', url_for(params.merge(:sort => "legnepszerubbek")), :class => 'pill' %>
+			<%= link_to 'Legújabbak', url_for(params.merge(:sort => "legujabbak")), :class => 'pill' %>
+			<%= link_to 'Ár &uarr;'.html_safe, url_for(params.merge(:sort => "arnovekvo")), :class => 'pill' %>
+			<%= link_to 'Ár &darr;'.html_safe, url_for(params.merge(:sort => "arcsokkeno")), :class => 'pill' %>
+			<%= link_to 'A-Z', url_for(params.merge(:sort => "utneve")), :class => 'pill' %>
 			<div class="pagi">
 				<%= paginate @traveloffers, :window => 2 %>
 			</div>
