@@ -12,11 +12,11 @@
 	</aside>
 	<div id="list-wrap">
 		<div class="pagination" id="pagi-t">
-			<%= link_to 'Legnépszerűbbek', url_for(params.merge(:sort => "legnepszerubbek")), :class => 'pill' %>
-			<%= link_to 'Legújabbak', url_for(params.merge(:sort => "legujabbak")), :class => 'pill' %>
-			<%= link_to 'Ár &uarr;'.html_safe, url_for(params.merge(:sort => "arnovekvo")), :class => 'pill' %>
-			<%= link_to 'Ár &darr;'.html_safe, url_for(params.merge(:sort => "arcsokkeno")), :class => 'pill' %>
-			<%= link_to 'A-Z', url_for(params.merge(:sort => "utneve")), :class => 'pill' %>
+			<%= link_to 'Legnépszerűbbek', url_for(params.merge(:sort => "legnepszerubbek", :ord => 'csokkeno')), :class => 'pill' %>
+			<%= link_to 'Legújabbak', url_for(params.merge(:sort => "legujabbak", :ord => 'csokkeno')), :class => 'pill' %>
+			<%= link_to 'Ár &uarr;'.html_safe, url_for(params.merge(:sort => "arnovekvo", :ord => 'novekvo')), :class => 'pill' %>
+			<%= link_to 'Ár &darr;'.html_safe, url_for(params.merge(:sort => "arcsokkeno", :ord => 'csokkeno')), :class => 'pill' %>
+			<%= link_to 'A-Z', url_for(params.merge(:sort => "utneve", :ord => 'novekvo')), :class => 'pill' %>
 			<div class="pagi">
 				<%= paginate @traveloffers, :window => 2 %>
 			</div>
