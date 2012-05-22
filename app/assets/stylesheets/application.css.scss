@@ -38,12 +38,49 @@ footer{
 	clear:both;
 }
 
-label,p,span{
+label,p,span,h1,h2,h3,h4,legend{
 	-webkit-transform-style: preserve-3d;
 }
 
 a:visited{
 	color:darken($blue,30%);
+}
+
+input[type="text"],input[type="date"],input[type="email"],input[type="search"]{
+	color:#58595B;
+	@include font-pt;
+	@include border-radius(3px,3px,3px,3px);
+	border:1px solid #7D579A;
+	height:20px;
+	padding:2px;
+	
+	background: #bcbec0; /* Old browsers */
+	background: -moz-linear-gradient(top, #bcbec0 0%, #ffffff 20); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#bcbec0), color-stop(20%,#ffffff)); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top, #bcbec0 0%,#ffffff 20); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top, #bcbec0 0%,#ffffff 20); /* Opera 11.10+ */
+	background: -ms-linear-gradient(top, #bcbec0 0%,#ffffff 20); /* IE10+ */
+	background: linear-gradient(top, #bcbec0 0%,#ffffff 20); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#bcbec0', endColorstr='#ffffff',GradientType=0 ); /* IE6-9 */
+
+	&.datepicker{
+	padding-right:10px;	
+	background: #bcbec0; /* Old browsers */
+	background: url(icons/icons_calendar.png) no-repeat center right, -moz-linear-gradient(top, #bcbec0 0%, #ffffff 20); /* FF3.6+ */
+	background: url(icons/icons_calendar.png) no-repeat center right, -webkit-gradient(linear, left top, left bottom, color-stop(0%,#bcbec0), color-stop(20%,#ffffff)); /* Chrome,Safari4+ */
+	background: url(icons/icons_calendar.png) no-repeat center right, -webkit-linear-gradient(top, #bcbec0 0%,#ffffff 20); /* Chrome10+,Safari5.1+ */
+	background: url(icons/icons_calendar.png) no-repeat center right, -o-linear-gradient(top, #bcbec0 0%,#ffffff 20); /* Opera 11.10+ */
+	background: url(icons/icons_calendar.png) no-repeat center right, -ms-linear-gradient(top, #bcbec0 0%,#ffffff 20); /* IE10+ */
+	background: url(icons/icons_calendar.png) no-repeat center right,linear-gradient(top, #bcbec0 0%,#ffffff 20); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#bcbec0', endColorstr='#ffffff',GradientType=0 ); /* IE6-9 */
+	}
+}
+
+textarea{
+	color:#58595B;
+	@include font-pt;
+	@include border-radius(3px,3px,3px,3px);
+	border:1px solid #7D579A;
 }
 
 #header{
@@ -262,10 +299,7 @@ a:visited{
 		}
 	}
 
-.datepicker{
-	background:url(icons/icons_calendar.png) no-repeat center right white;
-	padding-right:10px;
-}
+
 
 #submit-set{
 	padding-top:0;
