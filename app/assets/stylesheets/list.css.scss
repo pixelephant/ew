@@ -169,18 +169,12 @@ aside{
 		width:538px;
 	}
 	.dates{
-		float:left;
-		color:$blue;
-		padding-top:7px;
-		font-size:14px;
-	}
-	.price{
-		color:$blue;
-		font-weight:bold;
-		font-style:italic;
 		float:right;
+		color:$blue;
 		padding-top:7px;
+		font-size:16px;
 	}
+	
 	p{
 		color:#5B5B5B;
 	}
@@ -192,6 +186,15 @@ aside{
 		@include big-red;
 	}
 }
+
+
+.price{
+		color:$blue;
+		font-weight:bold;
+		font-style:italic;
+		padding-top:7px;
+		display:block;
+	}
 
 #pagi-b{
 	border-top:1px solid $gray;
