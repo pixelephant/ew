@@ -1,0 +1,1530 @@
+<traveloffers generated="2012-03-29 06:05:01" count="10431">
+<traveloffer>
+	<md5>0670784a5a8e959a79466032c8973c3f</md5>
+	<id>123</id>
+	<import_id></import_id>
+	<partnerid>9</partnerid>
+	<travel_name><![CDATA[Rövid húsvéti utazás!]]></travel_name>
+	<szallas_name><![CDATA[Piere Anne Beach Hotel ***]]></szallas_name>
+	<destinations count="1">
+		<destination country="9" region="72" city="264" />
+	</destinations>
+	<skiregion/>
+	<category_standard>3</category_standard>
+	<category_aleph><![CDATA[Hotel ***]]></category_aleph>
+	<program_types count="1">
+		<program_type>1</program_type>
+	</program_types>
+	<attributes count="2">
+		<attribute>14</attribute>
+		<attribute>11</attribute>
+	</attributes>
+	<traffic>1</traffic>
+	<traveldays count="0"></traveldays>
+	<board>9</board>
+	<inprices count="3">
+		<inprice>1</inprice>
+		<inprice>6</inprice>
+		<inprice>7</inprice>
+	</inprices>
+	<outprices count="5">
+		<outprice>2</outprice>
+		<outprice>3</outprice>
+		<outprice>16</outprice>
+		<outprice>17</outprice>
+		<outprice>30</outprice>
+	</outprices>
+	<gallery count="4" url="http://backend.aleph.hu/travelmax/public_html/gallery/305901/">
+		<kepfilenev><![CDATA[1.JPG]]></kepfilenev>
+		<kepfilenev><![CDATA[2.JPG]]></kepfilenev>
+		<kepfilenev><![CDATA[3.JPG]]></kepfilenev>
+		<kepfilenev><![CDATA[4.JPG]]></kepfilenev>
+	</gallery>
+	<gmap></gmap>
+	<descriptions count="2">
+		<description name="Fekvese"><![CDATA[<p>Ideális fekvésű, városközponthoz és a strandhoz közeli szálloda.</p>
+		<p><strong>Fekvése:</strong> 2001-ben felújított igen kedvelt három épületből álló &#8222;strandhotel&#8221;, Ayia Napa városközpontjának a közelében, közvetlenül a tengerparton található. A szálloda előtt egy kis homokos strand található sziklás tengerpart ölelésében. A legközelebbi széles homokos strand vagy Ayia Napa központi homokos strandja a szállodától pár perc sétányira található. Környező városokba (Protaras, Larnaca) tömegközlekedéssel is el lehet jutni<strong>.</strong></p>
+		<p><strong>Szobák:</strong> minden szoba légkondicionált, fürdőszobás, hajszárítóval, tv-vel, rádióval, telefonnal felszerelt. A szobához erkély tartozik, szárazföldi vagy tengerre néző kilátással. Igény esetén családi szoba két hálószobával foglalható maximum 2 felnőtt és 2 gyermek elhelyezésére (lekérésre).</p>
+		<p><strong>Szolgáltatások:</strong> recepció, lift, étterem, lobbi- és medencebár, tvszoba, szobaszerviz, gyermekfelügyelet, internetezési lehetőség, parkoló.</p>
+		<p><strong>Sport és szórakozás:</strong> külső lagúnaformájú medence kis hidakkal, fedett medence (főszezonban zárva), napozóterasz napernyőkkel és nyugágyakkal, szauna, pezsgőfürdő, tornaterem, teniszpálya, asztalitenisz, szauna. A szálloda mögött található Fun Park számtalan szórakozási lehetőséget kínál, illetve rövid sétatávolságra elérhető a kikötő (~400 méter), ahol éjszakai szórakozóhelyek, éttermek, bárok, üzletek sokasága található.</p>]]>
+		</description>
+		<description name="Artablazat"><![CDATA[<p align="left"><b>Utazás a Budapest-Larnaca-Budapest útvonalon közelekedő Wizz Air járatokon. </b></p>
+		<p align="left"><strong>Speciális, rövid turnusra vonatkozó poggyászszállítási szabályzat:</strong> <br />Utasonként 1 db kézipoggyász vihető a fedélzetre, melynek maximális mérete 55x40x20 cm, illetve tömege legfeljebb <metricconverter productid="10 kg" w:st="on"></metricconverter>10 kg lehet. Igény esetén poggyász feladás foglalható (32 kg/csomag) melynek díja (előzetesen rendelve) +11&nbsp;000 Ft/db. </p>]]></description>
+		</descriptions>
+		<fakultativ_programok count="0"></fakultativ_programok>
+		<prices count="2">
+			<idopont id="160043908" fromdate="2012-04-04" todate="2012-04-08" lejar_ar="0000-00-00" szobakalk="Ft/fő" ej="4" nap="5" price="39990" akcios="1" ellatas="" agyszam="2" foglalasi_dij="500" transzfer_dij="8000" szervidij="0" vizum_dij="0" repteri_illetek="35500" storno_biztositas="1.00" bpp="0" kerozin_potdij="0" egyeni_idopont="0">
+				<idopont_tipus><![CDATA[2 ágyas szoba]]></idopont_tipus>
+				<idopont_tipuskod></idopont_tipuskod>
+				<departure_city><![CDATA[1365]]></departure_city>
+				<megjegyzes><![CDATA[Ft/fő]]></megjegyzes>
+				<unnepek count="0"></unnepek>
+				<opcionalis_dijak count="0"></opcionalis_dijak>
+				<inprices count="0"></inprices>
+				<outprices count="0"></outprices>
+				<elofoglalasok count="0"></elofoglalasok>
+				<gyerek_arak count="0"></gyerek_arak>
+			</idopont>
+			<idopont id="160043911" fromdate="2012-04-08" todate="2012-04-11" lejar_ar="0000-00-00" szobakalk="Ft/fő" ej="3" nap="4" price="39990" akcios="1" ellatas="" agyszam="2" foglalasi_dij="500" transzfer_dij="8000" szervidij="0" vizum_dij="0" repteri_illetek="35500" storno_biztositas="1.00" bpp="0" kerozin_potdij="0" egyeni_idopont="0">
+				<idopont_tipus><![CDATA[2 ágyas szoba]]></idopont_tipus>
+				<idopont_tipuskod></idopont_tipuskod>
+				<departure_city><![CDATA[1365]]></departure_city>
+				<megjegyzes><![CDATA[Ft/fő]]></megjegyzes>
+				<unnepek count="0"></unnepek>
+				<opcionalis_dijak count="0"></opcionalis_dijak>
+				<inprices count="0"></inprices>
+				<outprices count="0"></outprices>
+				<elofoglalasok count="0"></elofoglalasok>
+				<gyerek_arak count="0"></gyerek_arak>
+			</idopont>
+		</prices>
+	</traveloffer>
+<traveloffer>
+<md5>cdecac04cc6a87cf33d378ea996344ea</md5>
+<id>150658</id>
+<import_id><![CDATA[7-865]]></import_id>
+<partnerid>111</partnerid>
+<travel_name><![CDATA[Laguna Vista Beach Resort ***** (Neftisz program)]]></travel_name>
+<szallas_name><![CDATA[Laguna Vista Beach Resort *****]]></szallas_name>
+<destinations count="1">
+<destination country="81" region="315" city="627" />
+</destinations>
+<skiregion/>
+<category_standard>5</category_standard>
+<category_aleph><![CDATA[Hotel *****]]></category_aleph>
+<program_types count="1">
+<program_type>14</program_type>
+</program_types>
+<attributes count="1">
+<attribute>11</attribute>
+</attributes>
+<traffic>1</traffic>
+<traveldays count="1">
+<travelday>6</travelday>
+</traveldays>
+<board>8</board>
+<inprices count="6">
+<inprice>1</inprice>
+<inprice>6</inprice>
+<inprice>7</inprice>
+<inprice>8</inprice>
+<inprice>22</inprice>
+<inprice>3</inprice>
+</inprices>
+<outprices count="5">
+<outprice>2</outprice>
+<outprice>16</outprice>
+<outprice>15</outprice>
+<outprice>18</outprice>
+<outprice>43</outprice>
+</outprices>
+<gallery count="5" url="http://backend.aleph.hu/travelmax/public_html/gallery/582960/">
+<kepfilenev><![CDATA[anubisxml_582960_5.jpg]]></kepfilenev>
+<kepfilenev><![CDATA[anubisxml_582960_4.jpg]]></kepfilenev>
+<kepfilenev><![CDATA[anubisxml_582960_3.jpg]]></kepfilenev>
+<kepfilenev><![CDATA[anubisxml_582960_2.jpg]]></kepfilenev>
+<kepfilenev><![CDATA[anubisxml_582960_1.jpg]]></kepfilenev>
+</gallery>
+<gmap></gmap>
+<descriptions count="2">
+<description name="Fekvese"><![CDATA[<p><DIV class=szoveg_feher align=justify><A href="http://www.balbaagroup.com" mce_href="http://www.balbaagroup.com">www.</A><A href="http://www.balbaagroup.com" mce_href="http://www.balbaagroup.com">balbaagroup.com<BR></A><SPAN class=szoveg_sarga>Tel.: (00 20) 69 360 1210</SPAN><B class=szoveg_sarga><BR><BR>Fekvése: </B>A szálloda közvetlenül Nabq Bay homokos tengerpartján, a Tiran szigettel szemben található, kb. 10 km-re északra a repülőtértől és kb. 20 percnyi autóútra a városközponttól. A hotel kb. 250 m hosszú privát partszakasszal rendelkezik.<B class=szoveg_sarga><BR><BR>Szobák: </B>A szálloda 335 szobával és lakosztállyal rendelkezik. A standard szobák mindegyike légkondicionált, tévével, telefonnal, minibárral, a fürdőszoba hajszárítóval felszerelt. Chalet, dublex chalet valamint superior szoba felár ellenében igényelhető.<B class=szoveg_sarga><BR><BR>Szolgáltatások: </B>Éttermek, bárok, medencék, internet, szépségszalon, különféle üzletek, konferenciaterem, bankszolgáltatás, mosoda, wellness szolgáltatások (jakuzzi, szauna, gőzfürdő, masszázs), fitneszterem, aerobik, vízilabda, strandröplabda, asztalitenisz, biliárd, teniszpálya, vízisportok a parton (banán, parasailing), búvárközpont, snorkeling, parkoló, valamint animációs programok. Gyermekeknek medence, gyermekklub, játszótér. <BR><I>Egyes szolgáltatások csak külön térítés ellenében vehetők igénybe.</I></DIV><B class=szoveg_sarga>
+<DIV class=szoveg_feher align=justify><BR>Ellátás: </B>All inclusive.<SPAN class=szoveg_feher><SPAN class=szoveg_sarga><B></B></SPAN></SPAN></DIV>
+<DIV class=szoveg_feher align=justify><SPAN class=szoveg_feher><SPAN class=szoveg_sarga></SPAN></SPAN> </DIV></p><span class="szoveg_feher"><b class="szoveg_sarga">Neftisz program</b><br>8 nap / 7 éjszaka</span>
+<p><span class="szoveg_feher"><b class="szoveg_sarga">1. nap: Budapest / Sharm el Sheikh</b><br>Elutazás Sharm el Sheikh-re charter járattal. Érkezés után transzfer a szállodába. Szabadprogram. Vacsora és szállás Sharm el Sheikh-en.<br><br><b class="szoveg_sarga">2-7. nap: Sharm el Sheikh</b><br>Reggeli után szabadprogram. Fakultatív programlehetőségek. Vacsora és szállás Sharm el Sheikh-en.<br><br><b class="szoveg_sarga">8. nap: Sharm el Sheikh / Budapest</b><br>Reggel transzfer a repülőtérre, hazautazás.<br><span class="szoveg_sarga"><br><b>Az árak tartalmazzák:</b></span><br>1.) szállás: 7 éjszaka szállodában<br>2.) ellátás: a választott szálloda szerint<br>3.) repülőjegyek: Budapest</span><span class="szoveg_feher">-</span><span class="szoveg_feher">Sharm el Sheikh, Sharm el Sheikh-Budapest útvonalon<br>4.) repülőtéri transzferek<br>5.) vízum díj</span><br><br><span class="szoveg_feher"><b class="szoveg_sarga">Az árak nem tartalmazzák:</b><br>1.) </span><span class="szoveg_feher">repülőtéri illeték és üzemanyag pótdíj:</span><span class="szoveg_feher"> </span><span class="szoveg_feher">43.000 Ft/fő</span><br><span class="szoveg_feher">2.) útlemondási biztosítás: 1,4%<br>3.) szerviz díj: 5.000 Ft/fő<br>4.) utasbiztosítás: 650 Ft/fő/nap</span><span class="szoveg_feher"> </span></p>]]></description>
+<description name="Artablazat"></description>
+</descriptions>
+<fakultativ_programok count="0"></fakultativ_programok>
+<prices count="49">
+<idopont id="160298164" fromdate="2012-04-14" todate="2012-04-21" lejar_ar="0000-00-00" szobakalk="Ft/fő" ej="7" nap="8" price="207000" akcios="1" ellatas="8" agyszam="2" foglalasi_dij="" transzfer_dij="0" szervidij="5000" vizum_dij="0" repteri_illetek="43000" storno_biztositas="1.40" bpp="" kerozin_potdij="" egyeni_idopont="0">
+<idopont_tipus><![CDATA[2 ágyas szoba]]></idopont_tipus>
+<idopont_tipuskod><![CDATA[2]]></idopont_tipuskod>
+<departure_city><![CDATA[1365]]></departure_city>
+<megjegyzes><![CDATA[Ft/fő All Inclusive]]></megjegyzes>
+<unnepek count="0"></unnepek>
+<opcionalis_dijak count="3">
+<opcio ar="45000" ar_tipus="/fő" opcios="1" kedvezmeny="0" category="4" eletkor_tol="0" eletkor_ig="0" ervenyes_tol="" ervenyes_ig="">
+<name><![CDATA[Egyágyas felár]]></name>
+</opcio>
+<opcio ar="45000" ar_tipus="/fő" opcios="1" kedvezmeny="0" category="10" eletkor_tol="0" eletkor_ig="0" ervenyes_tol="" ervenyes_ig="">
+<name><![CDATA[Egyágyas felár hosszabítás / hét]]></name>
+</opcio>
+<opcio ar="150000" ar_tipus="/fő" opcios="1" kedvezmeny="0" category="10" eletkor_tol="0" eletkor_ig="0" ervenyes_tol="" ervenyes_ig="">
+<name><![CDATA[Részvételi díj hosszabítás / hét]]></name>
+</opcio>
+</opcionalis_dijak>
+<inprices count="0"></inprices>
+<outprices count="0"></outprices>
+<elofoglalasok count="0"></elofoglalasok>
+<gyerek_arak count="0"></gyerek_arak>
+</idopont>
+<idopont id="160298165" fromdate="2012-04-21" todate="2012-04-28" lejar_ar="0000-00-00" szobakalk="Ft/fő" ej="7" nap="8" price="207000" akcios="1" ellatas="8" agyszam="2" foglalasi_dij="" transzfer_dij="0" szervidij="5000" vizum_dij="0" repteri_illetek="43000" storno_biztositas="1.40" bpp="" kerozin_potdij="" egyeni_idopont="0">
+<idopont_tipus><![CDATA[2 ágyas szoba]]></idopont_tipus>
+<idopont_tipuskod><![CDATA[2]]></idopont_tipuskod>
+<departure_city><![CDATA[1365]]></departure_city>
+<megjegyzes><![CDATA[Ft/fő All Inclusive]]></megjegyzes>
+<unnepek count="0"></unnepek>
+<opcionalis_dijak count="3">
+<opcio ar="45000" ar_tipus="/fő" opcios="1" kedvezmeny="0" category="4" eletkor_tol="0" eletkor_ig="0" ervenyes_tol="" ervenyes_ig="">
+<name><![CDATA[Egyágyas felár]]></name>
+</opcio>
+<opcio ar="45000" ar_tipus="/fő" opcios="1" kedvezmeny="0" category="10" eletkor_tol="0" eletkor_ig="0" ervenyes_tol="" ervenyes_ig="">
+<name><![CDATA[Egyágyas felár hosszabítás / hét]]></name>
+</opcio>
+<opcio ar="150000" ar_tipus="/fő" opcios="1" kedvezmeny="0" category="10" eletkor_tol="0" eletkor_ig="0" ervenyes_tol="" ervenyes_ig="">
+<name><![CDATA[Részvételi díj hosszabítás / hét]]></name>
+</opcio>
+</opcionalis_dijak>
+<inprices count="0"></inprices>
+<outprices count="0"></outprices>
+<elofoglalasok count="0"></elofoglalasok>
+<gyerek_arak count="0"></gyerek_arak>
+</idopont>
+<idopont id="160298166" fromdate="2012-04-28" todate="2012-05-05" lejar_ar="0000-00-00" szobakalk="Ft/fő" ej="7" nap="8" price="207000" akcios="1" ellatas="8" agyszam="2" foglalasi_dij="" transzfer_dij="0" szervidij="5000" vizum_dij="0" repteri_illetek="43000" storno_biztositas="1.40" bpp="" kerozin_potdij="" egyeni_idopont="0">
+<idopont_tipus><![CDATA[2 ágyas szoba]]></idopont_tipus>
+<idopont_tipuskod><![CDATA[2]]></idopont_tipuskod>
+<departure_city><![CDATA[1365]]></departure_city>
+<megjegyzes><![CDATA[Ft/fő All Inclusive]]></megjegyzes>
+<unnepek count="0"></unnepek>
+<opcionalis_dijak count="3">
+<opcio ar="45000" ar_tipus="/fő" opcios="1" kedvezmeny="0" category="4" eletkor_tol="0" eletkor_ig="0" ervenyes_tol="" ervenyes_ig="">
+<name><![CDATA[Egyágyas felár]]></name>
+</opcio>
+<opcio ar="45000" ar_tipus="/fő" opcios="1" kedvezmeny="0" category="10" eletkor_tol="0" eletkor_ig="0" ervenyes_tol="" ervenyes_ig="">
+<name><![CDATA[Egyágyas felár hosszabítás / hét]]></name>
+</opcio>
+<opcio ar="150000" ar_tipus="/fő" opcios="1" kedvezmeny="0" category="10" eletkor_tol="0" eletkor_ig="0" ervenyes_tol="" ervenyes_ig="">
+<name><![CDATA[Részvételi díj hosszabítás / hét]]></name>
+</opcio>
+</opcionalis_dijak>
+<inprices count="0"></inprices>
+<outprices count="0"></outprices>
+<elofoglalasok count="0"></elofoglalasok>
+<gyerek_arak count="0"></gyerek_arak>
+</idopont>
+<idopont id="160298167" fromdate="2012-05-05" todate="2012-05-12" lejar_ar="0000-00-00" szobakalk="Ft/fő" ej="7" nap="8" price="174900" akcios="1" ellatas="8" agyszam="2" foglalasi_dij="" transzfer_dij="0" szervidij="5000" vizum_dij="0" repteri_illetek="43000" storno_biztositas="1.40" bpp="" kerozin_potdij="" egyeni_idopont="0">
+<idopont_tipus><![CDATA[2 ágyas szoba]]></idopont_tipus>
+<idopont_tipuskod><![CDATA[2]]></idopont_tipuskod>
+<departure_city><![CDATA[1365]]></departure_city>
+<megjegyzes><![CDATA[Ft/fő All Inclusive]]></megjegyzes>
+<unnepek count="0"></unnepek>
+<opcionalis_dijak count="3">
+<opcio ar="59000" ar_tipus="/fő" opcios="1" kedvezmeny="0" category="4" eletkor_tol="0" eletkor_ig="0" ervenyes_tol="" ervenyes_ig="">
+<name><![CDATA[Egyágyas felár]]></name>
+</opcio>
+<opcio ar="59000" ar_tipus="/fő" opcios="1" kedvezmeny="0" category="10" eletkor_tol="0" eletkor_ig="0" ervenyes_tol="" ervenyes_ig="">
+<name><![CDATA[Egyágyas felár hosszabítás / hét]]></name>
+</opcio>
+<opcio ar="129000" ar_tipus="/fő" opcios="1" kedvezmeny="0" category="10" eletkor_tol="0" eletkor_ig="0" ervenyes_tol="" ervenyes_ig="">
+<name><![CDATA[Részvételi díj hosszabítás / hét]]></name>
+</opcio>
+</opcionalis_dijak>
+<inprices count="0"></inprices>
+<outprices count="0"></outprices>
+<elofoglalasok count="0"></elofoglalasok>
+<gyerek_arak count="0"></gyerek_arak>
+</idopont>
+<idopont id="160298168" fromdate="2012-05-12" todate="2012-05-19" lejar_ar="0000-00-00" szobakalk="Ft/fő" ej="7" nap="8" price="174900" akcios="1" ellatas="8" agyszam="2" foglalasi_dij="" transzfer_dij="0" szervidij="5000" vizum_dij="0" repteri_illetek="43000" storno_biztositas="1.40" bpp="" kerozin_potdij="" egyeni_idopont="0">
+<idopont_tipus><![CDATA[2 ágyas szoba]]></idopont_tipus>
+<idopont_tipuskod><![CDATA[2]]></idopont_tipuskod>
+<departure_city><![CDATA[1365]]></departure_city>
+<megjegyzes><![CDATA[Ft/fő All Inclusive]]></megjegyzes>
+<unnepek count="0"></unnepek>
+<opcionalis_dijak count="3">
+<opcio ar="59000" ar_tipus="/fő" opcios="1" kedvezmeny="0" category="4" eletkor_tol="0" eletkor_ig="0" ervenyes_tol="" ervenyes_ig="">
+<name><![CDATA[Egyágyas felár]]></name>
+</opcio>
+<opcio ar="59000" ar_tipus="/fő" opcios="1" kedvezmeny="0" category="10" eletkor_tol="0" eletkor_ig="0" ervenyes_tol="" ervenyes_ig="">
+<name><![CDATA[Egyágyas felár hosszabítás / hét]]></name>
+</opcio>
+<opcio ar="129000" ar_tipus="/fő" opcios="1" kedvezmeny="0" category="10" eletkor_tol="0" eletkor_ig="0" ervenyes_tol="" ervenyes_ig="">
+<name><![CDATA[Részvételi díj hosszabítás / hét]]></name>
+</opcio>
+</opcionalis_dijak>
+<inprices count="0"></inprices>
+<outprices count="0"></outprices>
+<elofoglalasok count="0"></elofoglalasok>
+<gyerek_arak count="0"></gyerek_arak>
+</idopont>
+<idopont id="160298169" fromdate="2012-05-19" todate="2012-05-26" lejar_ar="0000-00-00" szobakalk="Ft/fő" ej="7" nap="8" price="174900" akcios="1" ellatas="8" agyszam="2" foglalasi_dij="" transzfer_dij="0" szervidij="5000" vizum_dij="0" repteri_illetek="43000" storno_biztositas="1.40" bpp="" kerozin_potdij="" egyeni_idopont="0">
+<idopont_tipus><![CDATA[2 ágyas szoba]]></idopont_tipus>
+<idopont_tipuskod><![CDATA[2]]></idopont_tipuskod>
+<departure_city><![CDATA[1365]]></departure_city>
+<megjegyzes><![CDATA[Ft/fő All Inclusive]]></megjegyzes>
+<unnepek count="0"></unnepek>
+<opcionalis_dijak count="3">
+<opcio ar="59000" ar_tipus="/fő" opcios="1" kedvezmeny="0" category="4" eletkor_tol="0" eletkor_ig="0" ervenyes_tol="" ervenyes_ig="">
+<name><![CDATA[Egyágyas felár]]></name>
+</opcio>
+<opcio ar="59000" ar_tipus="/fő" opcios="1" kedvezmeny="0" category="10" eletkor_tol="0" eletkor_ig="0" ervenyes_tol="" ervenyes_ig="">
+<name><![CDATA[Egyágyas felár hosszabítás / hét]]></name>
+</opcio>
+<opcio ar="129000" ar_tipus="/fő" opcios="1" kedvezmeny="0" category="10" eletkor_tol="0" eletkor_ig="0" ervenyes_tol="" ervenyes_ig="">
+<name><![CDATA[Részvételi díj hosszabítás / hét]]></name>
+</opcio>
+</opcionalis_dijak>
+<inprices count="0"></inprices>
+<outprices count="0"></outprices>
+<elofoglalasok count="0"></elofoglalasok>
+<gyerek_arak count="0"></gyerek_arak>
+</idopont>
+<idopont id="160298170" fromdate="2012-05-26" todate="2012-06-02" lejar_ar="0000-00-00" szobakalk="Ft/fő" ej="7" nap="8" price="174900" akcios="1" ellatas="8" agyszam="2" foglalasi_dij="" transzfer_dij="0" szervidij="5000" vizum_dij="0" repteri_illetek="43000" storno_biztositas="1.40" bpp="" kerozin_potdij="" egyeni_idopont="0">
+<idopont_tipus><![CDATA[2 ágyas szoba]]></idopont_tipus>
+<idopont_tipuskod><![CDATA[2]]></idopont_tipuskod>
+<departure_city><![CDATA[1365]]></departure_city>
+<megjegyzes><![CDATA[Ft/fő All Inclusive]]></megjegyzes>
+<unnepek count="0"></unnepek>
+<opcionalis_dijak count="3">
+<opcio ar="59000" ar_tipus="/fő" opcios="1" kedvezmeny="0" category="4" eletkor_tol="0" eletkor_ig="0" ervenyes_tol="" ervenyes_ig="">
+<name><![CDATA[Egyágyas felár]]></name>
+</opcio>
+<opcio ar="59000" ar_tipus="/fő" opcios="1" kedvezmeny="0" category="10" eletkor_tol="0" eletkor_ig="0" ervenyes_tol="" ervenyes_ig="">
+<name><![CDATA[Egyágyas felár hosszabítás / hét]]></name>
+</opcio>
+<opcio ar="129000" ar_tipus="/fő" opcios="1" kedvezmeny="0" category="10" eletkor_tol="0" eletkor_ig="0" ervenyes_tol="" ervenyes_ig="">
+<name><![CDATA[Részvételi díj hosszabítás / hét]]></name>
+</opcio>
+</opcionalis_dijak>
+<inprices count="0"></inprices>
+<outprices count="0"></outprices>
+<elofoglalasok count="0"></elofoglalasok>
+<gyerek_arak count="0"></gyerek_arak>
+</idopont>
+<idopont id="160298171" fromdate="2012-06-02" todate="2012-06-09" lejar_ar="0000-00-00" szobakalk="Ft/fő" ej="7" nap="8" price="174900" akcios="1" ellatas="8" agyszam="2" foglalasi_dij="" transzfer_dij="0" szervidij="5000" vizum_dij="0" repteri_illetek="43000" storno_biztositas="1.40" bpp="" kerozin_potdij="" egyeni_idopont="0">
+<idopont_tipus><![CDATA[2 ágyas szoba]]></idopont_tipus>
+<idopont_tipuskod><![CDATA[2]]></idopont_tipuskod>
+<departure_city><![CDATA[1365]]></departure_city>
+<megjegyzes><![CDATA[Ft/fő All Inclusive]]></megjegyzes>
+<unnepek count="0"></unnepek>
+<opcionalis_dijak count="3">
+<opcio ar="59000" ar_tipus="/fő" opcios="1" kedvezmeny="0" category="4" eletkor_tol="0" eletkor_ig="0" ervenyes_tol="" ervenyes_ig="">
+<name><![CDATA[Egyágyas felár]]></name>
+</opcio>
+<opcio ar="59000" ar_tipus="/fő" opcios="1" kedvezmeny="0" category="10" eletkor_tol="0" eletkor_ig="0" ervenyes_tol="" ervenyes_ig="">
+<name><![CDATA[Egyágyas felár hosszabítás / hét]]></name>
+</opcio>
+<opcio ar="129000" ar_tipus="/fő" opcios="1" kedvezmeny="0" category="10" eletkor_tol="0" eletkor_ig="0" ervenyes_tol="" ervenyes_ig="">
+<name><![CDATA[Részvételi díj hosszabítás / hét]]></name>
+</opcio>
+</opcionalis_dijak>
+<inprices count="0"></inprices>
+<outprices count="0"></outprices>
+<elofoglalasok count="0"></elofoglalasok>
+<gyerek_arak count="0"></gyerek_arak>
+</idopont>
+<idopont id="160298172" fromdate="2012-06-09" todate="2012-06-16" lejar_ar="0000-00-00" szobakalk="Ft/fő" ej="7" nap="8" price="174900" akcios="1" ellatas="8" agyszam="2" foglalasi_dij="" transzfer_dij="0" szervidij="5000" vizum_dij="0" repteri_illetek="43000" storno_biztositas="1.40" bpp="" kerozin_potdij="" egyeni_idopont="0">
+<idopont_tipus><![CDATA[2 ágyas szoba]]></idopont_tipus>
+<idopont_tipuskod><![CDATA[2]]></idopont_tipuskod>
+<departure_city><![CDATA[1365]]></departure_city>
+<megjegyzes><![CDATA[Ft/fő All Inclusive]]></megjegyzes>
+<unnepek count="0"></unnepek>
+<opcionalis_dijak count="3">
+<opcio ar="59000" ar_tipus="/fő" opcios="1" kedvezmeny="0" category="4" eletkor_tol="0" eletkor_ig="0" ervenyes_tol="" ervenyes_ig="">
+<name><![CDATA[Egyágyas felár]]></name>
+</opcio>
+<opcio ar="59000" ar_tipus="/fő" opcios="1" kedvezmeny="0" category="10" eletkor_tol="0" eletkor_ig="0" ervenyes_tol="" ervenyes_ig="">
+<name><![CDATA[Egyágyas felár hosszabítás / hét]]></name>
+</opcio>
+<opcio ar="129000" ar_tipus="/fő" opcios="1" kedvezmeny="0" category="10" eletkor_tol="0" eletkor_ig="0" ervenyes_tol="" ervenyes_ig="">
+<name><![CDATA[Részvételi díj hosszabítás / hét]]></name>
+</opcio>
+</opcionalis_dijak>
+<inprices count="0"></inprices>
+<outprices count="0"></outprices>
+<elofoglalasok count="0"></elofoglalasok>
+<gyerek_arak count="0"></gyerek_arak>
+</idopont>
+<idopont id="160298173" fromdate="2012-06-16" todate="2012-06-23" lejar_ar="0000-00-00" szobakalk="Ft/fő" ej="7" nap="8" price="174900" akcios="1" ellatas="8" agyszam="2" foglalasi_dij="" transzfer_dij="0" szervidij="5000" vizum_dij="0" repteri_illetek="43000" storno_biztositas="1.40" bpp="" kerozin_potdij="" egyeni_idopont="0">
+<idopont_tipus><![CDATA[2 ágyas szoba]]></idopont_tipus>
+<idopont_tipuskod><![CDATA[2]]></idopont_tipuskod>
+<departure_city><![CDATA[1365]]></departure_city>
+<megjegyzes><![CDATA[Ft/fő All Inclusive]]></megjegyzes>
+<unnepek count="0"></unnepek>
+<opcionalis_dijak count="3">
+<opcio ar="59000" ar_tipus="/fő" opcios="1" kedvezmeny="0" category="4" eletkor_tol="0" eletkor_ig="0" ervenyes_tol="" ervenyes_ig="">
+<name><![CDATA[Egyágyas felár]]></name>
+</opcio>
+<opcio ar="59000" ar_tipus="/fő" opcios="1" kedvezmeny="0" category="10" eletkor_tol="0" eletkor_ig="0" ervenyes_tol="" ervenyes_ig="">
+<name><![CDATA[Egyágyas felár hosszabítás / hét]]></name>
+</opcio>
+<opcio ar="129000" ar_tipus="/fő" opcios="1" kedvezmeny="0" category="10" eletkor_tol="0" eletkor_ig="0" ervenyes_tol="" ervenyes_ig="">
+<name><![CDATA[Részvételi díj hosszabítás / hét]]></name>
+</opcio>
+</opcionalis_dijak>
+<inprices count="0"></inprices>
+<outprices count="0"></outprices>
+<elofoglalasok count="0"></elofoglalasok>
+<gyerek_arak count="0"></gyerek_arak>
+</idopont>
+<idopont id="160298174" fromdate="2012-06-20" todate="2012-06-27" lejar_ar="0000-00-00" szobakalk="Ft/fő" ej="7" nap="8" price="174900" akcios="1" ellatas="8" agyszam="2" foglalasi_dij="" transzfer_dij="0" szervidij="5000" vizum_dij="0" repteri_illetek="43000" storno_biztositas="1.40" bpp="" kerozin_potdij="" egyeni_idopont="0">
+<idopont_tipus><![CDATA[2 ágyas szoba]]></idopont_tipus>
+<idopont_tipuskod><![CDATA[2]]></idopont_tipuskod>
+<departure_city><![CDATA[1365]]></departure_city>
+<megjegyzes><![CDATA[Ft/fő All Inclusive]]></megjegyzes>
+<unnepek count="0"></unnepek>
+<opcionalis_dijak count="3">
+<opcio ar="59000" ar_tipus="/fő" opcios="1" kedvezmeny="0" category="4" eletkor_tol="0" eletkor_ig="0" ervenyes_tol="" ervenyes_ig="">
+<name><![CDATA[Egyágyas felár]]></name>
+</opcio>
+<opcio ar="59000" ar_tipus="/fő" opcios="1" kedvezmeny="0" category="10" eletkor_tol="0" eletkor_ig="0" ervenyes_tol="" ervenyes_ig="">
+<name><![CDATA[Egyágyas felár hosszabítás / hét]]></name>
+</opcio>
+<opcio ar="129000" ar_tipus="/fő" opcios="1" kedvezmeny="0" category="10" eletkor_tol="0" eletkor_ig="0" ervenyes_tol="" ervenyes_ig="">
+<name><![CDATA[Részvételi díj hosszabítás / hét]]></name>
+</opcio>
+</opcionalis_dijak>
+<inprices count="0"></inprices>
+<outprices count="0"></outprices>
+<elofoglalasok count="0"></elofoglalasok>
+<gyerek_arak count="0"></gyerek_arak>
+</idopont>
+<idopont id="160298175" fromdate="2012-06-23" todate="2012-06-30" lejar_ar="0000-00-00" szobakalk="Ft/fő" ej="7" nap="8" price="174900" akcios="1" ellatas="8" agyszam="2" foglalasi_dij="" transzfer_dij="0" szervidij="5000" vizum_dij="0" repteri_illetek="43000" storno_biztositas="1.40" bpp="" kerozin_potdij="" egyeni_idopont="0">
+<idopont_tipus><![CDATA[2 ágyas szoba]]></idopont_tipus>
+<idopont_tipuskod><![CDATA[2]]></idopont_tipuskod>
+<departure_city><![CDATA[1365]]></departure_city>
+<megjegyzes><![CDATA[Ft/fő All Inclusive]]></megjegyzes>
+<unnepek count="0"></unnepek>
+<opcionalis_dijak count="3">
+<opcio ar="59000" ar_tipus="/fő" opcios="1" kedvezmeny="0" category="4" eletkor_tol="0" eletkor_ig="0" ervenyes_tol="" ervenyes_ig="">
+<name><![CDATA[Egyágyas felár]]></name>
+</opcio>
+<opcio ar="59000" ar_tipus="/fő" opcios="1" kedvezmeny="0" category="10" eletkor_tol="0" eletkor_ig="0" ervenyes_tol="" ervenyes_ig="">
+<name><![CDATA[Egyágyas felár hosszabítás / hét]]></name>
+</opcio>
+<opcio ar="129000" ar_tipus="/fő" opcios="1" kedvezmeny="0" category="10" eletkor_tol="0" eletkor_ig="0" ervenyes_tol="" ervenyes_ig="">
+<name><![CDATA[Részvételi díj hosszabítás / hét]]></name>
+</opcio>
+</opcionalis_dijak>
+<inprices count="0"></inprices>
+<outprices count="0"></outprices>
+<elofoglalasok count="0"></elofoglalasok>
+<gyerek_arak count="0"></gyerek_arak>
+</idopont>
+<idopont id="160298176" fromdate="2012-06-27" todate="2012-07-04" lejar_ar="0000-00-00" szobakalk="Ft/fő" ej="7" nap="8" price="174900" akcios="1" ellatas="8" agyszam="2" foglalasi_dij="" transzfer_dij="0" szervidij="5000" vizum_dij="0" repteri_illetek="43000" storno_biztositas="1.40" bpp="" kerozin_potdij="" egyeni_idopont="0">
+<idopont_tipus><![CDATA[2 ágyas szoba]]></idopont_tipus>
+<idopont_tipuskod><![CDATA[2]]></idopont_tipuskod>
+<departure_city><![CDATA[1365]]></departure_city>
+<megjegyzes><![CDATA[Ft/fő All Inclusive]]></megjegyzes>
+<unnepek count="0"></unnepek>
+<opcionalis_dijak count="3">
+<opcio ar="59000" ar_tipus="/fő" opcios="1" kedvezmeny="0" category="4" eletkor_tol="0" eletkor_ig="0" ervenyes_tol="" ervenyes_ig="">
+<name><![CDATA[Egyágyas felár]]></name>
+</opcio>
+<opcio ar="59000" ar_tipus="/fő" opcios="1" kedvezmeny="0" category="10" eletkor_tol="0" eletkor_ig="0" ervenyes_tol="" ervenyes_ig="">
+<name><![CDATA[Egyágyas felár hosszabítás / hét]]></name>
+</opcio>
+<opcio ar="129000" ar_tipus="/fő" opcios="1" kedvezmeny="0" category="10" eletkor_tol="0" eletkor_ig="0" ervenyes_tol="" ervenyes_ig="">
+<name><![CDATA[Részvételi díj hosszabítás / hét]]></name>
+</opcio>
+</opcionalis_dijak>
+<inprices count="0"></inprices>
+<outprices count="0"></outprices>
+<elofoglalasok count="0"></elofoglalasok>
+<gyerek_arak count="0"></gyerek_arak>
+</idopont>
+<idopont id="160298177" fromdate="2012-06-30" todate="2012-07-07" lejar_ar="0000-00-00" szobakalk="Ft/fő" ej="7" nap="8" price="174900" akcios="1" ellatas="8" agyszam="2" foglalasi_dij="" transzfer_dij="0" szervidij="5000" vizum_dij="0" repteri_illetek="43000" storno_biztositas="1.40" bpp="" kerozin_potdij="" egyeni_idopont="0">
+<idopont_tipus><![CDATA[2 ágyas szoba]]></idopont_tipus>
+<idopont_tipuskod><![CDATA[2]]></idopont_tipuskod>
+<departure_city><![CDATA[1365]]></departure_city>
+<megjegyzes><![CDATA[Ft/fő All Inclusive]]></megjegyzes>
+<unnepek count="0"></unnepek>
+<opcionalis_dijak count="3">
+<opcio ar="59000" ar_tipus="/fő" opcios="1" kedvezmeny="0" category="4" eletkor_tol="0" eletkor_ig="0" ervenyes_tol="" ervenyes_ig="">
+<name><![CDATA[Egyágyas felár]]></name>
+</opcio>
+<opcio ar="59000" ar_tipus="/fő" opcios="1" kedvezmeny="0" category="10" eletkor_tol="0" eletkor_ig="0" ervenyes_tol="" ervenyes_ig="">
+<name><![CDATA[Egyágyas felár hosszabítás / hét]]></name>
+</opcio>
+<opcio ar="165000" ar_tipus="/fő" opcios="1" kedvezmeny="0" category="10" eletkor_tol="0" eletkor_ig="0" ervenyes_tol="" ervenyes_ig="">
+<name><![CDATA[Részvételi díj hosszabítás / hét]]></name>
+</opcio>
+</opcionalis_dijak>
+<inprices count="0"></inprices>
+<outprices count="0"></outprices>
+<elofoglalasok count="0"></elofoglalasok>
+<gyerek_arak count="0"></gyerek_arak>
+</idopont>
+<idopont id="160298178" fromdate="2012-07-04" todate="2012-07-11" lejar_ar="0000-00-00" szobakalk="Ft/fő" ej="7" nap="8" price="204900" akcios="1" ellatas="8" agyszam="2" foglalasi_dij="" transzfer_dij="0" szervidij="5000" vizum_dij="0" repteri_illetek="43000" storno_biztositas="1.40" bpp="" kerozin_potdij="" egyeni_idopont="0">
+<idopont_tipus><![CDATA[2 ágyas szoba]]></idopont_tipus>
+<idopont_tipuskod><![CDATA[2]]></idopont_tipuskod>
+<departure_city><![CDATA[1365]]></departure_city>
+<megjegyzes><![CDATA[Ft/fő All Inclusive]]></megjegyzes>
+<unnepek count="0"></unnepek>
+<opcionalis_dijak count="3">
+<opcio ar="59000" ar_tipus="/fő" opcios="1" kedvezmeny="0" category="4" eletkor_tol="0" eletkor_ig="0" ervenyes_tol="" ervenyes_ig="">
+<name><![CDATA[Egyágyas felár]]></name>
+</opcio>
+<opcio ar="59000" ar_tipus="/fő" opcios="1" kedvezmeny="0" category="10" eletkor_tol="0" eletkor_ig="0" ervenyes_tol="" ervenyes_ig="">
+<name><![CDATA[Egyágyas felár hosszabítás / hét]]></name>
+</opcio>
+<opcio ar="165000" ar_tipus="/fő" opcios="1" kedvezmeny="0" category="10" eletkor_tol="0" eletkor_ig="0" ervenyes_tol="" ervenyes_ig="">
+<name><![CDATA[Részvételi díj hosszabítás / hét]]></name>
+</opcio>
+</opcionalis_dijak>
+<inprices count="0"></inprices>
+<outprices count="0"></outprices>
+<elofoglalasok count="0"></elofoglalasok>
+<gyerek_arak count="0"></gyerek_arak>
+</idopont>
+<idopont id="160298179" fromdate="2012-07-07" todate="2012-07-14" lejar_ar="0000-00-00" szobakalk="Ft/fő" ej="7" nap="8" price="204900" akcios="1" ellatas="8" agyszam="2" foglalasi_dij="" transzfer_dij="0" szervidij="5000" vizum_dij="0" repteri_illetek="43000" storno_biztositas="1.40" bpp="" kerozin_potdij="" egyeni_idopont="0">
+<idopont_tipus><![CDATA[2 ágyas szoba]]></idopont_tipus>
+<idopont_tipuskod><![CDATA[2]]></idopont_tipuskod>
+<departure_city><![CDATA[1365]]></departure_city>
+<megjegyzes><![CDATA[Ft/fő All Inclusive]]></megjegyzes>
+<unnepek count="0"></unnepek>
+<opcionalis_dijak count="3">
+<opcio ar="59000" ar_tipus="/fő" opcios="1" kedvezmeny="0" category="4" eletkor_tol="0" eletkor_ig="0" ervenyes_tol="" ervenyes_ig="">
+<name><![CDATA[Egyágyas felár]]></name>
+</opcio>
+<opcio ar="59000" ar_tipus="/fő" opcios="1" kedvezmeny="0" category="10" eletkor_tol="0" eletkor_ig="0" ervenyes_tol="" ervenyes_ig="">
+<name><![CDATA[Egyágyas felár hosszabítás / hét]]></name>
+</opcio>
+<opcio ar="165000" ar_tipus="/fő" opcios="1" kedvezmeny="0" category="10" eletkor_tol="0" eletkor_ig="0" ervenyes_tol="" ervenyes_ig="">
+<name><![CDATA[Részvételi díj hosszabítás / hét]]></name>
+</opcio>
+</opcionalis_dijak>
+<inprices count="0"></inprices>
+<outprices count="0"></outprices>
+<elofoglalasok count="0"></elofoglalasok>
+<gyerek_arak count="0"></gyerek_arak>
+</idopont>
+<idopont id="160298180" fromdate="2012-07-11" todate="2012-07-18" lejar_ar="0000-00-00" szobakalk="Ft/fő" ej="7" nap="8" price="204900" akcios="1" ellatas="8" agyszam="2" foglalasi_dij="" transzfer_dij="0" szervidij="5000" vizum_dij="0" repteri_illetek="43000" storno_biztositas="1.40" bpp="" kerozin_potdij="" egyeni_idopont="0">
+<idopont_tipus><![CDATA[2 ágyas szoba]]></idopont_tipus>
+<idopont_tipuskod><![CDATA[2]]></idopont_tipuskod>
+<departure_city><![CDATA[1365]]></departure_city>
+<megjegyzes><![CDATA[Ft/fő All Inclusive]]></megjegyzes>
+<unnepek count="0"></unnepek>
+<opcionalis_dijak count="3">
+<opcio ar="59000" ar_tipus="/fő" opcios="1" kedvezmeny="0" category="4" eletkor_tol="0" eletkor_ig="0" ervenyes_tol="" ervenyes_ig="">
+<name><![CDATA[Egyágyas felár]]></name>
+</opcio>
+<opcio ar="59000" ar_tipus="/fő" opcios="1" kedvezmeny="0" category="10" eletkor_tol="0" eletkor_ig="0" ervenyes_tol="" ervenyes_ig="">
+<name><![CDATA[Egyágyas felár hosszabítás / hét]]></name>
+</opcio>
+<opcio ar="165000" ar_tipus="/fő" opcios="1" kedvezmeny="0" category="10" eletkor_tol="0" eletkor_ig="0" ervenyes_tol="" ervenyes_ig="">
+<name><![CDATA[Részvételi díj hosszabítás / hét]]></name>
+</opcio>
+</opcionalis_dijak>
+<inprices count="0"></inprices>
+<outprices count="0"></outprices>
+<elofoglalasok count="0"></elofoglalasok>
+<gyerek_arak count="0"></gyerek_arak>
+</idopont>
+<idopont id="160298181" fromdate="2012-07-14" todate="2012-07-21" lejar_ar="0000-00-00" szobakalk="Ft/fő" ej="7" nap="8" price="204900" akcios="1" ellatas="8" agyszam="2" foglalasi_dij="" transzfer_dij="0" szervidij="5000" vizum_dij="0" repteri_illetek="43000" storno_biztositas="1.40" bpp="" kerozin_potdij="" egyeni_idopont="0">
+<idopont_tipus><![CDATA[2 ágyas szoba]]></idopont_tipus>
+<idopont_tipuskod><![CDATA[2]]></idopont_tipuskod>
+<departure_city><![CDATA[1365]]></departure_city>
+<megjegyzes><![CDATA[Ft/fő All Inclusive]]></megjegyzes>
+<unnepek count="0"></unnepek>
+<opcionalis_dijak count="3">
+<opcio ar="59000" ar_tipus="/fő" opcios="1" kedvezmeny="0" category="4" eletkor_tol="0" eletkor_ig="0" ervenyes_tol="" ervenyes_ig="">
+<name><![CDATA[Egyágyas felár]]></name>
+</opcio>
+<opcio ar="59000" ar_tipus="/fő" opcios="1" kedvezmeny="0" category="10" eletkor_tol="0" eletkor_ig="0" ervenyes_tol="" ervenyes_ig="">
+<name><![CDATA[Egyágyas felár hosszabítás / hét]]></name>
+</opcio>
+<opcio ar="165000" ar_tipus="/fő" opcios="1" kedvezmeny="0" category="10" eletkor_tol="0" eletkor_ig="0" ervenyes_tol="" ervenyes_ig="">
+<name><![CDATA[Részvételi díj hosszabítás / hét]]></name>
+</opcio>
+</opcionalis_dijak>
+<inprices count="0"></inprices>
+<outprices count="0"></outprices>
+<elofoglalasok count="0"></elofoglalasok>
+<gyerek_arak count="0"></gyerek_arak>
+</idopont>
+<idopont id="160298182" fromdate="2012-07-18" todate="2012-07-25" lejar_ar="0000-00-00" szobakalk="Ft/fő" ej="7" nap="8" price="204900" akcios="1" ellatas="8" agyszam="2" foglalasi_dij="" transzfer_dij="0" szervidij="5000" vizum_dij="0" repteri_illetek="43000" storno_biztositas="1.40" bpp="" kerozin_potdij="" egyeni_idopont="0">
+<idopont_tipus><![CDATA[2 ágyas szoba]]></idopont_tipus>
+<idopont_tipuskod><![CDATA[2]]></idopont_tipuskod>
+<departure_city><![CDATA[1365]]></departure_city>
+<megjegyzes><![CDATA[Ft/fő All Inclusive]]></megjegyzes>
+<unnepek count="0"></unnepek>
+<opcionalis_dijak count="3">
+<opcio ar="59000" ar_tipus="/fő" opcios="1" kedvezmeny="0" category="4" eletkor_tol="0" eletkor_ig="0" ervenyes_tol="" ervenyes_ig="">
+<name><![CDATA[Egyágyas felár]]></name>
+</opcio>
+<opcio ar="59000" ar_tipus="/fő" opcios="1" kedvezmeny="0" category="10" eletkor_tol="0" eletkor_ig="0" ervenyes_tol="" ervenyes_ig="">
+<name><![CDATA[Egyágyas felár hosszabítás / hét]]></name>
+</opcio>
+<opcio ar="165000" ar_tipus="/fő" opcios="1" kedvezmeny="0" category="10" eletkor_tol="0" eletkor_ig="0" ervenyes_tol="" ervenyes_ig="">
+<name><![CDATA[Részvételi díj hosszabítás / hét]]></name>
+</opcio>
+</opcionalis_dijak>
+<inprices count="0"></inprices>
+<outprices count="0"></outprices>
+<elofoglalasok count="0"></elofoglalasok>
+<gyerek_arak count="0"></gyerek_arak>
+</idopont>
+<idopont id="160298183" fromdate="2012-07-21" todate="2012-07-28" lejar_ar="0000-00-00" szobakalk="Ft/fő" ej="7" nap="8" price="204900" akcios="1" ellatas="8" agyszam="2" foglalasi_dij="" transzfer_dij="0" szervidij="5000" vizum_dij="0" repteri_illetek="43000" storno_biztositas="1.40" bpp="" kerozin_potdij="" egyeni_idopont="0">
+<idopont_tipus><![CDATA[2 ágyas szoba]]></idopont_tipus>
+<idopont_tipuskod><![CDATA[2]]></idopont_tipuskod>
+<departure_city><![CDATA[1365]]></departure_city>
+<megjegyzes><![CDATA[Ft/fő All Inclusive]]></megjegyzes>
+<unnepek count="0"></unnepek>
+<opcionalis_dijak count="3">
+<opcio ar="59000" ar_tipus="/fő" opcios="1" kedvezmeny="0" category="4" eletkor_tol="0" eletkor_ig="0" ervenyes_tol="" ervenyes_ig="">
+<name><![CDATA[Egyágyas felár]]></name>
+</opcio>
+<opcio ar="59000" ar_tipus="/fő" opcios="1" kedvezmeny="0" category="10" eletkor_tol="0" eletkor_ig="0" ervenyes_tol="" ervenyes_ig="">
+<name><![CDATA[Egyágyas felár hosszabítás / hét]]></name>
+</opcio>
+<opcio ar="165000" ar_tipus="/fő" opcios="1" kedvezmeny="0" category="10" eletkor_tol="0" eletkor_ig="0" ervenyes_tol="" ervenyes_ig="">
+<name><![CDATA[Részvételi díj hosszabítás / hét]]></name>
+</opcio>
+</opcionalis_dijak>
+<inprices count="0"></inprices>
+<outprices count="0"></outprices>
+<elofoglalasok count="0"></elofoglalasok>
+<gyerek_arak count="0"></gyerek_arak>
+</idopont>
+<idopont id="160298184" fromdate="2012-07-25" todate="2012-08-01" lejar_ar="0000-00-00" szobakalk="Ft/fő" ej="7" nap="8" price="204900" akcios="1" ellatas="8" agyszam="2" foglalasi_dij="" transzfer_dij="0" szervidij="5000" vizum_dij="0" repteri_illetek="43000" storno_biztositas="1.40" bpp="" kerozin_potdij="" egyeni_idopont="0">
+<idopont_tipus><![CDATA[2 ágyas szoba]]></idopont_tipus>
+<idopont_tipuskod><![CDATA[2]]></idopont_tipuskod>
+<departure_city><![CDATA[1365]]></departure_city>
+<megjegyzes><![CDATA[Ft/fő All Inclusive]]></megjegyzes>
+<unnepek count="0"></unnepek>
+<opcionalis_dijak count="3">
+<opcio ar="59000" ar_tipus="/fő" opcios="1" kedvezmeny="0" category="4" eletkor_tol="0" eletkor_ig="0" ervenyes_tol="" ervenyes_ig="">
+<name><![CDATA[Egyágyas felár]]></name>
+</opcio>
+<opcio ar="59000" ar_tipus="/fő" opcios="1" kedvezmeny="0" category="10" eletkor_tol="0" eletkor_ig="0" ervenyes_tol="" ervenyes_ig="">
+<name><![CDATA[Egyágyas felár hosszabítás / hét]]></name>
+</opcio>
+<opcio ar="165000" ar_tipus="/fő" opcios="1" kedvezmeny="0" category="10" eletkor_tol="0" eletkor_ig="0" ervenyes_tol="" ervenyes_ig="">
+<name><![CDATA[Részvételi díj hosszabítás / hét]]></name>
+</opcio>
+</opcionalis_dijak>
+<inprices count="0"></inprices>
+<outprices count="0"></outprices>
+<elofoglalasok count="0"></elofoglalasok>
+<gyerek_arak count="0"></gyerek_arak>
+</idopont>
+<idopont id="160298185" fromdate="2012-07-28" todate="2012-08-04" lejar_ar="0000-00-00" szobakalk="Ft/fő" ej="7" nap="8" price="204900" akcios="1" ellatas="8" agyszam="2" foglalasi_dij="" transzfer_dij="0" szervidij="5000" vizum_dij="0" repteri_illetek="43000" storno_biztositas="1.40" bpp="" kerozin_potdij="" egyeni_idopont="0">
+<idopont_tipus><![CDATA[2 ágyas szoba]]></idopont_tipus>
+<idopont_tipuskod><![CDATA[2]]></idopont_tipuskod>
+<departure_city><![CDATA[1365]]></departure_city>
+<megjegyzes><![CDATA[Ft/fő All Inclusive]]></megjegyzes>
+<unnepek count="0"></unnepek>
+<opcionalis_dijak count="3">
+<opcio ar="59000" ar_tipus="/fő" opcios="1" kedvezmeny="0" category="4" eletkor_tol="0" eletkor_ig="0" ervenyes_tol="" ervenyes_ig="">
+<name><![CDATA[Egyágyas felár]]></name>
+</opcio>
+<opcio ar="59000" ar_tipus="/fő" opcios="1" kedvezmeny="0" category="10" eletkor_tol="0" eletkor_ig="0" ervenyes_tol="" ervenyes_ig="">
+<name><![CDATA[Egyágyas felár hosszabítás / hét]]></name>
+</opcio>
+<opcio ar="153000" ar_tipus="/fő" opcios="1" kedvezmeny="0" category="10" eletkor_tol="0" eletkor_ig="0" ervenyes_tol="" ervenyes_ig="">
+<name><![CDATA[Részvételi díj hosszabítás / hét]]></name>
+</opcio>
+</opcionalis_dijak>
+<inprices count="0"></inprices>
+<outprices count="0"></outprices>
+<elofoglalasok count="0"></elofoglalasok>
+<gyerek_arak count="0"></gyerek_arak>
+</idopont>
+<idopont id="160298186" fromdate="2012-08-01" todate="2012-08-08" lejar_ar="0000-00-00" szobakalk="Ft/fő" ej="7" nap="8" price="194900" akcios="1" ellatas="8" agyszam="2" foglalasi_dij="" transzfer_dij="0" szervidij="5000" vizum_dij="0" repteri_illetek="43000" storno_biztositas="1.40" bpp="" kerozin_potdij="" egyeni_idopont="0">
+<idopont_tipus><![CDATA[2 ágyas szoba]]></idopont_tipus>
+<idopont_tipuskod><![CDATA[2]]></idopont_tipuskod>
+<departure_city><![CDATA[1365]]></departure_city>
+<megjegyzes><![CDATA[Ft/fő All Inclusive]]></megjegyzes>
+<unnepek count="0"></unnepek>
+<opcionalis_dijak count="3">
+<opcio ar="59000" ar_tipus="/fő" opcios="1" kedvezmeny="0" category="4" eletkor_tol="0" eletkor_ig="0" ervenyes_tol="" ervenyes_ig="">
+<name><![CDATA[Egyágyas felár]]></name>
+</opcio>
+<opcio ar="59000" ar_tipus="/fő" opcios="1" kedvezmeny="0" category="10" eletkor_tol="0" eletkor_ig="0" ervenyes_tol="" ervenyes_ig="">
+<name><![CDATA[Egyágyas felár hosszabítás / hét]]></name>
+</opcio>
+<opcio ar="153000" ar_tipus="/fő" opcios="1" kedvezmeny="0" category="10" eletkor_tol="0" eletkor_ig="0" ervenyes_tol="" ervenyes_ig="">
+<name><![CDATA[Részvételi díj hosszabítás / hét]]></name>
+</opcio>
+</opcionalis_dijak>
+<inprices count="0"></inprices>
+<outprices count="0"></outprices>
+<elofoglalasok count="0"></elofoglalasok>
+<gyerek_arak count="0"></gyerek_arak>
+</idopont>
+<idopont id="160298187" fromdate="2012-08-04" todate="2012-08-11" lejar_ar="0000-00-00" szobakalk="Ft/fő" ej="7" nap="8" price="194900" akcios="1" ellatas="8" agyszam="2" foglalasi_dij="" transzfer_dij="0" szervidij="5000" vizum_dij="0" repteri_illetek="43000" storno_biztositas="1.40" bpp="" kerozin_potdij="" egyeni_idopont="0">
+<idopont_tipus><![CDATA[2 ágyas szoba]]></idopont_tipus>
+<idopont_tipuskod><![CDATA[2]]></idopont_tipuskod>
+<departure_city><![CDATA[1365]]></departure_city>
+<megjegyzes><![CDATA[Ft/fő All Inclusive]]></megjegyzes>
+<unnepek count="0"></unnepek>
+<opcionalis_dijak count="3">
+<opcio ar="59000" ar_tipus="/fő" opcios="1" kedvezmeny="0" category="4" eletkor_tol="0" eletkor_ig="0" ervenyes_tol="" ervenyes_ig="">
+<name><![CDATA[Egyágyas felár]]></name>
+</opcio>
+<opcio ar="59000" ar_tipus="/fő" opcios="1" kedvezmeny="0" category="10" eletkor_tol="0" eletkor_ig="0" ervenyes_tol="" ervenyes_ig="">
+<name><![CDATA[Egyágyas felár hosszabítás / hét]]></name>
+</opcio>
+<opcio ar="153000" ar_tipus="/fő" opcios="1" kedvezmeny="0" category="10" eletkor_tol="0" eletkor_ig="0" ervenyes_tol="" ervenyes_ig="">
+<name><![CDATA[Részvételi díj hosszabítás / hét]]></name>
+</opcio>
+</opcionalis_dijak>
+<inprices count="0"></inprices>
+<outprices count="0"></outprices>
+<elofoglalasok count="0"></elofoglalasok>
+<gyerek_arak count="0"></gyerek_arak>
+</idopont>
+<idopont id="160298188" fromdate="2012-08-08" todate="2012-08-15" lejar_ar="0000-00-00" szobakalk="Ft/fő" ej="7" nap="8" price="194900" akcios="1" ellatas="8" agyszam="2" foglalasi_dij="" transzfer_dij="0" szervidij="5000" vizum_dij="0" repteri_illetek="43000" storno_biztositas="1.40" bpp="" kerozin_potdij="" egyeni_idopont="0">
+<idopont_tipus><![CDATA[2 ágyas szoba]]></idopont_tipus>
+<idopont_tipuskod><![CDATA[2]]></idopont_tipuskod>
+<departure_city><![CDATA[1365]]></departure_city>
+<megjegyzes><![CDATA[Ft/fő All Inclusive]]></megjegyzes>
+<unnepek count="0"></unnepek>
+<opcionalis_dijak count="3">
+<opcio ar="59000" ar_tipus="/fő" opcios="1" kedvezmeny="0" category="4" eletkor_tol="0" eletkor_ig="0" ervenyes_tol="" ervenyes_ig="">
+<name><![CDATA[Egyágyas felár]]></name>
+</opcio>
+<opcio ar="59000" ar_tipus="/fő" opcios="1" kedvezmeny="0" category="10" eletkor_tol="0" eletkor_ig="0" ervenyes_tol="" ervenyes_ig="">
+<name><![CDATA[Egyágyas felár hosszabítás / hét]]></name>
+</opcio>
+<opcio ar="153000" ar_tipus="/fő" opcios="1" kedvezmeny="0" category="10" eletkor_tol="0" eletkor_ig="0" ervenyes_tol="" ervenyes_ig="">
+<name><![CDATA[Részvételi díj hosszabítás / hét]]></name>
+</opcio>
+</opcionalis_dijak>
+<inprices count="0"></inprices>
+<outprices count="0"></outprices>
+<elofoglalasok count="0"></elofoglalasok>
+<gyerek_arak count="0"></gyerek_arak>
+</idopont>
+<idopont id="160298189" fromdate="2012-08-11" todate="2012-08-18" lejar_ar="0000-00-00" szobakalk="Ft/fő" ej="7" nap="8" price="194900" akcios="1" ellatas="8" agyszam="2" foglalasi_dij="" transzfer_dij="0" szervidij="5000" vizum_dij="0" repteri_illetek="43000" storno_biztositas="1.40" bpp="" kerozin_potdij="" egyeni_idopont="0">
+<idopont_tipus><![CDATA[2 ágyas szoba]]></idopont_tipus>
+<idopont_tipuskod><![CDATA[2]]></idopont_tipuskod>
+<departure_city><![CDATA[1365]]></departure_city>
+<megjegyzes><![CDATA[Ft/fő All Inclusive]]></megjegyzes>
+<unnepek count="0"></unnepek>
+<opcionalis_dijak count="3">
+<opcio ar="59000" ar_tipus="/fő" opcios="1" kedvezmeny="0" category="4" eletkor_tol="0" eletkor_ig="0" ervenyes_tol="" ervenyes_ig="">
+<name><![CDATA[Egyágyas felár]]></name>
+</opcio>
+<opcio ar="59000" ar_tipus="/fő" opcios="1" kedvezmeny="0" category="10" eletkor_tol="0" eletkor_ig="0" ervenyes_tol="" ervenyes_ig="">
+<name><![CDATA[Egyágyas felár hosszabítás / hét]]></name>
+</opcio>
+<opcio ar="153000" ar_tipus="/fő" opcios="1" kedvezmeny="0" category="10" eletkor_tol="0" eletkor_ig="0" ervenyes_tol="" ervenyes_ig="">
+<name><![CDATA[Részvételi díj hosszabítás / hét]]></name>
+</opcio>
+</opcionalis_dijak>
+<inprices count="0"></inprices>
+<outprices count="0"></outprices>
+<elofoglalasok count="0"></elofoglalasok>
+<gyerek_arak count="0"></gyerek_arak>
+</idopont>
+<idopont id="160298190" fromdate="2012-08-15" todate="2012-08-22" lejar_ar="0000-00-00" szobakalk="Ft/fő" ej="7" nap="8" price="194900" akcios="1" ellatas="8" agyszam="2" foglalasi_dij="" transzfer_dij="0" szervidij="5000" vizum_dij="0" repteri_illetek="43000" storno_biztositas="1.40" bpp="" kerozin_potdij="" egyeni_idopont="0">
+<idopont_tipus><![CDATA[2 ágyas szoba]]></idopont_tipus>
+<idopont_tipuskod><![CDATA[2]]></idopont_tipuskod>
+<departure_city><![CDATA[1365]]></departure_city>
+<megjegyzes><![CDATA[Ft/fő All Inclusive]]></megjegyzes>
+<unnepek count="0"></unnepek>
+<opcionalis_dijak count="3">
+<opcio ar="59000" ar_tipus="/fő" opcios="1" kedvezmeny="0" category="4" eletkor_tol="0" eletkor_ig="0" ervenyes_tol="" ervenyes_ig="">
+<name><![CDATA[Egyágyas felár]]></name>
+</opcio>
+<opcio ar="59000" ar_tipus="/fő" opcios="1" kedvezmeny="0" category="10" eletkor_tol="0" eletkor_ig="0" ervenyes_tol="" ervenyes_ig="">
+<name><![CDATA[Egyágyas felár hosszabítás / hét]]></name>
+</opcio>
+<opcio ar="153000" ar_tipus="/fő" opcios="1" kedvezmeny="0" category="10" eletkor_tol="0" eletkor_ig="0" ervenyes_tol="" ervenyes_ig="">
+<name><![CDATA[Részvételi díj hosszabítás / hét]]></name>
+</opcio>
+</opcionalis_dijak>
+<inprices count="0"></inprices>
+<outprices count="0"></outprices>
+<elofoglalasok count="0"></elofoglalasok>
+<gyerek_arak count="0"></gyerek_arak>
+</idopont>
+<idopont id="160298191" fromdate="2012-08-18" todate="2012-08-25" lejar_ar="0000-00-00" szobakalk="Ft/fő" ej="7" nap="8" price="194900" akcios="1" ellatas="8" agyszam="2" foglalasi_dij="" transzfer_dij="0" szervidij="5000" vizum_dij="0" repteri_illetek="43000" storno_biztositas="1.40" bpp="" kerozin_potdij="" egyeni_idopont="0">
+<idopont_tipus><![CDATA[2 ágyas szoba]]></idopont_tipus>
+<idopont_tipuskod><![CDATA[2]]></idopont_tipuskod>
+<departure_city><![CDATA[1365]]></departure_city>
+<megjegyzes><![CDATA[Ft/fő All Inclusive]]></megjegyzes>
+<unnepek count="0"></unnepek>
+<opcionalis_dijak count="3">
+<opcio ar="59000" ar_tipus="/fő" opcios="1" kedvezmeny="0" category="4" eletkor_tol="0" eletkor_ig="0" ervenyes_tol="" ervenyes_ig="">
+<name><![CDATA[Egyágyas felár]]></name>
+</opcio>
+<opcio ar="59000" ar_tipus="/fő" opcios="1" kedvezmeny="0" category="10" eletkor_tol="0" eletkor_ig="0" ervenyes_tol="" ervenyes_ig="">
+<name><![CDATA[Egyágyas felár hosszabítás / hét]]></name>
+</opcio>
+<opcio ar="153000" ar_tipus="/fő" opcios="1" kedvezmeny="0" category="10" eletkor_tol="0" eletkor_ig="0" ervenyes_tol="" ervenyes_ig="">
+<name><![CDATA[Részvételi díj hosszabítás / hét]]></name>
+</opcio>
+</opcionalis_dijak>
+<inprices count="0"></inprices>
+<outprices count="0"></outprices>
+<elofoglalasok count="0"></elofoglalasok>
+<gyerek_arak count="0"></gyerek_arak>
+</idopont>
+<idopont id="160298192" fromdate="2012-08-22" todate="2012-08-29" lejar_ar="0000-00-00" szobakalk="Ft/fő" ej="7" nap="8" price="194900" akcios="1" ellatas="8" agyszam="2" foglalasi_dij="" transzfer_dij="0" szervidij="5000" vizum_dij="0" repteri_illetek="43000" storno_biztositas="1.40" bpp="" kerozin_potdij="" egyeni_idopont="0">
+<idopont_tipus><![CDATA[2 ágyas szoba]]></idopont_tipus>
+<idopont_tipuskod><![CDATA[2]]></idopont_tipuskod>
+<departure_city><![CDATA[1365]]></departure_city>
+<megjegyzes><![CDATA[Ft/fő All Inclusive]]></megjegyzes>
+<unnepek count="0"></unnepek>
+<opcionalis_dijak count="3">
+<opcio ar="59000" ar_tipus="/fő" opcios="1" kedvezmeny="0" category="4" eletkor_tol="0" eletkor_ig="0" ervenyes_tol="" ervenyes_ig="">
+<name><![CDATA[Egyágyas felár]]></name>
+</opcio>
+<opcio ar="59000" ar_tipus="/fő" opcios="1" kedvezmeny="0" category="10" eletkor_tol="0" eletkor_ig="0" ervenyes_tol="" ervenyes_ig="">
+<name><![CDATA[Egyágyas felár hosszabítás / hét]]></name>
+</opcio>
+<opcio ar="153000" ar_tipus="/fő" opcios="1" kedvezmeny="0" category="10" eletkor_tol="0" eletkor_ig="0" ervenyes_tol="" ervenyes_ig="">
+<name><![CDATA[Részvételi díj hosszabítás / hét]]></name>
+</opcio>
+</opcionalis_dijak>
+<inprices count="0"></inprices>
+<outprices count="0"></outprices>
+<elofoglalasok count="0"></elofoglalasok>
+<gyerek_arak count="0"></gyerek_arak>
+</idopont>
+<idopont id="160298193" fromdate="2012-08-25" todate="2012-09-01" lejar_ar="0000-00-00" szobakalk="Ft/fő" ej="7" nap="8" price="194900" akcios="1" ellatas="8" agyszam="2" foglalasi_dij="" transzfer_dij="0" szervidij="5000" vizum_dij="0" repteri_illetek="43000" storno_biztositas="1.40" bpp="" kerozin_potdij="" egyeni_idopont="0">
+<idopont_tipus><![CDATA[2 ágyas szoba]]></idopont_tipus>
+<idopont_tipuskod><![CDATA[2]]></idopont_tipuskod>
+<departure_city><![CDATA[1365]]></departure_city>
+<megjegyzes><![CDATA[Ft/fő All Inclusive]]></megjegyzes>
+<unnepek count="0"></unnepek>
+<opcionalis_dijak count="3">
+<opcio ar="59000" ar_tipus="/fő" opcios="1" kedvezmeny="0" category="4" eletkor_tol="0" eletkor_ig="0" ervenyes_tol="" ervenyes_ig="">
+<name><![CDATA[Egyágyas felár]]></name>
+</opcio>
+<opcio ar="59000" ar_tipus="/fő" opcios="1" kedvezmeny="0" category="10" eletkor_tol="0" eletkor_ig="0" ervenyes_tol="" ervenyes_ig="">
+<name><![CDATA[Egyágyas felár hosszabítás / hét]]></name>
+</opcio>
+<opcio ar="153000" ar_tipus="/fő" opcios="1" kedvezmeny="0" category="10" eletkor_tol="0" eletkor_ig="0" ervenyes_tol="" ervenyes_ig="">
+<name><![CDATA[Részvételi díj hosszabítás / hét]]></name>
+</opcio>
+</opcionalis_dijak>
+<inprices count="0"></inprices>
+<outprices count="0"></outprices>
+<elofoglalasok count="0"></elofoglalasok>
+<gyerek_arak count="0"></gyerek_arak>
+</idopont>
+<idopont id="160298194" fromdate="2012-08-29" todate="2012-09-05" lejar_ar="0000-00-00" szobakalk="Ft/fő" ej="7" nap="8" price="194900" akcios="1" ellatas="8" agyszam="2" foglalasi_dij="" transzfer_dij="0" szervidij="5000" vizum_dij="0" repteri_illetek="43000" storno_biztositas="1.40" bpp="" kerozin_potdij="" egyeni_idopont="0">
+<idopont_tipus><![CDATA[2 ágyas szoba]]></idopont_tipus>
+<idopont_tipuskod><![CDATA[2]]></idopont_tipuskod>
+<departure_city><![CDATA[1365]]></departure_city>
+<megjegyzes><![CDATA[Ft/fő All Inclusive]]></megjegyzes>
+<unnepek count="0"></unnepek>
+<opcionalis_dijak count="3">
+<opcio ar="59000" ar_tipus="/fő" opcios="1" kedvezmeny="0" category="4" eletkor_tol="0" eletkor_ig="0" ervenyes_tol="" ervenyes_ig="">
+<name><![CDATA[Egyágyas felár]]></name>
+</opcio>
+<opcio ar="59000" ar_tipus="/fő" opcios="1" kedvezmeny="0" category="10" eletkor_tol="0" eletkor_ig="0" ervenyes_tol="" ervenyes_ig="">
+<name><![CDATA[Egyágyas felár hosszabítás / hét]]></name>
+</opcio>
+<opcio ar="153000" ar_tipus="/fő" opcios="1" kedvezmeny="0" category="10" eletkor_tol="0" eletkor_ig="0" ervenyes_tol="" ervenyes_ig="">
+<name><![CDATA[Részvételi díj hosszabítás / hét]]></name>
+</opcio>
+</opcionalis_dijak>
+<inprices count="0"></inprices>
+<outprices count="0"></outprices>
+<elofoglalasok count="0"></elofoglalasok>
+<gyerek_arak count="0"></gyerek_arak>
+</idopont>
+<idopont id="160298195" fromdate="2012-09-01" todate="2012-09-08" lejar_ar="0000-00-00" szobakalk="Ft/fő" ej="7" nap="8" price="194900" akcios="1" ellatas="8" agyszam="2" foglalasi_dij="" transzfer_dij="0" szervidij="5000" vizum_dij="0" repteri_illetek="43000" storno_biztositas="1.40" bpp="" kerozin_potdij="" egyeni_idopont="0">
+<idopont_tipus><![CDATA[2 ágyas szoba]]></idopont_tipus>
+<idopont_tipuskod><![CDATA[2]]></idopont_tipuskod>
+<departure_city><![CDATA[1365]]></departure_city>
+<megjegyzes><![CDATA[Ft/fő All Inclusive]]></megjegyzes>
+<unnepek count="0"></unnepek>
+<opcionalis_dijak count="3">
+<opcio ar="59000" ar_tipus="/fő" opcios="1" kedvezmeny="0" category="4" eletkor_tol="0" eletkor_ig="0" ervenyes_tol="" ervenyes_ig="">
+<name><![CDATA[Egyágyas felár]]></name>
+</opcio>
+<opcio ar="59000" ar_tipus="/fő" opcios="1" kedvezmeny="0" category="10" eletkor_tol="0" eletkor_ig="0" ervenyes_tol="" ervenyes_ig="">
+<name><![CDATA[Egyágyas felár hosszabítás / hét]]></name>
+</opcio>
+<opcio ar="153000" ar_tipus="/fő" opcios="1" kedvezmeny="0" category="10" eletkor_tol="0" eletkor_ig="0" ervenyes_tol="" ervenyes_ig="">
+<name><![CDATA[Részvételi díj hosszabítás / hét]]></name>
+</opcio>
+</opcionalis_dijak>
+<inprices count="0"></inprices>
+<outprices count="0"></outprices>
+<elofoglalasok count="0"></elofoglalasok>
+<gyerek_arak count="0"></gyerek_arak>
+</idopont>
+<idopont id="160298196" fromdate="2012-09-05" todate="2012-09-12" lejar_ar="0000-00-00" szobakalk="Ft/fő" ej="7" nap="8" price="194900" akcios="1" ellatas="8" agyszam="2" foglalasi_dij="" transzfer_dij="0" szervidij="5000" vizum_dij="0" repteri_illetek="43000" storno_biztositas="1.40" bpp="" kerozin_potdij="" egyeni_idopont="0">
+<idopont_tipus><![CDATA[2 ágyas szoba]]></idopont_tipus>
+<idopont_tipuskod><![CDATA[2]]></idopont_tipuskod>
+<departure_city><![CDATA[1365]]></departure_city>
+<megjegyzes><![CDATA[Ft/fő All Inclusive]]></megjegyzes>
+<unnepek count="0"></unnepek>
+<opcionalis_dijak count="3">
+<opcio ar="59000" ar_tipus="/fő" opcios="1" kedvezmeny="0" category="4" eletkor_tol="0" eletkor_ig="0" ervenyes_tol="" ervenyes_ig="">
+<name><![CDATA[Egyágyas felár]]></name>
+</opcio>
+<opcio ar="59000" ar_tipus="/fő" opcios="1" kedvezmeny="0" category="10" eletkor_tol="0" eletkor_ig="0" ervenyes_tol="" ervenyes_ig="">
+<name><![CDATA[Egyágyas felár hosszabítás / hét]]></name>
+</opcio>
+<opcio ar="153000" ar_tipus="/fő" opcios="1" kedvezmeny="0" category="10" eletkor_tol="0" eletkor_ig="0" ervenyes_tol="" ervenyes_ig="">
+<name><![CDATA[Részvételi díj hosszabítás / hét]]></name>
+</opcio>
+</opcionalis_dijak>
+<inprices count="0"></inprices>
+<outprices count="0"></outprices>
+<elofoglalasok count="0"></elofoglalasok>
+<gyerek_arak count="0"></gyerek_arak>
+</idopont>
+<idopont id="160298197" fromdate="2012-09-08" todate="2012-09-15" lejar_ar="0000-00-00" szobakalk="Ft/fő" ej="7" nap="8" price="194900" akcios="1" ellatas="8" agyszam="2" foglalasi_dij="" transzfer_dij="0" szervidij="5000" vizum_dij="0" repteri_illetek="43000" storno_biztositas="1.40" bpp="" kerozin_potdij="" egyeni_idopont="0">
+<idopont_tipus><![CDATA[2 ágyas szoba]]></idopont_tipus>
+<idopont_tipuskod><![CDATA[2]]></idopont_tipuskod>
+<departure_city><![CDATA[1365]]></departure_city>
+<megjegyzes><![CDATA[Ft/fő All Inclusive]]></megjegyzes>
+<unnepek count="0"></unnepek>
+<opcionalis_dijak count="3">
+<opcio ar="59000" ar_tipus="/fő" opcios="1" kedvezmeny="0" category="4" eletkor_tol="0" eletkor_ig="0" ervenyes_tol="" ervenyes_ig="">
+<name><![CDATA[Egyágyas felár]]></name>
+</opcio>
+<opcio ar="59000" ar_tipus="/fő" opcios="1" kedvezmeny="0" category="10" eletkor_tol="0" eletkor_ig="0" ervenyes_tol="" ervenyes_ig="">
+<name><![CDATA[Egyágyas felár hosszabítás / hét]]></name>
+</opcio>
+<opcio ar="153000" ar_tipus="/fő" opcios="1" kedvezmeny="0" category="10" eletkor_tol="0" eletkor_ig="0" ervenyes_tol="" ervenyes_ig="">
+<name><![CDATA[Részvételi díj hosszabítás / hét]]></name>
+</opcio>
+</opcionalis_dijak>
+<inprices count="0"></inprices>
+<outprices count="0"></outprices>
+<elofoglalasok count="0"></elofoglalasok>
+<gyerek_arak count="0"></gyerek_arak>
+</idopont>
+<idopont id="160298198" fromdate="2012-09-12" todate="2012-09-19" lejar_ar="0000-00-00" szobakalk="Ft/fő" ej="7" nap="8" price="194900" akcios="1" ellatas="8" agyszam="2" foglalasi_dij="" transzfer_dij="0" szervidij="5000" vizum_dij="0" repteri_illetek="43000" storno_biztositas="1.40" bpp="" kerozin_potdij="" egyeni_idopont="0">
+<idopont_tipus><![CDATA[2 ágyas szoba]]></idopont_tipus>
+<idopont_tipuskod><![CDATA[2]]></idopont_tipuskod>
+<departure_city><![CDATA[1365]]></departure_city>
+<megjegyzes><![CDATA[Ft/fő All Inclusive]]></megjegyzes>
+<unnepek count="0"></unnepek>
+<opcionalis_dijak count="3">
+<opcio ar="59000" ar_tipus="/fő" opcios="1" kedvezmeny="0" category="4" eletkor_tol="0" eletkor_ig="0" ervenyes_tol="" ervenyes_ig="">
+<name><![CDATA[Egyágyas felár]]></name>
+</opcio>
+<opcio ar="59000" ar_tipus="/fő" opcios="1" kedvezmeny="0" category="10" eletkor_tol="0" eletkor_ig="0" ervenyes_tol="" ervenyes_ig="">
+<name><![CDATA[Egyágyas felár hosszabítás / hét]]></name>
+</opcio>
+<opcio ar="153000" ar_tipus="/fő" opcios="1" kedvezmeny="0" category="10" eletkor_tol="0" eletkor_ig="0" ervenyes_tol="" ervenyes_ig="">
+<name><![CDATA[Részvételi díj hosszabítás / hét]]></name>
+</opcio>
+</opcionalis_dijak>
+<inprices count="0"></inprices>
+<outprices count="0"></outprices>
+<elofoglalasok count="0"></elofoglalasok>
+<gyerek_arak count="0"></gyerek_arak>
+</idopont>
+<idopont id="160298199" fromdate="2012-09-15" todate="2012-09-22" lejar_ar="0000-00-00" szobakalk="Ft/fő" ej="7" nap="8" price="194900" akcios="1" ellatas="8" agyszam="2" foglalasi_dij="" transzfer_dij="0" szervidij="5000" vizum_dij="0" repteri_illetek="43000" storno_biztositas="1.40" bpp="" kerozin_potdij="" egyeni_idopont="0">
+<idopont_tipus><![CDATA[2 ágyas szoba]]></idopont_tipus>
+<idopont_tipuskod><![CDATA[2]]></idopont_tipuskod>
+<departure_city><![CDATA[1365]]></departure_city>
+<megjegyzes><![CDATA[Ft/fő All Inclusive]]></megjegyzes>
+<unnepek count="0"></unnepek>
+<opcionalis_dijak count="3">
+<opcio ar="59000" ar_tipus="/fő" opcios="1" kedvezmeny="0" category="4" eletkor_tol="0" eletkor_ig="0" ervenyes_tol="" ervenyes_ig="">
+<name><![CDATA[Egyágyas felár]]></name>
+</opcio>
+<opcio ar="59000" ar_tipus="/fő" opcios="1" kedvezmeny="0" category="10" eletkor_tol="0" eletkor_ig="0" ervenyes_tol="" ervenyes_ig="">
+<name><![CDATA[Egyágyas felár hosszabítás / hét]]></name>
+</opcio>
+<opcio ar="153000" ar_tipus="/fő" opcios="1" kedvezmeny="0" category="10" eletkor_tol="0" eletkor_ig="0" ervenyes_tol="" ervenyes_ig="">
+<name><![CDATA[Részvételi díj hosszabítás / hét]]></name>
+</opcio>
+</opcionalis_dijak>
+<inprices count="0"></inprices>
+<outprices count="0"></outprices>
+<elofoglalasok count="0"></elofoglalasok>
+<gyerek_arak count="0"></gyerek_arak>
+</idopont>
+<idopont id="160298200" fromdate="2012-09-19" todate="2012-09-26" lejar_ar="0000-00-00" szobakalk="Ft/fő" ej="7" nap="8" price="194900" akcios="1" ellatas="8" agyszam="2" foglalasi_dij="" transzfer_dij="0" szervidij="5000" vizum_dij="0" repteri_illetek="43000" storno_biztositas="1.40" bpp="" kerozin_potdij="" egyeni_idopont="0">
+<idopont_tipus><![CDATA[2 ágyas szoba]]></idopont_tipus>
+<idopont_tipuskod><![CDATA[2]]></idopont_tipuskod>
+<departure_city><![CDATA[1365]]></departure_city>
+<megjegyzes><![CDATA[Ft/fő All Inclusive]]></megjegyzes>
+<unnepek count="0"></unnepek>
+<opcionalis_dijak count="3">
+<opcio ar="59000" ar_tipus="/fő" opcios="1" kedvezmeny="0" category="4" eletkor_tol="0" eletkor_ig="0" ervenyes_tol="" ervenyes_ig="">
+<name><![CDATA[Egyágyas felár]]></name>
+</opcio>
+<opcio ar="59000" ar_tipus="/fő" opcios="1" kedvezmeny="0" category="10" eletkor_tol="0" eletkor_ig="0" ervenyes_tol="" ervenyes_ig="">
+<name><![CDATA[Egyágyas felár hosszabítás / hét]]></name>
+</opcio>
+<opcio ar="153000" ar_tipus="/fő" opcios="1" kedvezmeny="0" category="10" eletkor_tol="0" eletkor_ig="0" ervenyes_tol="" ervenyes_ig="">
+<name><![CDATA[Részvételi díj hosszabítás / hét]]></name>
+</opcio>
+</opcionalis_dijak>
+<inprices count="0"></inprices>
+<outprices count="0"></outprices>
+<elofoglalasok count="0"></elofoglalasok>
+<gyerek_arak count="0"></gyerek_arak>
+</idopont>
+<idopont id="160298201" fromdate="2012-09-22" todate="2012-09-29" lejar_ar="0000-00-00" szobakalk="Ft/fő" ej="7" nap="8" price="194900" akcios="1" ellatas="8" agyszam="2" foglalasi_dij="" transzfer_dij="0" szervidij="5000" vizum_dij="0" repteri_illetek="43000" storno_biztositas="1.40" bpp="" kerozin_potdij="" egyeni_idopont="0">
+<idopont_tipus><![CDATA[2 ágyas szoba]]></idopont_tipus>
+<idopont_tipuskod><![CDATA[2]]></idopont_tipuskod>
+<departure_city><![CDATA[1365]]></departure_city>
+<megjegyzes><![CDATA[Ft/fő All Inclusive]]></megjegyzes>
+<unnepek count="0"></unnepek>
+<opcionalis_dijak count="3">
+<opcio ar="59000" ar_tipus="/fő" opcios="1" kedvezmeny="0" category="4" eletkor_tol="0" eletkor_ig="0" ervenyes_tol="" ervenyes_ig="">
+<name><![CDATA[Egyágyas felár]]></name>
+</opcio>
+<opcio ar="59000" ar_tipus="/fő" opcios="1" kedvezmeny="0" category="10" eletkor_tol="0" eletkor_ig="0" ervenyes_tol="" ervenyes_ig="">
+<name><![CDATA[Egyágyas felár hosszabítás / hét]]></name>
+</opcio>
+<opcio ar="153000" ar_tipus="/fő" opcios="1" kedvezmeny="0" category="10" eletkor_tol="0" eletkor_ig="0" ervenyes_tol="" ervenyes_ig="">
+<name><![CDATA[Részvételi díj hosszabítás / hét]]></name>
+</opcio>
+</opcionalis_dijak>
+<inprices count="0"></inprices>
+<outprices count="0"></outprices>
+<elofoglalasok count="0"></elofoglalasok>
+<gyerek_arak count="0"></gyerek_arak>
+</idopont>
+<idopont id="160298202" fromdate="2012-09-26" todate="2012-10-03" lejar_ar="0000-00-00" szobakalk="Ft/fő" ej="7" nap="8" price="194900" akcios="1" ellatas="8" agyszam="2" foglalasi_dij="" transzfer_dij="0" szervidij="5000" vizum_dij="0" repteri_illetek="43000" storno_biztositas="1.40" bpp="" kerozin_potdij="" egyeni_idopont="0">
+<idopont_tipus><![CDATA[2 ágyas szoba]]></idopont_tipus>
+<idopont_tipuskod><![CDATA[2]]></idopont_tipuskod>
+<departure_city><![CDATA[1365]]></departure_city>
+<megjegyzes><![CDATA[Ft/fő All Inclusive]]></megjegyzes>
+<unnepek count="0"></unnepek>
+<opcionalis_dijak count="3">
+<opcio ar="59000" ar_tipus="/fő" opcios="1" kedvezmeny="0" category="4" eletkor_tol="0" eletkor_ig="0" ervenyes_tol="" ervenyes_ig="">
+<name><![CDATA[Egyágyas felár]]></name>
+</opcio>
+<opcio ar="59000" ar_tipus="/fő" opcios="1" kedvezmeny="0" category="10" eletkor_tol="0" eletkor_ig="0" ervenyes_tol="" ervenyes_ig="">
+<name><![CDATA[Egyágyas felár hosszabítás / hét]]></name>
+</opcio>
+<opcio ar="153000" ar_tipus="/fő" opcios="1" kedvezmeny="0" category="10" eletkor_tol="0" eletkor_ig="0" ervenyes_tol="" ervenyes_ig="">
+<name><![CDATA[Részvételi díj hosszabítás / hét]]></name>
+</opcio>
+</opcionalis_dijak>
+<inprices count="0"></inprices>
+<outprices count="0"></outprices>
+<elofoglalasok count="0"></elofoglalasok>
+<gyerek_arak count="0"></gyerek_arak>
+</idopont>
+<idopont id="160298203" fromdate="2012-09-29" todate="2012-10-06" lejar_ar="0000-00-00" szobakalk="Ft/fő" ej="7" nap="8" price="194900" akcios="1" ellatas="8" agyszam="2" foglalasi_dij="" transzfer_dij="0" szervidij="5000" vizum_dij="0" repteri_illetek="43000" storno_biztositas="1.40" bpp="" kerozin_potdij="" egyeni_idopont="0">
+<idopont_tipus><![CDATA[2 ágyas szoba]]></idopont_tipus>
+<idopont_tipuskod><![CDATA[2]]></idopont_tipuskod>
+<departure_city><![CDATA[1365]]></departure_city>
+<megjegyzes><![CDATA[Ft/fő All Inclusive]]></megjegyzes>
+<unnepek count="0"></unnepek>
+<opcionalis_dijak count="3">
+<opcio ar="59000" ar_tipus="/fő" opcios="1" kedvezmeny="0" category="4" eletkor_tol="0" eletkor_ig="0" ervenyes_tol="" ervenyes_ig="">
+<name><![CDATA[Egyágyas felár]]></name>
+</opcio>
+<opcio ar="59000" ar_tipus="/fő" opcios="1" kedvezmeny="0" category="10" eletkor_tol="0" eletkor_ig="0" ervenyes_tol="" ervenyes_ig="">
+<name><![CDATA[Egyágyas felár hosszabítás / hét]]></name>
+</opcio>
+<opcio ar="165000" ar_tipus="/fő" opcios="1" kedvezmeny="0" category="10" eletkor_tol="0" eletkor_ig="0" ervenyes_tol="" ervenyes_ig="">
+<name><![CDATA[Részvételi díj hosszabítás / hét]]></name>
+</opcio>
+</opcionalis_dijak>
+<inprices count="0"></inprices>
+<outprices count="0"></outprices>
+<elofoglalasok count="0"></elofoglalasok>
+<gyerek_arak count="0"></gyerek_arak>
+</idopont>
+<idopont id="160298204" fromdate="2012-10-03" todate="2012-10-10" lejar_ar="0000-00-00" szobakalk="Ft/fő" ej="7" nap="8" price="204900" akcios="1" ellatas="8" agyszam="2" foglalasi_dij="" transzfer_dij="0" szervidij="5000" vizum_dij="0" repteri_illetek="43000" storno_biztositas="1.40" bpp="" kerozin_potdij="" egyeni_idopont="0">
+<idopont_tipus><![CDATA[2 ágyas szoba]]></idopont_tipus>
+<idopont_tipuskod><![CDATA[2]]></idopont_tipuskod>
+<departure_city><![CDATA[1365]]></departure_city>
+<megjegyzes><![CDATA[Ft/fő All Inclusive]]></megjegyzes>
+<unnepek count="0"></unnepek>
+<opcionalis_dijak count="3">
+<opcio ar="59000" ar_tipus="/fő" opcios="1" kedvezmeny="0" category="4" eletkor_tol="0" eletkor_ig="0" ervenyes_tol="" ervenyes_ig="">
+<name><![CDATA[Egyágyas felár]]></name>
+</opcio>
+<opcio ar="59000" ar_tipus="/fő" opcios="1" kedvezmeny="0" category="10" eletkor_tol="0" eletkor_ig="0" ervenyes_tol="" ervenyes_ig="">
+<name><![CDATA[Egyágyas felár hosszabítás / hét]]></name>
+</opcio>
+<opcio ar="165000" ar_tipus="/fő" opcios="1" kedvezmeny="0" category="10" eletkor_tol="0" eletkor_ig="0" ervenyes_tol="" ervenyes_ig="">
+<name><![CDATA[Részvételi díj hosszabítás / hét]]></name>
+</opcio>
+</opcionalis_dijak>
+<inprices count="0"></inprices>
+<outprices count="0"></outprices>
+<elofoglalasok count="0"></elofoglalasok>
+<gyerek_arak count="0"></gyerek_arak>
+</idopont>
+<idopont id="160298205" fromdate="2012-10-06" todate="2012-10-13" lejar_ar="0000-00-00" szobakalk="Ft/fő" ej="7" nap="8" price="204900" akcios="1" ellatas="8" agyszam="2" foglalasi_dij="" transzfer_dij="0" szervidij="5000" vizum_dij="0" repteri_illetek="43000" storno_biztositas="1.40" bpp="" kerozin_potdij="" egyeni_idopont="0">
+<idopont_tipus><![CDATA[2 ágyas szoba]]></idopont_tipus>
+<idopont_tipuskod><![CDATA[2]]></idopont_tipuskod>
+<departure_city><![CDATA[1365]]></departure_city>
+<megjegyzes><![CDATA[Ft/fő All Inclusive]]></megjegyzes>
+<unnepek count="0"></unnepek>
+<opcionalis_dijak count="3">
+<opcio ar="59000" ar_tipus="/fő" opcios="1" kedvezmeny="0" category="4" eletkor_tol="0" eletkor_ig="0" ervenyes_tol="" ervenyes_ig="">
+<name><![CDATA[Egyágyas felár]]></name>
+</opcio>
+<opcio ar="59000" ar_tipus="/fő" opcios="1" kedvezmeny="0" category="10" eletkor_tol="0" eletkor_ig="0" ervenyes_tol="" ervenyes_ig="">
+<name><![CDATA[Egyágyas felár hosszabítás / hét]]></name>
+</opcio>
+<opcio ar="165000" ar_tipus="/fő" opcios="1" kedvezmeny="0" category="10" eletkor_tol="0" eletkor_ig="0" ervenyes_tol="" ervenyes_ig="">
+<name><![CDATA[Részvételi díj hosszabítás / hét]]></name>
+</opcio>
+</opcionalis_dijak>
+<inprices count="0"></inprices>
+<outprices count="0"></outprices>
+<elofoglalasok count="0"></elofoglalasok>
+<gyerek_arak count="0"></gyerek_arak>
+</idopont>
+<idopont id="160298206" fromdate="2012-10-10" todate="2012-10-17" lejar_ar="0000-00-00" szobakalk="Ft/fő" ej="7" nap="8" price="204900" akcios="1" ellatas="8" agyszam="2" foglalasi_dij="" transzfer_dij="0" szervidij="5000" vizum_dij="0" repteri_illetek="43000" storno_biztositas="1.40" bpp="" kerozin_potdij="" egyeni_idopont="0">
+<idopont_tipus><![CDATA[2 ágyas szoba]]></idopont_tipus>
+<idopont_tipuskod><![CDATA[2]]></idopont_tipuskod>
+<departure_city><![CDATA[1365]]></departure_city>
+<megjegyzes><![CDATA[Ft/fő All Inclusive]]></megjegyzes>
+<unnepek count="0"></unnepek>
+<opcionalis_dijak count="3">
+<opcio ar="59000" ar_tipus="/fő" opcios="1" kedvezmeny="0" category="4" eletkor_tol="0" eletkor_ig="0" ervenyes_tol="" ervenyes_ig="">
+<name><![CDATA[Egyágyas felár]]></name>
+</opcio>
+<opcio ar="59000" ar_tipus="/fő" opcios="1" kedvezmeny="0" category="10" eletkor_tol="0" eletkor_ig="0" ervenyes_tol="" ervenyes_ig="">
+<name><![CDATA[Egyágyas felár hosszabítás / hét]]></name>
+</opcio>
+<opcio ar="165000" ar_tipus="/fő" opcios="1" kedvezmeny="0" category="10" eletkor_tol="0" eletkor_ig="0" ervenyes_tol="" ervenyes_ig="">
+<name><![CDATA[Részvételi díj hosszabítás / hét]]></name>
+</opcio>
+</opcionalis_dijak>
+<inprices count="0"></inprices>
+<outprices count="0"></outprices>
+<elofoglalasok count="0"></elofoglalasok>
+<gyerek_arak count="0"></gyerek_arak>
+</idopont>
+<idopont id="160298207" fromdate="2012-10-13" todate="2012-10-20" lejar_ar="0000-00-00" szobakalk="Ft/fő" ej="7" nap="8" price="204900" akcios="1" ellatas="8" agyszam="2" foglalasi_dij="" transzfer_dij="0" szervidij="5000" vizum_dij="0" repteri_illetek="43000" storno_biztositas="1.40" bpp="" kerozin_potdij="" egyeni_idopont="0">
+<idopont_tipus><![CDATA[2 ágyas szoba]]></idopont_tipus>
+<idopont_tipuskod><![CDATA[2]]></idopont_tipuskod>
+<departure_city><![CDATA[1365]]></departure_city>
+<megjegyzes><![CDATA[Ft/fő All Inclusive]]></megjegyzes>
+<unnepek count="0"></unnepek>
+<opcionalis_dijak count="3">
+<opcio ar="59000" ar_tipus="/fő" opcios="1" kedvezmeny="0" category="4" eletkor_tol="0" eletkor_ig="0" ervenyes_tol="" ervenyes_ig="">
+<name><![CDATA[Egyágyas felár]]></name>
+</opcio>
+<opcio ar="59000" ar_tipus="/fő" opcios="1" kedvezmeny="0" category="10" eletkor_tol="0" eletkor_ig="0" ervenyes_tol="" ervenyes_ig="">
+<name><![CDATA[Egyágyas felár hosszabítás / hét]]></name>
+</opcio>
+<opcio ar="165000" ar_tipus="/fő" opcios="1" kedvezmeny="0" category="10" eletkor_tol="0" eletkor_ig="0" ervenyes_tol="" ervenyes_ig="">
+<name><![CDATA[Részvételi díj hosszabítás / hét]]></name>
+</opcio>
+</opcionalis_dijak>
+<inprices count="0"></inprices>
+<outprices count="0"></outprices>
+<elofoglalasok count="0"></elofoglalasok>
+<gyerek_arak count="0"></gyerek_arak>
+</idopont>
+<idopont id="160298208" fromdate="2012-10-17" todate="2012-10-24" lejar_ar="0000-00-00" szobakalk="Ft/fő" ej="7" nap="8" price="204900" akcios="1" ellatas="8" agyszam="2" foglalasi_dij="" transzfer_dij="0" szervidij="5000" vizum_dij="0" repteri_illetek="43000" storno_biztositas="1.40" bpp="" kerozin_potdij="" egyeni_idopont="0">
+<idopont_tipus><![CDATA[2 ágyas szoba]]></idopont_tipus>
+<idopont_tipuskod><![CDATA[2]]></idopont_tipuskod>
+<departure_city><![CDATA[1365]]></departure_city>
+<megjegyzes><![CDATA[Ft/fő All Inclusive]]></megjegyzes>
+<unnepek count="0"></unnepek>
+<opcionalis_dijak count="3">
+<opcio ar="59000" ar_tipus="/fő" opcios="1" kedvezmeny="0" category="4" eletkor_tol="0" eletkor_ig="0" ervenyes_tol="" ervenyes_ig="">
+<name><![CDATA[Egyágyas felár]]></name>
+</opcio>
+<opcio ar="59000" ar_tipus="/fő" opcios="1" kedvezmeny="0" category="10" eletkor_tol="0" eletkor_ig="0" ervenyes_tol="" ervenyes_ig="">
+<name><![CDATA[Egyágyas felár hosszabítás / hét]]></name>
+</opcio>
+<opcio ar="165000" ar_tipus="/fő" opcios="1" kedvezmeny="0" category="10" eletkor_tol="0" eletkor_ig="0" ervenyes_tol="" ervenyes_ig="">
+<name><![CDATA[Részvételi díj hosszabítás / hét]]></name>
+</opcio>
+</opcionalis_dijak>
+<inprices count="0"></inprices>
+<outprices count="0"></outprices>
+<elofoglalasok count="0"></elofoglalasok>
+<gyerek_arak count="0"></gyerek_arak>
+</idopont>
+<idopont id="160298209" fromdate="2012-10-20" todate="2012-10-27" lejar_ar="0000-00-00" szobakalk="Ft/fő" ej="7" nap="8" price="204900" akcios="1" ellatas="8" agyszam="2" foglalasi_dij="" transzfer_dij="0" szervidij="5000" vizum_dij="0" repteri_illetek="43000" storno_biztositas="1.40" bpp="" kerozin_potdij="" egyeni_idopont="0">
+<idopont_tipus><![CDATA[2 ágyas szoba]]></idopont_tipus>
+<idopont_tipuskod><![CDATA[2]]></idopont_tipuskod>
+<departure_city><![CDATA[1365]]></departure_city>
+<megjegyzes><![CDATA[Ft/fő All Inclusive]]></megjegyzes>
+<unnepek count="0"></unnepek>
+<opcionalis_dijak count="3">
+<opcio ar="59000" ar_tipus="/fő" opcios="1" kedvezmeny="0" category="4" eletkor_tol="0" eletkor_ig="0" ervenyes_tol="" ervenyes_ig="">
+<name><![CDATA[Egyágyas felár]]></name>
+</opcio>
+<opcio ar="59000" ar_tipus="/fő" opcios="1" kedvezmeny="0" category="10" eletkor_tol="0" eletkor_ig="0" ervenyes_tol="" ervenyes_ig="">
+<name><![CDATA[Egyágyas felár hosszabítás / hét]]></name>
+</opcio>
+<opcio ar="165000" ar_tipus="/fő" opcios="1" kedvezmeny="0" category="10" eletkor_tol="0" eletkor_ig="0" ervenyes_tol="" ervenyes_ig="">
+<name><![CDATA[Részvételi díj hosszabítás / hét]]></name>
+</opcio>
+</opcionalis_dijak>
+<inprices count="0"></inprices>
+<outprices count="0"></outprices>
+<elofoglalasok count="0"></elofoglalasok>
+<gyerek_arak count="0"></gyerek_arak>
+</idopont>
+<idopont id="160298210" fromdate="2012-10-24" todate="2012-10-31" lejar_ar="0000-00-00" szobakalk="Ft/fő" ej="7" nap="8" price="204900" akcios="1" ellatas="8" agyszam="2" foglalasi_dij="" transzfer_dij="0" szervidij="5000" vizum_dij="0" repteri_illetek="43000" storno_biztositas="1.40" bpp="" kerozin_potdij="" egyeni_idopont="0">
+<idopont_tipus><![CDATA[2 ágyas szoba]]></idopont_tipus>
+<idopont_tipuskod><![CDATA[2]]></idopont_tipuskod>
+<departure_city><![CDATA[1365]]></departure_city>
+<megjegyzes><![CDATA[Ft/fő All Inclusive]]></megjegyzes>
+<unnepek count="0"></unnepek>
+<opcionalis_dijak count="3">
+<opcio ar="59000" ar_tipus="/fő" opcios="1" kedvezmeny="0" category="4" eletkor_tol="0" eletkor_ig="0" ervenyes_tol="" ervenyes_ig="">
+<name><![CDATA[Egyágyas felár]]></name>
+</opcio>
+<opcio ar="59000" ar_tipus="/fő" opcios="1" kedvezmeny="0" category="10" eletkor_tol="0" eletkor_ig="0" ervenyes_tol="" ervenyes_ig="">
+<name><![CDATA[Egyágyas felár hosszabítás / hét]]></name>
+</opcio>
+<opcio ar="165000" ar_tipus="/fő" opcios="1" kedvezmeny="0" category="10" eletkor_tol="0" eletkor_ig="0" ervenyes_tol="" ervenyes_ig="">
+<name><![CDATA[Részvételi díj hosszabítás / hét]]></name>
+</opcio>
+</opcionalis_dijak>
+<inprices count="0"></inprices>
+<outprices count="0"></outprices>
+<elofoglalasok count="0"></elofoglalasok>
+<gyerek_arak count="0"></gyerek_arak>
+</idopont>
+<idopont id="160298211" fromdate="2012-10-27" todate="2012-11-03" lejar_ar="0000-00-00" szobakalk="Ft/fő" ej="7" nap="8" price="204900" akcios="1" ellatas="8" agyszam="2" foglalasi_dij="" transzfer_dij="0" szervidij="5000" vizum_dij="0" repteri_illetek="43000" storno_biztositas="1.40" bpp="" kerozin_potdij="" egyeni_idopont="0">
+<idopont_tipus><![CDATA[2 ágyas szoba]]></idopont_tipus>
+<idopont_tipuskod><![CDATA[2]]></idopont_tipuskod>
+<departure_city><![CDATA[1365]]></departure_city>
+<megjegyzes><![CDATA[Ft/fő All Inclusive]]></megjegyzes>
+<unnepek count="0"></unnepek>
+<opcionalis_dijak count="3">
+<opcio ar="59000" ar_tipus="/fő" opcios="1" kedvezmeny="0" category="4" eletkor_tol="0" eletkor_ig="0" ervenyes_tol="" ervenyes_ig="">
+<name><![CDATA[Egyágyas felár]]></name>
+</opcio>
+<opcio ar="59000" ar_tipus="/fő" opcios="1" kedvezmeny="0" category="10" eletkor_tol="0" eletkor_ig="0" ervenyes_tol="" ervenyes_ig="">
+<name><![CDATA[Egyágyas felár hosszabítás / hét]]></name>
+</opcio>
+<opcio ar="165000" ar_tipus="/fő" opcios="1" kedvezmeny="0" category="10" eletkor_tol="0" eletkor_ig="0" ervenyes_tol="" ervenyes_ig="">
+<name><![CDATA[Részvételi díj hosszabítás / hét]]></name>
+</opcio>
+</opcionalis_dijak>
+<inprices count="0"></inprices>
+<outprices count="0"></outprices>
+<elofoglalasok count="0"></elofoglalasok>
+<gyerek_arak count="0"></gyerek_arak>
+</idopont>
+<idopont id="160298212" fromdate="2012-10-31" todate="2012-11-07" lejar_ar="0000-00-00" szobakalk="Ft/fő" ej="7" nap="8" price="204900" akcios="1" ellatas="8" agyszam="2" foglalasi_dij="" transzfer_dij="0" szervidij="5000" vizum_dij="0" repteri_illetek="43000" storno_biztositas="1.40" bpp="" kerozin_potdij="" egyeni_idopont="0">
+<idopont_tipus><![CDATA[2 ágyas szoba]]></idopont_tipus>
+<idopont_tipuskod><![CDATA[2]]></idopont_tipuskod>
+<departure_city><![CDATA[1365]]></departure_city>
+<megjegyzes><![CDATA[Ft/fő All Inclusive]]></megjegyzes>
+<unnepek count="0"></unnepek>
+<opcionalis_dijak count="3">
+<opcio ar="59000" ar_tipus="/fő" opcios="1" kedvezmeny="0" category="4" eletkor_tol="0" eletkor_ig="0" ervenyes_tol="" ervenyes_ig="">
+<name><![CDATA[Egyágyas felár]]></name>
+</opcio>
+<opcio ar="59000" ar_tipus="/fő" opcios="1" kedvezmeny="0" category="10" eletkor_tol="0" eletkor_ig="0" ervenyes_tol="" ervenyes_ig="">
+<name><![CDATA[Egyágyas felár hosszabítás / hét]]></name>
+</opcio>
+<opcio ar="165000" ar_tipus="/fő" opcios="1" kedvezmeny="0" category="10" eletkor_tol="0" eletkor_ig="0" ervenyes_tol="" ervenyes_ig="">
+<name><![CDATA[Részvételi díj hosszabítás / hét]]></name>
+</opcio>
+</opcionalis_dijak>
+<inprices count="0"></inprices>
+<outprices count="0"></outprices>
+<elofoglalasok count="0"></elofoglalasok>
+<gyerek_arak count="0"></gyerek_arak>
+</idopont>
+</prices>
+</traveloffer>
+<traveloffer>
+<md5>585a41867ef1000f283d8ce645c1131c</md5>
+<id>153104</id>
+<import_id></import_id>
+<partnerid>126</partnerid>
+<travel_name><![CDATA[Európa gyöngyszemei]]></travel_name>
+<szallas_name><![CDATA[Luxemburg-Brüsszel-Hollandia]]></szallas_name>
+<destinations count="1">
+<destination country="110" region="1166" city="4893" />
+</destinations>
+<skiregion/>
+<category_standard>3</category_standard>
+<category_aleph><![CDATA[Hotel ***]]></category_aleph>
+<program_types count="2">
+<program_type>6</program_type>
+<program_type>2</program_type>
+</program_types>
+<attributes count="1">
+<attribute>26</attribute>
+</attributes>
+<traffic>2</traffic>
+<traveldays count="0"></traveldays>
+<board>2</board>
+<inprices count="4">
+<inprice>4</inprice>
+<inprice>6</inprice>
+<inprice>7</inprice>
+<inprice>11</inprice>
+</inprices>
+<outprices count="4">
+<outprice>15</outprice>
+<outprice>16</outprice>
+<outprice>20</outprice>
+<outprice>39</outprice>
+</outprices>
+<gallery count="12" url="http://backend.aleph.hu/travelmax/public_html/gallery/584965/">
+<kepfilenev><![CDATA[tdm_alkmaarsajtpiac1_nl.jpg]]></kepfilenev>
+<kepfilenev><![CDATA[tdm_amsterdam_nl.jpg]]></kepfilenev>
+<kepfilenev><![CDATA[tdm_brugge1_be.jpg]]></kepfilenev>
+<kepfilenev><![CDATA[tdm_brusszel2_be.jpg]]></kepfilenev>
+<kepfilenev><![CDATA[tdm_delft_nl.jpg]]></kepfilenev>
+<kepfilenev><![CDATA[tdm_holland1_nl.jpg]]></kepfilenev>
+<kepfilenev><![CDATA[tdm_holland2_nl.jpg]]></kepfilenev>
+<kepfilenev><![CDATA[tdm_holland_nl.jpg]]></kepfilenev>
+<kepfilenev><![CDATA[tdm_marken2_nl.jpg]]></kepfilenev>
+<kepfilenev><![CDATA[tdm_marken_nl.jpg]]></kepfilenev>
+<kepfilenev><![CDATA[tdm-amszterdam6_nl.jpg]]></kepfilenev>
+<kepfilenev><![CDATA[tdm-amszterdam7_nl.jpg]]></kepfilenev>
+</gallery>
+<gmap></gmap>
+<descriptions count="2">
+<description name="Fekvese"><![CDATA[<p align="center"><strong>2012. Augusztus 11-19., Október 1-9.</strong></p>
+<p align="justify"><strong>1. nap: Budapest-Mannheim<br /></strong>Elutazás Budapestről a kora reggeli órákban. Folyamatos utazás rövid pihenőkkel a Budapest&#8211; Hegyeshalom&#8211;Linz-Passau&#8211;Nürnberg-Mannheim útvonalon a németországi tranzitszállásra. Szállás elfoglalása Mannheim közelében az esti órákban.</p>
+<p align="justify"><strong>2. nap: Luxemburg-Leuven</strong><br />Reggeli után Luxemburg mini államába utazunk. A nagyhercegség pazar fekvésű városát hatalmas erődjének köszönhetően Észak-Gibraltárjának is emlegetik. Luxemburg óvárosa és erődrendszere a Világörökség része.&nbsp;Az erőd épületét 963-ban Sigefroid&nbsp;gróf építette fel az Alzette folyó völgyéből kiemelkedő Bock sziklára. Belvárosi sétánk alkalmával az erőd, &nbsp;a mór stílusban épült Nagyhercegi palota, a Notre Dame katedrális és a Parlament lesznek a legfontosabb látnivalók.&nbsp;Búcsú Luxemburgtól a&nbsp;főváros egyik leglátványosabb&nbsp;jelképével a Petrusse folyó felett átívelő impozáns Adolf híddal mely hosszú ideig a világ legnagyobb fesztávolságú kő ívhídja volt. Utazás Belgiumba, a Brüsszeltől mindössze 30km-re fekvő Leuven városába mely építészeti remekei mellett, egyeteméről és finom söréről is híres. Városnézés a Flamand-Brabant tartomány fővárosában: egyetem, gótikus városháza, a csodálatos Szent Péter templom és a legrégebbi beginaudvar (Groot Begijnhof ), mely része az UNESCO Világörökségnek. A különleges hangulatú begina-rendi kolostor negyed megtekintése után utazás a Brüsszel környéki szálláshelyre.</p>
+<p align="justify"><strong>3. nap: Brüsszel-Waterloo<br /></strong>Reggeli után egész napos programunk kezdődik Brüsszelben. Buszos és gyalogos városnézésünk alkalmával először a város egyik jelképéhez a Heysel parkban található, <metricconverter w:st="on" productid="102 m&#65513;ter"></metricconverter>102 méter magas Atomiumhoz látogatunk. Az Atomium emlékmű 9 acélgömbből álló építménye az 1958-as brüsszeli világkiállításra épült, a vasmolekula kristályrácsát jeleníti meg 165 milliárdszoros nagyításban. Ezt követően az óváros legfontosabb nevezetességeinek megtekintése következik. Megtekintjük a világörökség részévé vált főteret (Grand Place) a gazdagon díszített barokk stílusú céhházakkal&nbsp; és a Városházát, de nem maradhat ki programunkból a híres Manneken Pis szobor és a Szent Mihály- és Szent Gudula-Székesegyház sem. Késő délután utazás a 20km-re fekvő Waterloo városkába. Tiszteletünket tesszük a híres csata emlékművénél, Napóleon utolsó csatájának színterén, ahol legyőzésének emlékére egy <metricconverter w:st="on" productid="40 m&#65513;ter"></metricconverter>40 méter magas dombot emeltek a győztesek azon a helyen, ahol a hollandok egyik hercege megsebesült a csatában. Az Oroszlán dombról szép kilátás nyílik az egykori csatatérre és az emlékkiállítást is megtekintjük. Visszautazás a szállásra az esti órákban.</p>
+<p align="justify"><strong>4. nap: Brugge-Gent<br /></strong>Mai programunk első állomás &#8222;Észak-Velencéje&#8221; a festői Brugge.&nbsp;Nyugat-Flandria legnagyobb városának, csatornákkal színesített történelmi óvárosa 2000 óta szerepel az UNESCO világörökségi listáján. Az óvárost körülvevő régi erődítmények és malmok maradványai a csatornák mellett találhatóak. Brugge Európában a legjobb állapotban fennmaradt középkori város. Flandria gyöngyszeme gyönyörű épületeivel, a macskaköves utcákkal és festői csatornáival életre szóló élménnyel ajándékozza meg a látogatókat. Belvárosi sétánk alkalmával megtekintjük a beginaudvart, a város kereskedelmi központjában a Piac teret, a város jelképével a középkori harangtoronnyal és a Miasszonyunk templomát (Michelangelo-Bruges-i Madonna szobra) is. Programunkból nem maradhat ki a Burg tér egyik legszebb látnivalója a gótikus Városháza és az itt található Szent Vér Bazilika épülete sem melynek mellékkápolnájában a Krisztus vérét őrző Szent Vér relikviát láthatjuk. A délutánt Kelet-Flandria tartomány legnagyobb városában Gent-ben töltjük. A Schelde és a Leie folyók találkozásán fekvő város a középkorban Észak-Európa egyik legnagyobb és leggazdagabb települése volt. Séta az &#8222;Észak Firenzéjeként&#8221; is gyakran emlegetett városba, ahol a "Beguinage" (beginaudvar), a harangtorony, valamint a közeli szövetcsarnok az UNESCO világörökség része. Utazás az Antwerpeni szállásra.</p>
+<p align="justify"><strong>5. nap: Antwerpen-Delft-Hága<br /></strong>Városnézés a világ egyik legnagyobb kikötővárosában, a Schelde folyó partján fekvő Antwerpen-ben. Van Dyck szülővárosában szűk utcákat járva a Place de Meir, a királyi palota, a Rubens ház, a Notre Dame székesegyház és a Németalföld legrégebbi reneszánsz épülete a Városháza lesznek a legfontosabb látnivalók. Továbbutazás a kék porcelánról is híres Delft, csatornákkal tagolt tipikus holland városába. Belvárosi séta (Piactér, Városháza, Újtemplom- holland királyi család temetkezési helye, Öreg templom a ferde harangtornyával..) rövid szabadidő majd utazás Hollandia közigazgatási székhelyére. Hágai városnézésünk alkalmával megtekintjük a Parlament, a Paleis Noordeinde &#8211; <personname w:st="on" productid="a királyi család"></personname>a királyi család rezidenciája- épületét majd délután lehetőség a Mauritshuis képtár - egykori hercegi palota- megtekintésére részletes tárlatvezetéssel. (Ár: 20 EUR/fő) A szálláshely elfoglalása Amszterdam közelében az esti órákban.</p>
+<p align="justify"><strong>6. nap: Amszterdam<br /></strong>Városnézés Hollandia fővárosában, a csatornáiról, múzeumairól, éjszakai életéről és piros lámpás negyedéről hírhedt, Amstel folyó partján fekvő Amszterdamban. Városnézésünk során a következő nevezetességeket tekintjük meg: Rijksmuseum, Dam tér a Királyi Palota és az Új-templom épülete (koronázó templom a magyarok ezüstkoszorújával), Öreg templom (Oude Kerk) majd sétahajózás a Világörökséghez tartozó festői csatornákon.(Hajójegy:15 EUR/fő) Látogatás egy gyémántcsiszoló műhelyben majd szabadidő a belvárosban.</p>
+<p align="justify"><strong>7.nap: Alkmaar&#8211;Volendam-Marken<br /></strong>Szabadidő Amszterdamban vagy fakultatív kirándulási lehetőség a vidéki Hollandia szélmalmokkal tarkított tájaira (Ár: 20 EUR/fő). Utazás Alkmaar városába mely leginkább sajtpiacáról híres. (Augusztusban látogatás a híres sajtpiacon!)A csatornákkal átszőtt belvárosban a Waag XIV. századi épületét, a Városházát és a Sint-Laurenskerk templomot tekintjük meg. Továbbutazás a népviseletéről , halászairól híres Volendam városábaahol a kikötő és a móló eredeti házai a régmúlt Hollandiáját varázsolják a látogatók elé. Látogatás egy helyi gazdaságban ahol a sajtkészítés és a fapapucs gyártás rejtélyeibe is betekintést nyerhetünk, majd kóstoló az ízletes sajtfélékből. Utolsó megállónkat egy földnyelven érjük el: Marken színpompás halászfalujába érkezünk, ahol több száz éves faházakban és a végtelen tengernek tűnő víztükörben gyönyörködhetünk. Visszautazás az Amszterdam közeli szállásra az esti órákban.</p>
+<p align="justify"><strong>8. nap: Haar kastély-Utrect<br /></strong>Reggeli után Hollandia egyik leglátogatottabb kastélya lesz az úti célunk. Utazás az Utrecht városától 8km-re található Haarzuilens kisvárosába ahol a XIV.században épült csodálatos neo-gótikus Haar kastélyt keressük fel. Látogatás a vizesárokkal körülölelt tündérmesék hangulatát igéző kastély épületben. (A kastély megtekintése részletes tárlatvezetéssel. Ár: 3.500,- Ft/fő mely a jelentkezéssel egy időben fizetendő, tekintettel arra, hogy a kastélylátogatáshoz előzetes bejelentkezés szükséges!) Búcsú a szépséges Haar kastélytól és rövid városnézés Hollandia negyedik legnagyobb városában. Utrecht belvárosában megtekintjük a gótikus Katedrálist melynek 112 méter magas harangtornya a legmagasabb Hollandiában. Utazás a németországi tranzitszállásra, szálláshely elfoglalása az esti órákban.</p>
+<p align="justify"><strong>9. nap: Mannheim-Passau-Budapest<br /></strong>Reggeli a szállodában majd utazás Passau városába. Gyalogos városnézés &#8222;a három folyó&#8221; városában ahol megtekintjük <personname w:st="on" productid="a Szent István"></personname>a Szent István Dóm és a Niedernburg kolostor (Gizella királyné sírja) épületét is majd folyamatos utazás rövid pihenőkkel Magyarországra. Érkezés Budapestre a késő esti órákban.</p>]]></description>
+<description name="Artablazat"><![CDATA[<p align="center"><strong>Utazás:</strong> autóbusszal <strong>Elhelyezés:</strong> *** szálloda <strong>Ellátás:</strong> reggeli</p>
+<p align="center"><strong>Részvételi díj:</strong> 139.900,- Ft/fő <strong>Gyermekár:</strong> 125.900,- Ft/fő <strong>Félpanzió:</strong> 38.400,- Ft/fő&nbsp;&nbsp;&nbsp;<br /><strong>Egyágyas felár:</strong> 52.000,- Ft/fő&nbsp; &nbsp;<strong>Biztosítás:</strong> 4.500,- Ft/fő <strong>Sztornó biztosítás:</strong> 1,5%</p>
+<p align="center"><em><strong><u>Tájékoztató árak a helyszínen fizetendő belépőkről, egyéb költségekről:<br /></u></strong>Waterloo&nbsp;9 EUR<br />Brugge templom 2 EUR<br />Brugge hajókázás 7 EUR<br />Antwerpen Rubens háza 6 EUR<br />Antwerpen Miasszonyunk katedrális 3 EUR<br />Antwerpen St.James katedrális 1,50 EUR<br />Mauritshuis képtár 20 EUR<br />Rijks múzeum 14 EUR</em><em><br />Van Gogh múzeum 14 EUR<br />Amszterdam Királiy Palota 7,50 EUR<br />Sétahajózás 15 EUR<br />Alkmaar-Volendam-Marken fakultatív kirándulás 20 EUR<br />Haar kastély 13 EUR</em></p>
+<p align="center"><em><br /></em><strong>Utazás: </strong>Az utazás emelt szintű autóbusszal történik - videó vagy DVD, büfé. Indulás: Budapest, Déli pályaudvar, Koronaőr köz</p>
+<p align="center"><strong>Felszállási lehetőségek:<br /></strong>Budapest - Déli Pu. Koronaőr köz: 06:00<br />Tatabánya - M1-es autópálya, 61-es km, Centrum-Vértesszőlősi lehajtó, agip benzinkút: 06:40<br />Győr - M1-es autópálya, 119-es km, Arabona pihenőhely,&nbsp;OMV benzinkút: 07:30<br />Mosonmagyaróvár - M1-es autópálya, 163-as km, Mosoni pihenőhely, MOL-Marché benzinkút: 07:50</p>
+<p align="left"><strong>Szállás:</strong> </p>
+<p align="left">Tranzitszállás: Best Western Hotel Ludwigshafen vagy ehhez hasonló<br />Brüsszel: NH Htel Brussel City Center vagy ehhez hasonló<br />Antwerpen: ETPA antwerpen City Center vagy ehhez hasonló<br />Amszterdam: NH Hotel Noordwijkerhout vagy ehhez hasonló</p>]]></description>
+</descriptions>
+<fakultativ_programok count="0"></fakultativ_programok>
+<prices count="6">
+<idopont id="156689205" fromdate="2012-08-11" todate="2012-08-19" lejar_ar="2012-03-31" szobakalk="Ft/fő" ej="8" nap="9" price="125910" akcios="1" ellatas="2" agyszam="2" foglalasi_dij="0" transzfer_dij="0" szervidij="0" vizum_dij="0" repteri_illetek="0" storno_biztositas="1.50" bpp="0" kerozin_potdij="0" egyeni_idopont="0">
+<idopont_tipus></idopont_tipus>
+<idopont_tipuskod></idopont_tipuskod>
+<departure_city><![CDATA[1365]]></departure_city>
+<megjegyzes><![CDATA[Ft/fő 03.31.-ig érvényes ár, teljes összeg befizetése esetén!]]></megjegyzes>
+<unnepek count="0"></unnepek>
+<opcionalis_dijak count="3">
+<opcio ar="4500" ar_tipus="/fő" opcios="1" kedvezmeny="1" category="3" eletkor_tol="0" eletkor_ig="0" ervenyes_tol="" ervenyes_ig="">
+<name><![CDATA[BBP]]></name>
+</opcio>
+<opcio ar="52000" ar_tipus="/fő" opcios="1" kedvezmeny="1" category="4" eletkor_tol="0" eletkor_ig="0" ervenyes_tol="" ervenyes_ig="">
+<name><![CDATA[Egyágyas felár]]></name>
+</opcio>
+<opcio ar="38400" ar_tipus="/fő" opcios="1" kedvezmeny="1" category="6" eletkor_tol="0" eletkor_ig="0" ervenyes_tol="" ervenyes_ig="">
+<name><![CDATA[Félpanzió]]></name>
+</opcio>
+</opcionalis_dijak>
+<inprices count="0"></inprices>
+<outprices count="0"></outprices>
+<elofoglalasok count="0"></elofoglalasok>
+<gyerek_arak count="1">
+<gyerek_ar index="1" kor_tol="0" kor_ig="14" agy_tipus="Főágy" ar_tipus="Ft" ar="125900" />
+</gyerek_arak>
+</idopont>
+<idopont id="131409464" fromdate="2012-08-11" todate="2012-08-19" lejar_ar="0000-00-00" szobakalk="Ft/fő" ej="8" nap="9" price="139900" akcios="0" ellatas="2" agyszam="2" foglalasi_dij="0" transzfer_dij="0" szervidij="0" vizum_dij="0" repteri_illetek="0" storno_biztositas="1.50" bpp="0" kerozin_potdij="0" egyeni_idopont="0">
+<idopont_tipus></idopont_tipus>
+<idopont_tipuskod></idopont_tipuskod>
+<departure_city><![CDATA[1365]]></departure_city>
+<megjegyzes><![CDATA[Ft/fő]]></megjegyzes>
+<unnepek count="0"></unnepek>
+<opcionalis_dijak count="3">
+<opcio ar="4500" ar_tipus="/fő" opcios="1" kedvezmeny="0" category="3" eletkor_tol="0" eletkor_ig="0" ervenyes_tol="" ervenyes_ig="">
+<name><![CDATA[BBP]]></name>
+</opcio>
+<opcio ar="52000" ar_tipus="/fő" opcios="1" kedvezmeny="0" category="4" eletkor_tol="0" eletkor_ig="0" ervenyes_tol="" ervenyes_ig="">
+<name><![CDATA[Egyágyas felár]]></name>
+</opcio>
+<opcio ar="38400" ar_tipus="/fő" opcios="1" kedvezmeny="0" category="6" eletkor_tol="0" eletkor_ig="0" ervenyes_tol="" ervenyes_ig="">
+<name><![CDATA[fakultatív félpanzió]]></name>
+</opcio>
+</opcionalis_dijak>
+<inprices count="4">
+<inprice>4</inprice>
+<inprice>6</inprice>
+<inprice>7</inprice>
+<inprice>11</inprice>
+</inprices>
+<outprices count="4">
+<outprice>15</outprice>
+<outprice>16</outprice>
+<outprice>20</outprice>
+<outprice>39</outprice>
+</outprices>
+<elofoglalasok count="0"></elofoglalasok>
+<gyerek_arak count="1">
+<gyerek_ar index="1" kor_tol="0" kor_ig="14" agy_tipus="Pótágy" ar_tipus="Ft" ar="125900" />
+</gyerek_arak>
+</idopont>
+<idopont id="156689204" fromdate="2012-08-11" todate="2012-08-19" lejar_ar="2012-03-31" szobakalk="Ft/fő" ej="8" nap="9" price="139900" akcios="1" ellatas="2" agyszam="2" foglalasi_dij="0" transzfer_dij="0" szervidij="0" vizum_dij="0" repteri_illetek="0" storno_biztositas="1.50" bpp="0" kerozin_potdij="0" egyeni_idopont="0">
+<idopont_tipus></idopont_tipus>
+<idopont_tipuskod></idopont_tipuskod>
+<departure_city><![CDATA[1365]]></departure_city>
+<megjegyzes><![CDATA[Ft/fő 03.31.-ig érvényes ár, előleg befizetése esetén!]]></megjegyzes>
+<unnepek count="0"></unnepek>
+<opcionalis_dijak count="3">
+<opcio ar="4500" ar_tipus="/fő" opcios="1" kedvezmeny="1" category="3" eletkor_tol="0" eletkor_ig="0" ervenyes_tol="" ervenyes_ig="">
+<name><![CDATA[BBP]]></name>
+</opcio>
+<opcio ar="52000" ar_tipus="/fő" opcios="1" kedvezmeny="1" category="4" eletkor_tol="0" eletkor_ig="0" ervenyes_tol="" ervenyes_ig="">
+<name><![CDATA[Egyágyas felár]]></name>
+</opcio>
+<opcio ar="38400" ar_tipus="/fő" opcios="1" kedvezmeny="1" category="6" eletkor_tol="0" eletkor_ig="0" ervenyes_tol="" ervenyes_ig="">
+<name><![CDATA[Félpanzió]]></name>
+</opcio>
+</opcionalis_dijak>
+<inprices count="0"></inprices>
+<outprices count="0"></outprices>
+<elofoglalasok count="0"></elofoglalasok>
+<gyerek_arak count="1">
+<gyerek_ar index="1" kor_tol="0" kor_ig="14" agy_tipus="Főágy" ar_tipus="Ft" ar="125900" />
+</gyerek_arak>
+</idopont>
+<idopont id="144107737" fromdate="2012-10-01" todate="2012-10-09" lejar_ar="2012-03-31" szobakalk="Ft/fő" ej="8" nap="9" price="118915" akcios="1" ellatas="2" agyszam="2" foglalasi_dij="0" transzfer_dij="0" szervidij="0" vizum_dij="0" repteri_illetek="0" storno_biztositas="1.50" bpp="0" kerozin_potdij="0" egyeni_idopont="0">
+<idopont_tipus></idopont_tipus>
+<idopont_tipuskod></idopont_tipuskod>
+<departure_city><![CDATA[1365]]></departure_city>
+<megjegyzes><![CDATA[Ft/Fő 03.31.-ig érvényes ár, teljes összeg befizetése esetén!]]></megjegyzes>
+<unnepek count="0"></unnepek>
+<opcionalis_dijak count="3">
+<opcio ar="4500" ar_tipus="/fő" opcios="1" kedvezmeny="0" category="3" eletkor_tol="0" eletkor_ig="0" ervenyes_tol="" ervenyes_ig="">
+<name><![CDATA[BBP]]></name>
+</opcio>
+<opcio ar="52000" ar_tipus="/fő" opcios="1" kedvezmeny="0" category="4" eletkor_tol="0" eletkor_ig="0" ervenyes_tol="" ervenyes_ig="">
+<name><![CDATA[Egyágyas felár]]></name>
+</opcio>
+<opcio ar="38400" ar_tipus="/fő" opcios="1" kedvezmeny="0" category="6" eletkor_tol="0" eletkor_ig="0" ervenyes_tol="" ervenyes_ig="">
+<name><![CDATA[fakultatív félpanzió]]></name>
+</opcio>
+</opcionalis_dijak>
+<inprices count="0"></inprices>
+<outprices count="0"></outprices>
+<elofoglalasok count="0"></elofoglalasok>
+<gyerek_arak count="1">
+<gyerek_ar index="1" kor_tol="0" kor_ig="14" agy_tipus="Pótágy" ar_tipus="Ft" ar="125900" />
+</gyerek_arak>
+</idopont>
+<idopont id="144107735" fromdate="2012-10-01" todate="2012-10-09" lejar_ar="2012-03-31" szobakalk="Ft/fő" ej="8" nap="9" price="125910" akcios="1" ellatas="2" agyszam="2" foglalasi_dij="0" transzfer_dij="0" szervidij="0" vizum_dij="0" repteri_illetek="0" storno_biztositas="1.50" bpp="0" kerozin_potdij="0" egyeni_idopont="0">
+<idopont_tipus></idopont_tipus>
+<idopont_tipuskod></idopont_tipuskod>
+<departure_city><![CDATA[1365]]></departure_city>
+<megjegyzes><![CDATA[Ft/Fő 03.31.-ig érvényes ár, előleg befizetése esetén!]]></megjegyzes>
+<unnepek count="0"></unnepek>
+<opcionalis_dijak count="3">
+<opcio ar="4500" ar_tipus="/fő" opcios="1" kedvezmeny="0" category="3" eletkor_tol="0" eletkor_ig="0" ervenyes_tol="" ervenyes_ig="">
+<name><![CDATA[BBP]]></name>
+</opcio>
+<opcio ar="52000" ar_tipus="/fő" opcios="1" kedvezmeny="0" category="4" eletkor_tol="0" eletkor_ig="0" ervenyes_tol="" ervenyes_ig="">
+<name><![CDATA[Egyágyas felár]]></name>
+</opcio>
+<opcio ar="38400" ar_tipus="/fő" opcios="1" kedvezmeny="0" category="6" eletkor_tol="0" eletkor_ig="0" ervenyes_tol="" ervenyes_ig="">
+<name><![CDATA[fakultatív félpanzió]]></name>
+</opcio>
+</opcionalis_dijak>
+<inprices count="0"></inprices>
+<outprices count="0"></outprices>
+<elofoglalasok count="0"></elofoglalasok>
+<gyerek_arak count="1">
+<gyerek_ar index="1" kor_tol="0" kor_ig="14" agy_tipus="Pótágy" ar_tipus="Ft" ar="125900" />
+</gyerek_arak>
+</idopont>
+<idopont id="131409469" fromdate="2012-10-01" todate="2012-10-09" lejar_ar="0000-00-00" szobakalk="Ft/fő" ej="8" nap="9" price="139900" akcios="0" ellatas="2" agyszam="2" foglalasi_dij="0" transzfer_dij="0" szervidij="0" vizum_dij="0" repteri_illetek="0" storno_biztositas="1.50" bpp="0" kerozin_potdij="0" egyeni_idopont="0">
+<idopont_tipus></idopont_tipus>
+<idopont_tipuskod></idopont_tipuskod>
+<departure_city><![CDATA[1365]]></departure_city>
+<megjegyzes><![CDATA[Ft/fő]]></megjegyzes>
+<unnepek count="0"></unnepek>
+<opcionalis_dijak count="3">
+<opcio ar="4500" ar_tipus="/fő" opcios="1" kedvezmeny="0" category="3" eletkor_tol="0" eletkor_ig="0" ervenyes_tol="" ervenyes_ig="">
+<name><![CDATA[BBP]]></name>
+</opcio>
+<opcio ar="52000" ar_tipus="/fő" opcios="1" kedvezmeny="0" category="4" eletkor_tol="0" eletkor_ig="0" ervenyes_tol="" ervenyes_ig="">
+<name><![CDATA[Egyágyas felár]]></name>
+</opcio>
+<opcio ar="38400" ar_tipus="/fő" opcios="1" kedvezmeny="0" category="6" eletkor_tol="0" eletkor_ig="0" ervenyes_tol="" ervenyes_ig="">
+<name><![CDATA[fakultatív félpanzió]]></name>
+</opcio>
+</opcionalis_dijak>
+<inprices count="0"></inprices>
+<outprices count="0"></outprices>
+<elofoglalasok count="0"></elofoglalasok>
+<gyerek_arak count="1">
+<gyerek_ar index="1" kor_tol="0" kor_ig="14" agy_tipus="Pótágy" ar_tipus="Ft" ar="125900" />
+</gyerek_arak>
+</idopont>
+</prices>
+</traveloffer>
+<traveloffer>
+<md5>ebad8a8c486f3698960cf4dcaf89c844</md5>
+<id>164210</id>
+<import_id></import_id>
+<partnerid>267</partnerid>
+<travel_name><![CDATA[HUNGUEST HOTEL AQUA SOL ****]]></travel_name>
+<szallas_name><![CDATA[HUNGUEST HOTEL AQUA SOL ****]]></szallas_name>
+<destinations count="1">
+<destination country="132" region="592" city="1411" />
+</destinations>
+<skiregion/>
+<category_standard>4</category_standard>
+<category_aleph><![CDATA[Hotel ****]]></category_aleph>
+<program_types count="3">
+<program_type>11</program_type>
+<program_type>18</program_type>
+<program_type>1</program_type>
+</program_types>
+<attributes count="2">
+<attribute>6</attribute>
+<attribute>21</attribute>
+</attributes>
+<traffic>5</traffic>
+<traveldays count="0"></traveldays>
+<board>9</board>
+<inprices count="3">
+<inprice>6</inprice>
+<inprice>7</inprice>
+<inprice>43</inprice>
+</inprices>
+<outprices count="1">
+<outprice>33</outprice>
+</outprices>
+<gallery count="0" url=""></gallery>
+<gmap></gmap>
+<descriptions count="2">
+<description name="Fekvese"><![CDATA[<P align=justify>A szálloda az ország legnagyobb, dinamikusan fejl&otilde;d&otilde; gyógy- és strandfürd&otilde;jének szomszédságában, a város üdül&otilde;övezetének központjában található. A szálloda I. emeletét fedett híd köti össze a gyógy- és strandfürd&otilde;vel.
+<P align=justify><STRONG>SZOLGÁLTATÁSOK:</STRONG> étterem szezonálisan üzemel&otilde; terasszal, drinkbár, úszómedence, pezsg&otilde;fürd&otilde;, szauna, g&otilde;zkabin, különterem, szobaszervíz, fedett garázs, parkoló, csomagmeg&otilde;rzés
+<P align=justify><STRONG>ELLÁTÁS:</STRONG> svédasztalos félpanzió
+<P align=justify><STRONG>ELHELYEZÉS:</STRONG> 2 ágyas, esetenként pótágyazható, fürdőszoba/WC-s, TV-vel, telefonnal, minibárral, széffel, internet-elérhet&otilde;séggel rendelkez&otilde;, klimatizált szobákban</P>]]></description>
+<description name="Artablazat"><![CDATA[<P align=justify><STRONG>GYERMEKKEDVEZMÉNY:</STRONG> 0-4 éves korig szállás és étkezés gratis; 4-12 éves korig pótágyon történ&otilde; elhelyezés esetén pótágyár fizetend&otilde;
+<P align=justify><STRONG>AZ ÁRAK MINDEN ESETBEN TARTALMAZZÁK:</STRONG> a szálloda wellness-részlegének (9 m hosszú úszómedence, jacuzzi, szauna, g&otilde;zkabin) korlátlan használatát, a Hungarospa Hajdúszoboszlói Gyógyfürd&otilde; üzemel&otilde; medencéinek igénybevételét (fedett- és nyitott gyógyvizes medencék, továbbá a strandid&otilde;szakban hullám- és pezsg&otilde;fürd&otilde;, gyermekmedence, mediterrán tengerpart), délutáni kávé és süteménybüfét, fürd&otilde;köpeny, zárt parkoló használatot, valamint a vadonatúj Aqua-Palace fedett élményfürd&otilde; díjtalan igénybevételét (egyedi élménymedencék, jégbarlang-, mozi-, Pávai termál-, római-, Gangesz-, tengeri és trópusi fürd&otilde;, szauna rendszer).
+<P align=justify>Ünnepi id&otilde;szakokban szállás félpanzióval: 80.390.- Ft/f&otilde;/3 éj; 107.190.- Ft/f&otilde;/4 éj
+<P align=justify>Idegenforgalmi adó a helyszínen fizetendő!</P>]]></description>
+</descriptions>
+<fakultativ_programok count="0"></fakultativ_programok>
+<prices count="3">
+<idopont id="148566287" fromdate="2012-01-02" todate="2012-04-01" lejar_ar="0000-00-00" szobakalk="Ft/fő" ej="2" nap="3" price="37990" akcios="0" ellatas="" agyszam="2" foglalasi_dij="0" transzfer_dij="0" szervidij="0" vizum_dij="0" repteri_illetek="0" storno_biztositas="0.00" bpp="0" kerozin_potdij="0" egyeni_idopont="1">
+<idopont_tipus><![CDATA[2 ágyas szoba]]></idopont_tipus>
+<idopont_tipuskod></idopont_tipuskod>
+<departure_city><![CDATA[1365]]></departure_city>
+<megjegyzes><![CDATA[Ft/fő]]></megjegyzes>
+<unnepek count="0"></unnepek>
+<opcionalis_dijak count="0"></opcionalis_dijak>
+<inprices count="0"></inprices>
+<outprices count="0"></outprices>
+<elofoglalasok count="0"></elofoglalasok>
+<gyerek_arak count="0"></gyerek_arak>
+</idopont>
+<idopont id="148566288" fromdate="2012-01-02" todate="2012-04-01" lejar_ar="0000-00-00" szobakalk="Ft/fő" ej="4" nap="5" price="68190" akcios="0" ellatas="" agyszam="2" foglalasi_dij="0" transzfer_dij="0" szervidij="0" vizum_dij="0" repteri_illetek="0" storno_biztositas="0.00" bpp="0" kerozin_potdij="0" egyeni_idopont="1">
+<idopont_tipus><![CDATA[2 ágyas szoba]]></idopont_tipus>
+<idopont_tipuskod></idopont_tipuskod>
+<departure_city><![CDATA[1365]]></departure_city>
+<megjegyzes><![CDATA[Ft/fő]]></megjegyzes>
+<unnepek count="0"></unnepek>
+<opcionalis_dijak count="0"></opcionalis_dijak>
+<inprices count="0"></inprices>
+<outprices count="0"></outprices>
+<elofoglalasok count="0"></elofoglalasok>
+<gyerek_arak count="0"></gyerek_arak>
+</idopont>
+<idopont id="148566289" fromdate="2012-01-02" todate="2012-04-01" lejar_ar="0000-00-00" szobakalk="Ft/fő" ej="7" nap="8" price="111490" akcios="0" ellatas="" agyszam="2" foglalasi_dij="0" transzfer_dij="0" szervidij="0" vizum_dij="0" repteri_illetek="0" storno_biztositas="0.00" bpp="0" kerozin_potdij="0" egyeni_idopont="1">
+<idopont_tipus><![CDATA[2 ágyas szoba]]></idopont_tipus>
+<idopont_tipuskod></idopont_tipuskod>
+<departure_city><![CDATA[1365]]></departure_city>
+<megjegyzes><![CDATA[Ft/fő]]></megjegyzes>
+<unnepek count="0"></unnepek>
+<opcionalis_dijak count="0"></opcionalis_dijak>
+<inprices count="0"></inprices>
+<outprices count="0"></outprices>
+<elofoglalasok count="0"></elofoglalasok>
+<gyerek_arak count="0"></gyerek_arak>
+</idopont>
+</prices>
+</traveloffer>
+</traveloffers>
