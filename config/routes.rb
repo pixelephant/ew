@@ -1,5 +1,6 @@
 Ewutazas::Application.routes.draw do
 
+  match 'trip' => 'trip#index'
   match 'order' => 'order#index'
   match ':id' => 'list#index'
 
