@@ -81,6 +81,7 @@ textarea{
 	@include font-pt;
 	@include border-radius(3px,3px,3px,3px);
 	border:1px solid #7D579A;
+	width:100%;
 }
 
 #header{
