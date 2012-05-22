@@ -1,8 +1,8 @@
-
+//= require jquery.anystretch.min
 
 $(document).ready(function(){
 
-
+$('#page-header').anystretch("assets/headers/europe.jpg", {speed: 1000, positionY: "center"});
 
 
 $("#filter-no-date").change(function(){

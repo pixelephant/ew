@@ -272,7 +272,9 @@ textarea{
 			color:white;
 			float:left;
 			margin-right:10px;
-			font-size:14px;
+			font-size:16px;
+			height:24px;
+			line-height:24px;
 		}
 		input[type="text"],input[type="date"],input[type="range"],select{
 			float:left;
@@ -289,7 +291,10 @@ textarea{
 		.left{
 			float:left;
 			color:white;
-			font-size:12px;
+			font-size:14px;
+			height:24px;
+			line-height:24px;
+			margin-left:5px;
 		}
 		.row{
 			overflow:hidden;
@@ -306,6 +311,10 @@ textarea{
 	padding-top:0;
 }	
 
+#max-price{
+	margin-top:5px;
+}
+
 #max-price-text{
 	width:65px;
 	margin-left:10px;
@@ -321,11 +330,13 @@ textarea{
 	input[type="submit"]{
 		@include small-blue;
 		margin-right:10px;
+		font-size:18px;
 	}
 }
 
 #estimate{
 	font-size:14px;
+	font-weight:bold;
 }
 
 #simple-search{
@@ -337,6 +348,7 @@ textarea{
 	input[type="submit"]{
 		@include small-red;
 		margin-top:20px;
+		font-size:18px;
 	}
 	fieldset,.row{
 		padding-left:0;

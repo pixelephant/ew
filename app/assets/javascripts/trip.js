@@ -8,10 +8,10 @@ $(document).ready(function(){
 
 	 $('#additional-time table').tablePagination({
 	 	rowsPerPage : 2,
-	 	firstArrow : (new Image()).src="./images/firstBlue.gif",
-        prevArrow : (new Image()).src="./images/prevBlue.gif",
-		lastArrow : (new Image()).src="./images/lastBlue.gif",
-		nextArrow : (new Image()).src="./images/nextBlue.gif",
+	 	firstArrow : (new Image()).src="/assets/first.png",
+        prevArrow : (new Image()).src="/assets/prev.png",
+		lastArrow : (new Image()).src="/assets/last.png",
+		nextArrow : (new Image()).src="/assets/next.png",
 		optionsForRows : [5,10,20]
 	 });
 

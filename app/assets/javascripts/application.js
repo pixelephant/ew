@@ -81,7 +81,7 @@ $(document).ready(function(){
       changeMonth: true,
       changeYear: true,
       showButtonPanel: true,
-      minDate: 0,
+      minDate: 1,
       dateFormat : "yy-mm-dd",
       defaultDate: "+1w",
       onSelect: function( selectedDate ) {
@@ -99,7 +99,7 @@ $(document).ready(function(){
       }
     });
 
-  var dates = $( "#filter-arrival, #filter-departure" ).datepicker({
+  var dates1 = $( "#filter-arrival, #filter-departure" ).datepicker({
       changeMonth: true,
       changeYear: true,
       showButtonPanel: true,
