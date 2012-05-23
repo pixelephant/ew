@@ -12,14 +12,7 @@
 	</aside>
 	<div id="list-wrap">
 		<div class="pagination" id="pagi-t">
-			<%= link_to 'Legnépszerűbbek', url_for(params.merge(:sort => "legnepszerubbek", :ord => 'csokkeno')), :class => 'pill' %>
-			<%= link_to 'Legújabbak', url_for(params.merge(:sort => "legujabbak", :ord => 'csokkeno')), :class => 'pill' %>
-			<%= link_to 'Ár &uarr;'.html_safe, url_for(params.merge(:sort => "arnovekvo", :ord => 'novekvo')), :class => 'pill' %>
-			<%= link_to 'Ár &darr;'.html_safe, url_for(params.merge(:sort => "arcsokkeno", :ord => 'csokkeno')), :class => 'pill' %>
-			<%= link_to 'A-Z', url_for(params.merge(:sort => "utneve", :ord => 'novekvo')), :class => 'pill' %>
-			<div class="pagi">
-				<%= paginate @traveloffers, :window => 2 %>
-			</div>
+			<%= render "list/pagination_sort" %>
 		</div>
 		<div id="list">
 			<% @traveloffers.each do |traveloffer| %>
@@ -212,19 +205,7 @@
 			</div>
 		</div>
 		<div class="pagination" id="pagi-b">
-			<a class="pill" href="#">Legnépszerűbbek</a>
-			<a class="pill" href="#">Legújabbak</a>
-			<a class="pill" href="#">Ár &uarr;</a>
-			<a class="pill" href="#">Ár &darr;</a>
-			<a class="pill" href="#">A-Z</a>
-			<div class="pagi">
-				<a href="#">Előző</a>
-				<a href="#">1</a>
-				<a href="#">2</a>
-				<a href="#">...</a>
-				<a href="#">10</a>
-				<a href="#">Következő</a>
-			</div>
+			<%= render "list/pagination_sort" %>
 		</div>
 	</div>
 </section>

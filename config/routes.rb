@@ -4,6 +4,9 @@ Ewutazas::Application.routes.draw do
   match 'order' => 'order#index'
   match ':id' => 'list#index'
 
+  match 'ajax/get_region' => 'ajax#get_region', :method => 'POST'
+  match 'ajax/get_city' => 'ajax#get_city', :method => 'POST'
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
