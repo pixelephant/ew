@@ -2,6 +2,7 @@ Ewutazas::Application.routes.draw do
 
   match 'trip' => 'trip#index'
   match 'order' => 'order#index'
+  match 'insurance' => 'insurance#index'
   match ':id' => 'list#index'
 
   # The priority is based upon order of creation:

@@ -1,5 +1,8 @@
 @import "_mixins.css.scss";
 
+#content{
+	overflow:hidden;
+}
 
 #page-header{
 	height:260px;
@@ -39,7 +42,7 @@ aside{
 }
 
 #filter-form{
-	height:2409px;
+	height:2800px;
 	fieldset{
 		padding:0;
 		padding-top:15px;
@@ -124,6 +127,68 @@ aside{
 		@include small-gray;
 
 		}
+}
+
+.selector{
+	-webkit-transform-style: preserve-3d;
+	background:$blue;
+	border-left:1px solid $gray;
+	border-top:1px solid $gray;
+	padding:16px 20px;
+	overflow:hidden;
+	h3{
+		margin-top:0;
+		color:white;
+	}
+	.country{
+		display:block;
+		float:left;
+		padding:5px;
+		margin:0 5px 10px 5px;
+		-webkit-transform-style: preserve-3d;
+		background:white;
+		opacity:0.7;
+		color:$blue;
+		font-style:italic;
+		text-decoration:none;
+		@include t-04;
+		font-size:18px;
+		span{
+			font-size:16px;
+			-webkit-transform-style: preserve-3d;
+			color:white;
+			background:$blue;
+			padding:2px 4px;
+		}
+		&:hover,&:focus{
+			opacity:1;
+		}
+		&.active{
+			opacity:1;
+			color:$orange;
+			span{
+				background:$orange;
+				color:white;
+			}
+		}
+	}
+}	
+
+#more-countries{
+	float:right;
+	color:white;
+	text-decoration:none;
+}
+
+#other-countries {
+	display:none;
+	padding-top:0;
+	div{
+	 overflow:hidden;
+	}
+	h3{
+		margin-top:16px;
+	}
 }
 
 .trip{

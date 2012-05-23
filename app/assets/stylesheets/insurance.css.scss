@@ -1,0 +1,31 @@
+@import "_mixins.css.scss";
+
+h2{
+	color:$orange;
+}
+
+#insurance-wrap{
+	margin-top:30px;
+	
+	h3{
+		color:$purple;
+	}
+	img{
+		width:200px;
+		height:100px;
+	}
+	a{
+		@include t-04;
+		&:hover,&:focus{
+			@include scale(1.1);
+		}
+		height:300px;
+		float:left;
+		text-decoration:none;
+		width:200px;
+		margin:0 63px;
+		p{
+			color:#5B5B5B;
+		}
+	}
+}
