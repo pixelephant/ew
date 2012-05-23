@@ -7,127 +7,52 @@
 <section id="content">
 	<aside>
 		<h2>Európai utazások</h2>
-		<form action="#" id="filter-form">
-			<h3>Szűkítse az utakat</h3>
-			<fieldset>
-				<legend>Utazás időpontja</legend>
-				<div id="filter-precise-row">
-					<div>
-						<label for="filter-arrival">Érkezés</label>
-						<input type="date" name="filter-arrival" id="filter-arrival" class="datepicker">
-					</div>
-					<div>
-						<label for="filter-departure">Távozás</label>
-						<input type="date" name="filter-departure" id="filter-departure" class="datepicker">
-						<span class="left">(<span id="filter-between">-</span> éjszaka)</span>
-					</div>
-					<div>
-						<label for="filter-flexibility">Rugalmasság</label>
-						<select name="filter-flexibility" id="filter-flexibility">
-							<option value="1">+/- 1 nap</option>
-							<option value="3">+/- 3 nap</option>
-							<option value="7">+/- 1 hét</option>
-							<option value="0">Nincs</option>
-						</select>
-					</div>
-				</div>
-				<div id="filter-imprecise-row">
-					<label for="filter-imprecise">Körülbelül mikor utaznék</label>
-					<select name="filter-imprecise" id="filter-imprecise">
-						<optgroup label="Hónapok">
-							<option value="0">Január</option>
-							<option value="1">Február</option>
-						</optgroup>
-						<optgroup label="Időszakok">
-							<option value="2">Tavasz szünet</option>
-							<option value="3">Nyáron</option>
-						</optgroup>
-						<option value="3">Nem tudom</option>
-					</select>
-				</div>
-				<div>
-					<label for="filter-no-date">Nincs pontos dátumom <input type="checkbox" name="filter-no-date" id="filter-no-date"></label>	
-				</div>
-			</fieldset>
-			<fieldset>
-				<legend>Utazás max. ára/fő</legend>
-				<div>
-					<label for="filter-price-1">50.000 Ft <input type="radio" id="filter-price-1" name="price-group" /></label>
-					<label for="filter-price-2">150.000 Ft <input type="radio" id="filter-price-2" name="price-group" /></label>
-					<label for="filter-price-3">250.000 Ft <input type="radio" id="filter-price-3" name="price-group" /></label>
-					<label for="filter-price-4">550.000 Ft <input type="radio" id="filter-price-4" name="price-group" /></label>
-
-				</div>
-			</fieldset>
-			<fieldset>
-				<legend>Úticél</legend>
-				<div>
-					<label for="filter-country">Ország</label>
-					<select name="filter-country" id="filter-country">
-						<option value="0">-- Mindegy --</option>
-					</select>
-				</div>
-				<div>
-					<label for="filter-region">Régió</label>
-					<select name="filter-region" id="filter-region">
-						<option value="0">-- Mindegy --</option>
-					</select>
-				</div>
-				<div>
-					<label for="type">Típus</label>
-					<select name="type" id="type">
-						<option value="0">-- Mindegy --</option>
-					</select>
-				</div>
-			</fieldset>
-			<fieldset class="collapsible">
-				<h4 class="legend">Program típusok <a href="#">&darr;</a></h4>
-				<div class="collapse">
-					<div>
-						<label for="all-program">Összes <input class="all" type="radio" name="program" id="all-program" checked></label>
-					</div>
-					<div><label for="only-program">Csak az alábbiak <input class="only" type="radio" name="program" id="only-program"></label></div>
-					<div>
-						<label for="">1<input type="checkbox" name="" id="" disabled checked></label>
-						<label for="">2<input type="checkbox" name="" id="" disabled checked></label>
-						<label for="">3<input type="checkbox" name="" id="" disabled checked></label>
-						<label for="">4<input type="checkbox" name="" id="" disabled checked></label>
-						<label for="">5<input type="checkbox" name="" id="" disabled checked></label>
-						<label for="">6<input type="checkbox" name="" id="" disabled checked></label>
-						<label for="">7<input type="checkbox" name="" id="" disabled checked></label>
-						<label for="">8<input type="checkbox" name="" id="" disabled checked></label>
-						<label for="">9<input type="checkbox" name="" id="" disabled checked></label>
-						<label for="">10<input type="checkbox" name="" id="" disabled checked></label>
-					</div>
-				</div>
-			</fieldset>
-		</form>
+		<%= render 'list/filter' %>
 		<a href="#" id="totop">&uarr; oldal tetejére</a>
 	</aside>
 	<div id="list-wrap">
 		<div class="pagination" id="pagi-t">
-			<a class="pill" href="#">Legnépszerűbbek</a>
-			<a class="pill" href="#">Legújabbak</a>
-			<a class="pill" href="#">Ár &uarr;</a>
-			<a class="pill" href="#">Ár &darr;</a>
-			<a class="pill" href="#">A-Z</a>
+			<%= link_to 'Legnépszerűbbek', url_for(params.merge(:sort => "legnepszerubbek", :ord => 'csokkeno')), :class => 'pill' %>
+			<%= link_to 'Legújabbak', url_for(params.merge(:sort => "legujabbak", :ord => 'csokkeno')), :class => 'pill' %>
+			<%= link_to 'Ár &uarr;'.html_safe, url_for(params.merge(:sort => "arnovekvo", :ord => 'novekvo')), :class => 'pill' %>
+			<%= link_to 'Ár &darr;'.html_safe, url_for(params.merge(:sort => "arcsokkeno", :ord => 'csokkeno')), :class => 'pill' %>
+			<%= link_to 'A-Z', url_for(params.merge(:sort => "utneve", :ord => 'novekvo')), :class => 'pill' %>
 			<div class="pagi">
-				<a href="#">Előző</a>
-				<a href="#">1</a>
-				<a href="#">2</a>
-				<a href="#">...</a>
-				<a href="#">10</a>
-				<a href="#">Következő</a>
+				<%= paginate @traveloffers, :window => 2 %>
 			</div>
 		</div>
 		<div id="list">
+			<% @traveloffers.each do |traveloffer| %>
+			<div class="trip">
+				<a href="/trip">
+					<div class="thumbnail">
+						<%= (image_tag traveloffer.gallery_url + traveloffer.images.first.file_name, :height => 140, :width => 140, :alt => traveloffer.travel_name) if traveloffer.images.any? %>
+					</div>
+					<div class="data">
+						<div class="row">
+							<h3><%= traveloffer.travel_name %></h3>
+							<span class="dates">2012-02-11 - 2012-02-15</span>
+						</div>
+						<span class="price">119 000 Ft-tól</span>
+						<p><%= (strip_tags(truncate(traveloffer.descriptions.where(:name => "Fekvese").first.description, :length => 255))) if traveloffer.descriptions.any? %></p>
+					</div>
+					<div class="icons">
+						<img src="http://www.placehold.it/30x30" alt="">
+						<img src="http://www.placehold.it/30x30" alt="">
+						<img src="http://www.placehold.it/30x30" alt="">
+					</div>
+					<a class="view" href="/trip">Részletek &raquo;</a>
+				</a>
+			</div>
+			<% end %>
 			<div class="trip">
 				<a href="/trip">
 					<div class="thumbnail">
 						<img src="http://www.officeholidays.com/images/spotlights/germany.jpg" alt="">
 					</div>
 					<div class="data">
-						<div class="row"><h3>Német álomutazás</h3> <span class="dates">2012-02-11 - 2012-02-15</span> <span class="price">119 000 Ft-tól</span></div>
+						<div class="row"><h3>Német álomutazás</h3> <span class="dates">2012-02-11 - 2012-02-15</span> </div>
+						<span class="price">119 000 Ft-tól</span>
 						<p>A Német Szövetségi Köztársaság (németül Bundesrepublik Deutschland; nemzetközi szerződésekben, okmányokban, hivatalos fórumokon a Németországi Szövetségi Köztársaság megnevezés szerepel hivatalos országnévként) Európa vezető, s a világ negyedik legnagyobb...</p>
 					</div>
 					<div class="icons">
@@ -144,24 +69,8 @@
 						<img src="http://www.officeholidays.com/images/spotlights/germany.jpg" alt="">
 					</div>
 					<div class="data">
-						<div class="row"><h3>Német álomutazás</h3> <span class="dates">2012-02-11 - 2012-02-15</span> <span class="price">119 000 Ft-tól</span></div>
-						<p>A Német Szövetségi Köztársaság (németül Bundesrepublik Deutschland; nemzetközi szerződésekben, okmányokban, hivatalos fórumokon a Németországi Szövetségi Köztársaság megnevezés szerepel hivatalos országnévként) Európa vezető, s a világ negyedik legnagyobb...</p>
-					</div>
-					<div class="icons">
-						<img src="http://www.placehold.it/30x30" alt="">
-						<img src="http://www.placehold.it/30x30" alt="">
-						<img src="http://www.placehold.it/30x30" alt="">
-					</div>
-					<a class="view" href="/trip">Részletek &raquo;</a>
-				</a>
-			</div>
-			<div class="trip">
-				<a href="/trip">
-					<div class="thumbnail">
-						<img src="http://www.officeholidays.com/images/spotlights/germany.jpg" alt="">
-					</div>
-					<div class="data">
-						<div class="row"><h3>Német álomutazás</h3> <span class="dates">2012-02-11 - 2012-02-15</span> <span class="price">119 000 Ft-tól</span></div>
+						<div class="row"><h3>Német álomutazás</h3> <span class="dates">2012-02-11 - 2012-02-15</span></div>
+						<span class="price">119 000 Ft-tól</span>
 						<p>A Német Szövetségi Köztársaság (németül Bundesrepublik Deutschland; nemzetközi szerződésekben, okmányokban, hivatalos fórumokon a Németországi Szövetségi Köztársaság megnevezés szerepel hivatalos országnévként) Európa vezető, s a világ negyedik legnagyobb...</p>
 					</div>
 					<div class="icons">
@@ -181,7 +90,8 @@
 						<img src="http://www.officeholidays.com/images/spotlights/germany.jpg" alt="">
 					</div>
 					<div class="data">
-						<div class="row"><h3>Német álomutazás</h3> <span class="dates">2012-02-11 - 2012-02-15</span> <span class="price">119 000 Ft-tól</span></div>
+						<div class="row"><h3>Német álomutazás</h3> <span class="dates">2012-02-11 - 2012-02-15</span> </div>
+						<span class="price">119 000 Ft-tól</span>
 						<p>A Német Szövetségi Köztársaság (németül Bundesrepublik Deutschland; nemzetközi szerződésekben, okmányokban, hivatalos fórumokon a Németországi Szövetségi Köztársaság megnevezés szerepel hivatalos országnévként) Európa vezető, s a világ negyedik legnagyobb...</p>
 					</div>
 					<div class="icons">
@@ -198,7 +108,8 @@
 						<img src="http://www.officeholidays.com/images/spotlights/germany.jpg" alt="">
 					</div>
 					<div class="data">
-						<div class="row"><h3>Német álomutazás</h3> <span class="dates">2012-02-11 - 2012-02-15</span> <span class="price">119 000 Ft-tól</span></div>
+						<div class="row"><h3>Német álomutazás</h3> <span class="dates">2012-02-11 - 2012-02-15</span> </div>
+						<span class="price">119 000 Ft-tól</span>
 						<p>A Német Szövetségi Köztársaság (németül Bundesrepublik Deutschland; nemzetközi szerződésekben, okmányokban, hivatalos fórumokon a Németországi Szövetségi Köztársaság megnevezés szerepel hivatalos országnévként) Európa vezető, s a világ negyedik legnagyobb...</p>
 					</div>
 					<div class="icons">
@@ -215,7 +126,8 @@
 						<img src="http://www.officeholidays.com/images/spotlights/germany.jpg" alt="">
 					</div>
 					<div class="data">
-						<div class="row"><h3>Német álomutazás</h3> <span class="dates">2012-02-11 - 2012-02-15</span> <span class="price">119 000 Ft-tól</span></div>
+						<div class="row"><h3>Német álomutazás</h3> <span class="dates">2012-02-11 - 2012-02-15</span> </div>
+						<span class="price">119 000 Ft-tól</span>
 						<p>A Német Szövetségi Köztársaság (németül Bundesrepublik Deutschland; nemzetközi szerződésekben, okmányokban, hivatalos fórumokon a Németországi Szövetségi Köztársaság megnevezés szerepel hivatalos országnévként) Európa vezető, s a világ negyedik legnagyobb...</p>
 					</div>
 					<div class="icons">
@@ -232,7 +144,8 @@
 						<img src="http://www.officeholidays.com/images/spotlights/germany.jpg" alt="">
 					</div>
 					<div class="data">
-						<div class="row"><h3>Német álomutazás</h3> <span class="dates">2012-02-11 - 2012-02-15</span> <span class="price">119 000 Ft-tól</span></div>
+						<div class="row"><h3>Német álomutazás</h3> <span class="dates">2012-02-11 - 2012-02-15</span> </div>
+						<span class="price">119 000 Ft-tól</span>
 						<p>A Német Szövetségi Köztársaság (németül Bundesrepublik Deutschland; nemzetközi szerződésekben, okmányokban, hivatalos fórumokon a Németországi Szövetségi Köztársaság megnevezés szerepel hivatalos országnévként) Európa vezető, s a világ negyedik legnagyobb...</p>
 					</div>
 					<div class="icons">
@@ -249,7 +162,8 @@
 						<img src="http://www.officeholidays.com/images/spotlights/germany.jpg" alt="">
 					</div>
 					<div class="data">
-						<div class="row"><h3>Német álomutazás</h3> <span class="dates">2012-02-11 - 2012-02-15</span> <span class="price">119 000 Ft-tól</span></div>
+						<div class="row"><h3>Német álomutazás</h3> <span class="dates">2012-02-11 - 2012-02-15</span> </div>
+						<span class="price">119 000 Ft-tól</span>
 						<p>A Német Szövetségi Köztársaság (németül Bundesrepublik Deutschland; nemzetközi szerződésekben, okmányokban, hivatalos fórumokon a Németországi Szövetségi Köztársaság megnevezés szerepel hivatalos országnévként) Európa vezető, s a világ negyedik legnagyobb...</p>
 					</div>
 					<div class="icons">
@@ -266,7 +180,8 @@
 						<img src="http://www.officeholidays.com/images/spotlights/germany.jpg" alt="">
 					</div>
 					<div class="data">
-						<div class="row"><h3>Német álomutazás</h3> <span class="dates">2012-02-11 - 2012-02-15</span> <span class="price">119 000 Ft-tól</span></div>
+						<div class="row"><h3>Német álomutazás</h3> <span class="dates">2012-02-11 - 2012-02-15</span> </div>
+						<span class="price">119 000 Ft-tól</span>
 						<p>A Német Szövetségi Köztársaság (németül Bundesrepublik Deutschland; nemzetközi szerződésekben, okmányokban, hivatalos fórumokon a Németországi Szövetségi Köztársaság megnevezés szerepel hivatalos országnévként) Európa vezető, s a világ negyedik legnagyobb...</p>
 					</div>
 					<div class="icons">
@@ -283,7 +198,8 @@
 						<img src="http://www.officeholidays.com/images/spotlights/germany.jpg" alt="">
 					</div>
 					<div class="data">
-						<div class="row"><h3>Német álomutazás</h3> <span class="dates">2012-02-11 - 2012-02-15</span> <span class="price">119 000 Ft-tól</span></div>
+						<div class="row"><h3>Német álomutazás</h3> <span class="dates">2012-02-11 - 2012-02-15</span> </div>
+						<span class="price">119 000 Ft-tól</span>
 						<p>A Német Szövetségi Köztársaság (németül Bundesrepublik Deutschland; nemzetközi szerződésekben, okmányokban, hivatalos fórumokon a Németországi Szövetségi Köztársaság megnevezés szerepel hivatalos országnévként) Európa vezető, s a világ negyedik legnagyobb...</p>
 					</div>
 					<div class="icons">

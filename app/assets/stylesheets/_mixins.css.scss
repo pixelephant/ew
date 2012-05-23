@@ -309,10 +309,12 @@ $gray: #d1d3d2;
 
 @mixin search{
   //@include t-02;
+  cursor:pointer;
   text-decoration:none;
   color: #ffffff;
   padding: 4px 20px;
-  @include background-gradient(#ff8400,#db3a00);
+  padding-left:30px;
+  @include background-gradient(#ff8400,#db3a00, url(icons/icons_search.png) no-repeat 3px 6px);
   @include border-radius(20px,20px,20px,20px);
   border: 1px solid #be1e2e;
   -moz-box-shadow:
@@ -329,7 +331,7 @@ $gray: #d1d3d2;
     0px 0px 0px rgba(255,255,255,0);
 
   &:hover,&:focus{
-    @include background-gradient(#ff8400,#ff6200);
+    @include background-gradient(#ff8400,#ff6200, url(icons/icons_search.png) no-repeat  3px 6px);
      -moz-box-shadow:
     0px 1px 1px rgba(000,000,000,0.7),
     inset 0px 0px 3px rgba(255,216,171,0.8);
@@ -345,7 +347,7 @@ $gray: #d1d3d2;
   }
 
   &:active,&.active{
-    @include background-gradient(#e64100,#ff8400);
+    @include background-gradient(#e64100,#ff8400, url(icons/icons_search.png) no-repeat  3px 6px);
     color: #8a0000;
     -moz-box-shadow:
     0px 1px 1px rgba(255,255,255,0.7),

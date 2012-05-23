@@ -13,31 +13,38 @@
   <link href='http://fonts.googleapis.com/css?family=PT+Sans:400,700,400italic,700italic|Lobster+Two:700italic|Bree+Serif&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
   <%= javascript_include_tag "modernizr-2.5.3.min.js" %>
   <%= csrf_meta_tags %>
+  <!--[if !IE 7]>
+	<style type="text/css">
+		#wrap {display:table;height:100%}
+	</style>
+<![endif]-->
+
 </head>
 <body>
+<div id="wrap">
+		
 <section id="header">
 	<nav class="clearfix">
 		<div id="logo" class=""><a href="/"><%= image_tag "logo.png", :alt => "East-West Utazási és Sport Iroda" %></a></div>
 		<div id="ul-wrap">
 			<ul id="primary-nav">
-				<li class="active"><a href="#">Last minute</a></li>
-				<li><a href="#">Külföldi utazások</a></li>
-				<li><a href="#">Belföldi utazások</a></li>
-				<li><a href="#">Síelés</a></li>
-				<li><a href="#">Akciós utak</a></li>
-				<li><a href="#">Egzotikus utak</a></li>
-				<li><a href="#">Körutazások</a></li>
-				<li><a href="#">Sportutak</a></li>
+				<li id="lastminute" class="active"><a href="#">Last minute</a></li>
+				<li id="abroad"><a href="#">Külföldi utazások</a></li>
+				<li id="sale"><a href="#">Akciós utak</a></li>
+				<li id="ski"><a href="#">Síelés</a></li>
+				<li id="boat"><a href="#">Hajóutak</a></li>
 			</ul>
 			<ul id="secondary-nav">
+				<li><a href="#">Egzotikus utak</a></li>
+				<li><a href="#">Belföldi utazások</a></li>
 				<li><a href="#">Nászutak</a></li>
-				<li><a href="#">Hajóutak</a></li>
+				<li><a href="#">Körutazások</a></li>
 				<li><a href="#">Városlátogatások</a></li>
+				<li><a href="#">Sportutak</a></li>
 				<span> | </span>
 				<li><a href="#">Kapcsolat</a></li>
-				<li><a href="#">Rólunk</a></li>
-				<li><a href="#">Utasbiztosítás</a></li>
-				<li><a href="#">Sportirodánk</a></li>
+				<li><a href="#">Biztosítás</a></li>
+				<!--<li><a href="#">Sportirodánk</a></li>-->
 			</ul>
 			<a class="animated bounceIn" href="#" id="search-button">Útkereső</a>
 		</div>
@@ -52,11 +59,11 @@
 				<div id="precise-row" class="row">
 					<div class="group">
 						<label for="arrival">Érkezés</label>
-						<input type="date" name="arrival" id="arrival" class="datepicker" value="2012-05-14">
+						<input type="date" name="arrival" id="arrival" class="datepicker" value="">
 					</div>
 					<div class="group">
 						<label for="departure">Távozás</label>
-						<input type="date" name="departure" id="departure" class="datepicker" value="2012-05-21">
+						<input type="date" name="departure" id="departure" class="datepicker" value="">
 						<div class="left">(<span id="between">6</span> éjszaka)</div>
 					</div>
 					<div class="group">
@@ -121,13 +128,13 @@
 						<div class="group">
 							<label for="max-price">Maximális ár/fő</label>
 							<input id="max-price" type ="range" min ="50000" max="500000" step ="20000" value ="120000" data-textbox="max-price-text"/>
-							<input type="text" name="max-price-text" id="max-price-text" value="120 000">Ft
+							<input type="text" name="max-price-text" id="max-price-text" value="120 000"> <span class="left">Ft</span>
 						</div>
 					</div>
 				</fieldset>
 				<fieldset id="submit-set">
 					<div class="row">
-						<input type="submit" value="Keresés"> (~ <span id="estimate">1 000 000</span> út felel meg)
+						<input type="submit" value="Keresés"> ( ~ <span id="estimate">1 000 000</span> út felel meg )
 					</div>
 				</fieldset>
 		</form>
@@ -147,7 +154,7 @@
 </section>
 
 <%= yield %>
-
+</div>
 <footer>
 	<div id="footer-inner">
 		<div class="three">

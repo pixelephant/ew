@@ -26,8 +26,62 @@ body{
 	@include font-pt;
 }
 
+#wrap {min-height: 100%;}
+
+#content {overflow:auto;
+	padding-bottom: 410px;}
+
+footer{
+	position: relative;
+	margin-top: -372px; 
+	height: 372px;
+	clear:both;
+}
+
+label,p,span,h1,h2,h3,h4,legend{
+	-webkit-transform-style: preserve-3d;
+}
+
 a:visited{
 	color:darken($blue,30%);
+}
+
+input[type="text"],input[type="date"],input[type="email"],input[type="search"]{
+	color:#58595B;
+	@include font-pt;
+	@include border-radius(3px,3px,3px,3px);
+	border:1px solid #7D579A;
+	height:20px;
+	padding:2px;
+	
+	background: #bcbec0; /* Old browsers */
+	background: -moz-linear-gradient(top, #bcbec0 0%, #ffffff 20); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#bcbec0), color-stop(20%,#ffffff)); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top, #bcbec0 0%,#ffffff 20); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top, #bcbec0 0%,#ffffff 20); /* Opera 11.10+ */
+	background: -ms-linear-gradient(top, #bcbec0 0%,#ffffff 20); /* IE10+ */
+	background: linear-gradient(top, #bcbec0 0%,#ffffff 20); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#bcbec0', endColorstr='#ffffff',GradientType=0 ); /* IE6-9 */
+
+	&.datepicker{
+	padding-right:10px;	
+	background: #bcbec0; /* Old browsers */
+	background: url(icons/icons_calendar.png) no-repeat center right, -moz-linear-gradient(top, #bcbec0 0%, #ffffff 20); /* FF3.6+ */
+	background: url(icons/icons_calendar.png) no-repeat center right, -webkit-gradient(linear, left top, left bottom, color-stop(0%,#bcbec0), color-stop(20%,#ffffff)); /* Chrome,Safari4+ */
+	background: url(icons/icons_calendar.png) no-repeat center right, -webkit-linear-gradient(top, #bcbec0 0%,#ffffff 20); /* Chrome10+,Safari5.1+ */
+	background: url(icons/icons_calendar.png) no-repeat center right, -o-linear-gradient(top, #bcbec0 0%,#ffffff 20); /* Opera 11.10+ */
+	background: url(icons/icons_calendar.png) no-repeat center right, -ms-linear-gradient(top, #bcbec0 0%,#ffffff 20); /* IE10+ */
+	background: url(icons/icons_calendar.png) no-repeat center right,linear-gradient(top, #bcbec0 0%,#ffffff 20); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#bcbec0', endColorstr='#ffffff',GradientType=0 ); /* IE6-9 */
+	}
+}
+
+textarea{
+	color:#58595B;
+	@include font-pt;
+	@include border-radius(3px,3px,3px,3px);
+	border:1px solid #7D579A;
+	width:100%;
 }
 
 #header{
@@ -50,11 +104,12 @@ a:visited{
 		display: block;
 		overflow: hidden;
 		width:870px;
-		li{
+		&#secondary-nav li{
+			-webkit-transform-style: preserve-3d;
 			text-align:center;
 			display:block;
 			float:left;
-			margin:0 5px;
+			margin:0 2px;
 			&.active{
 				a{
 					@include border-radius(20px,20px,20px,20px);
@@ -87,9 +142,58 @@ a:visited{
 		span{
 			color:white;
 			display:block;
-			float:left;	
+			float:left;
+			-webkit-transform-style: preserve-3d;	
 		}
+
+		&#primary-nav li{
+			-webkit-transform-style: preserve-3d;
+			font-size:18px;
+			float:left;
+			padding-left:45px;
+			margin-right:40px;
+			
+			&:hover,&:focus,&.active{
+				a{
+					color:rgba(255,255,255,1)	
+				}
+			}
+			&:active{
+				position:relative;
+				top:1px;
+			}
+			a{
+				-webkit-transform-style: preserve-3d;
+				@include t-shadow;
+				@include t-04;
+				color:rgba(255,255,255,0.8);
+				position:relative;
+				top:2px;
+				text-decoration:none;
+			}
+		}
+
 	}
+}
+
+#lastminute{
+	background:url(icons/icons_lastminute.png) no-repeat left center;
+}
+
+#abroad{
+	background:url(icons/icons_kulfold.png) no-repeat left center;	
+}
+
+#sale{
+	background:url(icons/icons_akcio.png) no-repeat left center;
+}
+
+#ski{
+	background:url(icons/icons_sieles.png) no-repeat left center;
+}
+
+#boat{
+	background:url(icons/icons_hajo.png) no-repeat left center;
 }
 
 #ul-wrap{
@@ -116,7 +220,7 @@ a:visited{
 
 #secondary-nav{
 	border-top:1px solid #5a6592;
-	font-size:12px;
+	font-size:14px;
 	float:left;
 }
 
@@ -168,7 +272,9 @@ a:visited{
 			color:white;
 			float:left;
 			margin-right:10px;
-			font-size:14px;
+			font-size:16px;
+			height:24px;
+			line-height:24px;
 		}
 		input[type="text"],input[type="date"],input[type="range"],select{
 			float:left;
@@ -185,7 +291,10 @@ a:visited{
 		.left{
 			float:left;
 			color:white;
-			font-size:12px;
+			font-size:14px;
+			height:24px;
+			line-height:24px;
+			margin-left:5px;
 		}
 		.row{
 			overflow:hidden;
@@ -196,9 +305,15 @@ a:visited{
 		}
 	}
 
+
+
 #submit-set{
 	padding-top:0;
 }	
+
+#max-price{
+	margin-top:5px;
+}
 
 #max-price-text{
 	width:65px;
@@ -215,11 +330,13 @@ a:visited{
 	input[type="submit"]{
 		@include small-blue;
 		margin-right:10px;
+		font-size:18px;
 	}
 }
 
 #estimate{
 	font-size:14px;
+	font-weight:bold;
 }
 
 #simple-search{
@@ -231,6 +348,7 @@ a:visited{
 	input[type="submit"]{
 		@include small-red;
 		margin-top:20px;
+		font-size:18px;
 	}
 	fieldset,.row{
 		padding-left:0;
@@ -272,8 +390,8 @@ a:visited{
 
 
 footer{	
+	height:370px;
 	border-top:2px solid $blue;
-	margin-top:40px;
 	width:100%;
 	box-shadow: 1px 12px 30px 15px rgba(221,221,221,1);
 	-webkit-box-shadow: 1px 12px 30px 15px rgba(221,221,221,1);
