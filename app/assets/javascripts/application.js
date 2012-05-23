@@ -99,7 +99,7 @@ $(document).ready(function(){
       }
     });
 
-  var dates1 = $( "#filter-arrival, #filter-departure" ).datepicker({
+  var dates1 = $( "#filters_arrival, #filters_departure" ).datepicker({
       changeMonth: true,
       changeYear: true,
       showButtonPanel: true,
@@ -107,11 +107,11 @@ $(document).ready(function(){
       dateFormat : "yy-mm-dd",
       defaultDate: "+1w",
       onSelect: function( selectedDate ) {
-        var d1=new Date($("#filter-arrival").val());
-        var d2=new Date($('#filter-departure').val());
+        var d1=new Date($("#filters_arrival").val());
+        var d2=new Date($('#filters_departure').val());
         $('#filter-between').html((Math.abs((d2-d1)/86400000))-1);
 
-        var option = this.id == "filter-arrival" ? "minDate" : "maxDate",
+        var option = this.id == "filters_arrival" ? "minDate" : "maxDate",
           instance = $( this ).data( "datepicker" ),
           date = $.datepicker.parseDate(
             instance.settings.dateFormat ||

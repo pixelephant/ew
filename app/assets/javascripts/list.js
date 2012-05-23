@@ -5,7 +5,7 @@ $(document).ready(function(){
 $('#page-header').anystretch("assets/headers/europe.jpg", {speed: 1000, positionY: "center"});
 
 
-$("#filter-no-date").change(function(){
+$("#filters_no-date").change(function(){
       var checked = $(this).is(":checked");
       if(checked){
         $("#filter-precise-row").slideUp("300",function(){
@@ -21,8 +21,7 @@ $("#filter-no-date").change(function(){
 
 $(".only").change(function(){
   var checked = $(this).is(":checked");
-  var boxes = $(this).parent().parent ().next().find("input[type='checkbox']");
-
+  var boxes = $(this).parent().parent().find("input[type='checkbox']");
   if(checked){
     boxes.removeAttr("disabled");
   }
@@ -30,7 +29,7 @@ $(".only").change(function(){
 
 $(".all").change(function(){
   var checked = $(this).is(":checked");
-  var boxes = $(this).parent().parent().next().next().find("input[type='checkbox']");
+  var boxes = $(this).parent().parent().find("input[type='checkbox']");
   if(checked){
     boxes.attr("disabled","disabled");
     boxes.attr("checked","checked");
@@ -50,12 +49,40 @@ $("#totop").click(function(){
    return false;
 });
 
-$("#more-countries").toggle(function(){
-  $(this).find("span").html("&#9650;");
-  $("#other-countries").slideDown();
-},function(){
-  $(this).find("span").html("&#9660;");
-  $("#other-countries").slideUp();
-})
+$("#filters_country").change(function(){
+  $.ajax({
+    type: 'POST',
+    url: "/ajax/get_region",
+    data: {id : $(this).val()},
+    success: function(resp){
+      if(resp.error == 'none'){
+        options = '<option value="0">-- Mindegy --</option>';
+        $.each(resp.data, function(){
+          options += '<option value="' + this.id + '">' + this.name + '</option>';
+        });
+        $("#filters_region").html(options);
+      }
+  }});
+  return false;
+});
+
+
+$("#filters_region").change(function(){
+  $.ajax({
+    type: 'POST',
+    url: "/ajax/get_city",
+    data: {id : $(this).val()},
+    success: function(resp){
+      if(resp.error == 'none'){
+        options = '<option value="0">-- Mindegy --</option>';
+        $.each(resp.data, function(){
+          options += '<option value="' + this.id + '">' + this.name + '</option>';
+        });
+        $("#filters_city").html(options);
+      }
+  }});
+  return false;
+});
+
 
 });
