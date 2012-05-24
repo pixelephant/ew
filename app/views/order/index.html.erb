@@ -4,7 +4,7 @@
 <form id="order-form">
 <div class="row"><h3>Német álomutazás</h3> <span class="dates">2012-02-11 - 2012-02-15</span> <span class="price">119 000 Ft</span></div>
 
-<fieldset>
+<fieldset class="left">
 <div class="r">
 	<label for="name">Név</label>
 	<input type="text" id="name" name="name" />
@@ -14,22 +14,22 @@
 	<input type="email"  id="email" name="email" />
 </div>
 <div class="r">
-	<label for="prefix">Telefonszám</label>
-	+36 - <input id="prefix" name="prefix" type="text" /> - <input type="text" name="number" id="number" />
+	<label for="com">Megjegyzés</label>
+	<textarea name="com" id="com" cols="30" rows="5"></textarea>
 </div>
-<div class="r">
-	<label for="head">Fő</label>
-	<input type="number" min=1 id="head" name="head" value="2">
-</div>
-
 </fieldset>
 
-<fieldset>
+<fieldset class="right">
 	<div class="r">
-		<label for="com">Megjegyzés</label>
-		<textarea name="com" id="com" cols="30" rows="5"></textarea>
+		<label for="prefix">Telefonszám</label>
+		+36 - <input id="prefix" name="prefix" type="text" /> - <input type="text" name="number" id="number" />
+	</div>
+	<div class="r">
+		<label for="head">Fő</label>
+		<input type="number" min=1 id="head" name="head" value="2">
 	</div>
 </fieldset>
+
 
 <input type="submit" value="Foglalás &raquo;">
 
