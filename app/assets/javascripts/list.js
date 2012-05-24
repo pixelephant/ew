@@ -5,7 +5,7 @@ $(document).ready(function(){
 $('#page-header').anystretch("assets/headers/europe.jpg", {speed: 1000, positionY: "center"});
 
 
-$("#filters_no-date").change(function(){
+$("#filters_no_date").change(function(){
       var checked = $(this).is(":checked");
       if(checked){
         $("#filter-precise-row").slideUp("300",function(){
@@ -57,6 +57,7 @@ $("#filters_country").change(function(){
     success: function(resp){
       if(resp.error == 'none'){
         options = '<option value="0">-- Mindegy --</option>';
+        $("#filters_city").html(options);
         $.each(resp.data, function(){
           options += '<option value="' + this.id + '">' + this.name + '</option>';
         });
@@ -65,7 +66,6 @@ $("#filters_country").change(function(){
   }});
   return false;
 });
-
 
 $("#filters_region").change(function(){
   $.ajax({
@@ -83,6 +83,5 @@ $("#filters_region").change(function(){
   }});
   return false;
 });
-
 
 });

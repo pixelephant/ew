@@ -22,8 +22,8 @@
 			<%= f.select "imprecise", (grouped_options_for_select([['Hónapok', monthsForSelect],['Időszakok', periodsForSelect]]) + options_for_select([['Nem tudom', 0]])) %>
 		</div>
 		<div>
-			<%= f.label "no-date", "Nincs pontos dátumom" %>
-			<%= f.check_box "no-date" %>
+			<%= f.label "no_date", "Nincs pontos dátumom" %>
+			<%= f.check_box "no_date" %>
 		</div>
 	</fieldset>
 	<fieldset>
@@ -44,11 +44,11 @@
 		<div>
 			<!-- Ajaxosan -->
 			<label for="filters_region">Régió</label>
-			<select name="filters_region" id="filters_region">
+			<select name="filters[region]" id="filters_region">
 				<option value="0">-- Mindegy --</option>
 			</select>
 			<label for="filters_city">Város</label>
-			<select name="filters_city" id="filters_city">
+			<select name="filters[city]" id="filters_city">
 				<option value="0">-- Mindegy --</option>
 			</select>
 			<!-- Ajaxosan -->
