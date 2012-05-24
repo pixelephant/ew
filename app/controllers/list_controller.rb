@@ -2,7 +2,9 @@ class ListController < ApplicationController
 	layout "application"
 
 	def index
-		order_by = 'created_at'
+
+		@program_types = ProgramType.all
+		order_by = 'travel_offers.created_at'
 
 		params[:ord] == 'csokkeno' ? ord = 'desc' : ord = 'asc'
 
