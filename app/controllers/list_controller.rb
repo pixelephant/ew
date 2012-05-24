@@ -5,6 +5,9 @@ class ListController < ApplicationController
 
 		@filt = params[:filters]
 		@program_types = ProgramType.all
+		@regions = Region.where(:country_id => @filt[:country]) unless @filt[:country].blank?
+		@cities = City.where(:region_id => @filt[:region]) unless @filt[:region].blank?
+
 		order_by = 'travel_offers.created_at'
 
 		params[:ord] == 'csokkeno' ? ord = 'desc' : ord = 'asc'

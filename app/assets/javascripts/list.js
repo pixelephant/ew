@@ -57,10 +57,16 @@ $("#filters_country").change(function(){
     success: function(resp){
       if(resp.error == 'none'){
         options = '<option value="0">-- Mindegy --</option>';
-        $.each(resp.data, function(){
+        $.each(resp.region, function(){
           options += '<option value="' + this.id + '">' + this.name + '</option>';
         });
         $("#filters_region").html(options);
+
+        options = '<option value="0">-- Mindegy --</option>';
+        $.each(resp.city, function(){
+          options += '<option value="' + this.id + '">' + this.name + '</option>';
+        });
+        $("#filters_city").html(options);
       }
   }});
   return false;
@@ -71,7 +77,7 @@ $("#filters_region").change(function(){
   $.ajax({
     type: 'POST',
     url: "/ajax/get_city",
-    data: {id : $(this).val()},
+    data: {id : $(this).val(), country_id : $("#filters_country").val()},
     success: function(resp){
       if(resp.error == 'none'){
         options = '<option value="0">-- Mindegy --</option>';
