@@ -85,4 +85,14 @@ $("#filters_region").change(function(){
 });
 
 
+$("#more-countries").toggle(function(){
+  $(this).find("span").html("&#9650;");
+  $("#other-countries").slideDown();
+},function(){
+  $(this).find("span").html("&#9660;");
+  $("#other-countries").slideUp();
+})
+
+
+
 });

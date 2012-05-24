@@ -42,7 +42,7 @@ aside{
 }
 
 #filter-form{
-	height:2800px;
+	height:2700px;
 	fieldset{
 		padding:0;
 		padding-top:15px;
@@ -178,6 +178,11 @@ aside{
 	float:right;
 	color:white;
 	text-decoration:none;
+	opacity:0.7;
+	@include t-04;
+	&:hover{
+		opacity:1;
+	}
 }
 
 #other-countries {
@@ -215,6 +220,24 @@ aside{
 		height:140px;
 		border:1px solid $gray;
 		margin-right:20px;
+		position:relative;
+		.ribbon{
+			-webkit-transform-style: preserve-3d;
+			text-align:center;
+			font-size:16px;
+			padding:2px;
+			height:20px;
+			line-height:16px;
+			border:1px solid $red;
+			border-left:0;
+			width:50px;
+			@include font-bree;
+			color:#fff;
+			position:absolute;
+			top:10px;
+			//@include background-gradient(#d33301,#ea5d32);
+			background:#ea5d32;
+		}
 	}
 	.data{
 		float:left;
@@ -236,9 +259,11 @@ aside{
 	.dates{
 		float:right;
 		color:$blue;
-		padding-top:7px;
-		font-size:16px;
+		font-size:18px;
 		font-weight:bold;
+		.nights{
+			font-size:14px;
+		}
 	}
 	
 	p{
@@ -254,11 +279,39 @@ aside{
 }
 
 
+.arrow_box {
+	position: relative;
+	background: #ea5d32;
+	border: 1px solid #B4303D;
+}
+.arrow_box:after, .arrow_box:before {
+	left: 100%;
+	border: solid transparent;
+	content: " ";
+	height: 0;
+	width: 0;
+	position: absolute;
+	pointer-events: none;
+}
+
+.arrow_box:after {
+	border-left-color: #ea5d32;
+	border-width: 12px;
+	top: 50%;
+	margin-top: -12px;
+}
+.arrow_box:before {
+	border-left-color: #B4303D;
+	border-width: 13px;
+	top: 50%;
+	margin-top: -13px;
+}
+
 .price{
 		color:$blue;
 		font-weight:bold;
 		font-style:italic;
-		padding-top:7px;
+		font-size:18px;
 		display:block;
 	}
 
