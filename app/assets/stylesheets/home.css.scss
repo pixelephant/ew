@@ -139,8 +139,12 @@
 
 #popular-destinations a{
 	display:block;
+	float:left;
+	margin:5px;
 	color:$blue;
 	@include font-pt;
+	font-size:18px;
+	font-style:italic;
 }
 
 #special-offers{

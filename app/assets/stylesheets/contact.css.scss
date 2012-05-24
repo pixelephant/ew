@@ -1,0 +1,25 @@
+@import "_mixins.css.scss";
+
+
+
+h2{
+	color:$orange;
+}
+
+h3{
+	color:$purple;
+}
+
+img#store{
+	background:white;
+	padding:10px;
+	float:right;
+		box-shadow: 3px 3px 11px 1px rgba(0,0,0,0.5);
+	-webkit-box-shadow: 3px 3px 11px 1px rgba(0,0,0,0.5);
+	-moz-box-shadow: 3px 3px 11px 1px rgba(0,0,0,0.5);
+	margin-right:10px;
+}
+
+div#contact-data{
+	float:left;
+}

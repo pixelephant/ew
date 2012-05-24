@@ -4,6 +4,14 @@ h2{
 	color:$orange;
 }
 
+fieldset.left{
+	float:left;
+}
+
+fieldset.right{
+	float:right;
+}
+
 #order-form,#personalized-form{
 	float:left;
 	width:610px;
@@ -97,6 +105,14 @@ h2{
 #comment{
 		width:330px;
 		float:left;
+		.sidebox{
+			height:190px;
+		}
+}
+
+#services{
+		height:220px !important;
+		margin-top:40px;
 }
 
 .sidebox{

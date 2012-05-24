@@ -57,7 +57,6 @@ $("#filters_country").change(function(){
     success: function(resp){
       if(resp.error == 'none'){
         options = '<option value="0">-- Mindegy --</option>';
-        $("#filters_city").html(options);
         $.each(resp.data, function(){
           options += '<option value="' + this.id + '">' + this.name + '</option>';
         });
@@ -66,6 +65,7 @@ $("#filters_country").change(function(){
   }});
   return false;
 });
+
 
 $("#filters_region").change(function(){
   $.ajax({
@@ -83,5 +83,6 @@ $("#filters_region").change(function(){
   }});
   return false;
 });
+
 
 });
