@@ -1,5 +1,7 @@
 class AjaxController < ApplicationController
 
+	include Rack::Utils
+
 	def get_region
 		id = params[:id]
 		r = Region.where(:country_id => id)
@@ -21,6 +23,21 @@ class AjaxController < ApplicationController
 		else
 			c = City.where(:country_id => country_id)
 		end
+
+		respond_to do |format|
+			format.json {
+				render :json => {:error => "none", :data => c.as_json}
+			}
+		end
+	end
+
+	def search_estimate
+		
+		data = parse_nested_query(params[:data])
+		form_vals = data["search"]
+		c = form_vals["country"]
+
+
 
 		respond_to do |format|
 			format.json {

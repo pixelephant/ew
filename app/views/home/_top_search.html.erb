@@ -1,0 +1,71 @@
+<%= form_for 'search', :html => {:id => 'advanced-search'} do |f| %>
+	<h2>Összetett keresés</h2>
+	<fieldset>
+		<legend>Utazás időpontja</legend>
+		<div id="precise-row" class="row">
+			<div class="group">
+				<%= f.label "arrival", "Érkezés" %>
+				<%= f.text_field "arrival", :class => "datepicker", :type => "date", :value => (@filt[:arrival] if @filt) %>
+			</div>
+			<div class="group">
+				<%= f.label "departure", "Távozás" %>
+				<%= f.text_field "departure", :class => "datepicker", :type => "date", :value => (@filt[:departure] if @filt) %>
+				<span class="left">(<span id="search_between">-</span> éjszaka)</span>
+			</div>
+			<div class="group">
+				<%= f.label "flexibility", "Rugalmasság" %>
+				<%= f.select "flexibility", options_for_select([['+/- 1 nap', 1], ['+/- 3 nap', 3],['+/- 1 hét', 7],['Nincs', 0]], (@filt[:flexibility] if @filt)) %>
+			</div>
+		</div>
+		<div id="imprecise-row" class="row">
+			<div class="group">
+				<%= f.label "imprecise", "Körülbelül mikor utaznék" %>
+				<%= f.select "imprecise", (grouped_options_for_select([['Hónapok', monthsForSelect],['Időszakok', periodsForSelect]], (@filt[:imprecise] if @filt)) + options_for_select([['Nem tudom', 0]], (@filt[:imprecise] if @filt))) %>
+			</div>
+		</div>
+		<div class="row">
+			<div class="group">
+				<%= f.label "no_date", "Nincs pontos dátumom" %>
+				<%= f.check_box "no_date", { :checked => @no_date_checked} %>
+			</div>
+		</div>
+	</fieldset>
+	<fieldset>
+			<legend>Úticél</legend>
+			<div class="row">
+				<div class="group">
+					<%= f.label "country", "Ország" %>
+					<%= f.select "country", [['-- Mindegy --', 0]] + Country.all.collect {|p| [ p.name, p.id ] }, {:selected => (@filt[:country] if @filt)} %>
+				</div>
+				<div class="group">
+					<label for="search_region">Régió</label>
+					<select name="search[region]" id="search_region">
+						<option value="0">-- Mindegy --</option>
+						<%= options_for_select @regions.collect {|p| [p.name, p.id]}, {:selected => (@filt[:region] if @filt)} %>
+					</select>
+				</div>
+				<div class="group">
+					<label for="search_city">Város</label>
+					<select name="search[city]" id="search_city">
+						<option value="0">-- Mindegy --</option>
+						<%= options_for_select @cities.collect {|p| [p.name, p.id]}, {:selected => (@filt[:city] if @filt)} %>
+					</select>
+				</div>
+			</div>
+	</fieldset>
+	<fieldset>
+		<legend>Utazás ára/fő</legend>
+		<div class="row">
+			<div class="group">
+				<%= f.label "max_price", "Maximális ár/fő" %>
+				<input id="max-price" type ="range" min ="50000" max="500000" step ="20000" value ="120000" data-textbox="max-price-text"/>
+				<%= f.text_field "max_price_text", :type => "text" %> <span class="left">Ft</span>
+			</div>
+		</div>
+	</fieldset>
+	<fieldset id="submit-set">
+		<div class="row">
+			<%= f.submit "Keresés" %> ( ~ <span id="estimate">1 000 000</span> út felel meg )
+		</div>
+	</fieldset>
+<% end %>
