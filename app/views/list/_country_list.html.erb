@@ -1,39 +1,40 @@
 <div id="country-selector" class="selector">
-				<h3>Országok</h3>
-				<a href="#" class="country active">Összes <span class="count"><%= @travelofferscount %></span></a>
-				<% @p_countries.each do |country| %>
-					<a href="#" class="country active"><%= country.name %> <span class="count"><%= country.travel_offers_count %></span></a>
-				<% end %>
-			</div>
-			<div id="other-countries" class="selector">
-				<div>
-					<h3>Európa</h3>
-				<% @countries_europe.each do |country| %>
-					<a href="#" class="country active"><%= country.name %> <span class="count"><%= country.travel_offers_count %></span></a>
-				<% end %>
-				</div>
-				<div>
-					<h3>Észak-Amerika</h3>
-				<% @countries_namerica.each do |country| %>
-					<a href="#" class="country active"><%= country.name %> <span class="count"><%= country.travel_offers_count %></span></a>
-				<% end %>
-				</div>
-				<div>
-					<h3>Dél-Amerika</h3>
-				<% @countries_samerica.each do |country| %>
-					<a href="#" class="country active"><%= country.name %> <span class="count"><%= country.travel_offers_count %></span></a>
-				<% end %>
-				</div>
-				<div>
-					<h3>Ázsia</h3>
-				<% @countries_asia.each do |country| %>
-					<a href="#" class="country active"><%= country.name %> <span class="count"><%= country.travel_offers_count %></span></a>
-				<% end %>
-				</div>
-				<div>
-					<h3>Ausztrália</h3>
-				<% @countries_australia.each do |country| %>
-					<a href="#" class="country active"><%= country.name %> <span class="count"><%= country.travel_offers_count %></span></a>
-				<% end %>
-				</div>				
-			</div>
+	<h3>Országok</h3>
+	<a href="#" class="country active">Összes <span class="count"><%= @travelofferscount %></span></a>
+	<% @p_countries.each do |country| %>
+		<a href="#" class="country active"><%= country.name %> <span class="count"><%= country.travel_offers_count %></span></a>
+	<% end %>
+	<a href="#" id="more-countries">Továbbiak <span>&#9660;</span></a>
+</div>
+<div id="other-countries" class="selector">
+	<div>
+		<h3>Európa</h3>
+	<% @countries_europe.each do |country| %>
+		<a href="#" class="country active"><%= country.name %> <span class="count"><%= country.travel_offers_count %></span></a>
+	<% end %>
+	</div>
+	<div>
+		<h3>Észak-Amerika</h3>
+	<% @countries_namerica.each do |country| %>
+		<a href="#" class="country active"><%= country.name %> <span class="count"><%= country.travel_offers_count %></span></a>
+	<% end %>
+	</div>
+	<div>
+		<h3>Dél-Amerika</h3>
+	<% @countries_samerica.each do |country| %>
+		<a href="#" class="country active"><%= country.name %> <span class="count"><%= country.travel_offers_count %></span></a>
+	<% end %>
+	</div>
+	<div>
+		<h3>Ázsia</h3>
+	<% @countries_asia.each do |country| %>
+		<a href="#" class="country active"><%= country.name %> <span class="count"><%= country.travel_offers_count %></span></a>
+	<% end %>
+	</div>
+	<div>
+		<h3>Ausztrália</h3>
+	<% @countries_australia.each do |country| %>
+		<a href="#" class="country active"><%= country.name %> <span class="count"><%= country.travel_offers_count %></span></a>
+	<% end %>
+	</div>				
+</div>
