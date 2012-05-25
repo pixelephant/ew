@@ -23,17 +23,16 @@
 		</div>
 		<div>
 			<%= f.label "no_date", "Nincs pontos dátumom" %>
-			<% checked = @filt[:no_date] == 0 ? false : true %>
-			<%= f.check_box "no_date", { :checked => checked} %>
+			<%= f.check_box "no_date", { :checked => @no_date_checked} %>
 		</div>
 	</fieldset>
 	<fieldset>
 		<legend>Utazás max. ára/fő</legend>
 		<div>
-			<%= f.label "price_50000", ("50.000 Ft " + (f.radio_button "price", '50000', {:checked => (@filt[:price] == '50000' ? true : false )})).html_safe %>
-			<%= f.label "price_150000", ("150.000 Ft " + (f.radio_button "price", '150000', {:checked => (@filt[:price] == '150000' ? true : false )})).html_safe %>
-			<%= f.label "price_250000", ("250.000 Ft " + (f.radio_button "price", '250000', {:checked => (@filt[:price] == '250000' ? true : false )})).html_safe %>
-			<%= f.label "price_550000", ("550.000 Ft " + (f.radio_button "price", '550000', {:checked => (@filt[:price] == '550000' ? true : false )})).html_safe %>
+			<%= f.label "price_50000", ("50.000 Ft " + (f.radio_button "price", '50000', {:checked => @price_checked['50000'.to_sym]})).html_safe %>
+			<%= f.label "price_150000", ("150.000 Ft " + (f.radio_button "price", '150000', {:checked => @price_checked['150000'.to_sym]})).html_safe %>
+			<%= f.label "price_250000", ("250.000 Ft " + (f.radio_button "price", '250000', {:checked => @price_checked['250000'.to_sym]})).html_safe %>
+			<%= f.label "price_550000", ("550.000 Ft " + (f.radio_button "price", '550000', {:checked => @price_checked['550000'.to_sym]})).html_safe %>
 		</div>
 	</fieldset>
 	<fieldset>

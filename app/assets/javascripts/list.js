@@ -4,6 +4,13 @@ $(document).ready(function(){
 
 $('#page-header').anystretch("assets/headers/europe.jpg", {speed: 1000, positionY: "center"});
 
+$("#more-countries").toggle(function(){
+ $(this).find("span").html("&#9650;");
+ $("#other-countries").slideDown();
+},function(){
+ $(this).find("span").html("&#9660;");
+ $("#other-countries").slideUp();
+})
 
 $("#filters_no_date").change(function(){
       var checked = $(this).is(":checked");
