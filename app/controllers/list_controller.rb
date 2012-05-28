@@ -69,11 +69,11 @@ class ListController < ApplicationController
 				if @filt[:no_date].to_i == 1
 					@no_date_checked = true
 					im = @filt[:imprecise].to_i
-					if im > 1 && im < 13
-						if Date.today.month.to_i < im
-							d = (Date.today.year.to_i + 1).to_s + "-" + Date.today.month.to_s
+					if im > 0 && im < 13
+						if Date.today.month.to_i > im
+							d = (Date.today.year.to_i + 1).to_s + "-" + im.to_s
 						else
-							d = Date.today.year.to_s + "-" + Date.today.month.to_s
+							d = Date.today.year.to_s + "-" + im.to_s
 						end
 						dstart = d + "-01"
 						dend = d + "-31"
@@ -94,7 +94,7 @@ class ListController < ApplicationController
 				if @filt[:price].to_i > 0
 					price = @filt[:price].to_s
 					@price_checked[price.to_sym] = true
-					c << ("travel_times.price > #{price}")
+					c << ("travel_times.price <= #{price}")
 				end
 			end
 			#Filterek
