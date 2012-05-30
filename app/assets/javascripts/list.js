@@ -4,8 +4,15 @@ $(document).ready(function(){
 
 $('#page-header').anystretch("assets/headers/europe.jpg", {speed: 1000, positionY: "center"});
 
+$("#more-countries").toggle(function(){
+ $(this).find("span").html("&#9650;");
+ $("#other-countries").slideDown();
+},function(){
+ $(this).find("span").html("&#9660;");
+ $("#other-countries").slideUp();
+})
 
-$("#filters_no-date").change(function(){
+$("#filters_no_date").change(function(){
       var checked = $(this).is(":checked");
       if(checked){
         $("#filter-precise-row").slideUp("300",function(){
@@ -48,51 +55,5 @@ $("#totop").click(function(){
    $('html,body').animate({scrollTop: $("#pagi-t").offset().top},'slow');
    return false;
 });
-
-$("#filters_country").change(function(){
-  $.ajax({
-    type: 'POST',
-    url: "/ajax/get_region",
-    data: {id : $(this).val()},
-    success: function(resp){
-      if(resp.error == 'none'){
-        options = '<option value="0">-- Mindegy --</option>';
-        $.each(resp.data, function(){
-          options += '<option value="' + this.id + '">' + this.name + '</option>';
-        });
-        $("#filters_region").html(options);
-      }
-  }});
-  return false;
-});
-
-
-$("#filters_region").change(function(){
-  $.ajax({
-    type: 'POST',
-    url: "/ajax/get_city",
-    data: {id : $(this).val()},
-    success: function(resp){
-      if(resp.error == 'none'){
-        options = '<option value="0">-- Mindegy --</option>';
-        $.each(resp.data, function(){
-          options += '<option value="' + this.id + '">' + this.name + '</option>';
-        });
-        $("#filters_city").html(options);
-      }
-  }});
-  return false;
-});
-
-
-$("#more-countries").toggle(function(){
-  $(this).find("span").html("&#9650;");
-  $("#other-countries").slideDown();
-},function(){
-  $(this).find("span").html("&#9660;");
-  $("#other-countries").slideUp();
-})
-
-
 
 });

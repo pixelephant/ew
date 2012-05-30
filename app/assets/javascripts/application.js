@@ -77,7 +77,7 @@ jQuery(function($){
 $(document).ready(function(){
 
 
-  var dates = $( "#arrival, #departure" ).datepicker({
+  var dates = $( "#search_arrival, #search_departure" ).datepicker({
       changeMonth: true,
       changeYear: true,
       showButtonPanel: true,
@@ -85,11 +85,11 @@ $(document).ready(function(){
       dateFormat : "yy-mm-dd",
       defaultDate: "+1w",
       onSelect: function( selectedDate ) {
-        var d1=new Date($("#arrival").val());
-        var d2=new Date($('#departure').val());
-        $('#between').html((Math.abs((d2-d1)/86400000))-1);
+        var d1=new Date($("#search_arrival").val());
+        var d2=new Date($('#search_departure').val());
+        $('#search_between').html((Math.abs((d2-d1)/86400000))-1);
 
-        var option = this.id == "arrival" ? "minDate" : "maxDate",
+        var option = this.id == "search_arrival" ? "minDate" : "maxDate",
           instance = $( this ).data( "datepicker" ),
           date = $.datepicker.parseDate(
             instance.settings.dateFormat ||
@@ -125,10 +125,10 @@ $(document).ready(function(){
 
   $("#advanced-search :input,advanced-search select").change(function(){
     var formData = $("#advanced-search").serialize();
-    $.post("/search",{
+    $.post("/ajax/search_estimate",{
       data : formData
     },function(resp){
-      $("#estiamte").html(resp);
+      $("#estimate").html(resp.data);
     })
   });
 
@@ -157,7 +157,7 @@ $(document).ready(function(){
 	 	$("#" + id).val(FormatNumberBy3($(this).val(),"."," "));
 	 });
 
-   $("#no-date").change(function(){
+   $("#search_no_date").change(function(){
       var checked = $(this).is(":checked");
       if(checked){
         $("#precise-row").slideUp("300",function(){
@@ -170,5 +170,54 @@ $(document).ready(function(){
         });
       }
    });
+
+  $("#filters_country, #search_country").change(function(){
+    $.ajax({
+      type: 'POST',
+      url: "/ajax/get_region",
+      data: {id : $(this).val()},
+      success: function(resp){
+        if(resp.error == 'none'){
+          options = '<option value="0">-- Mindegy --</option>';
+          $.each(resp.region, function(){
+            options += '<option value="' + this.id + '">' + this.name + '</option>';
+          });
+          $("#filters_region").html(options);
+          $("#search_region").html(options);
+
+          options = '<option value="0">-- Mindegy --</option>';
+          $.each(resp.city, function(){
+            options += '<option value="' + this.id + '">' + this.name + '</option>';
+          });
+          $("#filters_city").html(options);
+          $("#search_city").html(options);
+        }
+    }});
+    return false;
+  });
+
+
+  $("#filters_region, #search_region").change(function(){
+    if(this.id == 'filters_region'){
+      val = $("#filters_country").val();
+    }else{
+      val = $("#search_country").val();
+    }
+    $.ajax({
+      type: 'POST',
+      url: "/ajax/get_city",
+      data: {id : $(this).val(), country_id : val},
+      success: function(resp){
+        if(resp.error == 'none'){
+          options = '<option value="0">-- Mindegy --</option>';
+          $.each(resp.data, function(){
+            options += '<option value="' + this.id + '">' + this.name + '</option>';
+          });
+          $("#filters_city").html(options);
+          $("#search_city").html(options);
+        }
+    }});
+    return false;
+  });
 
 });
