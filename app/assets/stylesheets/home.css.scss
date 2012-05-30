@@ -165,6 +165,13 @@
 .small-wrap{
 	overflow:hidden;
 	float:left;
+	a{
+		text-decoration:none;
+		@include t-04;
+		&:hover,&:focus{
+			@include scale(1.04);
+		}	
+	}
 }
 
 .box{
@@ -185,8 +192,8 @@
 		width:82px;
 		padding:5px;
 		box-shadow: 3px 3px 11px 1px rgba(0,0,0,0.5);
-	-webkit-box-shadow: 3px 3px 11px 1px rgba(0,0,0,0.5);
-	-moz-box-shadow: 3px 3px 11px 1px rgba(0,0,0,0.5);
+		-webkit-box-shadow: 3px 3px 11px 1px rgba(0,0,0,0.5);
+		-moz-box-shadow: 3px 3px 11px 1px rgba(0,0,0,0.5);
 	}
 	&.quarter{
 		width:120px;
