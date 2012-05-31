@@ -24,9 +24,13 @@ body{
 	background: url("noise.jpg") repeat white;
 	color:#5b5b5b;
 	@include font-pt;
+	text-shadow: 0px 0px 1px rgba(128,128,128,0.01); 
 }
 
-#wrap {min-height: 100%;}
+#wrap {
+	min-height: 100%;
+	width:100%;
+}
 
 #content {overflow:auto;
 	padding-bottom: 410px;}
@@ -54,25 +58,25 @@ input[type="text"],input[type="date"],input[type="email"],input[type="search"]{
 	height:20px;
 	padding:2px;
 	
-	background: #bcbec0; /* Old browsers */
+	background: white; /* Old browsers */
 	background: -moz-linear-gradient(top, #bcbec0 0%, #ffffff 20); /* FF3.6+ */
 	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#bcbec0), color-stop(20%,#ffffff)); /* Chrome,Safari4+ */
 	background: -webkit-linear-gradient(top, #bcbec0 0%,#ffffff 20); /* Chrome10+,Safari5.1+ */
 	background: -o-linear-gradient(top, #bcbec0 0%,#ffffff 20); /* Opera 11.10+ */
 	background: -ms-linear-gradient(top, #bcbec0 0%,#ffffff 20); /* IE10+ */
 	background: linear-gradient(top, #bcbec0 0%,#ffffff 20); /* W3C */
-	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#bcbec0', endColorstr='#ffffff',GradientType=0 ); /* IE6-9 */
+	//filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#bcbec0', endColorstr='#ffffff',GradientType=0 ); /* IE6-9 */
 
 	&.datepicker{
 	padding-right:10px;	
-	background: #bcbec0; /* Old browsers */
+	background: url(icons/icons_calendar.png) no-repeat center right white; /* Old browsers */
 	background: url(icons/icons_calendar.png) no-repeat center right, -moz-linear-gradient(top, #bcbec0 0%, #ffffff 20); /* FF3.6+ */
 	background: url(icons/icons_calendar.png) no-repeat center right, -webkit-gradient(linear, left top, left bottom, color-stop(0%,#bcbec0), color-stop(20%,#ffffff)); /* Chrome,Safari4+ */
 	background: url(icons/icons_calendar.png) no-repeat center right, -webkit-linear-gradient(top, #bcbec0 0%,#ffffff 20); /* Chrome10+,Safari5.1+ */
 	background: url(icons/icons_calendar.png) no-repeat center right, -o-linear-gradient(top, #bcbec0 0%,#ffffff 20); /* Opera 11.10+ */
 	background: url(icons/icons_calendar.png) no-repeat center right, -ms-linear-gradient(top, #bcbec0 0%,#ffffff 20); /* IE10+ */
 	background: url(icons/icons_calendar.png) no-repeat center right,linear-gradient(top, #bcbec0 0%,#ffffff 20); /* W3C */
-	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#bcbec0', endColorstr='#ffffff',GradientType=0 ); /* IE6-9 */
+	//filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#bcbec0', endColorstr='#ffffff',GradientType=0 ); /* IE6-9 */
 	}
 }
 
@@ -166,6 +170,7 @@ textarea{
 				-webkit-transform-style: preserve-3d;
 				@include t-shadow;
 				@include t-04;
+				color:white;
 				color:rgba(255,255,255,0.8);
 				position:relative;
 				top:2px;
@@ -243,6 +248,13 @@ textarea{
 	box-shadow:         inset 0px -10px 15px rgba(50, 50, 50, 0.24);
 }
 
+.lt-ie9{
+	#search{
+		position:relative;
+		top:-500px;
+	}
+}
+
 #inner-search{
 		opacity:0;
 		overflow:hidden;
@@ -281,6 +293,7 @@ textarea{
 		}
 		input[type="date"]{
 			width:100px;
+			
 		}
 		.group{
 			float:left;
@@ -304,8 +317,6 @@ textarea{
 			padding:15px 0 25px 15px;
 		}
 	}
-
-
 
 #submit-set{
 	padding-top:0;
@@ -350,6 +361,7 @@ textarea{
 		margin-top:20px;
 		font-size:18px;
 	}
+
 	fieldset,.row{
 		padding-left:0;
 	}
