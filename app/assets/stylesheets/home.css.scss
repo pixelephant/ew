@@ -23,6 +23,7 @@
 		height:380px;
 		position: absolute;
 		top: 0px;
+		left:0;
     	display:none;
     	.price{
     		&.big{
@@ -85,6 +86,7 @@
     		}
     		span{
     			display:block;
+    			clear:both;
     			width:102px;
     			padding-left:5px;
     			color:#7d579A;

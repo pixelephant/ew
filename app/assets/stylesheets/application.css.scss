@@ -15,6 +15,17 @@
 @import "_mixins.css.scss";
 @import "ui-lightness/style.css";
 
+.lt-ie8{
+	a{
+		
+		border:none;
+	}
+
+	#content a{
+		text-decoration:none;
+	}
+}
+
 html,body{
 	width:100%;
 	height:100%;
@@ -159,19 +170,20 @@ textarea{
 			
 			&:hover,&:focus,&.active{
 				a{
-					color:rgba(255,255,255,1)	
+					color:rgba(255,255,255,1) !important;	
 				}
 			}
 			&:active{
 				position:relative;
 				top:1px;
+
 			}
 			a{
 				-webkit-transform-style: preserve-3d;
 				@include t-shadow;
 				@include t-04;
 				color:white;
-				color:rgba(255,255,255,0.8);
+				
 				position:relative;
 				top:2px;
 				text-decoration:none;
@@ -179,6 +191,15 @@ textarea{
 		}
 
 	}
+}
+
+.rgba #primary-nav a{
+color:rgba(255,255,255,0.8) !important;
+
+}
+
+.lt-ie9 #header li.active a{
+	text-decoration:underline !important;
 }
 
 #lastminute{
@@ -280,6 +301,9 @@ textarea{
 			font-weight:bold;
 			font-size:18px;
 		}
+		legend + div{
+			padding-top:15px;
+		}
 		label{
 			color:white;
 			float:left;
@@ -291,7 +315,7 @@ textarea{
 		input[type="text"],input[type="date"],input[type="range"],select{
 			float:left;
 		}
-		input[type="date"]{
+		.datepicker{
 			width:100px;
 			
 		}
@@ -314,7 +338,7 @@ textarea{
 			padding-left:15px;
 		}
 		fieldset{
-			padding:15px 0 25px 15px;
+			padding:0px 0 25px 15px;
 		}
 	}
 
