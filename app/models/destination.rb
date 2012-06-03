@@ -4,4 +4,6 @@ class Destination < ActiveRecord::Base
 	has_one :city
 	has_one :region
 	has_one :country
+
+	attr_accessible :id, :country_id, :region_id, :city_id
 end
