@@ -129,6 +129,12 @@ aside{
 		}
 }
 
+.lt-ie9{
+	a.pill{
+		border:1px solid $gray;
+	}
+}
+
 .selector{
 	-webkit-transform-style: preserve-3d;
 	background:$blue;
@@ -199,7 +205,12 @@ aside{
 .trip{
 	&.alert{
 		text-align:center;
-		background:rgba(244,213,33,0.2);
+		
+  background-color: transparent;
+  background-color: rgba(244, 213, 33, 0.2); 
+            filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#33F4D521,endColorstr=#33F4D521);
+            zoom: 1;
+
 		padding:15px 20px;
 		p{
 			font-size:18px;

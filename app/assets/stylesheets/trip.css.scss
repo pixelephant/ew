@@ -71,6 +71,20 @@
 	}
 }
 
+.lt-ie9{
+	#curr{
+		border:1px solid $gray;
+		width:358px;
+	}
+	.thumb{
+		border:1px solid $gray;
+		width:48px;
+		img{
+			width:48px;
+		}
+	}
+}
+
 .arrow_box {
 	position: relative;
 	background: $blue;
@@ -156,13 +170,13 @@
 		}
 	}
 	thead{
-		text-align:left;
 		@include font-bree;
 		color:$purple;
 		font-size:24px;
 		border-bottom:1px solid $gray;
 		th{
 			padding:15px;
+			text-align:left;
 		}
 	}
 	tbody{
@@ -265,6 +279,16 @@
 	}
 }
 
+.lt-ie9{
+	#sights a{
+		border:1px solid $gray;
+		width:58px;
+	}
+	#sights img{
+		width:48px;
+	}
+}
+
 #tri-wrap{
 	overflow:hidden;
 }
@@ -321,6 +345,21 @@
 	}
 }
 
+
+.lt-ie9{
+	#similar a{
+		border:1px solid $gray;
+		width:198px;
+	}
+	#similar img{
+		
+		width:198px;
+	}
+
+	#similar .ribbon{
+		width:186px;
+	}
+}
 #tablePagination{
 	margin-top:5px;
 	padding:5px;

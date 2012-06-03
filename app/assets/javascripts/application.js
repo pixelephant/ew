@@ -136,7 +136,8 @@ $(document).ready(function(){
 
 	 $("#search-button").toggle(function(){
 	 	$("#search").stop().animate({
-	 		marginTop:0
+	 		top:0,
+      marginTop:0
 	 	},"slow",function(){
 	 		$("#inner-search").animate({
 	 			opacity: 1
@@ -147,15 +148,16 @@ $(document).ready(function(){
 	 		opacity: 0
 	 	},"normal",function(){
 	 		$("#search").animate({
+        top:-searchHeight,
 	 			marginTop:-searchHeight
 	 		},"slow");
 	 	});
 	 });
 
-	 $("input[type='range']").change(function(){
+	 /*$("input[type='range']").change(function(){
 	 	var id = $(this).data("textbox");
 	 	$("#" + id).val(FormatNumberBy3($(this).val(),"."," "));
-	 });
+	 });*/
 
    $("#search_no_date").change(function(){
       var checked = $(this).is(":checked");

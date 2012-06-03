@@ -58,8 +58,10 @@
 		<div class="row">
 			<div class="group">
 				<%= f.label "max_price", "Maximális ár/fő" %>
-				<input id="max-price" type ="range" min ="50000" max="500000" step ="20000" value ="120000" data-textbox="max-price-text"/>
-				<%= f.text_field "max_price_text", :type => "text" %> <span class="left">Ft</span>
+				<!--<%= f.text_field "max_price_text", :type => "text" %> <span class="left">Ft</span>-->
+				<select name="search[max_price]" id="max_price">
+					<option value="50000">50000</option>
+				</select>
 			</div>
 		</div>
 	</fieldset>

@@ -23,6 +23,7 @@
 		height:380px;
 		position: absolute;
 		top: 0px;
+		left:0;
     	display:none;
     	.price{
     		&.big{
@@ -85,6 +86,9 @@
     		}
     		span{
     			display:block;
+    			clear:both;
+    			width:102px;
+    			padding-left:5px;
     			color:#7d579A;
     			font-style:italic;
     			text-align:center;
@@ -166,6 +170,8 @@
 	overflow:hidden;
 	float:left;
 	a{
+		display:block;
+		overflow:hidden;
 		text-decoration:none;
 		@include t-04;
 		&:hover,&:focus{
@@ -257,5 +263,23 @@
 		-webkit-box-shadow: inset 1px 1px 5px 3px rgba(221,221,221,1);
 		-moz-box-shadow: inset 1px 1px 5px 3px rgba(221,221,221,1);
 		position:relative;
+	}
+}
+
+.lt-ie9{
+	.box{
+		border:1px solid $gray;
+		&.small{
+			border:none;
+		}
+		&.quarter{
+			width:118px;
+		}
+		&.half{
+			width:278px;
+		}
+		&.full{
+			width:278px;
+		}
 	}
 }
