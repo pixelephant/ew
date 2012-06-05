@@ -110,7 +110,7 @@
 				end
 
 				traveloffer.css("idopontok idopont").each do |travel_time|
-					tt = t.travel_times.new(
+					tt = TravelTime.new(
 						:id => travel_time.attribute("id").to_s,
 						:from_date => travel_time.attribute("fromdate").to_s,
 						:to_date => travel_time.attribute("todate").to_s,
@@ -178,6 +178,8 @@
 							)
 					end
 
+					tt.save
+					t.travel_times << tt
 				end
 
 				#puts traveloffer.css("gmap").inner_text

@@ -23,7 +23,6 @@ class ListController < ApplicationController
 		@countries_samerica = Destination.find_by_sql("SELECT countries.name, countries.id AS id, count(travel_offers.id) AS travel_offers_count, sum(travel_times.click) AS click FROM `travel_offers` INNER JOIN `destinations_travel_offers` ON `destinations_travel_offers`.`travel_offer_id` = `travel_offers`.`id` INNER JOIN `destinations` ON `destinations`.`id` = `destinations_travel_offers`.`destination_id` INNER JOIN `travel_times` ON `travel_times`.`travel_offer_id` = `travel_offers`.`id` INNER JOIN `countries` ON `countries`.`id` = `destinations`.`country_id` WHERE continent='delamerika' AND countries.id NOT IN (#{top_countries}) GROUP BY destinations.country_id ORDER BY travel_times.click desc")
 		@countries_australia = Destination.find_by_sql("SELECT countries.name, countries.id AS id, count(travel_offers.id) AS travel_offers_count, sum(travel_times.click) AS click FROM `travel_offers` INNER JOIN `destinations_travel_offers` ON `destinations_travel_offers`.`travel_offer_id` = `travel_offers`.`id` INNER JOIN `destinations` ON `destinations`.`id` = `destinations_travel_offers`.`destination_id` INNER JOIN `travel_times` ON `travel_times`.`travel_offer_id` = `travel_offers`.`id` INNER JOIN `countries` ON `countries`.`id` = `destinations`.`country_id` WHERE continent='ausztralia' AND countries.id NOT IN (#{top_countries}) GROUP BY destinations.country_id ORDER BY travel_times.click desc")
 
-
 		unless params[:filters].blank? && params[:sort].blank?
 			@filt = params[:filters]
 			@regions = Region.where(:country_id => @filt[:country]) unless @filt[:country].blank?
@@ -111,5 +110,59 @@ class ListController < ApplicationController
 		@traveloffers = Kaminari.paginate_array(traveloffers_array).page(params[:page])
 		render "index"
 	end
+
+	def naszutak
+		traveloffers_array = TravelOffer.joins(:attributes).where(:attributes => {:id => 19})
+		@traveloffers = Kaminari.paginate_array(traveloffers_array).page(params[:page])
+		render "index"
+	end
+
+	def hajoutak
+		traveloffers_array = TravelOffer.joins(:attributes).where(:attributes => {:id => 19})
+		@traveloffers = Kaminari.paginate_array(traveloffers_array).page(params[:page])
+		render "index"
+	end
+
+	def sieles
+		traveloffers_array = TravelOffer.joins(:program_types).where(:program_types => {:id => [7,19]})
+		@traveloffers = Kaminari.paginate_array(traveloffers_array).page(params[:page])
+		render "index"
+	end
+
+	def egzotikusutak
+		traveloffers_array = TravelOffer.joins(:program_types).where(:program_types => {:id => 5})
+		@traveloffers = Kaminari.paginate_array(traveloffers_array).page(params[:page])
+		render "index"
+	end
+
+	def korutazasok
+		traveloffers_array = TravelOffer.joins(:program_types).where(:program_types => {:id => [6,8]})
+		@traveloffers = Kaminari.paginate_array(traveloffers_array).page(params[:page])
+		render "index"
+	end
+
+	def varoslatogatasok
+		traveloffers_array = TravelOffer.joins(:program_types).where(:program_types => {:id => 2})
+		@traveloffers = Kaminari.paginate_array(traveloffers_array).page(params[:page])
+		render "index"
+	end
+
+	def sportutak
+		traveloffers_array = TravelOffer.joins(:program_types).where(:program_types => {:id => 23})
+		@traveloffers = Kaminari.paginate_array(traveloffers_array).page(params[:page])
+		render "index"
+	end
+
+	def kulfoldiutazasok
+		traveloffers_array = TravelOffer.joins(:destinations).where('destinations.country_id <> 132')
+		@traveloffers = Kaminari.paginate_array(traveloffers_array).page(params[:page])
+		render "index"
+	end
+
+	def belfoldiutazasok
+		traveloffers_array = TravelOffer.joins(:destinations).where(:destinations => {:country_id => 132})
+		@traveloffers = Kaminari.paginate_array(traveloffers_array).page(params[:page])
+		render "index"
+	end	
 
 end

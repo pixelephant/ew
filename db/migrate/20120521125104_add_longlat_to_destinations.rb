@@ -1,8 +1,8 @@
 class AddLonglatToDestinations < ActiveRecord::Migration
   def up
 		change_table :destinations do |t|
-      t.string :lat, :null => false
-      t.string :long, :null => false
+      t.string :lat
+      t.string :long
 		end
   end
 

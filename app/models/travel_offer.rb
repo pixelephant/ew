@@ -10,8 +10,8 @@ class TravelOffer < ActiveRecord::Base
 	has_many :descriptions, :dependent => :destroy
 	has_many :fakultativs, :dependent => :destroy
 	has_many :travel_times, :dependent => :destroy
-	has_many :boards, :dependent => :destroy
-
+	
+	belongs_to :board
 	belongs_to :traffic
 	belongs_to :skiregion
 

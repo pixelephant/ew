@@ -12,6 +12,16 @@ Ewutazas::Application.routes.draw do
   match 'ajax/get_city' => 'ajax#get_city', :method => 'POST'
   match 'ajax/search_estimate' => 'ajax#search_estimate', :method => 'POST'
 
+  match 'naszutak' => 'list#naszutak'
+  match 'hajoutak' => 'list#hajoutak'
+  match 'sieles' => 'list#sieles'
+  match 'egzotikusutak' => 'list#egzotikus'
+  match 'korutazasok' => 'list#korutazasok'
+  match 'varoslatogatasok' => 'list#varoslatogatasok'
+  match 'sportutak' => 'list#sportutak'
+  match 'kulfoldiutazasok' => 'list#kulfoldiutazasok'
+  match 'belfoldiutazasok' => 'list#belfoldiutazasok'
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
