@@ -239,10 +239,12 @@ namespace :setup do
   end
 
   task :all => :environment do
+  	time = Time.now
   	Rake::Task['setup:torzsadat'].invoke()
   	Rake::Task['setup:destinations'].invoke()
   	Rake::Task['setup:partners'].invoke()
   	Rake::Task['setup:skiregions'].invoke()
+  	puts ((Time.now - time) / 60).to_s
   end
 
 end

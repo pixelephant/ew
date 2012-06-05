@@ -109,7 +109,8 @@
 				 	t.fakultativs.new(:title => fakultativ.css("cim").inner_text, :description => fakultativ.css("leiras").inner_text, :length => fakultativ.attribute("idotartam").to_s, :price => fakultativ.attribute("ar").to_s)
 				end
 
-				traveloffer.css("idopontok idopont").each do |travel_time|
+				traveloffer.css("prices idopont").each do |travel_time|
+					puts "TravelTime id: " + travel_time.attribute("id").to_s
 					tt = TravelTime.new(
 						:id => travel_time.attribute("id").to_s,
 						:from_date => travel_time.attribute("fromdate").to_s,
@@ -178,7 +179,7 @@
 							)
 					end
 
-					tt.save
+					# tt.save
 					t.travel_times << tt
 				end
 
@@ -223,7 +224,7 @@
     # get file
 		puts "Processing file"
 		
-		doc = Nokogiri::XML(File.open("public/xmlallgen_megszunt.xml"))
+		doc = Nokogiri::XML(File.open("public/xmlallgen_valtozott.xml"))
 
 		doc.css("traveloffers traveloffer").each_with_index do |traveloffer, i|
 			id = traveloffer.attribute("id").to_s
