@@ -65,10 +65,10 @@
 
 					city = 0 if city.blank?
 
-					d = Destination.where(:country_id => country, :region_id => region, :city_id => city).limit(1).first
+					d = Destination.where(:country_id => country, :region_id => region, :city_id => city).first
 					if d.nil?
 						d = Destination.new(:country_id => country, :region_id => region, :city_id => city).save!
-						d = Destination.where(:country_id => country, :region_id => region, :city_id => city).limit(1).first
+						d = Destination.where(:country_id => country, :region_id => region, :city_id => city).first
 					end
 
 					(t.destinations << d) unless d.blank?
@@ -152,11 +152,11 @@
 					end
 
 					travel_time.css("inprice").each do |inprice|
-						tt.inprices << Inprice.find(inprice.inner_text).limit(1)
+						tt.inprices << Inprice.find(inprice.inner_text)
 					end
 
 					travel_time.css("outprice").each do |outprice|
-						tt.outprices << Outprice.find(outprice.inner_text).limit(1)
+						tt.outprices << Outprice.find(outprice.inner_text)
 					end
 
 					travel_time.css("elofoglalas").each do |prebooking|
