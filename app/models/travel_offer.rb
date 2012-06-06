@@ -29,7 +29,12 @@ class TravelOffer < ActiveRecord::Base
 	end
 
 	def min_price
-		TravelTime.where("travel_offer_id = #{self.id} AND DATE(from_date) > DATE(NOW())").order("price ASC").first.price
+		t = TravelTime.where("travel_offer_id = #{self.id} AND DATE(from_date) > DATE(NOW())").order("price ASC").first
+		t.nil? ? 0 : t.price
+	end
+
+	def similar_offers
+		TravelOffer.joins(:travel_times).where(["board_id = ? AND traffic_id = ? AND category_standard = ? AND travel_offers.id <> ? AND DATE(from_date) > DATE(NOW())", self.board_id, self.traffic_id, self.category_standard, self.id ]).group('travel_offers.id').limit(4)
 	end
 
 	def name_and_id

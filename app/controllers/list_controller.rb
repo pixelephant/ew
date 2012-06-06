@@ -1,3 +1,4 @@
+# encoding: UTF-8
 class ListController < ApplicationController
 	layout "application"
 
@@ -86,6 +87,7 @@ class ListController < ApplicationController
 	def naszutak
 		traveloffers_array = TravelOffer.joins(:attributes).where(:attributes => {:id => 19})
 		@traveloffers = Kaminari.paginate_array(traveloffers_array).page(params[:page])
+		@h = "Nászutak"
 		
 		render "index"
 	end
@@ -93,6 +95,7 @@ class ListController < ApplicationController
 	def hajoutak
 		traveloffers_array = TravelOffer.joins(:attributes).where(:attributes => {:id => 19})
 		@traveloffers = Kaminari.paginate_array(traveloffers_array).page(params[:page])
+		@h2 = "Hajóutak"
 		
 		render "index"
 	end
@@ -100,6 +103,7 @@ class ListController < ApplicationController
 	def sieles
 		traveloffers_array = TravelOffer.joins(:program_types).where(:program_types => {:id => [7,19]})
 		@traveloffers = Kaminari.paginate_array(traveloffers_array).page(params[:page])
+		@h2 = "Sielés"
 		
 		render "index"
 	end
@@ -107,6 +111,7 @@ class ListController < ApplicationController
 	def egzotikusutak
 		traveloffers_array = TravelOffer.joins(:program_types).where(:program_types => {:id => 5}).order(@order_by)
 		@traveloffers = Kaminari.paginate_array(traveloffers_array).page(params[:page])
+		@h2 = "Egzotikus utak"
 
 		render "index"
 	end
@@ -114,6 +119,7 @@ class ListController < ApplicationController
 	def korutazasok
 		traveloffers_array = TravelOffer.joins(:program_types).where(:program_types => {:id => [6,8]})
 		@traveloffers = Kaminari.paginate_array(traveloffers_array).page(params[:page])
+		@h2 = "Körutazások"
 		
 		render "index"
 	end
@@ -121,6 +127,7 @@ class ListController < ApplicationController
 	def varoslatogatasok
 		traveloffers_array = TravelOffer.joins(:program_types).where(:program_types => {:id => 2})
 		@traveloffers = Kaminari.paginate_array(traveloffers_array).page(params[:page])
+		@h2 = "Városlátogatások"
 		
 		render "index"
 	end
@@ -128,6 +135,7 @@ class ListController < ApplicationController
 	def sportutak
 		traveloffers_array = TravelOffer.joins(:program_types).where(:program_types => {:id => 23})
 		@traveloffers = Kaminari.paginate_array(traveloffers_array).page(params[:page])
+		@h2 = "Sportutak"
 		
 		render "index"
 	end
@@ -135,6 +143,7 @@ class ListController < ApplicationController
 	def kulfoldiutazasok
 		traveloffers_array = TravelOffer.joins(:destinations).where('destinations.country_id <> 132')
 		@traveloffers = Kaminari.paginate_array(traveloffers_array).page(params[:page])
+		@h2 = "Külföldi utazások"
 		
 		render "index"
 	end
@@ -142,6 +151,7 @@ class ListController < ApplicationController
 	def belfoldiutazasok
 		traveloffers_array = TravelOffer.joins(:destinations).where(:destinations => {:country_id => 132})
 		@traveloffers = Kaminari.paginate_array(traveloffers_array).page(params[:page])
+		@h2 = "Belföldi utazások"
 		
 		render "index"
 	end	

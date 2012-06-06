@@ -7,26 +7,6 @@
 <section id="content">
 	<div id="main">
 		<div id="trip-images">
-			<!-- <a rel="gallery" href="http://wetu.com/ImageHandler/1280x1280/1481/The%20Restaurant.jpg" class="fancybox" id="curr">
-				<img src="http://www.lastminutekozpont.hu/images/1029/zambezi_sun10.JPG" alt="">
-			</a>
-			<div>
-				<a rel="gallery" href="http://media.gadventures.com/media-server/dynamic/admin/photos/south_africa_cape_town.jpg" class="thumb fancybox">
-					<img src="http://media.gadventures.com/media-server/dynamic/admin/photos/south_africa_cape_town.jpg" alt="">
-				</a>
-				<a rel="gallery" href="http://csis.org/files/imagecache/50w-scale/120217_africa_cq.jpg" class="thumb fancybox">
-					<img src="http://csis.org/files/imagecache/50w-scale/120217_africa_cq.jpg" alt="">
-				</a>
-				<a rel="gallery" href="http://profile.ak.fbcdn.net/hprofile-ak-snc4/277026_197177290345130_1908509687_q.jpg" class="thumb fancybox">
-					<img src="http://profile.ak.fbcdn.net/hprofile-ak-snc4/277026_197177290345130_1908509687_q.jpg" alt="">
-				</a>
-				<a rel="gallery" href="http://profile.ak.fbcdn.net/hprofile-ak-snc4/41606_14457426444_1711762621_q.jpg" class="thumb fancybox">
-					<img src="http://profile.ak.fbcdn.net/hprofile-ak-snc4/41606_14457426444_1711762621_q.jpg" alt="">
-				</a>
-				<a rel="gallery" href="http://profile.ak.fbcdn.net/hprofile-ak-snc4/161678_100000027544509_879335915_q.jpg" class="thumb last fancybox">
-					<img src="http://profile.ak.fbcdn.net/hprofile-ak-snc4/161678_100000027544509_879335915_q.jpg" alt="">
-				</a>
-			</div> -->
 			<%= link_to image_tag(@gallery + @images.first.file_name.to_s), (@gallery + @images.first.file_name.to_s), :class => 'fancybox', :id => 'curr', :alt => @travel_offer.travel_name, :rel => 'gallery' %>
 			<div>
 				<% @images.each do |image| %>
@@ -42,9 +22,9 @@
 				<li><strong>Utazás módja:</strong> <%= @travel_offer.traffic.name %></li>
 				<li><strong>Időpont:</strong> <%= @closest_travel_time.from_date.to_s(:year_month_day) + " - " + @closest_travel_time.to_date.to_s(:year_month_day) %> (<%= @closest_travel_time.night %> éjszaka)</li>
 				<li><strong>Ellátás:</strong> <%= @travel_offer.board.name %></li>
-				<!-- <li><strong>Szoba:</strong> Club szoba</li> -->
+				<li><strong>Szoba:</strong> <%= @closest_travel_time.travel_time_type_name %></li>
 			</ul>
-			<h3 id="full-price">Egy főre eső teljes ár: <span>123.000 Ft</span></h3>
+			<h3 id="full-price">Egy főre eső ár: <span><%= @closest_travel_time.price %> Ft</span></h3>
 			<div id="book-wrap">
 				<a class="view" href="#">Foglalás &raquo;</a>
 				<a href="#">Változtatna az úton? Kérjen egyedi árajánlatot!</a>
@@ -69,49 +49,22 @@
 				</tr>
 			</tfoot>
 			<tbody>
-				<tr>
-					<td>2012-01-01 - 2012-02-01 (30 éjszaka)</td>
-					<td>All-inclusive</td>
-					<td>Club Szoba</td>
-					<td class="price">120 000 Ft</td>
-					<td><a href="">Foglalás &raquo;</a></td>
-				</tr>
-				<tr>
-					<td>2012-01-01 - 2012-02-01 (30 éjszaka)</td>
-					<td>All-inclusive</td>
-					<td>Club Szoba</td>
-					<td class="price">103 000 Ft</td>
-					<td><a href="">Foglalás &raquo;</a></td>
-				</tr>
-				<tr>
-					<td>2012-01-01 - 2012-02-01 (30 éjszaka)</td>
-					<td>All-inclusive</td>
-					<td>Club Szoba</td>
-					<td class="price">100 020 Ft</td>
-					<td><a href="">Foglalás &raquo;</a></td>
-				</tr>
-				<tr>
-					<td>2012-01-01 - 2012-02-01 (30 éjszaka)</td>
-					<td>All-inclusive</td>
-					<td>Club Szoba</td>
-					<td class="price">110 000 Ft</td>
-					<td><a href="">Foglalás &raquo;</a></td>
-				</tr>
+				<% @travel_times.each do |traveltime| %>
+					<tr>
+						<td><%= traveltime.from_date.to_s(:year_month_day) %> - <%= traveltime.to_date.to_s(:year_month_day) %> (<%= traveltime.night.to_s %> éjszaka)</td>
+						<td><%= @travel_offer.board.name %></td>
+						<td><%= traveltime.travel_time_type_name %></td>
+						<td class="price"><%= traveltime.price %> <%= traveltime.price_measure %></td>
+						<td><a href="">Foglalás &raquo;</a></td>
+					</tr>
+				<% end %>
 			</tbody>
 		</table>
 	</div>
 	<div id="trip-description">
 		<div id="text">
 			<h3>Részletes leírás</h3>
-			<p>
-				Africa is the world's second-largest and second-most-populous continent, after Asia. At about 30.2 million km² (11.7 million sq mi) including adjacent islands, it covers 6% of the Earth's total surface area and 20.4% of the total land area.[2] With 1.0 billion people (as of 2009, see table), it accounts for about 14.72% of the world's human population.
-			</p>
-			<p>
-				The continent is surrounded by the Mediterranean Sea to the north, both the Suez Canal and the Red Sea along the Sinai Peninsula to the northeast, the Indian Ocean to the southeast, and the Atlantic Ocean to the west. The continent includes Madagascar and various archipelagoes. It has 54 fully recognized sovereign states ("countries"), 9 territories and three de facto states with limited recognition.[3]
-			</p>
-			<p>
-				Africa, particularly central Eastern Africa, is widely regarded within the scientific community to be the origin of humans and the Hominidae clade (great apes), as evidenced by the discovery of the earliest hominids and their ancestors, as well as later ones that have been dated to around seven million years ago – including Sahelanthropus tchadensis, Australopithecus africanus, A. afarensis, Homo erectus, H. habilis and H. ergaster – with the earliest Homo sapiens (modern human) found in Ethiopia being dated to circa 200,000 years ago.[4]
-			</p>
+			<%= @leiras %>
 			<h3>Miért fogod szeretni?</h3>
 			<p>
 				Africa is the world's second-largest and second-most-populous continent, after Asia. At about 30.2 million km² (11.7 million sq mi) including adjacent islands, it covers 6% of the Earth's total surface area and 20.4% of the total land area.[2] With 1.0 billion people (as of 2009, see table), it accounts for about 14.72% of the world's human population.
@@ -121,16 +74,9 @@
 			<div class="sidebox" id="services">
 				<h3>Kényelmi szolgáltatások</h3>
 				<ul>
-					<li>Szolgáltatás</li>
-					<li>Szolgáltatás</li>
-					<li>Szolgáltatás</li>
-					<li>Szolgáltatás</li>
-					<li>Szolgáltatás</li>
-					<li>Szolgáltatás</li>
-					<li>Szolgáltatás</li>
-					<li>Szolgáltatás</li>
-					<li>Szolgáltatás</li>
-					<li>Szolgáltatás</li>
+					<% @travel_attributes.each do |travel_attributes| %>
+						<li><%= travel_attributes.name %></li>
+					<% end %>
 				</ul>
 			</div>
 			<div class="sidebox" id="sights">
@@ -188,20 +134,13 @@
 	</div>
 	<div id="similar">
 		<h3>Hasonló utazások</h3>
-		<a href="#">
-			<div class="ribbon">
-				Dubai - 199 000 Ft
-			</div>
-			<img src="http://www.bvents.com/_resources/venues/83425/dubai-international-convention-and-exhibition-centre.jpg" alt="">
-		</a>
-		<a href="#">
-			<img src="http://www.bvents.com/_resources/venues/83425/dubai-international-convention-and-exhibition-centre.jpg" alt="">
-		</a>
-		<a href="#">
-			<img src="http://www.bvents.com/_resources/venues/83425/dubai-international-convention-and-exhibition-centre.jpg" alt="">
-		</a>
-		<a href="#">
-			<img src="http://www.bvents.com/_resources/venues/83425/dubai-international-convention-and-exhibition-centre.jpg" alt="">
-		</a>
+		<% @similar_offers.each do |offer| %>
+			<%= link_to offer do %>
+				<div class="ribbon">
+					<%= Country.find(offer.destinations.first.country_id).name %> - <%= offer.min_price %>
+				</div>
+				<%= image_tag(offer.gallery_url + offer.images.first.file_name.to_s, :alt => offer.travel_name, :width => 200, :height => 200) %>
+			<% end %>
+		<% end %>
 	</div>
 </section>
