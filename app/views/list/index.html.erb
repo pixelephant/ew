@@ -18,7 +18,7 @@
 			<%= render 'list/country_list' %>
 			<% @traveloffers.each do |traveloffer| %>
 			<div class="trip">
-				<a href="/trip">
+				<%= link_to traveloffer do %>
 					<div class="thumbnail">
 						<%= (image_tag traveloffer.gallery_url + traveloffer.images.first.file_name, :height => 140, :width => 140, :alt => traveloffer.travel_name) if traveloffer.images.any? %>
 					</div>
@@ -27,7 +27,7 @@
 							<h3><%= traveloffer.travel_name %></h3>
 						</div>
 						<span class="dates">2012-02-11 - 2012-02-15</span>
-						<span class="price">119 000 Ft-tól</span>
+						<span class="price"><%= traveloffer.min_price %> Ft-tól</span>
 						<p><%= (strip_tags(truncate(traveloffer.descriptions.where(:name => "Fekvese").first.description, :length => 255))) if traveloffer.descriptions.any? %></p>
 					</div>
 					<div class="icons">
@@ -35,178 +35,10 @@
 						<img src="http://www.placehold.it/30x30" alt="">
 						<img src="http://www.placehold.it/30x30" alt="">
 					</div>
-					<a class="view" href="/trip">Részletek &raquo;</a>
-				</a>
+					<%= link_to 'Részletek', traveloffer, :class => "view" %>
+				<% end %>
 			</div>
 			<% end %>
-			<!-- <div class="trip">
-				<a href="/trip">
-					<div class="thumbnail">
-						<span class="ribbon arrow_box">Új!</span>
-						<img src="http://www.officeholidays.com/images/spotlights/germany.jpg" alt="">
-					</div>
-					<div class="data">
-						<div class="row"><h3>Német álomutazás</h3> </div>
-						<span class="dates">2012-02-11 - 2012-02-15 <span class="nights">(5 éjszaka)</span></span>
-						<span class="price">119 000 Ft-tól</span>
-						<p>A Német Szövetségi Köztársaság (németül Bundesrepublik Deutschland; nemzetközi szerződésekben, okmányokban, hivatalos fórumokon a Németországi Szövetségi Köztársaság megnevezés szerepel hivatalos országnévként) Európa vezető, s a világ negyedik legnagyobb...</p>
-					</div>
-					<div class="icons">
-						<img src="http://www.placehold.it/30x30" alt="">
-						<img src="http://www.placehold.it/30x30" alt="">
-						<img src="http://www.placehold.it/30x30" alt="">
-					</div>
-					<a class="view" href="/trip">Részletek &raquo;</a>
-				</a>
-			</div>
-			<div class="trip">
-				<a href="/trip">
-					<div class="thumbnail">
-						<span class="ribbon arrow_box">Áreső</span>
-						<img src="http://www.officeholidays.com/images/spotlights/germany.jpg" alt="">
-					</div>
-					<div class="data">
-						<div class="row"><h3>Német álomutazás</h3> <span class="dates">2012-02-11 - 2012-02-15</span></div>
-						<span class="price">119 000 Ft-tól</span>
-						<p>A Német Szövetségi Köztársaság (németül Bundesrepublik Deutschland; nemzetközi szerződésekben, okmányokban, hivatalos fórumokon a Németországi Szövetségi Köztársaság megnevezés szerepel hivatalos országnévként) Európa vezető, s a világ negyedik legnagyobb...</p>
-					</div>
-					<div class="icons">
-						<img src="http://www.placehold.it/30x30" alt="">
-						<img src="http://www.placehold.it/30x30" alt="">
-						<img src="http://www.placehold.it/30x30" alt="">
-					</div>
-					<a class="view" href="/trip">Részletek &raquo;</a>
-				</a>
-			</div>
-			<div class="trip alert">
-				<p>Nem talál megfelelő utat? Kérjen <a href="#">egyedi útszervezést!</a></p>
-			</div>
-			<div class="trip">
-				<a href="/trip">
-					<div class="thumbnail">
-						<img src="http://www.officeholidays.com/images/spotlights/germany.jpg" alt="">
-					</div>
-					<div class="data">
-						<div class="row"><h3>Német álomutazás</h3> <span class="dates">2012-02-11 - 2012-02-15</span> </div>
-						<span class="price">119 000 Ft-tól</span>
-						<p>A Német Szövetségi Köztársaság (németül Bundesrepublik Deutschland; nemzetközi szerződésekben, okmányokban, hivatalos fórumokon a Németországi Szövetségi Köztársaság megnevezés szerepel hivatalos országnévként) Európa vezető, s a világ negyedik legnagyobb...</p>
-					</div>
-					<div class="icons">
-						<img src="http://www.placehold.it/30x30" alt="">
-						<img src="http://www.placehold.it/30x30" alt="">
-						<img src="http://www.placehold.it/30x30" alt="">
-					</div>
-					<a class="view" href="/trip">Részletek &raquo;</a>
-				</a>
-			</div>
-			<div class="trip">
-				<a href="/trip">
-					<div class="thumbnail">
-						<img src="http://www.officeholidays.com/images/spotlights/germany.jpg" alt="">
-					</div>
-					<div class="data">
-						<div class="row"><h3>Német álomutazás</h3> <span class="dates">2012-02-11 - 2012-02-15</span> </div>
-						<span class="price">119 000 Ft-tól</span>
-						<p>A Német Szövetségi Köztársaság (németül Bundesrepublik Deutschland; nemzetközi szerződésekben, okmányokban, hivatalos fórumokon a Németországi Szövetségi Köztársaság megnevezés szerepel hivatalos országnévként) Európa vezető, s a világ negyedik legnagyobb...</p>
-					</div>
-					<div class="icons">
-						<img src="http://www.placehold.it/30x30" alt="">
-						<img src="http://www.placehold.it/30x30" alt="">
-						<img src="http://www.placehold.it/30x30" alt="">
-					</div>
-					<a class="view" href="/trip">Részletek &raquo;</a>
-				</a>
-			</div>
-			<div class="trip">
-				<a href="/trip">
-					<div class="thumbnail">
-						<img src="http://www.officeholidays.com/images/spotlights/germany.jpg" alt="">
-					</div>
-					<div class="data">
-						<div class="row"><h3>Német álomutazás</h3> <span class="dates">2012-02-11 - 2012-02-15</span> </div>
-						<span class="price">119 000 Ft-tól</span>
-						<p>A Német Szövetségi Köztársaság (németül Bundesrepublik Deutschland; nemzetközi szerződésekben, okmányokban, hivatalos fórumokon a Németországi Szövetségi Köztársaság megnevezés szerepel hivatalos országnévként) Európa vezető, s a világ negyedik legnagyobb...</p>
-					</div>
-					<div class="icons">
-						<img src="http://www.placehold.it/30x30" alt="">
-						<img src="http://www.placehold.it/30x30" alt="">
-						<img src="http://www.placehold.it/30x30" alt="">
-					</div>
-					<a class="view" href="/trip">Részletek &raquo;</a>
-				</a>
-			</div>
-			<div class="trip">
-				<a href="/trip">
-					<div class="thumbnail">
-						<img src="http://www.officeholidays.com/images/spotlights/germany.jpg" alt="">
-					</div>
-					<div class="data">
-						<div class="row"><h3>Német álomutazás</h3> <span class="dates">2012-02-11 - 2012-02-15</span> </div>
-						<span class="price">119 000 Ft-tól</span>
-						<p>A Német Szövetségi Köztársaság (németül Bundesrepublik Deutschland; nemzetközi szerződésekben, okmányokban, hivatalos fórumokon a Németországi Szövetségi Köztársaság megnevezés szerepel hivatalos országnévként) Európa vezető, s a világ negyedik legnagyobb...</p>
-					</div>
-					<div class="icons">
-						<img src="http://www.placehold.it/30x30" alt="">
-						<img src="http://www.placehold.it/30x30" alt="">
-						<img src="http://www.placehold.it/30x30" alt="">
-					</div>
-					<a class="view" href="/trip">Részletek &raquo;</a>
-				</a>
-			</div>
-			<div class="trip">
-				<a href="/trip">
-					<div class="thumbnail">
-						<img src="http://www.officeholidays.com/images/spotlights/germany.jpg" alt="">
-					</div>
-					<div class="data">
-						<div class="row"><h3>Német álomutazás</h3> <span class="dates">2012-02-11 - 2012-02-15</span> </div>
-						<span class="price">119 000 Ft-tól</span>
-						<p>A Német Szövetségi Köztársaság (németül Bundesrepublik Deutschland; nemzetközi szerződésekben, okmányokban, hivatalos fórumokon a Németországi Szövetségi Köztársaság megnevezés szerepel hivatalos országnévként) Európa vezető, s a világ negyedik legnagyobb...</p>
-					</div>
-					<div class="icons">
-						<img src="http://www.placehold.it/30x30" alt="">
-						<img src="http://www.placehold.it/30x30" alt="">
-						<img src="http://www.placehold.it/30x30" alt="">
-					</div>
-					<a class="view" href="/trip">Részletek &raquo;</a>
-				</a>
-			</div>
-			<div class="trip">
-				<a href="/trip">
-					<div class="thumbnail">
-						<img src="http://www.officeholidays.com/images/spotlights/germany.jpg" alt="">
-					</div>
-					<div class="data">
-						<div class="row"><h3>Német álomutazás</h3> <span class="dates">2012-02-11 - 2012-02-15</span> </div>
-						<span class="price">119 000 Ft-tól</span>
-						<p>A Német Szövetségi Köztársaság (németül Bundesrepublik Deutschland; nemzetközi szerződésekben, okmányokban, hivatalos fórumokon a Németországi Szövetségi Köztársaság megnevezés szerepel hivatalos országnévként) Európa vezető, s a világ negyedik legnagyobb...</p>
-					</div>
-					<div class="icons">
-						<img src="http://www.placehold.it/30x30" alt="">
-						<img src="http://www.placehold.it/30x30" alt="">
-						<img src="http://www.placehold.it/30x30" alt="">
-					</div>
-					<a class="view" href="/trip">Részletek &raquo;</a>
-				</a>
-			</div>
-			<div class="trip">
-				<a href="/trip">
-					<div class="thumbnail">
-						<img src="http://www.officeholidays.com/images/spotlights/germany.jpg" alt="">
-					</div>
-					<div class="data">
-						<div class="row"><h3>Német álomutazás</h3> <span class="dates">2012-02-11 - 2012-02-15</span> </div>
-						<span class="price">119 000 Ft-tól</span>
-						<p>A Német Szövetségi Köztársaság (németül Bundesrepublik Deutschland; nemzetközi szerződésekben, okmányokban, hivatalos fórumokon a Németországi Szövetségi Köztársaság megnevezés szerepel hivatalos országnévként) Európa vezető, s a világ negyedik legnagyobb...</p>
-					</div>
-					<div class="icons">
-						<img src="http://www.placehold.it/30x30" alt="">
-						<img src="http://www.placehold.it/30x30" alt="">
-						<img src="http://www.placehold.it/30x30" alt="">
-					</div>
-					<a class="view" href="/trip">Részletek &raquo;</a>
-				</a>
-			</div> -->
 		</div>
 		<div class="pagination" id="pagi-b">
 			<%= render "list/pagination_sort" %>

@@ -1,10 +1,13 @@
 class TravelOffer < ActiveRecord::Base
+	extend FriendlyId
+  friendly_id :name_and_id, :use => :slugged
+
 	has_and_belongs_to_many :destinations
 	has_and_belongs_to_many :program_types
 	has_and_belongs_to_many :traveldays
 	has_and_belongs_to_many :inprices
 	has_and_belongs_to_many :outprices
-	has_and_belongs_to_many :attributes
+	has_and_belongs_to_many :travel_attributes
 
 	has_many :images, :dependent => :destroy
 	has_many :descriptions, :dependent => :destroy
@@ -20,4 +23,12 @@ class TravelOffer < ActiveRecord::Base
 	accepts_nested_attributes_for :traveldays
 
 	attr_accessible :id, :md5, :partner_id, :travel_name, :szallas_name, :category_standard, :category_aleph, :gallery_url, :board_id, :traffic_id
+
+	def min_price
+		TravelTime.where("travel_offer_id = #{self.id} AND DATE(from_date) > DATE(NOW())").order("price ASC").first.price
+	end
+
+	def name_and_id
+    "#{travel_name}-#{id}"
+  end
 end
