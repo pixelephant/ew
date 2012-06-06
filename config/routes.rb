@@ -19,9 +19,8 @@ Ewutazas::Application.routes.draw do
   match 'kulfoldiutazasok' => 'list#kulfoldiutazasok'
   match 'belfoldiutazasok' => 'list#belfoldiutazasok'
 
-
-  match ':id' => 'list#index', :method => 'POST'
   match ':id' => 'trip#show', :as => :travel_offer
+  match ':id' => 'list#index', :method => 'POST'
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

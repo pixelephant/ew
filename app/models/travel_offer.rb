@@ -24,6 +24,10 @@ class TravelOffer < ActiveRecord::Base
 
 	attr_accessible :id, :md5, :partner_id, :travel_name, :szallas_name, :category_standard, :category_aleph, :gallery_url, :board_id, :traffic_id
 
+	def closest_travel_time
+		TravelTime.where("travel_offer_id = #{self.id} AND DATE(from_date) > DATE(NOW())").order("from_date ASC").first
+	end
+
 	def min_price
 		TravelTime.where("travel_offer_id = #{self.id} AND DATE(from_date) > DATE(NOW())").order("price ASC").first.price
 	end

@@ -7,7 +7,7 @@ class ApplicationController < ActionController::Base
 
   	@order_by = 'travel_offers.created_at'
 			
-		params[:ord] == 'csokkeno' ? ord = 'desc' : ord = 'asc'
+		params[:ord] == 'csokkeno' ? @ord = 'desc' : @ord = 'asc'
 
 		case params[:sort]
 			when 'legnepszerubbek' then @order_by = 'travel_offers.click'
@@ -18,8 +18,6 @@ class ApplicationController < ActionController::Base
 		end
 
   	@program_types = ProgramType.all
-		c = []
-		ord = 'desc'
 		@price_checked = {'50000'.to_sym => false,'150000'.to_sym => false,'250000'.to_sym => false,'550000'.to_sym => false}
 		@no_date_checked = false
 		@regions = []

@@ -8,6 +8,8 @@ class ListController < ApplicationController
 			@regions = Region.where(:country_id => @filt[:country]) unless @filt[:country].blank?
 			@cities = City.where(:region_id => @filt[:region]) unless @filt[:region].blank?
 
+			c = []
+
 			#Filterek
 			unless @filt.blank?
 				if @filt[:no_date].to_i == 0
@@ -71,9 +73,10 @@ class ListController < ApplicationController
 		
 		end
 
-		conditions = c.join(" AND ")
+		conditions = ''
+		conditions = c.join(" AND ") unless c.blank?
 
-		traveloffers_array = TravelOffer.find(:all, :joins => [:travel_times, :destinations, :program_types], :select => "travel_offers.*", :order => order_by + " " + ord, :group => "travel_offers.id", :conditions => conditions )
+		traveloffers_array = TravelOffer.find(:all, :joins => [:travel_times, :destinations, :program_types], :select => "travel_offers.*", :order => @order_by + " " + @ord, :group => "travel_offers.id", :conditions => conditions )
 		#@traveloffers = Kaminari.paginate_array(@traveloffers_array).page(params[:page])
 		@traveloffers = Kaminari.paginate_array(traveloffers_array).page(params[:page])
 		
