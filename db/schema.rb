@@ -11,20 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120525125936) do
-
-  create_table "attributes", :force => true do |t|
-    t.string   "name"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
-  end
-
-  create_table "attributes_travel_offers", :force => true do |t|
-    t.integer  "attribute_id"
-    t.integer  "travel_offer_id"
-    t.datetime "created_at",      :null => false
-    t.datetime "updated_at",      :null => false
-  end
+ActiveRecord::Schema.define(:version => 20120606110527) do
 
   create_table "boards", :force => true do |t|
     t.string   "name"
@@ -44,14 +31,17 @@ ActiveRecord::Schema.define(:version => 20120525125936) do
     t.string   "bed_type"
     t.string   "price_type"
     t.integer  "price"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.datetime "created_at",     :null => false
+    t.datetime "updated_at",     :null => false
+    t.integer  "travel_time_id"
   end
 
   create_table "cities", :force => true do |t|
     t.integer  "country_id"
     t.integer  "region_id"
     t.string   "name"
+    t.string   "lat"
+    t.string   "long"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end
@@ -61,6 +51,7 @@ ActiveRecord::Schema.define(:version => 20120525125936) do
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
     t.string   "continent"
+    t.integer  "position"
   end
 
   create_table "descriptions", :force => true do |t|
@@ -77,8 +68,6 @@ ActiveRecord::Schema.define(:version => 20120525125936) do
     t.integer  "city_id"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
-    t.string   "lat",        :null => false
-    t.string   "long",       :null => false
   end
 
   create_table "destinations_travel_offers", :force => true do |t|
@@ -93,8 +82,9 @@ ActiveRecord::Schema.define(:version => 20120525125936) do
     t.string   "length"
     t.string   "title"
     t.string   "description"
-    t.datetime "created_at",  :null => false
-    t.datetime "updated_at",  :null => false
+    t.datetime "created_at",      :null => false
+    t.datetime "updated_at",      :null => false
+    t.integer  "travel_offer_id"
   end
 
   create_table "holidays", :force => true do |t|
@@ -213,10 +203,31 @@ ActiveRecord::Schema.define(:version => 20120525125936) do
     t.datetime "updated_at", :null => false
   end
 
+  create_table "skiregions", :force => true do |t|
+    t.integer  "region_id"
+    t.integer  "country_id"
+    t.string   "name"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
   create_table "traffics", :force => true do |t|
     t.string   "name"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
+  end
+
+  create_table "travel_attributes", :force => true do |t|
+    t.string   "name"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  create_table "travel_attributes_travel_offers", :force => true do |t|
+    t.integer  "travel_attribute_id"
+    t.integer  "travel_offer_id"
+    t.datetime "created_at",          :null => false
+    t.datetime "updated_at",          :null => false
   end
 
   create_table "travel_offers", :force => true do |t|
@@ -232,7 +243,12 @@ ActiveRecord::Schema.define(:version => 20120525125936) do
     t.text     "gmap"
     t.datetime "created_at",        :null => false
     t.datetime "updated_at",        :null => false
+    t.integer  "skiregion_id"
+    t.integer  "click"
+    t.string   "slug"
   end
+
+  add_index "travel_offers", ["slug"], :name => "index_travel_offers_on_slug", :unique => true
 
   create_table "travel_offers_traveldays", :force => true do |t|
     t.integer  "travelday_id"
@@ -268,7 +284,6 @@ ActiveRecord::Schema.define(:version => 20120525125936) do
     t.text     "note"
     t.datetime "created_at",            :null => false
     t.datetime "updated_at",            :null => false
-    t.integer  "click"
   end
 
   create_table "traveldays", :force => true do |t|

@@ -4,4 +4,6 @@ class City < ActiveRecord::Base
 	belongs_to :destination
 
 	attr_accessible :id, :name, :region_id, :country_id
+
+	default_scope :order => 'name ASC'
 end

@@ -68,12 +68,8 @@ class AjaxController < ApplicationController
 				(c << ('travel_times.from_date = ' + arrival)) unless arrival.blank?
 				(c << ('travel_times.to_date = ' + departure)) unless departure.blank?
 			end
-
-			(c << ('destinations.city_id = ' + city)) unless (city.blank? || city.to_i == 0)
-			(c << ('destinations.region_id = ' + region)) unless (region.blank? || region.to_i == 0)
-			(c << ('destinations.country_id = ' + country)) unless (country.blank? || country.to_i == 0)
 		end
-		if no_date.to_i == 1
+		if no_date.to_i == 1 && imprecise.to_i > 0
 			im = imprecise.to_i
 			if im > 0 && im < 13
 				if Date.today.month.to_i > im
@@ -92,6 +88,10 @@ class AjaxController < ApplicationController
 			price = max_price.to_s
 			c << ("travel_times.price <= #{price}")
 		end
+
+		(c << ('destinations.city_id = ' + city)) unless (city.blank? || city.to_i == 0)
+		(c << ('destinations.region_id = ' + region)) unless (region.blank? || region.to_i == 0)
+		(c << ('destinations.country_id = ' + country)) unless (country.blank? || country.to_i == 0)
 
 		conditions = c.join(" AND ")
 

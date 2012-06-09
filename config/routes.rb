@@ -4,13 +4,23 @@ Ewutazas::Application.routes.draw do
   match 'order' => 'order#index'
   match 'contact' => 'contact#index'
   match 'insurance' => 'insurance#index'
-  match ':id' => 'list#index'
-
-  match ':id' => 'list#index', :method => 'POST'
 
   match 'ajax/get_region' => 'ajax#get_region', :method => 'POST'
   match 'ajax/get_city' => 'ajax#get_city', :method => 'POST'
   match 'ajax/search_estimate' => 'ajax#search_estimate', :method => 'POST'
+
+  match 'naszutak' => 'list#naszutak'
+  match 'hajoutak' => 'list#hajoutak'
+  match 'sieles' => 'list#sieles'
+  match 'egzotikusutak' => 'list#egzotikusutak'
+  match 'korutazasok' => 'list#korutazasok'
+  match 'varoslatogatasok' => 'list#varoslatogatasok'
+  match 'sportutak' => 'list#sportutak'
+  match 'kulfoldiutazasok' => 'list#kulfoldiutazasok'
+  match 'belfoldiutazasok' => 'list#belfoldiutazasok'
+
+  match ':id' => 'trip#show', :as => :travel_offer
+  match ':id' => 'list#index', :method => 'POST'
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
@@ -67,5 +77,5 @@ Ewutazas::Application.routes.draw do
 
   # This is a legacy wild controller route that's not recommended for RESTful applications.
   # Note: This route will make all actions in every controller accessible via GET requests.
-  match ':controller(/:action(/:id))(.:format)'
+  # match ':controller(/:action(/:id))(.:format)'
 end

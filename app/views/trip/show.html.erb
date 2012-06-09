@@ -1,0 +1,146 @@
+<section id="page-header">
+	<div id="page-header-inner">
+		<h1>Csak akkor látszom, ha kiemelt vagyok</h1>
+	</div>
+</section>
+
+<section id="content">
+	<div id="main">
+		<div id="trip-images">
+			<%= link_to image_tag(@gallery + @images.first.file_name.to_s), (@gallery + @images.first.file_name.to_s), :class => 'fancybox', :id => 'curr', :alt => @travel_offer.travel_name, :rel => 'gallery' %>
+			<div>
+				<% @images.each do |image| %>
+					<%= (link_to image_tag(@gallery + image.file_name.to_s, :width => 50), (@gallery + image.file_name.to_s), :class => 'thumb fancybox' + (image == @images.last ? ' last' : ''), :alt => @travel_offer.travel_name, :rel => 'gallery') unless image == @images.first %>
+				<% end %>
+			</div>
+		</div>
+		<div id="trip-details">
+			<h2><%= @travel_offer.travel_name %></h2>
+			<ul>
+				<li><strong>Ország:</strong> <%= @country.name %></li>
+				<li><strong>Régió:</strong> <%= @region.name %></li>
+				<li><strong>Utazás módja:</strong> <%= @travel_offer.traffic.name %></li>
+				<li><strong>Időpont:</strong> <%= @closest_travel_time.from_date.to_s(:year_month_day) + " - " + @closest_travel_time.to_date.to_s(:year_month_day) %> (<%= @closest_travel_time.night %> éjszaka)</li>
+				<li><strong>Ellátás:</strong> <%= @travel_offer.board.name %></li>
+				<li><strong>Szoba:</strong> <%= @closest_travel_time.travel_time_type_name %></li>
+			</ul>
+			<h3 id="full-price">Egy főre eső ár: <span><%= @closest_travel_time.price %> Ft</span></h3>
+			<div id="book-wrap">
+				<a class="view" href="#">Foglalás &raquo;</a>
+				<a href="#">Változtatna az úton? Kérjen egyedi árajánlatot!</a>
+			</div>
+		</div>
+	</div>
+	<div id="additional-time">
+		<h2>További időpontok és változatok</h2>
+		<table>
+			<thead>
+				<tr>
+					<th>Utazás időpontja</th>
+					<th>Szállás</th>
+					<th>Ellátás</th>
+					<th>Ár</th>
+					<th>&nbsp;</th>
+				</tr>
+			</thead>
+			<tfoot>
+				<tr>
+					<td colspan="5">Bizonyos árak csak a szállásra vonatkoznak, vagy nem tartalmaznak minden útiköltséget. Kérjük nézze meg az ajánlat részletes árinformációit.</td>
+				</tr>
+			</tfoot>
+			<tbody>
+				<% @travel_times.each do |traveltime| %>
+					<tr>
+						<td><%= traveltime.from_date.to_s(:year_month_day) %> - <%= traveltime.to_date.to_s(:year_month_day) %> (<%= traveltime.night.to_s %> éjszaka)</td>
+						<td><%= @travel_offer.board.name %></td>
+						<td><%= traveltime.travel_time_type_name %></td>
+						<td class="price"><%= traveltime.price %> <%= traveltime.price_measure %></td>
+						<td><a href="">Foglalás &raquo;</a></td>
+					</tr>
+				<% end %>
+			</tbody>
+		</table>
+	</div>
+	<div id="trip-description">
+		<div id="text">
+			<h3>Részletes leírás</h3>
+			<%= @leiras %>
+			<h3>Miért fogod szeretni?</h3>
+			<p>
+				Africa is the world's second-largest and second-most-populous continent, after Asia. At about 30.2 million km² (11.7 million sq mi) including adjacent islands, it covers 6% of the Earth's total surface area and 20.4% of the total land area.[2] With 1.0 billion people (as of 2009, see table), it accounts for about 14.72% of the world's human population.
+			</p>
+		</div>
+		<div id="side">
+			<div class="sidebox" id="services">
+				<h3>Kényelmi szolgáltatások</h3>
+				<ul>
+					<% @travel_attributes.each do |travel_attributes| %>
+						<li><%= travel_attributes.name %></li>
+					<% end %>
+				</ul>
+			</div>
+			<div class="sidebox" id="sights">
+				<h3>Látnivalók a közelben</h3>
+				<div class="wrap">
+					
+					<a rel="sights" class="fancybox" href="http://wetu.com/ImageHandler/1280x1280/1481/The%20Restaurant.jpg"><div><img src="http://www.egzotikus-utazas.info/images_content/thumbnails/50x50/dubai-top-1.jpg" alt=""></div></a>
+					
+					<a rel="sights" class="fancybox" href="http://wetu.com/ImageHandler/1280x1280/1481/The%20Restaurant.jpg"><div><img src="http://www.caracolutazas.hu/images_content/caracol/thumbnails/50x50/Dubai.jpg" alt=""></div></a>
+					
+					<a rel="sights" class="fancybox" href="http://wetu.com/ImageHandler/1280x1280/1481/The%20Restaurant.jpg"><div><img src="http://external.ak.fbcdn.net/safe_image.php?d=AQCk1iIvTYg-fRbg&w=50&h=50&url=http%3A%2F%2Fupload.wikimedia.org%2Fwikipedia%2Fcommons%2Fthumb%2Fe%2Fe1%2FDubai_2010.JPG%2F720px-Dubai_2010.JPG&crop&fallback=hub_likes&prefix=q" alt=""></div></a>
+
+					<a rel="sights" class="fancybox" href="http://wetu.com/ImageHandler/1280x1280/1481/The%20Restaurant.jpg"><div><img src="http://www.egzotikus-utazas.info/images_content/thumbnails/50x50/dubai-top-1.jpg" alt=""></div></a>
+					
+					<a rel="sights" class="fancybox" href="http://wetu.com/ImageHandler/1280x1280/1481/The%20Restaurant.jpg"><div><img src="http://www.caracolutazas.hu/images_content/caracol/thumbnails/50x50/Dubai.jpg" alt=""></div></a>
+					
+					<a rel="sights" class="fancybox" href="http://wetu.com/ImageHandler/1280x1280/1481/The%20Restaurant.jpg"><div><img src="http://external.ak.fbcdn.net/safe_image.php?d=AQCk1iIvTYg-fRbg&w=50&h=50&url=http%3A%2F%2Fupload.wikimedia.org%2Fwikipedia%2Fcommons%2Fthumb%2Fe%2Fe1%2FDubai_2010.JPG%2F720px-Dubai_2010.JPG&crop&fallback=hub_likes&prefix=q" alt=""></div></a>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div id="tri-wrap">
+		<div class="tri">
+			<h3>Jó tudni</h3>
+			<ul>
+				<li>Harap a teve</li>
+				<li>Pénznem: Dollár</li>
+				<li>Oltás: Malária</li>
+			</ul>
+		</div>
+		<div class="tri">
+			<h3>Jó tudni</h3>
+			<ul>
+				<li>Harap a teve</li>
+				<li>Pénznem: Dollár</li>
+				<li>Oltás: Malária</li>
+			</ul>
+		</div>
+		<div class="tri">
+			<h3>Jó tudni</h3>
+			<ul>
+				<li>Harap a teve</li>
+				<li>Pénznem: Dollár</li>
+				<li>Oltás: Malária</li>
+			</ul>
+		</div>
+		<div class="tri">
+			<h3>Jó tudni</h3>
+			<ul>
+				<li>Harap a teve</li>
+				<li>Pénznem: Dollár</li>
+				<li>Oltás: Malária</li>
+			</ul>
+		</div>
+	</div>
+	<div id="similar">
+		<h3>Hasonló utazások</h3>
+		<% @similar_offers.each do |offer| %>
+			<%= link_to offer do %>
+				<div class="ribbon">
+					<%= Country.find(offer.destinations.first.country_id).name %> - <%= offer.min_price %>
+				</div>
+				<%= image_tag(offer.gallery_url + offer.images.first.file_name.to_s, :alt => offer.travel_name, :width => 200, :height => 200) %>
+			<% end %>
+		<% end %>
+	</div>
+</section>

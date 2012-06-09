@@ -2,7 +2,9 @@ namespace :setup do
 
 	require 'nokogiri'
 	require 'open-uri'
+	require 'erb'
 
+	include ERB::Util
 	include ActionView::Helpers::SanitizeHelper
   
   task :torzsadat => :environment do
@@ -201,5 +203,48 @@ namespace :setup do
 		end
 		puts "Skiregions processed: " + a_count.to_s	
 	end
+
+	task :setgmap => :environment do
+
+  	desc "Set lat & long values from city"
+    # get file
+		puts "Processing..."
+		
+		City.where(:lat => '', :long => '').each do |c|
+			puts "City: " + c.to_s
+			puts "City name: " + c.name.to_s + ", Country name: " + c.country.name.to_s
+			address = (c.name + " " + c.country.name)
+			puts "Address: " + address
+			# coord = open("http://maps.googleapis.com/maps/api/geocode/json?address=#{address}&sensor=false")
+			coord = open(URI.parse(URI.encode("http://maps.googleapis.com/maps/api/geocode/json?address=#{address}&sensor=false")))
+			
+			puts coord.to_s
+			j = ""
+			coord.each do |l|
+				j << l.to_s
+			end
+			j = ActiveSupport::JSON.decode(j)
+			puts j
+			unless j["status"] == "ZERO_RESULTS"
+				lat = j["results"][0]["geometry"]["location"]["lat"]
+				long = j["results"][0]["geometry"]["location"]["lng"]
+				puts "Lat: " + lat.to_s
+				puts "Lng: " + long.to_s
+				c.lat = lat
+				c.long = long
+				c.save!
+			end
+		end
+		
+  end
+
+  task :all => :environment do
+  	time = Time.now
+  	Rake::Task['setup:torzsadat'].invoke()
+  	Rake::Task['setup:destinations'].invoke()
+  	Rake::Task['setup:partners'].invoke()
+  	Rake::Task['setup:skiregions'].invoke()
+  	puts ((Time.now - time) / 60).to_s
+  end
 
 end

@@ -6,4 +6,10 @@ class Country < ActiveRecord::Base
 	has_many :skiregions
 
 	attr_accessible :id, :name
+
+	default_scope :order => 'position DESC, name ASC'
+
+	def travel_offers_count
+		TravelOffer.joins(:destinations).where(:destinations => {:country_id => self.id}).count
+	end
 end
