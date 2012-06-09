@@ -1,29 +1,23 @@
- namespace :import do
+namespace :import do
 
 	require 'nokogiri'
 	require 'open-uri'
 
 	include ActionView::Helpers::SanitizeHelper
   
-  task :inittraveloffers, [:file_name] => :environment do |t, args|
+  task :inittraveloffers => :environment do
 
   	desc "Processing xml file containing travel offers"
     # get file
-    args.with_defaults(:file_name => "xmlallgen_osszes.xml")
-    time = Time.now
 		unchanged_counter = 0
 		offer_counter = 0
 		puts "Processing file"
 		
-		doc = Nokogiri::XML(File.open("public/" + args.file_name))
-		# doc = Nokogiri::XML::Reader(File.open("public/xml_minta.xml"))
+		doc = Nokogiri::XML(File.open("public/xml_minta.xml"))
 
-		puts "Travel offers in file: " + doc.css("traveloffers").attribute("count").to_s
+		doc.css("traveloffer").each_with_index do |traveloffer, i|
 
-		doc.css("traveloffers traveloffer").each_with_index do |traveloffer, i|
-
-			puts "traveloffer: " + i.to_s
-			puts "TravelOffer id: " + traveloffer.css("id").inner_text
+			puts traveloffer.css("md5").inner_text
 
 			md5 = traveloffer.css("md5").inner_text
 			if TravelOffer.where(:md5 => md5).any?
@@ -42,7 +36,6 @@
 				t.gallery_url = traveloffer.css("gallery").attribute("url").to_s
 				t.gmap = traveloffer.css("gmap").inner_text
 				t.traffic_id = traveloffer.css("traffic").inner_text
-				t.skiregion_id = traveloffer.css("skiregion").inner_text
 
 				traveloffer.css("destinations destination").each do |dest|
 
@@ -50,38 +43,19 @@
 					region = dest.attribute("region").to_s
 					city = dest.attribute("city").to_s
 
-					puts "Country: " + country.to_s
-					puts "Region: " + region.to_s
-					puts "City: " + city.to_s
-
-					if country.blank?
-						country = Region.find(region).country_id if Region.exists?(region)
-						country = City.find(city).country_id if City.exists?(city)
-					end
-
-					if region.blank?
-						region = City.find(city).region_id if City.exists?(city)
-					end
-
-					city = 0 if city.blank?
-
 					d = Destination.where(:country_id => country, :region_id => region, :city_id => city).limit(1).first
-					if d.nil?
-						d = Destination.new(:country_id => country, :region_id => region, :city_id => city).save!
-						d = Destination.where(:country_id => country, :region_id => region, :city_id => city).limit(1).first
-					end
 
-					(t.destinations << d) unless d.blank?
+					t.destinations << d
 
 					puts 'Traveloffer: ' + i.to_s
 				end
 
 				traveloffer.css("program_type").each do |program_type|
-					(t.program_types << ProgramType.find(program_type.inner_text)) if ProgramType.exists?(program_type.inner_text)
+					t.program_types << ProgramType.find(program_type.inner_text)
 				end
 
 				traveloffer.css("attribute").each do |attribute|
-					(t.attributes << Attribute.find(attribute.inner_text)) if Attribute.exists?(attribute.inner_text)
+					t.attributes << Attribute.find(attribute.inner_text)
 				end
 
 				traveloffer.css("travelday").each do |travelday|
@@ -178,6 +152,9 @@
 							)
 					end
 
+					tt.save
+					t.travel_times << tt
+
 				end
 
 				#puts traveloffer.css("gmap").inner_text
@@ -197,7 +174,6 @@
 		puts "Offers found: " << offer_counter.to_s
 		puts "Offers processed: " << (offer_counter.to_i - unchanged_counter.to_i).to_s
 		puts "Offers unchanged:" << unchanged_counter.to_s
-		puts ((Time.now - time) / 60).to_s
   end
 
   task :deletedoffers => :environment do
@@ -213,22 +189,6 @@
 			TravelOffer.delete(id)
 		end
 		puts "Travel offers removed: " + (i+1).to_s
-  end
-
-	task :updatedoffers => :environment do
-
-  	desc "Processing xml file containing updated travel offers"
-    # get file
-		puts "Processing file"
-		
-		doc = Nokogiri::XML(File.open("public/xmlallgen_megszunt.xml"))
-
-		doc.css("traveloffers traveloffer").each_with_index do |traveloffer, i|
-			id = traveloffer.attribute("id").to_s
-			TravelOffer.destroy(id) if TravelOffer.exists?(id)
-			puts "Traveloffer removed: " + id
-		end
-		Rake::Task['import:inittraveloffers'].invoke("xmlallgen_valtozott.xml")
   end
 
 end
