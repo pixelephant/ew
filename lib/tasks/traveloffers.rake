@@ -163,7 +163,7 @@
 						tt.pre_bookings << PreBooking.new(
 								:start_date => prebooking.attribute("datum_kezd").to_s,
 								:end_date => prebooking.attribute("datum_vege").to_s,
-								:type => prebooking.attribute("tipus").to_s,
+								:amount_type => prebooking.attribute("tipus").to_s,
 								:amount => prebooking.css("osszeg").inner_text,
 								:description => prebooking.css("szoveg").inner_text
 							)

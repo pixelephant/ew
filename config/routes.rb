@@ -1,5 +1,9 @@
 Ewutazas::Application.routes.draw do
 
+  devise_for :users
+
+  mount RailsAdmin::Engine => '/admin', :as => 'rails_admin' # Feel free to change '/admin' to any namespace you need.
+
   match 'trip' => 'trip#index'
   match 'order' => 'order#index'
   match 'contact' => 'contact#index'
