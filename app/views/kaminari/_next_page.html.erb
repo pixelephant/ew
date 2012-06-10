@@ -5,7 +5,9 @@
     num_pages:     total number of pages
     per_page:      number of items to fetch per page
     remote:        data-remote
+
+    link_to_unless current_page.last?, raw(t 'views.pagination.next'), url, :rel => 'next', :remote => remote
 -%>
 <span class="next">
-  <%= link_to_unless current_page.last?, raw(t 'views.pagination.next'), url, :rel => 'next', :remote => remote %>
+  <%= link_to_unless current_page.last?, "Következő", url, :rel => 'next', :remote => remote %>
 </span>

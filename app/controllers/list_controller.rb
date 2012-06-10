@@ -154,6 +154,16 @@ class ListController < ApplicationController
 		@h2 = "Belföldi utazások"
 		
 		render "index"
-	end	
+	end
+
+	def kereses
+		word = params[:query]
+
+		traveloffers_array = TravelOffer.joins(:descriptions).where("descriptions.description LIKE '%#{word}%' OR travel_offers.travel_name  LIKE '%#{word}%' OR travel_offers.szallas_name LIKE '%#{word}%'")
+		@traveloffers = Kaminari.paginate_array(traveloffers_array).page(params[:page])
+		@h2 = "Keresés: #{word}"
+		
+		render "index"
+	end
 
 end

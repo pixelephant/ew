@@ -19,6 +19,8 @@ Ewutazas::Application.routes.draw do
   match 'kulfoldiutazasok' => 'list#kulfoldiutazasok'
   match 'belfoldiutazasok' => 'list#belfoldiutazasok'
 
+  match 'kereses' => 'list#kereses'
+
   match ':id' => 'trip#show', :as => :travel_offer
   match ':id' => 'list#index', :method => 'POST'
 
