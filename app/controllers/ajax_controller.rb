@@ -95,7 +95,7 @@ class AjaxController < ApplicationController
 
 		conditions = c.join(" AND ")
 
-		c = TravelOffer.find(:all, :joins => [:travel_times, :destinations, :program_types], :select => "travel_offers.*", :group => "travel_offers.id", :conditions => conditions ).count
+		c = TravelOffer.find(:all, :joins => [:travel_times, :destinations], :select => "DISTINCT travel_offers.id", :group => "travel_offers.id", :conditions => conditions ).count
 
 		respond_to do |format|
 			format.json {
