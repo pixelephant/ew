@@ -85,7 +85,7 @@ class ListController < ApplicationController
 	end
 
 	def naszutak
-		traveloffers_array = TravelOffer.joins(:attributes).where(:attributes => {:id => 19})
+		traveloffers_array = TravelOffer.joins(:travel_attributes).where(:travel_attributes => {:id => 19})
 		@traveloffers = Kaminari.paginate_array(traveloffers_array).page(params[:page])
 		@h = "Nászutak"
 		
@@ -93,7 +93,7 @@ class ListController < ApplicationController
 	end
 
 	def hajoutak
-		traveloffers_array = TravelOffer.joins(:attributes).where(:attributes => {:id => 19})
+		traveloffers_array = TravelOffer.joins(:travel_attributes).where(:travel_attributes => {:id => 19})
 		@traveloffers = Kaminari.paginate_array(traveloffers_array).page(params[:page])
 		@h2 = "Hajóutak"
 		
@@ -159,7 +159,7 @@ class ListController < ApplicationController
 	def kereses
 		word = params[:query]
 
-		traveloffers_array = TravelOffer.joins(:descriptions).where("descriptions.description LIKE '%#{word}%' OR travel_offers.travel_name  LIKE '%#{word}%' OR travel_offers.szallas_name LIKE '%#{word}%'")
+		traveloffers_array = TravelOffer.find(:all, :select => "DISTINCT travel_offers.*",:joins => :descriptions, :conditions => "descriptions.description LIKE '%#{word}%' OR travel_offers.travel_name LIKE '%#{word}%' OR travel_offers.szallas_name LIKE '%#{word}%'")
 		@traveloffers = Kaminari.paginate_array(traveloffers_array).page(params[:page])
 		@h2 = "Keresés: #{word}"
 		

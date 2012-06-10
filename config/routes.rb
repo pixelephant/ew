@@ -28,8 +28,8 @@ Ewutazas::Application.routes.draw do
   match 'kapcsolat' => 'contact#index'
   match 'biztositasok' => 'insurance#index'
 
+  match 'list' => 'list#index', :method => 'POST'
   match ':id' => 'trip#show', :as => :travel_offer
-  match ':id' => 'list#index', :method => 'POST'
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
