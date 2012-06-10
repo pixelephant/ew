@@ -34,7 +34,7 @@ class TravelOffer < ActiveRecord::Base
 	end
 
 	def similar_offers
-		TravelOffer.joins(:travel_times).where(["board_id = ? AND traffic_id = ? AND category_standard = ? AND travel_offers.id <> ? AND DATE(from_date) > DATE(NOW())", self.board_id, self.traffic_id, self.category_standard, self.id ]).group('travel_offers.id').limit(4)
+		TravelOffer.joins(:travel_times, :program_types).where(["board_id = ? AND traffic_id = ? AND category_standard = ? AND travel_offers.id <> ? AND DATE(from_date) > DATE(NOW())", self.board_id, self.traffic_id, self.category_standard, self.id]).group('travel_offers.id').limit(4)
 	end
 
 	def name_and_id

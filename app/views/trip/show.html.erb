@@ -26,8 +26,8 @@
 			</ul>
 			<h3 id="full-price">Egy főre eső ár: <span><%= @closest_travel_time.price %> Ft</span></h3>
 			<div id="book-wrap">
-				<a class="view" href="#">Foglalás &raquo;</a>
-				<a href="#">Változtatna az úton? Kérjen egyedi árajánlatot!</a>
+				<a class="view" href="/foglalas/<%= @closest_travel_time.id %>">Foglalás &raquo;</a>
+				<a href="/egyedi/<%= @closest_travel_time.id %>">Változtatna az úton? Kérjen egyedi árajánlatot!</a>
 			</div>
 		</div>
 	</div>
@@ -55,7 +55,7 @@
 						<td><%= @travel_offer.board.name %></td>
 						<td><%= traveltime.travel_time_type_name %></td>
 						<td class="price"><%= traveltime.price %> <%= traveltime.price_measure %></td>
-						<td><a href="">Foglalás &raquo;</a></td>
+						<td><a href="/foglalas/<%= traveltime.id %>">Foglalás &raquo;</a></td>
 					</tr>
 				<% end %>
 			</tbody>

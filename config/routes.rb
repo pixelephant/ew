@@ -28,6 +28,10 @@ Ewutazas::Application.routes.draw do
   match 'kapcsolat' => 'contact#index'
   match 'biztositasok' => 'insurance#index'
 
+  match 'foglalas/koszonjuk' => 'order#thankyou'
+  match 'foglalas/:id' => 'order#index'
+  match 'egyedi/:id' => 'order#personalized'
+
   match 'list' => 'list#index', :method => 'POST'
   match ':id' => 'trip#show', :as => :travel_offer
 

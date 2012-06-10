@@ -11,6 +11,7 @@ gem 'nokogiri'
 gem 'kaminari'
 gem "friendly_id", "~> 4.0.1"
 
+gem 'fastercsv'
 gem 'rails_admin'
 
 # Gems used only for assets and not required
