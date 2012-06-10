@@ -21,6 +21,9 @@ Ewutazas::Application.routes.draw do
 
   match 'kereses' => 'list#kereses'
 
+  match 'kapcsolat' => 'contact#index'
+  match 'biztositasok' => 'insurance#index'
+
   match ':id' => 'trip#show', :as => :travel_offer
   match ':id' => 'list#index', :method => 'POST'
 
