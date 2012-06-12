@@ -21,12 +21,18 @@
 			<ul>
 				<li><strong>Ország:</strong> <%= @country.name %></li>
 				<li><strong>Régió:</strong> <%= @region.name %></li>
-				<li><strong>Utazás módja:</strong> <%= @travel_offer.traffic.name %></li>
+				<li><strong>Utazás módja:</strong> <%= @closest_travel_time.individual == 1 ? 'Egyéni utazással' : @travel_offer.traffic.name %></li>
+				<li><strong>Indulás:</strong> <%= @departure_city.name %></li>
 				<li><strong>Időpont:</strong> <%= @closest_travel_time.from_date.to_s(:year_month_day) + " - " + @closest_travel_time.to_date.to_s(:year_month_day) %> (<%= @closest_travel_time.night %> éjszaka)</li>
 				<li><strong>Ellátás:</strong> <%= @travel_offer.board.name %></li>
 				<li><strong>Szoba:</strong> <%= @closest_travel_time.travel_time_type_name %></li>
+				<%= ('<li><strong>Foglalási díj: </strong>' + number_to_currency(@closest_travel_time.reservation_fee.to_s, :locale => :hu, :delimiter => " ", :unit => "") + @closest_travel_time.price_measure.to_s + '</li>').html_safe unless @closest_travel_time.reservation_fee.blank? %>
+				<%= ('<li><strong>Transzfer díj: </strong>' + number_to_currency(@closest_travel_time.transfer_fee.to_s, :locale => :hu, :delimiter => " ", :unit => "") + @closest_travel_time.price_measure.to_s + '</li>').html_safe unless @closest_travel_time.transfer_fee.blank? %>
+				<%= ('<li><strong>Vízum díj: </strong>' + number_to_currency(@closest_travel_time.visa_fee.to_s, :locale => :hu, :delimiter => " ", :unit => "") + @closest_travel_time.price_measure.to_s + '</li>').html_safe unless @closest_travel_time.visa_fee.blank? %>
+				<%= ('<li><strong>Reptéri illeték: </strong>' + number_to_currency(@closest_travel_time.airport_tax.to_s, :locale => :hu, :delimiter => " ", :unit => "") + @closest_travel_time.price_measure.to_s + '</li>').html_safe unless @closest_travel_time.airport_tax.blank? %>
+				<%= ('<li><strong>Kerozin pótdíj: </strong>' + number_to_currency(@closest_travel_time.kerosene_charge.to_s, :locale => :hu, :delimiter => " ", :unit => "") + @closest_travel_time.price_measure.to_s + '</li>').html_safe unless @closest_travel_time.kerosene_charge.blank? %>
 			</ul>
-			<h3 id="full-price">Egy főre eső ár: <span><%= @closest_travel_time.price %> Ft</span></h3>
+			<h3 id="full-price">Az utazás ára: <span><%= number_to_currency(@closest_travel_time.price, :locale => :hu, :delimiter => " ", :unit => "") %><%= @closest_travel_time.note %></span></h3>
 			<div id="book-wrap">
 				<a class="view" href="/foglalas/<%= @closest_travel_time.id %>">Foglalás &raquo;</a>
 				<a href="/egyedi/<%= @closest_travel_time.id %>">Változtatna az úton? Kérjen egyedi árajánlatot!</a>
@@ -74,10 +80,10 @@
 		</div>
 		<div id="side">
 			<div class="sidebox" id="services">
-				<h3>Kényelmi szolgáltatások</h3>
+				<h3>Az utazás ára tartalmazza</h3>
 				<ul>
-					<% @travel_attributes.each do |travel_attributes| %>
-						<li><%= travel_attributes.name %></li>
+					<% @inprices.each do |inprice| %>
+						<li><%= inprice.name %></li>
 					<% end %>
 				</ul>
 			</div>
