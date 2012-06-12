@@ -167,11 +167,13 @@ class ListController < ApplicationController
 	end
 
 	def uticelok
-		country_id = Country.where(:name => params[:country_name].to_s).first
+		country = Country.where(:name => params[:country_name].to_s).first
 
-		traveloffers_array = TravelOffer.find(:all, :select => "DISTINCT travel_offers.*",:joins => :destinations, :conditions => "destinations.country_id = #{country_id}")
+		traveloffers_array = TravelOffer.find(:all, :select => "DISTINCT travel_offers.*",:joins => :destinations, :conditions => "destinations.country_id = #{country.id}")
 		@traveloffers = Kaminari.paginate_array(traveloffers_array).page(params[:page])
-		@h2 = ""
+		@h2 = "Úticél: " + country.name
+
+		render "index"
 	end
 
 end
