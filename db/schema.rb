@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120610204811) do
+ActiveRecord::Schema.define(:version => 20120612074657) do
 
   create_table "boards", :force => true do |t|
     t.string   "name"
@@ -100,6 +100,7 @@ ActiveRecord::Schema.define(:version => 20120610204811) do
     t.string   "file_name"
     t.datetime "created_at",      :null => false
     t.datetime "updated_at",      :null => false
+    t.boolean  "special"
   end
 
   create_table "in_out_prices", :force => true do |t|
@@ -262,6 +263,7 @@ ActiveRecord::Schema.define(:version => 20120610204811) do
     t.integer  "skiregion_id"
     t.integer  "click"
     t.string   "slug"
+    t.boolean  "special"
   end
 
   add_index "travel_offers", ["slug"], :name => "index_travel_offers_on_slug", :unique => true
@@ -300,6 +302,7 @@ ActiveRecord::Schema.define(:version => 20120610204811) do
     t.text     "note"
     t.datetime "created_at",                                               :null => false
     t.datetime "updated_at",                                               :null => false
+    t.boolean  "sale"
   end
 
   add_index "travel_times", ["from_date"], :name => "from_date"

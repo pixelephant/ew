@@ -54,21 +54,26 @@ edged in turquoise waters and brilliant white sand."</p>
 	<div id="popular-destinations">
 		<h2 class="orange">Legnépszerűbb úticélok</h2>
 		<div class="clearfix">
-				<a href="">Kuba</a>
-				<a href="">Dubai</a>
-				<a href="">Törökország</a>
-					<a href="">Kuba</a>
-				<a href="">Dubai</a>
-				<a href="">Törökország</a>
-					<a href="">Kuba</a>
-				<a href="">Dubai</a>
-				<a href="">Törökország</a>
+				<% @popular.each do |country| %>
+					<%= link_to Country.find(country.country_id).name, "/uticelok/" + Country.find(country.country_id).name %>
+				<% end %>
 		</div>
 	</div>
 
 	<div id="special-offers">
 		<h2 class="blue">Kiemelt ajánlataink</h2>
-		<div class="box-wrap third">
+		<!-- Lehetőségek: quarter, half, full -->
+		<% @specials.each_with_index do |offer, i| %>
+			<%= '<div class="box-wrap third">'.html_safe if i == 0 || i == 4 || i == 5 %>
+			<a href="/<%= offer.slug %>" class="box <%= i == 4 ? 'full' : 'quarter' %>">
+				<div class="inner">
+					<div class="ribbon"><%= offer.travel_name %></div>
+					<%= image_tag special_image(offer.id), :alt => offer.travel_name %>
+				</div>
+			</a>
+			<%= '</div>'.html_safe if i == 3 || i == 4 || i == 8 %>
+		<% end %>
+		<!-- <div class="box-wrap third">
 			<a href="#" class="box quarter">
 				<div class="inner">
 					<div class="ribbon">Hawaii</div>
@@ -124,7 +129,7 @@ edged in turquoise waters and brilliant white sand."</p>
 					<img src="http://static3.animeonly.org/albums/2007_02_02/Walls/thumb_v1s1-204-On-the-Edge-of-Sherwood-Forest-q75-1680x1050.jpg" alt="">
 				</div>
 			</a>
-		</div>
+		</div> -->
 	</div>
 	<div id="about-us">
 		<h2 class="blue">Rólunk</h2>

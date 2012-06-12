@@ -7,6 +7,7 @@ class TripController < ApplicationController
 
 	def show
 		@travel_offer = TravelOffer.find(params[:id])
+
 		@closest_travel_time = @travel_offer.closest_travel_time
 		@country = Country.find(@travel_offer.destinations.first.country_id)
 		@region = Region.find(@travel_offer.destinations.first.region_id)
@@ -17,6 +18,9 @@ class TripController < ApplicationController
 
 		@similar_offers = @travel_offer.similar_offers
 		@travel_attributes = @travel_offer.travel_attributes
+
+		@travel_offer.click = (@travel_offer.click.to_i + 1)
+		@travel_offer.save
 
 		render "show"
 	end

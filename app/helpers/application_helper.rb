@@ -11,4 +11,9 @@ module ApplicationHelper
 		return period = [['Tavaszi szünet', 13],['Nyáron', 14]]
 	end
 
+	def special_image(travel_offer_id)
+		image = Image.where(:travel_offer_id => travel_offer_id).order("images.special DESC").limit(1).first
+		return TravelOffer.find(travel_offer_id).gallery_url.to_s + image.file_name.to_s
+	end
+
 end
