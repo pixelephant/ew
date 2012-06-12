@@ -40,10 +40,10 @@ ActiveRecord::Schema.define(:version => 20120612091745) do
     t.integer  "country_id"
     t.integer  "region_id"
     t.string   "name"
-    t.string   "lat"
-    t.string   "long"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
+    t.string   "lat"
+    t.string   "long"
   end
 
   create_table "countries", :force => true do |t|
@@ -76,8 +76,6 @@ ActiveRecord::Schema.define(:version => 20120612091745) do
     t.datetime "created_at",      :null => false
     t.datetime "updated_at",      :null => false
   end
-
-  add_index "destinations_travel_offers", ["destination_id", "travel_offer_id"], :name => "foreign_keys"
 
   create_table "fakultativs", :force => true do |t|
     t.integer  "price"
@@ -213,8 +211,6 @@ ActiveRecord::Schema.define(:version => 20120612091745) do
     t.datetime "updated_at",      :null => false
   end
 
-  add_index "program_types_travel_offers", ["program_type_id", "travel_offer_id"], :name => "foreign_keys"
-
   create_table "regions", :force => true do |t|
     t.integer  "country_id"
     t.string   "name"
@@ -279,8 +275,8 @@ ActiveRecord::Schema.define(:version => 20120612091745) do
 
   create_table "travel_times", :force => true do |t|
     t.integer  "travel_offer_id"
-    t.datetime "from_date",             :default => '2012-01-01 00:00:00', :null => false
-    t.datetime "to_date",               :default => '2012-01-01 00:00:00', :null => false
+    t.datetime "from_date"
+    t.datetime "to_date"
     t.datetime "price_expire"
     t.string   "price_measure"
     t.integer  "night"
@@ -302,15 +298,10 @@ ActiveRecord::Schema.define(:version => 20120612091745) do
     t.string   "travel_time_type_code"
     t.integer  "departure_city_id"
     t.text     "note"
-    t.datetime "created_at",                                               :null => false
-    t.datetime "updated_at",                                               :null => false
+    t.datetime "created_at",            :null => false
+    t.datetime "updated_at",            :null => false
     t.boolean  "sale"
   end
-
-  add_index "travel_times", ["from_date"], :name => "from_date"
-  add_index "travel_times", ["to_date"], :name => "to_date"
-  add_index "travel_times", ["travel_offer_id", "from_date", "to_date"], :name => "dates"
-  add_index "travel_times", ["travel_offer_id"], :name => "travel_offer_id"
 
   create_table "traveldays", :force => true do |t|
     t.string   "name"

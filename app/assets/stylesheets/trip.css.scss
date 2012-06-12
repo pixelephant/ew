@@ -51,13 +51,18 @@
 		width:360px;
 		height:280px;
 		img{
-			//display:none;
+			max-width:360px;
+			max-height:280px;
 		}
 	}
 	.thumb{
 		@include t-04;
 		&:hover{
 			@include scale(1.04);
+		}
+		img{
+			width:50px;
+			height:50px;
 		}
 		margin-top:20px;
 		padding:5px;

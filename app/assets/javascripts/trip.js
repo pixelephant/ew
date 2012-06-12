@@ -32,6 +32,10 @@ $(document).ready(function(){
 		});
 	});
 
+	$("#tablePagination_prevPage,#tablePagination_nextPage").click(function(){
+		$('html,body').animate({scrollTop: $("#additional-time").offset().top},'slow');
+	});
+
 	//$("a.thumb").click(function(){
 		//$(this).siblings().removeClass("active").removeClass("arrow_box").end().addClass("active").addClass("arrow_box");
 		//return false;
