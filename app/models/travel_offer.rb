@@ -17,6 +17,7 @@ class TravelOffer < ActiveRecord::Base
 	belongs_to :board
 	belongs_to :traffic
 	belongs_to :skiregion
+	belongs_to :partner
 
 	accepts_nested_attributes_for :destinations
 	accepts_nested_attributes_for :program_types
