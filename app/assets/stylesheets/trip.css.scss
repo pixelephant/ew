@@ -112,13 +112,14 @@
 }
 
 #trip-details{
-	height:380px;
+	min-height:380px;
 	width:560px;
 	position:relative;
 	float:left;
 	padding-left:40px;
 	h2{
 		margin-top:0;
+		margin-bottom:0;
 		color:$orange;
 	}
 	ul{
@@ -218,6 +219,7 @@
 #side{
 	width:330px;
 	float:left;
+	padding-top:10px;
 }
 
 .sidebox{
@@ -232,7 +234,8 @@
 }
 
 #services{
-	height:200px;
+	padding-bottom:20px;
+	overflow:hidden;
 	ul{
 		font-size:14px;
 		color:$blue;

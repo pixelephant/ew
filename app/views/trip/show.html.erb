@@ -1,10 +1,11 @@
+<% if @travel_offer.special? %>
 <section id="page-header">
 	<div id="page-header-inner">
-		<% if @travel_offer.special? %>
-			<h1>Csak akkor látszom, ha kiemelt vagyok</h1>
-		<% end %>
+		
+			<h1>Csak akkor látszom, ha kiemelt vagyok</h1>		
 	</div>
 </section>
+<% end %>
 
 <section id="content">
 	<div id="main">
@@ -18,6 +19,7 @@
 		</div>
 		<div id="trip-details">
 			<h2><%= @travel_offer.travel_name %></h2>
+			<h3 id="full-price">Egy főre eső ár: <span><%= @closest_travel_time.price %> Ft</span></h3>
 			<ul>
 				<li><strong>Ország:</strong> <%= @country.name %></li>
 				<li><strong>Régió:</strong> <%= @region.name %></li>
@@ -26,7 +28,6 @@
 				<li><strong>Ellátás:</strong> <%= @travel_offer.board.name %></li>
 				<li><strong>Szoba:</strong> <%= @closest_travel_time.travel_time_type_name %></li>
 			</ul>
-			<h3 id="full-price">Egy főre eső ár: <span><%= @closest_travel_time.price %> Ft</span></h3>
 			<div id="book-wrap">
 				<a class="view" href="/foglalas/<%= @closest_travel_time.id %>">Foglalás &raquo;</a>
 				<a href="/egyedi/<%= @closest_travel_time.id %>">Változtatna az úton? Kérjen egyedi árajánlatot!</a>
