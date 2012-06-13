@@ -87,8 +87,9 @@ class ListController < ApplicationController
 	def naszutak
 		traveloffers_array = TravelOffer.joins(:travel_attributes).where(:travel_attributes => {:id => 19})
 		@traveloffers = Kaminari.paginate_array(traveloffers_array).page(params[:page])
-		@h = "Nászutak"
-		
+		@h2 = "Nászutak"
+		@img = "/assets/category_headers/naszutak.jpg"
+		@text = "Awake to a new vista each morning as large windows frame everchanging views of the azure ocean and sky, emerald-topped islands edged in turquoise waters and brilliant white sand."
 		render "index"
 	end
 
@@ -96,7 +97,8 @@ class ListController < ApplicationController
 		traveloffers_array = TravelOffer.joins(:travel_attributes).where(:travel_attributes => {:id => 19})
 		@traveloffers = Kaminari.paginate_array(traveloffers_array).page(params[:page])
 		@h2 = "Hajóutak"
-		
+		@img = "/assets/category_headers/hajo.jpg"
+		@text = "Awake to a new vista each morning as large windows frame everchanging views of the azure ocean and sky, emerald-topped islands edged in turquoise waters and brilliant white sand."
 		render "index"
 	end
 
@@ -104,7 +106,8 @@ class ListController < ApplicationController
 		traveloffers_array = TravelOffer.joins(:program_types).where(:program_types => {:id => [7,19]})
 		@traveloffers = Kaminari.paginate_array(traveloffers_array).page(params[:page])
 		@h2 = "Sielés"
-		
+		@img = "/assets/category_headers/sieles.jpg"
+		@text = "Awake to a new vista each morning as large windows frame everchanging views of the azure ocean and sky, emerald-topped islands edged in turquoise waters and brilliant white sand."
 		render "index"
 	end
 
@@ -112,7 +115,8 @@ class ListController < ApplicationController
 		traveloffers_array = TravelOffer.joins(:program_types).where(:program_types => {:id => 5}).order(@order_by)
 		@traveloffers = Kaminari.paginate_array(traveloffers_array).page(params[:page])
 		@h2 = "Egzotikus utak"
-
+		@img = "/assets/category_headers/egzotikus.jpg"
+		@text = "Awake to a new vista each morning as large windows frame everchanging views of the azure ocean and sky, emerald-topped islands edged in turquoise waters and brilliant white sand."
 		render "index"
 	end
 
@@ -120,7 +124,8 @@ class ListController < ApplicationController
 		traveloffers_array = TravelOffer.joins(:program_types).where(:program_types => {:id => [6,8]})
 		@traveloffers = Kaminari.paginate_array(traveloffers_array).page(params[:page])
 		@h2 = "Körutazások"
-		
+		@img = "/assets/category_headers/korut.jpg"
+		@text = "Awake to a new vista each morning as large windows frame everchanging views of the azure ocean and sky, emerald-topped islands edged in turquoise waters and brilliant white sand."
 		render "index"
 	end
 
@@ -128,7 +133,8 @@ class ListController < ApplicationController
 		traveloffers_array = TravelOffer.joins(:program_types).where(:program_types => {:id => 2})
 		@traveloffers = Kaminari.paginate_array(traveloffers_array).page(params[:page])
 		@h2 = "Városlátogatások"
-		
+		@img = "/assets/category_headers/varos.jpg"
+		@text = "Awake to a new vista each morning as large windows frame everchanging views of the azure ocean and sky, emerald-topped islands edged in turquoise waters and brilliant white sand."
 		render "index"
 	end
 
@@ -136,7 +142,8 @@ class ListController < ApplicationController
 		traveloffers_array = TravelOffer.joins(:program_types).where(:program_types => {:id => 23})
 		@traveloffers = Kaminari.paginate_array(traveloffers_array).page(params[:page])
 		@h2 = "Sportutak"
-		
+		@img = "/assets/category_headers/sport.jpg"
+		@text = "Awake to a new vista each morning as large windows frame everchanging views of the azure ocean and sky, emerald-topped islands edged in turquoise waters and brilliant white sand."
 		render "index"
 	end
 
@@ -144,7 +151,8 @@ class ListController < ApplicationController
 		traveloffers_array = TravelOffer.joins(:destinations).where('destinations.country_id <> 132')
 		@traveloffers = Kaminari.paginate_array(traveloffers_array).page(params[:page])
 		@h2 = "Külföldi utazások"
-		
+		@img = "/assets/category_headers/kulfold.jpg"
+		@text = "Awake to a new vista each morning as large windows frame everchanging views of the azure ocean and sky, emerald-topped islands edged in turquoise waters and brilliant white sand."
 		render "index"
 	end
 
@@ -152,7 +160,8 @@ class ListController < ApplicationController
 		traveloffers_array = TravelOffer.joins(:destinations).where(:destinations => {:country_id => 132})
 		@traveloffers = Kaminari.paginate_array(traveloffers_array).page(params[:page])
 		@h2 = "Belföldi utazások"
-		
+		@img = "/assets/category_headers/belfold.jpg"
+		@text = "Awake to a new vista each morning as large windows frame everchanging views of the azure ocean and sky, emerald-topped islands edged in turquoise waters and brilliant white sand."
 		render "index"
 	end
 

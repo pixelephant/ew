@@ -8,7 +8,7 @@
 	height:260px;
 	width:100%;
 	background:$blue;
-	border-bottom:1px solid $red;
+	border-bottom:1px solid $gray;
 }
 
 #page-header-inner{
@@ -23,6 +23,16 @@
 		@include font-lobster;
 		font-style:italic;
 		@include t-shadow;
+		text-align:center;
+	}
+	p{
+		color:white;
+		text-align:center;
+		font-style:italic;
+		@include t-shadow;
+		font-size:18px;
+		width:500px;
+		margin:20px auto;
 	}
 }
 

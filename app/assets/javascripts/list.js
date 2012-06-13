@@ -2,7 +2,7 @@
 
 $(document).ready(function(){
 
-$('#page-header').anystretch("assets/headers/europe.jpg", {speed: 1000, positionY: "center"});
+$('#page-header').anystretch($("#page-header-inner").data("image"), {speed: 1000, positionY: "center"});
 
 $("#more-countries").toggle(function(){
  $(this).find("span").html("&#9650;");
