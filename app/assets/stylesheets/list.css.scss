@@ -258,22 +258,29 @@ aside{
 		float:left;
 		width:538px;
 	}
+	.traveldata{
+		overflow:hidden;
+	}
 	h3{
 		color:$purple;
 		margin-top:0;
-		float:left;
+		margin-bottom:10px;
 		font-size:26px;
 		margin-right:10px;
+		line-height:1;
 	}
 	.row{
 		overflow:hidden;
 		height:30px;
 		line-height:30px;
 		width:538px;
+		&.h3{
+			overflow:visible;
+		}
 	}
 	.dates{
 		float:right;
-		color:$blue;
+		color:#5B5B5B;
 		font-size:18px;
 		font-weight:bold;
 		.nights{
