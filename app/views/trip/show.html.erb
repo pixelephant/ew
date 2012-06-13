@@ -39,6 +39,40 @@
 			</div>
 		</div>
 	</div>
+	<div id="tri-wrap">
+		<div class="tri">
+			<h3>Fakultativ Programok</h3>
+			<ul>
+				<% @fakultativs.each do |prog| %>
+					<li><%= prog.name %></li>
+				<% end %>
+			</ul>
+		</div>
+		<div class="tri">
+			<h3>Az utazás ára tartalmazza</h3>
+			<ul>
+				<% @inprices.each do |inprice| %>
+					<li><%= inprice.name %></li>
+				<% end %>
+			</ul>
+		</div>
+		<div class="tri">
+			<h3>Jó tudni</h3>
+			<ul>
+				<li>Harap a teve</li>
+				<li>Pénznem: Dollár</li>
+				<li>Oltás: Malária</li>
+			</ul>
+		</div>
+		<div class="tri">
+			<h3>Jó tudni</h3>
+			<ul>
+				<li>Harap a teve</li>
+				<li>Pénznem: Dollár</li>
+				<li>Oltás: Malária</li>
+			</ul>
+		</div>
+	</div>
 	<div id="additional-time">
 		<h2>További időpontok és változatok</h2>
 		<table>
@@ -63,7 +97,7 @@
 						<td><%= @travel_offer.board.name %></td>
 						<td><%= traveltime.travel_time_type_name %></td>
 						<td class="price"><%= traveltime.price %> <%= traveltime.price_measure %></td>
-						<td><a href="/foglalas/<%= traveltime.id %>">Foglalás &raquo;</a></td>
+						<td><a href="/<%= @travel_offer.slug %>/<%= traveltime.slug.to_s %>">Részletek &raquo;</a></td>
 					</tr>
 				<% end %>
 			</tbody>
@@ -104,40 +138,6 @@
 					<a rel="sights" class="fancybox" href="http://wetu.com/ImageHandler/1280x1280/1481/The%20Restaurant.jpg"><div><img src="http://external.ak.fbcdn.net/safe_image.php?d=AQCk1iIvTYg-fRbg&w=50&h=50&url=http%3A%2F%2Fupload.wikimedia.org%2Fwikipedia%2Fcommons%2Fthumb%2Fe%2Fe1%2FDubai_2010.JPG%2F720px-Dubai_2010.JPG&crop&fallback=hub_likes&prefix=q" alt=""></div></a>
 				</div>
 			</div>
-		</div>
-	</div>
-	<div id="tri-wrap">
-		<div class="tri">
-			<h3>Jó tudni</h3>
-			<ul>
-				<li>Harap a teve</li>
-				<li>Pénznem: Dollár</li>
-				<li>Oltás: Malária</li>
-			</ul>
-		</div>
-		<div class="tri">
-			<h3>Jó tudni</h3>
-			<ul>
-				<li>Harap a teve</li>
-				<li>Pénznem: Dollár</li>
-				<li>Oltás: Malária</li>
-			</ul>
-		</div>
-		<div class="tri">
-			<h3>Jó tudni</h3>
-			<ul>
-				<li>Harap a teve</li>
-				<li>Pénznem: Dollár</li>
-				<li>Oltás: Malária</li>
-			</ul>
-		</div>
-		<div class="tri">
-			<h3>Jó tudni</h3>
-			<ul>
-				<li>Harap a teve</li>
-				<li>Pénznem: Dollár</li>
-				<li>Oltás: Malária</li>
-			</ul>
 		</div>
 	</div>
 	<div id="similar">

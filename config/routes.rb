@@ -35,6 +35,7 @@ Ewutazas::Application.routes.draw do
   match 'egyedi/:id' => 'order#personalized'
 
   match 'list' => 'list#index', :method => 'POST'
+  match ':id/:from_date' => 'trip#show'
   match ':id' => 'trip#show', :as => :travel_offer
 
   # The priority is based upon order of creation:

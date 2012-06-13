@@ -58,23 +58,5 @@
 			<!-- Ajaxosan -->
 		</div>
 	</fieldset>
-	<fieldset class="collapsible">
-		<h4 class="legend">Program típusok <a href="#">&darr;</a></h4>
-		<div class="collapse">
-			<!-- <div>
-				<label for="all-program">Összes <input class="all" type="radio" name="program" id="all-program" checked></label>
-			</div> -->
-			<%= f.label "program-type_1", ("Összes " + (f.radio_button "program-type", '1', :class => "all")).html_safe %>
-			<!-- <div><label for="only-program">Csak az alábbiak <input class="only" type="radio" name="program" id="only-program"></label></div> -->
-			<%= f.label "program-type_0", ("Csak az alábbiak " + (f.radio_button "program-type", '0', :class => "only")).html_safe %>
-			<div>
-				<!-- <label for="">1<input type="checkbox" name="" id="" disabled checked></label>
-				<label for="">2<input type="checkbox" name="" id="" disabled checked></label> -->
-				<% @program_types.each do |program_type| %>
-				<%= f.label 'filters[program_type][]', (program_type.name + (check_box_tag "filters[program_type][]", program_type.id, :value => program_type.id)).html_safe %>
-				<% end %>	
-			</div>
-		</div>
-	</fieldset>
 	<%= f.submit 'Küldés' %>
 <% end %>
