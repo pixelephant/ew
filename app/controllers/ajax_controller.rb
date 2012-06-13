@@ -41,7 +41,7 @@ class AjaxController < ApplicationController
 		city = form_vals["city"]
 		arrival = form_vals["arrival"]
 		departure = form_vals["departure"]
-		max_price = form_vals["max_price_text"]
+		max_price = form_vals["max_price"]
 		flexibility = form_vals["flexibility"]
 		no_date = form_vals["no_date"]
 		imprecise = form_vals["imprecise"]
