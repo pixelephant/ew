@@ -47,6 +47,9 @@ aside{
 		padding:0;
 		padding-top:15px;
 	}
+	legend + div{
+			padding-top:0;
+		}
 	border:1px solid $gray;
 	border-right:none;
 	width:199px;
