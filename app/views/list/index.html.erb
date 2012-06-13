@@ -24,11 +24,13 @@
 								<%= (image_tag traveloffer.gallery_url + traveloffer.images.first.file_name, :height => 140, :width => 140, :alt => traveloffer.travel_name) if traveloffer.images.any? %>
 							</div>
 							<div class="data">
-								<div class="row">
+								<div class="travelname">
 									<h3><%= traveloffer.travel_name %></h3>
 								</div>
-								<span class="dates"><%= traveloffer.closest_travel_time.from_date.to_s(:year_month_day) + " - " + traveloffer.closest_travel_time.to_date.to_s(:year_month_day) %></span>
-								<span class="price"><%= traveloffer.min_price %> Ft-tól</span>
+								<div class="traveldata">
+									<span class="dates"><%= traveloffer.closest_travel_time.from_date.to_s(:year_month_day) + " - " + traveloffer.closest_travel_time.to_date.to_s(:year_month_day) %></span>
+									<span class="price"><%= traveloffer.min_price %> Ft-tól</span>
+								</div>
 								<p><%= (strip_tags(truncate(traveloffer.descriptions.where(:name => "Fekvese").first.description, :length => 255))) if traveloffer.descriptions.any? %></p>
 							</div>
 							<div class="icons">
