@@ -11,8 +11,11 @@ class ListController < ApplicationController
 
 		unless params[:filters].blank? && params[:sort].blank?
 			@filt = params[:filters]
-			@regions = Region.where(:country_id => @filt[:country]) unless @filt[:country].blank?
-			@cities = City.where(:region_id => @filt[:region]) unless @filt[:region].blank?
+
+			if @filt
+				@regions = Region.where(:country_id => @filt[:country]) unless @filt[:country].blank?
+				@cities = City.where(:region_id => @filt[:region]) unless @filt[:region].blank?
+			end
 
 			c = []
 

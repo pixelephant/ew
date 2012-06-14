@@ -1,3 +1,4 @@
+# encoding: UTF-8
 class OrderController < ApplicationController
 	layout "application"
 
@@ -16,6 +17,7 @@ class OrderController < ApplicationController
 		note = params[:com]
 		email = params[:email]
 		adult = params[:head]
+		children = params[:children]
 		name = params[:name]
 		phone = params[:prefix] + "/" + params[:number]
 		tt = TravelTime.find(params[:traveltime])
@@ -38,10 +40,23 @@ class OrderController < ApplicationController
 			outprices << (op.name.to_s + ",")
 		end
 
-		travel_text = "Utazás: " + to.travel_name.to_s + " <br/> Időpontja: " + tt.from_date.to_s + " - " + tt.to_date.to_s + " <br/> Módja: " + to.traffic.name.to_s + " <br/> Ellátás: " + to.board.name.to_s + " <br/> Ára: " + to.price.to_s + to.price_measure.to_s + "<br/> Szállás típusa: " + to.category_aleph.to_s + "<br /> Az ár tartalmazza: " + inprices.to_s "<br />Az ár nem tartalmazza: " + outprices.to_s
+		children = ""
+		tt.child_prices.each do |cp|
+			children << ("Kortól: " + cp.age_from.to_s + ", Korig: " + cp.age_to.to_s + ", Kedvezmény: " + cp.price.to_s + cp.price_type.to_s + ", Elhelyezés: " + cp.bed_type)
+		end
+
+		pre_bookings = ""
+		tt.pre_bookings.where("end_date > DATE(NOW())").each do |pb|
+			pre_bookings << ("Kedvezmény érvényes: " + pb.start_date.to_s + "-" + pb.end_date.to_s + ", mértéke: " + pb.amount.to_s + pb.amount_type.to_s + ". Szöveges leírás: " + pb.description.to_s)
+		end
+
+		travel_text = "Utazás: " + to.travel_name.to_s + " \nIdőpontja: " + tt.from_date.to_s + " - " + tt.to_date.to_s + " \nMódja: " + to.traffic.name.to_s + " \nEllátás: " + to.board.name.to_s + " \nÁra: " + tt.price.to_s + tt.price_measure.to_s + "\nSzállás típusa: " + to.category_aleph.to_s + "\nAz ár tartalmazza: " + inprices.to_s + "\nAz ár nem tartalmazza: " + outprices.to_s
+		travel_text << ("\nGyermek kedvezmény: " + children) unless children.blank?
+		travel_text << ("\nElőfoglalási kedvezmény: " + pre_bookings) unless pre_bookings.blank?
+
 		note = ("EGYEDI: " + note) if tt == 0
 
-		if Order.create(:name => name, :adult => adult, :email => email, :note => note, :phone => phone, :travel_time_id => tt, :partner_name => partner_name, :travel_text => travel_text).save
+		if Order.create(:name => name, :adult => adult, :children => children, :email => email, :note => note, :phone => phone, :travel_time_id => tt.id, :partner_name => partner_name, :travel_text => travel_text.html_safe).save
 			render "thankyou"
 		else
 			flash[:notice] = "Nem sikerült rögzíteni a megrendelést, kérjük próbálja újra!"
