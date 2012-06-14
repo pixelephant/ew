@@ -1,5 +1,5 @@
 <section id="page-header">
-	<div data-image="<%= @img.html_safe %>" id="page-header-inner">
+	<div data-image="<%= @img.html_safe unless @img.blank? %>" id="page-header-inner">
 		<h1><%=  @h2  %></h1>
 		<p><%=  @text  %></p>
 	</div>
@@ -34,11 +34,11 @@
 								</div>
 								<p><%= (strip_tags(truncate(traveloffer.descriptions.where(:name => "Fekvese").first.description, :length => 255))) if traveloffer.descriptions.any? %></p>
 							</div>
-							<div class="icons">
+							<!-- <div class="icons">
 								<img src="http://www.placehold.it/30x30" alt="">
 								<img src="http://www.placehold.it/30x30" alt="">
 								<img src="http://www.placehold.it/30x30" alt="">
-							</div>
+							</div> -->
 							<%= link_to 'Részletek', traveloffer, :class => "view" %>
 						<% end %>
 					</div>

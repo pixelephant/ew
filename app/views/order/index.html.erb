@@ -1,6 +1,8 @@
 <section id="content">
 <h2>Foglalás</h2>
 
+<%= flash[:notice] unless flash[:notice].blank? %>
+
 <form id="order-form" action="/foglalas/koszonjuk" method="POST">
 <div class="row"><h3><%= @travel_offer.travel_name %></h3> <span class="dates"><%= @travel_time.from_date.to_s(:year_month_day) %> - <%= @travel_time.from_date.to_s(:year_month_day) %></span> <span class="price"><%= @travel_time.price %> Ft</span></div>
 

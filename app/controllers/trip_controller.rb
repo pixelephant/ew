@@ -17,7 +17,11 @@ class TripController < ApplicationController
 		@travel_times = @travel_offer.travel_times.where('(DATE(travel_times.from_date) > DATE(NOW())) AND travel_times.id <> ' + @closest_travel_time.id.to_s)
 		@leiras = @travel_offer.descriptions.where(:name => 'Fekvese').first.description.to_s.html_safe
 		@inprices = @travel_offer.inprices
+		@outprices = @travel_offer.outprices
 		@fakultativs = @travel_offer.fakultativs
+
+		@prebooking = @closest_travel_time.pre_bookings.where("end_date > DATE(NOW())").order("end_date ASC")
+		@child_prices = @closest_travel_time.child_prices
 
 		@similar_offers = @travel_offer.similar_offers
 		@travel_attributes = @travel_offer.travel_attributes

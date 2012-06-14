@@ -13,7 +13,7 @@ Ewutazas::Application.routes.draw do
   match 'ajax/get_city' => 'ajax#get_city', :method => 'POST'
   match 'ajax/search_estimate' => 'ajax#search_estimate', :method => 'POST'
 
-  match 'uticelok/:country_name' => 'list#uticelok'
+  # match 'uticelok/:country_name' => 'list#uticelok'
 
   match 'naszutak' => 'list#naszutak'
   match 'hajoutak' => 'list#hajoutak'
@@ -24,6 +24,7 @@ Ewutazas::Application.routes.draw do
   match 'sportutak' => 'list#sportutak'
   match 'kulfoldiutazasok' => 'list#kulfoldiutazasok'
   match 'belfoldiutazasok' => 'list#belfoldiutazasok'
+  match 'akciosutak' => 'list#akciosutak'
 
   match 'kereses' => 'list#kereses'
 
@@ -35,6 +36,9 @@ Ewutazas::Application.routes.draw do
   match 'egyedi/:id' => 'order#personalized'
 
   match 'list' => 'list#index', :method => 'POST'
+
+  match 'uticelok/:country_name' => 'list#uticelok'
+
   match ':id/:from_date' => 'trip#show'
   match ':id' => 'trip#show', :as => :travel_offer
 

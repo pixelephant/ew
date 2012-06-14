@@ -4,6 +4,11 @@ class ListController < ApplicationController
 
 	def index
 
+		@h2 = "Utazási ajánlataink"
+		@h2 = @h2 + " - " + params[:country_name] if params[:country_name]
+		@img = ""
+		@text = ""
+
 		unless params[:filters].blank? && params[:sort].blank?
 			@filt = params[:filters]
 			@regions = Region.where(:country_id => @filt[:country]) unless @filt[:country].blank?
@@ -161,6 +166,20 @@ class ListController < ApplicationController
 		@traveloffers = Kaminari.paginate_array(traveloffers_array).page(params[:page])
 		@h2 = "Belföldi utazások"
 		@img = "/assets/category_headers/belfold.jpg"
+		@text = "Awake to a new vista each morning as large windows frame everchanging views of the azure ocean and sky, emerald-topped islands edged in turquoise waters and brilliant white sand."
+		render "index"
+	end
+
+	def akciosutak
+		travel_times = TravelTime.find_by_sql("SELECT DISTINCT travel_offer_id FROM travel_times WHERE discount=1")
+		tt_id = []
+		travel_times.each do |tt|
+			tt_id << tt.travel_offer_id
+		end
+		traveloffers_array = TravelOffer.where(:id => tt_id)
+		@traveloffers = Kaminari.paginate_array(traveloffers_array).page(params[:page])
+		@h2 = "Akciós utak"
+		@img = "/assets/category_headers/akcios.jpg"
 		@text = "Awake to a new vista each morning as large windows frame everchanging views of the azure ocean and sky, emerald-topped islands edged in turquoise waters and brilliant white sand."
 		render "index"
 	end

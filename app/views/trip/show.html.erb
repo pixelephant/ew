@@ -26,11 +26,11 @@
 				<li><strong>Időpont:</strong> <%= @closest_travel_time.from_date.to_s(:year_month_day) + " - " + @closest_travel_time.to_date.to_s(:year_month_day) %> (<%= @closest_travel_time.night %> éjszaka)</li>
 				<li><strong>Ellátás:</strong> <%= @travel_offer.board.name %></li>
 				<li><strong>Szoba:</strong> <%= @closest_travel_time.travel_time_type_name %></li>
-				<%= ('<li><strong>Foglalási díj: </strong>' + number_to_currency(@closest_travel_time.reservation_fee.to_s, :locale => :hu, :delimiter => " ", :unit => "") + @closest_travel_time.price_measure.to_s + '</li>').html_safe unless @closest_travel_time.reservation_fee.blank? %>
-				<%= ('<li><strong>Transzfer díj: </strong>' + number_to_currency(@closest_travel_time.transfer_fee.to_s, :locale => :hu, :delimiter => " ", :unit => "") + @closest_travel_time.price_measure.to_s + '</li>').html_safe unless @closest_travel_time.transfer_fee.blank? %>
-				<%= ('<li><strong>Vízum díj: </strong>' + number_to_currency(@closest_travel_time.visa_fee.to_s, :locale => :hu, :delimiter => " ", :unit => "") + @closest_travel_time.price_measure.to_s + '</li>').html_safe unless @closest_travel_time.visa_fee.blank? %>
-				<%= ('<li><strong>Reptéri illeték: </strong>' + number_to_currency(@closest_travel_time.airport_tax.to_s, :locale => :hu, :delimiter => " ", :unit => "") + @closest_travel_time.price_measure.to_s + '</li>').html_safe unless @closest_travel_time.airport_tax.blank? %>
-				<%= ('<li><strong>Kerozin pótdíj: </strong>' + number_to_currency(@closest_travel_time.kerosene_charge.to_s, :locale => :hu, :delimiter => " ", :unit => "") + @closest_travel_time.price_measure.to_s + '</li>').html_safe unless @closest_travel_time.kerosene_charge.blank? %>
+				<%= ('<li><strong>Foglalási díj: </strong>' + number_to_currency(@closest_travel_time.reservation_fee.to_s, :locale => :hu, :delimiter => " ", :unit => "") + @closest_travel_time.price_measure.to_s + '</li>').html_safe unless @closest_travel_time.reservation_fee.blank? || @closest_travel_time.reservation_fee == 0 %>
+				<%= ('<li><strong>Transzfer díj: </strong>' + number_to_currency(@closest_travel_time.transfer_fee.to_s, :locale => :hu, :delimiter => " ", :unit => "") + @closest_travel_time.price_measure.to_s + '</li>').html_safe unless @closest_travel_time.transfer_fee.blank? || @closest_travel_time.transfer_fee == 0 %>
+				<%= ('<li><strong>Vízum díj: </strong>' + number_to_currency(@closest_travel_time.visa_fee.to_s, :locale => :hu, :delimiter => " ", :unit => "") + @closest_travel_time.price_measure.to_s + '</li>').html_safe unless @closest_travel_time.visa_fee.blank? || @closest_travel_time.visa_fee == 0 %>
+				<%= ('<li><strong>Reptéri illeték: </strong>' + number_to_currency(@closest_travel_time.airport_tax.to_s, :locale => :hu, :delimiter => " ", :unit => "") + @closest_travel_time.price_measure.to_s + '</li>').html_safe unless @closest_travel_time.airport_tax.blank? || @closest_travel_time.airport_tax == 0 %>
+				<%= ('<li><strong>Kerozin pótdíj: </strong>' + number_to_currency(@closest_travel_time.kerosene_charge.to_s, :locale => :hu, :delimiter => " ", :unit => "") + @closest_travel_time.price_measure.to_s + '</li>').html_safe unless @closest_travel_time.kerosene_charge.blank? || @closest_travel_time.kerosene_charge == 0 %>
 			</ul>
 			<h3 id="full-price">Az utazás ára: <span><%= number_to_currency(@closest_travel_time.price, :locale => :hu, :delimiter => " ", :unit => "") %><%= @closest_travel_time.note %></span></h3>
 			<div id="book-wrap">
@@ -39,31 +39,48 @@
 			</div>
 		</div>
 	</div>
+
 	<div id="tri-wrap">
-		<div class="tri">
-			<h3>Fakultativ Programok</h3>
-			<ul>
-				<% @fakultativs.each do |prog| %>
-					<li><%= prog.name %></li>
-				<% end %>
-			</ul>
-		</div>
-		<div class="tri">
-			<h3>Az utazás ára tartalmazza</h3>
-			<ul>
-				<% @inprices.each do |inprice| %>
-					<li><%= inprice.name %></li>
-				<% end %>
-			</ul>
-		</div>
-		<div class="tri">
-			<h3>Jó tudni</h3>
-			<ul>
-				<li>Harap a teve</li>
-				<li>Pénznem: Dollár</li>
-				<li>Oltás: Malária</li>
-			</ul>
-		</div>
+		<% unless @fakultativs.blank? %>
+			<div class="tri">
+				<h3>Fakultativ Programok</h3>
+				<ul>
+					<% @fakultativs.each do |prog| %>
+						<li><%= prog.name %></li>
+					<% end %>
+				</ul>
+			</div>
+		<% end %>
+		<% unless @inprice.blank? %>
+			<div class="tri">
+				<h3>Az utazás ára tartalmazza</h3>
+				<ul>
+					<% @inprices.each do |inprice| %>
+						<li><%= inprice.name %></li>
+					<% end %>
+				</ul>
+			</div>
+		<% end %>
+		<% unless @prebooking.nil? %>
+			<div class="tri">
+				<h3>Előfoglalási kedvezmények</h3>
+				<ul>
+					<% @prebooking.each do |prebooking| %>
+						<li><%= prebooking.start_date.to_s + "és" unless prebooking.start_date.blank? %>  <%= prebooking.end_date %><%= prebooking.start_date.blank? ? "-ig" : " között" %>: <%= prebooking.amount %> <%= prebooking.amount_type %></li>
+					<% end %>
+				</ul>
+			</div>
+		<% end %>
+		<% unless @child_prices.nil? %>
+			<div class="tri">
+				<h3>Kedvezményes ár gyermekeknek</h3>
+				<ul>
+					<% @child_prices.each do |cp| %>
+						<li><%= cp.age_from.to_s %> éves kortól <%= cp.age_to.to_s + " éves korig" unless cp.age_to.blank? %>: <%= cp.price %> <%= cp.price_type %>. Elhelyezés: <%= cp.bed_type %></li>
+					<% end %>
+				</ul>
+			</div>
+		<% end %>
 		<div class="tri">
 			<h3>Jó tudni</h3>
 			<ul>
@@ -107,10 +124,6 @@
 		<div id="text">
 			<h3>Részletes leírás</h3>
 			<%= @leiras %>
-			<h3>Miért fogod szeretni?</h3>
-			<p>
-				Africa is the world's second-largest and second-most-populous continent, after Asia. At about 30.2 million km² (11.7 million sq mi) including adjacent islands, it covers 6% of the Earth's total surface area and 20.4% of the total land area.[2] With 1.0 billion people (as of 2009, see table), it accounts for about 14.72% of the world's human population.
-			</p>
 		</div>
 		<div id="side">
 			<div class="sidebox" id="services">

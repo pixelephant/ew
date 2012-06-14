@@ -27,13 +27,13 @@ class ApplicationController < ActionController::Base
 
 		t_countries = Destination.find_by_sql("SELECT destinations.country_id AS id, SUM(travel_offers.click) AS click FROM destinations INNER JOIN destinations_travel_offers ON destinations.id = destinations_travel_offers.destination_id INNER JOIN travel_offers ON travel_offers.id = destinations_travel_offers.travel_offer_id GROUP BY destinations.country_id ORDER BY SUM(travel_offers.click) LIMIT 4")
 		top_countries = t_countries.collect {|p| [p.id]}.join(",")
-		@p_countries = Country.find_by_sql("SELECT * FROM countries WHERE id IN (#{top_countries})")
+		@p_countries = (a = Country.find_by_sql("SELECT * FROM countries WHERE id IN (#{top_countries})").any? ? a : [])
 
-		@countries_europe = Country.find_by_sql("SELECT * FROM countries WHERE continent='europa' AND id NOT IN (#{top_countries})")
-		@countries_asia = Country.find_by_sql("SELECT * FROM countries WHERE continent='azsia' AND id NOT IN (#{top_countries})")
-		@countries_africa = Country.find_by_sql("SELECT * FROM countries WHERE continent='afrika' AND id NOT IN (#{top_countries})")
-		@countries_namerica = Country.find_by_sql("SELECT * FROM countries WHERE continent='eszakamerika' AND id NOT IN (#{top_countries})")
-		@countries_samerica = Country.find_by_sql("SELECT * FROM countries WHERE continent='delamerika' AND id NOT IN (#{top_countries})")
-		@countries_australia = Country.find_by_sql("SELECT * FROM countries WHERE continent='ausztralia' AND id NOT IN (#{top_countries})")
+		@countries_europe = Country.find_by_sql("SELECT * FROM countries WHERE continent='europa' AND id NOT IN (#{top_countries}) ORDER BY name")
+		@countries_asia = Country.find_by_sql("SELECT * FROM countries WHERE continent='azsia' AND id NOT IN (#{top_countries}) ORDER BY name")
+		@countries_africa = Country.find_by_sql("SELECT * FROM countries WHERE continent='afrika' AND id NOT IN (#{top_countries}) ORDER BY name")
+		@countries_namerica = Country.find_by_sql("SELECT * FROM countries WHERE continent='eszakamerika' AND id NOT IN (#{top_countries}) ORDER BY name")
+		@countries_samerica = Country.find_by_sql("SELECT * FROM countries WHERE continent='delamerika' AND id NOT IN (#{top_countries}) ORDER BY name")
+		@countries_australia = Country.find_by_sql("SELECT * FROM countries WHERE continent='ausztralia' AND id NOT IN (#{top_countries}) ORDER BY name")
   end
 end
