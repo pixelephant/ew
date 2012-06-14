@@ -22,7 +22,7 @@
 				<li><strong>Ország:</strong> <%= @country.name %></li>
 				<li><strong>Régió:</strong> <%= @region.name %></li>
 				<li><strong>Utazás módja:</strong> <%= @closest_travel_time.individual == 1 ? 'Egyéni utazással' : @travel_offer.traffic.name %></li>
-				<li><strong>Indulás:</strong> <%= @departure_city.name %></li>
+				<li><strong>Indulás:</strong> <%= @departure_city %></li>
 				<li><strong>Időpont:</strong> <%= @closest_travel_time.from_date.to_s(:year_month_day) + " - " + @closest_travel_time.to_date.to_s(:year_month_day) %> (<%= @closest_travel_time.night %> éjszaka)</li>
 				<li><strong>Ellátás:</strong> <%= @travel_offer.board.name %></li>
 				<li><strong>Szoba:</strong> <%= @closest_travel_time.travel_time_type_name %></li>
