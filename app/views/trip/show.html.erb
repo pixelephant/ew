@@ -61,7 +61,7 @@
 				</ul>
 			</div>
 		<% end %>
-		<% unless @prebooking.nil? %>
+		<% unless @prebooking.blank? %>
 			<div class="tri">
 				<h3>Előfoglalási kedvezmények</h3>
 				<ul>
@@ -71,7 +71,7 @@
 				</ul>
 			</div>
 		<% end %>
-		<% unless @child_prices.nil? %>
+		<% unless @child_prices.blank? %>
 			<div class="tri">
 				<h3>Kedvezményes ár gyermekeknek</h3>
 				<ul>
@@ -81,14 +81,16 @@
 				</ul>
 			</div>
 		<% end %>
-		<div class="tri">
-			<h3>Jó tudni</h3>
-			<ul>
-				<li>Harap a teve</li>
-				<li>Pénznem: Dollár</li>
-				<li>Oltás: Malária</li>
-			</ul>
-		</div>
+		<% unless @good_to_knows.blank? %>
+			<div class="tri">
+				<h3>Jó tudni</h3>
+				<ul>
+					<% @good_to_knows.each do |good| %>
+						<li><%= good.content %></li>
+					<% end %>				
+				</ul>
+			</div>
+		<% end %>
 	</div>
 	<div id="additional-time">
 		<h2>További időpontok és változatok</h2>

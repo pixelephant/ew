@@ -22,6 +22,7 @@ class TripController < ApplicationController
 
 		@prebooking = @closest_travel_time.pre_bookings.where("end_date > DATE(NOW())").order("end_date ASC")
 		@child_prices = @closest_travel_time.child_prices
+		@good_to_knows = @country.goods
 
 		@similar_offers = @travel_offer.similar_offers
 		@travel_attributes = @travel_offer.travel_attributes

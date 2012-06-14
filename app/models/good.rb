@@ -1,3 +1,5 @@
 class Good < ActiveRecord::Base
-  # attr_accessible :title, :body
+  belongs_to :country
+
+  attr_accessible :content, :country_id
 end
