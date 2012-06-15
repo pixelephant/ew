@@ -22,7 +22,7 @@
 					<div class="trip">
 						<%= link_to traveloffer do %>
 							<div class="thumbnail">
-								<%= (image_tag traveloffer.gallery_url + traveloffer.images.first.file_name, :height => 140, :width => 140, :alt => traveloffer.travel_name) if traveloffer.images.any? %>
+								<%= (image_tag traveloffer.gallery_url + traveloffer.images.first.file_name.to_s, :height => 140, :width => 140, :alt => traveloffer.travel_name) if traveloffer.images.any? %>
 							</div>
 							<div class="data">
 								<div class="travelname">

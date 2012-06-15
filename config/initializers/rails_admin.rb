@@ -10,17 +10,34 @@ RailsAdmin.config do |config|
 		include_all_fields
 		exclude_fields :md5
 
+		field :destinations do 
+      associated_collection_cache_all true 
+    end 
+
 		object_label_method do
 			:travel_offer_label_method
 		end
 	end
 
+	config.model Destination do
+		object_label_method do
+			:destination_label_method
+		end
+	end
+
 	def travel_time_label_method
-		self.travel_offer.travel_name
+		self.travel_offer ? self.travel_offer.travel_name : ''
 	end
 
 	def travel_offer_label_method
-		self.travel_name
+		self ? self.travel_name : ''
+	end
+
+	def destination_label_method
+		label = ""
+		label << (self.country ? self.country.name.to_s : '')
+		label << (self.city ? "," + self.city.name.to_s : '')
+		return label
 	end
 
 end

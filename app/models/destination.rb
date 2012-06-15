@@ -1,9 +1,12 @@
 class Destination < ActiveRecord::Base
 	has_and_belongs_to_many :travel_offers
 
-	has_one :city
-	has_one :region
-	has_one :country
+	belongs_to :city
+	belongs_to :region
+	belongs_to :country
 
-	attr_accessible :id, :country_id, :region_id, :city_id
+	accepts_nested_attributes_for :travel_offers
+
+	attr_protected
+	#attr_accessible :id, :country_id, :region_id, :city_id
 end

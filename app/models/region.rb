@@ -1,5 +1,5 @@
 class Region < ActiveRecord::Base
-	belongs_to :destination
+	has_many :destinations
 
 	has_many :cities
 	belongs_to :country
