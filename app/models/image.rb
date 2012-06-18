@@ -1,7 +1,7 @@
 class Image < ActiveRecord::Base
 	belongs_to :travel_offer
 
-	mount_uploader :file_name, ImageUploader
+	mount_uploader :own_image_file, ImageUploader
 
-	attr_accessible :id, :file_name, :travel_offer_id, :file_name_cache, :remove_file_name
+	attr_accessible :id, :own_image_file, :travel_offer_id, :own_image_file_cache, :remove_own_image_file
 end

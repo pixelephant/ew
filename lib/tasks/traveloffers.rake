@@ -23,16 +23,17 @@
 		doc.css("traveloffers traveloffer").each_with_index do |traveloffer, i|
 
 			puts "traveloffer: " + i.to_s
-			puts "TravelOffer id: " + traveloffer.css("id").inner_text
+			puts "TravelOffer id: " + (id = traveloffer.css("id").inner_text)
 
 			md5 = traveloffer.css("md5").inner_text
 			if TravelOffer.where(:md5 => md5).any?
 				unchanged_counter += 1
 			else
-				
-				t = TravelOffer.new
+				t = TravelOffer.find(id)
+				t = TravelOffer.new if t.nil?
 				t.md5 = md5
-				t.id = traveloffer.css("id").inner_text
+				#t.id = traveloffer.css("id").inner_text
+				t.id = id
 				t.partner_id = traveloffer.css("partnerid").inner_text
 				t.travel_name = traveloffer.css("travel_name").inner_text
 				t.szallas_name = traveloffer.css("szallas_name").inner_text
@@ -169,7 +170,7 @@
 							)
 					end
 
-					travel_time.css("gyerek_ar").each do |child_price|
+					travel_time.css("gyerek_arak gyerek_ar").each do |child_price|
 						tt.child_prices << ChildPrice.new(
 								:age_from => child_price.attribute("kortol").to_s,
 								:age_to => child_price.attribute("korig").to_s,

@@ -9,6 +9,8 @@ class ListController < ApplicationController
 		@img = ""
 		@text = ""
 
+		params[:filters] = params[:search] if params[:search]
+
 		unless params[:filters].blank? && params[:sort].blank?
 			@filt = params[:filters]
 
@@ -62,14 +64,14 @@ class ListController < ApplicationController
 					c << ("travel_times.to_date < '" + dend.to_s + "'")
 				end
 
-				p = []
-				@filt[:program_type].each do |ptype|
-					p << ptype
-				end
-				unless p.blank?
-					prog_type = p.join(",")
-				end
-				c << ("program_types.id IN (#{prog_type})")
+				# p = []
+				# @filt[:program_type].each do |ptype|
+				# 	p << ptype
+				# end
+				# unless p.blank?
+				# 	prog_type = p.join(",")
+				# end
+				# c << ("program_types.id IN (#{prog_type})")
 
 				if @filt[:price].to_i > 0
 					price = @filt[:price].to_s
