@@ -172,8 +172,8 @@
 
 					travel_time.css("gyerek_arak gyerek_ar").each do |child_price|
 						tt.child_prices << ChildPrice.new(
-								:age_from => child_price.attribute("kortol").to_s,
-								:age_to => child_price.attribute("korig").to_s,
+								:age_from => child_price.attribute("kor_tol").to_s,
+								:age_to => child_price.attribute("kor_ig").to_s,
 								:bed_type => child_price.attribute("agytipus").to_s,
 								:price_type => child_price.attribute("ar_tipus").to_s,
 								:price => child_price.attribute("ar").to_s
