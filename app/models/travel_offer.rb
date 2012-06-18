@@ -19,11 +19,19 @@ class TravelOffer < ActiveRecord::Base
 	belongs_to :skiregion
 	belongs_to :partner
 
-	accepts_nested_attributes_for :destinations
-	accepts_nested_attributes_for :program_types
-	accepts_nested_attributes_for :traveldays
+	#accepts_nested_attributes_for :destinations
+	# accepts_nested_attributes_for :program_types
+	# accepts_nested_attributes_for :traveldays
+	# accepts_nested_attributes_for :images
+	# accepts_nested_attributes_for :travel_attributes
+	# accepts_nested_attributes_for :inprices
+	# accepts_nested_attributes_for :outprices
+	# accepts_nested_attributes_for :descriptions
+	# accepts_nested_attributes_for :fakultativs
+	# accepts_nested_attributes_for :travel_times
 
-	attr_accessible :id, :md5, :partner_id, :travel_name, :szallas_name, :category_standard, :category_aleph, :gallery_url, :board_id, :traffic_id
+	#attr_accessible :id, :md5, :partner_id, :travel_name, :szallas_name, :category_standard, :category_aleph, :gallery_url, :board_id, :traffic_id,
+	attr_protected
 
 	def closest_travel_time
 		TravelTime.where("travel_offer_id = #{self.id} AND DATE(from_date) > DATE(NOW())").order("from_date ASC").first

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120613110547) do
+ActiveRecord::Schema.define(:version => 20120614085803) do
 
   create_table "boards", :force => true do |t|
     t.string   "name"
@@ -85,6 +85,13 @@ ActiveRecord::Schema.define(:version => 20120613110547) do
     t.datetime "created_at",      :null => false
     t.datetime "updated_at",      :null => false
     t.integer  "travel_offer_id"
+  end
+
+  create_table "goods", :force => true do |t|
+    t.integer  "country_id"
+    t.string   "content"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
   end
 
   create_table "holidays", :force => true do |t|
@@ -183,8 +190,8 @@ ActiveRecord::Schema.define(:version => 20120613110547) do
 
   create_table "pre_bookings", :force => true do |t|
     t.integer  "travel_time_id"
-    t.datetime "start_date"
-    t.datetime "end_date"
+    t.date     "start_date"
+    t.date     "end_date"
     t.string   "amount_type"
     t.integer  "amount"
     t.text     "description"

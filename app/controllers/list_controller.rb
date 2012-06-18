@@ -11,8 +11,11 @@ class ListController < ApplicationController
 
 		unless params[:filters].blank? && params[:sort].blank?
 			@filt = params[:filters]
-			@regions = Region.where(:country_id => @filt[:country]) unless @filt[:country].blank?
-			@cities = City.where(:region_id => @filt[:region]) unless @filt[:region].blank?
+
+			if @filt
+				@regions = Region.where(:country_id => @filt[:country]) unless @filt[:country].blank?
+				@cities = City.where(:region_id => @filt[:region]) unless @filt[:region].blank?
+			end
 
 			c = []
 
@@ -90,7 +93,7 @@ class ListController < ApplicationController
 	end
 
 	def naszutak
-		traveloffers_array = TravelOffer.joins(:travel_attributes).where(:travel_attributes => {:id => 19})
+		traveloffers_array = TravelOffer.joins(:travel_attributes).where(:travel_attributes => {:id => 19}).order(@order_by + " " + @ord)
 		@traveloffers = Kaminari.paginate_array(traveloffers_array).page(params[:page])
 		@h2 = "Nászutak"
 		@img = "/assets/category_headers/naszutak.jpg"
@@ -99,7 +102,7 @@ class ListController < ApplicationController
 	end
 
 	def hajoutak
-		traveloffers_array = TravelOffer.joins(:travel_attributes).where(:travel_attributes => {:id => 19})
+		traveloffers_array = TravelOffer.joins(:travel_attributes).where(:travel_attributes => {:id => 19}).order(@order_by + " " + @ord)
 		@traveloffers = Kaminari.paginate_array(traveloffers_array).page(params[:page])
 		@h2 = "Hajóutak"
 		@img = "/assets/category_headers/hajo.jpg"
@@ -108,7 +111,7 @@ class ListController < ApplicationController
 	end
 
 	def sieles
-		traveloffers_array = TravelOffer.joins(:program_types).where(:program_types => {:id => [7,19]})
+		traveloffers_array = TravelOffer.joins(:program_types).where(:program_types => {:id => [7,19]}).order(@order_by + " " + @ord)
 		@traveloffers = Kaminari.paginate_array(traveloffers_array).page(params[:page])
 		@h2 = "Sielés"
 		@img = "/assets/category_headers/sieles.jpg"
@@ -117,7 +120,7 @@ class ListController < ApplicationController
 	end
 
 	def egzotikusutak
-		traveloffers_array = TravelOffer.joins(:program_types).where(:program_types => {:id => 5}).order(@order_by)
+		traveloffers_array = TravelOffer.joins(:program_types).where(:program_types => {:id => 5}).order(@order_by + " " + @ord)
 		@traveloffers = Kaminari.paginate_array(traveloffers_array).page(params[:page])
 		@h2 = "Egzotikus utak"
 		@img = "/assets/category_headers/egzotikus.jpg"
@@ -126,7 +129,7 @@ class ListController < ApplicationController
 	end
 
 	def korutazasok
-		traveloffers_array = TravelOffer.joins(:program_types).where(:program_types => {:id => [6,8]})
+		traveloffers_array = TravelOffer.joins(:program_types).where(:program_types => {:id => [6,8]}).order(@order_by + " " + @ord)
 		@traveloffers = Kaminari.paginate_array(traveloffers_array).page(params[:page])
 		@h2 = "Körutazások"
 		@img = "/assets/category_headers/korut.jpg"
@@ -135,7 +138,7 @@ class ListController < ApplicationController
 	end
 
 	def varoslatogatasok
-		traveloffers_array = TravelOffer.joins(:program_types).where(:program_types => {:id => 2})
+		traveloffers_array = TravelOffer.joins(:program_types).where(:program_types => {:id => 2}).order(@order_by + " " + @ord)
 		@traveloffers = Kaminari.paginate_array(traveloffers_array).page(params[:page])
 		@h2 = "Városlátogatások"
 		@img = "/assets/category_headers/varos.jpg"
@@ -144,7 +147,7 @@ class ListController < ApplicationController
 	end
 
 	def sportutak
-		traveloffers_array = TravelOffer.joins(:program_types).where(:program_types => {:id => 23})
+		traveloffers_array = TravelOffer.joins(:program_types).where(:program_types => {:id => 23}).order(@order_by + " " + @ord)
 		@traveloffers = Kaminari.paginate_array(traveloffers_array).page(params[:page])
 		@h2 = "Sportutak"
 		@img = "/assets/category_headers/sport.jpg"
@@ -153,7 +156,7 @@ class ListController < ApplicationController
 	end
 
 	def kulfoldiutazasok
-		traveloffers_array = TravelOffer.joins(:destinations).where('destinations.country_id <> 132')
+		traveloffers_array = TravelOffer.joins(:destinations).where('destinations.country_id <> 132').order(@order_by + " " + @ord)
 		@traveloffers = Kaminari.paginate_array(traveloffers_array).page(params[:page])
 		@h2 = "Külföldi utazások"
 		@img = "/assets/category_headers/kulfold.jpg"
@@ -162,7 +165,7 @@ class ListController < ApplicationController
 	end
 
 	def belfoldiutazasok
-		traveloffers_array = TravelOffer.joins(:destinations).where(:destinations => {:country_id => 132})
+		traveloffers_array = TravelOffer.joins(:destinations).where(:destinations => {:country_id => 132}).order(@order_by + " " + @ord)
 		@traveloffers = Kaminari.paginate_array(traveloffers_array).page(params[:page])
 		@h2 = "Belföldi utazások"
 		@img = "/assets/category_headers/belfold.jpg"
@@ -176,7 +179,7 @@ class ListController < ApplicationController
 		travel_times.each do |tt|
 			tt_id << tt.travel_offer_id
 		end
-		traveloffers_array = TravelOffer.where(:id => tt_id)
+		traveloffers_array = TravelOffer.where(:id => tt_id).order(@order_by + " " + @ord)
 		@traveloffers = Kaminari.paginate_array(traveloffers_array).page(params[:page])
 		@h2 = "Akciós utak"
 		@img = "/assets/category_headers/akcios.jpg"
@@ -187,7 +190,7 @@ class ListController < ApplicationController
 	def kereses
 		word = params[:query]
 
-		traveloffers_array = TravelOffer.find(:all, :select => "DISTINCT travel_offers.*",:joins => :descriptions, :conditions => "descriptions.description LIKE '%#{word}%' OR travel_offers.travel_name LIKE '%#{word}%' OR travel_offers.szallas_name LIKE '%#{word}%'")
+		traveloffers_array = TravelOffer.find(:all, :select => "DISTINCT travel_offers.*",:joins => :descriptions, :order => @order_by + " " + @ord, :conditions => "descriptions.description LIKE '%#{word}%' OR travel_offers.travel_name LIKE '%#{word}%' OR travel_offers.szallas_name LIKE '%#{word}%'")
 		@traveloffers = Kaminari.paginate_array(traveloffers_array).page(params[:page])
 		@h2 = "Keresés: #{word}"
 		
@@ -197,7 +200,7 @@ class ListController < ApplicationController
 	def uticelok
 		country = Country.where(:name => params[:country_name].to_s).first
 
-		traveloffers_array = TravelOffer.find(:all, :select => "DISTINCT travel_offers.*",:joins => :destinations, :conditions => "destinations.country_id = #{country.id}")
+		traveloffers_array = TravelOffer.find(:all, :select => "DISTINCT travel_offers.*",:joins => :destinations, :order => @order_by + " " + @ord, :conditions => "destinations.country_id = #{country.id}")
 		@traveloffers = Kaminari.paginate_array(traveloffers_array).page(params[:page])
 		@h2 = "Úticél: " + country.name
 

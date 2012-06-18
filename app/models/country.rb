@@ -1,9 +1,10 @@
 class Country < ActiveRecord::Base
-	belongs_to :destination
+	has_many :destinations
 
 	has_many :regions
 	has_many :cities
 	has_many :skiregions
+	has_many :goods
 
 	attr_accessible :id, :name
 
