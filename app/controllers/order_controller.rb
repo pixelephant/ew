@@ -22,7 +22,7 @@ class OrderController < ApplicationController
 		phone = params[:prefix] + "/" + params[:number]
 		tt = TravelTime.find(params[:traveltime])
 		to = TravelOffer.find(tt.travel_offer_id)
-		partner_name = to.partner.name
+		partner_name = to.partner ? to.partner.name : ''
 		
 		inprices = ""
 		to.inprices.each do |ip|
@@ -40,9 +40,9 @@ class OrderController < ApplicationController
 			outprices << (op.name.to_s + ",")
 		end
 
-		children = ""
+		children_pr = ""
 		tt.child_prices.each do |cp|
-			children << ("Kortól: " + cp.age_from.to_s + ", Korig: " + cp.age_to.to_s + ", Kedvezmény: " + cp.price.to_s + cp.price_type.to_s + ", Elhelyezés: " + cp.bed_type)
+			children_pr << ("Kortól: " + cp.age_from.to_s + ", Korig: " + cp.age_to.to_s + ", Kedvezmény: " + cp.price.to_s + cp.price_type.to_s + ", Elhelyezés: " + cp.bed_type)
 		end
 
 		pre_bookings = ""
@@ -51,12 +51,13 @@ class OrderController < ApplicationController
 		end
 
 		travel_text = "Utazás: " + to.travel_name.to_s + " \nIdőpontja: " + tt.from_date.to_s + " - " + tt.to_date.to_s + " \nMódja: " + to.traffic.name.to_s + " \nEllátás: " + to.board.name.to_s + " \nÁra: " + tt.price.to_s + tt.price_measure.to_s + "\nSzállás típusa: " + to.category_aleph.to_s + "\nAz ár tartalmazza: " + inprices.to_s + "\nAz ár nem tartalmazza: " + outprices.to_s
-		travel_text << ("\nGyermek kedvezmény: " + children) unless children.blank?
+		travel_text << ("\nGyermek kedvezmény: " + children_pr) unless children_pr.blank?
 		travel_text << ("\nElőfoglalási kedvezmény: " + pre_bookings) unless pre_bookings.blank?
 
 		note = ("EGYEDI: " + note) if tt == 0
 
-		if Order.create(:name => name, :adult => adult, :children => children, :email => email, :note => note, :phone => phone, :travel_time_id => tt.id, :partner_name => partner_name, :travel_text => travel_text.html_safe).save
+		if o = Order.create(:name => name, :adult => adult, :children => children, :email => email, :note => note, :phone => phone, :travel_time_id => tt.id, :partner_name => partner_name, :travel_text => travel_text)
+			UserMailer.travel_order(o.id).deliver			
 			render "thankyou"
 		else
 			flash[:notice] = "Nem sikerült rögzíteni a megrendelést, kérjük próbálja újra!"

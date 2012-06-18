@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
+  </head>
+  <body>
+    <h1>Kedves <%= @order.name %></h1>
+    <p>
+      Megrendelő adatai:<br/>
+    </p>
+    <p>
+      Név: <%= @order.name %>
+    </p>
+    <p>
+      Telefonszám: <%= @order.phone %>
+    </p>
+    <p>
+      Email cím: <%= @order.email %><br/>
+    </p>
+    <p>
+      Foglalás:<br/>
+    </p>
+    <p>
+      <%= @order.adult %> felnőtt
+    </p>
+    <p>
+      <%= @order.children %> gyermek<br/>
+    </p>
+    <p>
+      Utazás leírása:<br/>
+    </p>
+    <p><%= simple_format(@order.travel_text) %></p>
+    <p>
+      Megjegyzés:<br/>
+    </p>
+    <p>
+      <%= @order.note %>
+    </p>
+  </body>
+</html>

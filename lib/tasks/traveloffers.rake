@@ -26,11 +26,11 @@
 			puts "TravelOffer id: " + (id = traveloffer.css("id").inner_text)
 
 			md5 = traveloffer.css("md5").inner_text
-			if TravelOffer.where(:md5 => md5).any?
-				unchanged_counter += 1
-			else
-				t = TravelOffer.find(id)
-				t = TravelOffer.new if t.nil?
+			# if TravelOffer.where(:md5 => md5).any?
+			# 	unchanged_counter += 1
+			# else
+				TravelOffer.find(id).destroy
+				t = TravelOffer.new
 				t.md5 = md5
 				#t.id = traveloffer.css("id").inner_text
 				t.id = id
@@ -120,7 +120,7 @@
 						:price_measure => travel_time.attribute("szobakalk").to_s,
 						:night => travel_time.attribute("ej").to_s,
 						:day => travel_time.attribute("nap").to_s,
-						:price => travel_time.attribute("ar").to_s,
+						:price => travel_time.attribute("price").to_s,
 						:discount => travel_time.attribute("akcios").to_s,
 						:service => travel_time.attribute("ellatas").to_s,
 						:bed => travel_time.attribute("agyszam").to_s,
@@ -192,7 +192,7 @@
 	  			puts "Error during save process: #{e.class}"
 				end
 
-			end
+			# end
 
 			offer_counter = (i+1)
 
@@ -212,11 +212,14 @@
 		
 		doc = Nokogiri::XML(File.open("public/xmlallgen_megszunt.xml"))
 
+		j = 0
+
 		doc.css("traveloffers traveloffer").each_with_index do |traveloffer, i|
 			id = traveloffer.attribute("id").to_s
-			TravelOffer.delete(id)
+			TravelOffer.destroy(id)
+			j = i
 		end
-		puts "Travel offers removed: " + (i+1).to_s
+		puts "Travel offers removed: " + (j+1).to_s
   end
 
 	task :updatedoffers => :environment do
@@ -225,13 +228,13 @@
     # get file
 		puts "Processing file"
 		
-		doc = Nokogiri::XML(File.open("public/xmlallgen_valtozott.xml"))
+		# doc = Nokogiri::XML(File.open("public/xmlallgen_valtozott.xml"))
 
-		doc.css("traveloffers traveloffer").each_with_index do |traveloffer, i|
-			id = traveloffer.attribute("id").to_s
-			TravelOffer.destroy(id) if TravelOffer.exists?(id)
-			puts "Traveloffer removed: " + id
-		end
+		# doc.css("traveloffers traveloffer").each_with_index do |traveloffer, i|
+		# 	id = traveloffer.attribute("id").to_s
+		# 	TravelOffer.destroy(id) if TravelOffer.exists?(id)
+		# 	puts "Traveloffer removed: " + id
+		# end
 		Rake::Task['import:inittraveloffers'].invoke("xmlallgen_valtozott.xml")
   end
 

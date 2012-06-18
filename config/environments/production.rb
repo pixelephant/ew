@@ -51,6 +51,15 @@ Ewutazas::Application.configure do
   # Disable delivery errors, bad email addresses will be ignored
   # config.action_mailer.raise_delivery_errors = false
 
+  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.smtp_settings = {
+    :address              => "pixelephant.hu",
+    :port                 => 26,
+    :user_name            => 'pixelephant@pixelephant.hu',
+    :password             => 'pix3l3phant',
+    :authentication       => 'plain',
+    :enable_starttls_auto => false}
+
   # Enable threaded mode
   # config.threadsafe!
 
