@@ -203,6 +203,10 @@
 	}
 	&.quarter{
 		width:120px;
+		img{
+			width:120px;
+			height:130px;
+		}
 		.ribbon{
 			-webkit-transform-style: preserve-3d;
 			text-align:center;
@@ -219,6 +223,10 @@
 	}
 	&.half{
 		width:280px;
+		img{
+			width:280px;
+			height:300px;
+		}
 		.ribbon{
 			-webkit-transform-style: preserve-3d;
 			border:1px solid $red;
@@ -235,6 +243,10 @@
 	}
 	&.full{
 		width:280px;
+		img{
+			width:280px;
+			height:380px;
+		}
 		.ribbon{
 			-webkit-transform-style: preserve-3d;
 			@include t-shadow;
