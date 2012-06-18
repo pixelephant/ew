@@ -40,10 +40,10 @@ ActiveRecord::Schema.define(:version => 20120613110547) do
     t.integer  "country_id"
     t.integer  "region_id"
     t.string   "name"
-    t.string   "lat"
-    t.string   "long"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
+    t.string   "lat"
+    t.string   "long"
   end
 
   create_table "countries", :force => true do |t|
@@ -77,8 +77,6 @@ ActiveRecord::Schema.define(:version => 20120613110547) do
     t.datetime "updated_at",      :null => false
   end
 
-  add_index "destinations_travel_offers", ["destination_id", "travel_offer_id"], :name => "foreign_keys"
-
   create_table "fakultativs", :force => true do |t|
     t.integer  "price"
     t.string   "length"
@@ -101,12 +99,6 @@ ActiveRecord::Schema.define(:version => 20120613110547) do
     t.datetime "created_at",      :null => false
     t.datetime "updated_at",      :null => false
     t.boolean  "special"
-  end
-
-  create_table "in_out_prices", :force => true do |t|
-    t.string   "name"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
   end
 
   create_table "inprices", :force => true do |t|
@@ -213,8 +205,6 @@ ActiveRecord::Schema.define(:version => 20120613110547) do
     t.datetime "updated_at",      :null => false
   end
 
-  add_index "program_types_travel_offers", ["program_type_id", "travel_offer_id"], :name => "foreign_keys"
-
   create_table "regions", :force => true do |t|
     t.integer  "country_id"
     t.string   "name"
@@ -279,8 +269,8 @@ ActiveRecord::Schema.define(:version => 20120613110547) do
 
   create_table "travel_times", :force => true do |t|
     t.integer  "travel_offer_id"
-    t.date     "from_date",             :default => '2012-01-01', :null => false
-    t.date     "to_date",               :default => '2012-01-01', :null => false
+    t.datetime "from_date"
+    t.datetime "to_date"
     t.datetime "price_expire"
     t.string   "price_measure"
     t.integer  "night"
@@ -302,17 +292,13 @@ ActiveRecord::Schema.define(:version => 20120613110547) do
     t.string   "travel_time_type_code"
     t.integer  "departure_city_id"
     t.text     "note"
-    t.datetime "created_at",                                      :null => false
-    t.datetime "updated_at",                                      :null => false
+    t.datetime "created_at",            :null => false
+    t.datetime "updated_at",            :null => false
     t.boolean  "sale"
     t.string   "slug"
   end
 
-  add_index "travel_times", ["from_date"], :name => "from_date"
   add_index "travel_times", ["slug"], :name => "index_travel_times_on_slug", :unique => true
-  add_index "travel_times", ["to_date"], :name => "to_date"
-  add_index "travel_times", ["travel_offer_id", "from_date", "to_date"], :name => "dates"
-  add_index "travel_times", ["travel_offer_id"], :name => "travel_offer_id"
 
   create_table "traveldays", :force => true do |t|
     t.string   "name"
