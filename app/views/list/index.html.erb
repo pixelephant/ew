@@ -22,6 +22,7 @@
 					<div class="trip">
 						<%= link_to traveloffer do %>
 							<div class="thumbnail">
+								<span class="ribbon lastminute arrow_box">Last minute</span>
 								<%= (image_tag traveloffer.gallery_url + traveloffer.images.first.file_name.to_s, :height => 140, :width => 140, :alt => traveloffer.travel_name) if traveloffer.images.any? %>
 							</div>
 							<div class="data">
