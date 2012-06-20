@@ -1,0 +1,80 @@
+@import "_mixins.css.scss";
+@import "jquery.fancybox.css";
+
+#page-header{
+	height:260px;
+	width:100%;
+	background:$blue;
+	border-bottom:1px solid $gray;
+}
+
+#page-header-inner{
+	width:980px;
+	height:230px;
+	padding-top:30px;
+	margin:0 auto;
+	h1{
+		margin:0;
+		color:$orange;
+		font-size:40px;
+		@include font-lobster;
+		font-style:italic;
+		@include t-shadow;
+		padding:5px;
+		text-align:center;
+	}
+	p{
+		color:white;
+		text-align:center;
+	}
+}
+
+
+
+#content h2{
+	color:$blue !important;
+}
+
+#download{
+	margin-top:40px;
+	a{
+		@include big-blue;
+	}
+}
+
+.hungaroring{
+	text-align:center;
+	h1{
+		display:block !important;
+		font-style:normal;
+		font-size:30px !important;
+		color:#cf2122 !important;
+		font-family: 'PT Sans', sans-serif !important;
+		margin-bottom:20px !important;
+	}
+	img{
+		margin-bottom:20px;
+	}
+}
+
+.barcelona{
+	text-align:center;
+	h1{
+		display:block !important;
+		font-family: 'Bree Serif', serif !important;
+		font-size:30px !important;
+		color:#172b9b !important;
+		font-style:normal !important;
+		margin-bottom:20px !important;
+		span{
+			color:#82143b !important;
+		}
+	}
+	p{
+		color:#172b9b !important;
+		margin-bottom:30px !important;
+	}
+	img{
+		margin-bottom:20px;
+	}
+}

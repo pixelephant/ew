@@ -108,6 +108,10 @@ aside{
 	.collapse{
 		display:none;
 	}
+
+	input[type="submit"]{
+		@include small-blue;
+	}
 }
 
 #filter-imprecise-row{
