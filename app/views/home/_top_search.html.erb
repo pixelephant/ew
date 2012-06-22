@@ -57,13 +57,13 @@
 		<legend>Utazás ára/fő</legend>
 		<div class="row">
 			<div class="group">
-				<%= f.label "max_price", "Maximális ár/fő" %>
+				<%= f.label "price", "ár/fő" %>
 				<!--<%= f.text_field "max_price_text", :type => "text" %> <span class="left">Ft</span>-->
-				<select name="search[max_price]" id="max_price">
-					<option value="100000">100000</option>
-					<option value="150000">150000</option>
-					<option value="200000">200000</option>
-					<option value="250000">250000</option>
+				<select name="search[price]" id="price">
+					<option value="0-100000">100000 Ft/fő-ig</option>
+					<option value="100000-250000">100000-250000 Ft/fő</option>
+					<option value="250000-500000">250000-500000 Ft/fő</option>
+					<option value="500000">500000 Ft/fő fölött</option>
 				</select>
 			</div>
 		</div>

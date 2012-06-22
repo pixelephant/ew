@@ -9,20 +9,18 @@ class ListController < ApplicationController
 		@img = ""
 		@text = ""
 
-		params[:filters] = params[:search] if params[:search]
+		@filt = params[:filters]
+		@filt = params[:data][:search] if params[:data][:search]
 
-		unless params[:filters].blank? && params[:sort].blank?
-			@filt = params[:filters]
-
-			if @filt
-				@regions = Region.where(:country_id => @filt[:country]) unless @filt[:country].blank?
-				@cities = City.where(:region_id => @filt[:region]) unless @filt[:region].blank?
-			end
-
+		unless @filt.blank? && params[:sort].blank?
+		
 			c = []
 
 			#Filterek
 			unless @filt.blank?
+				@regions = Region.where(:country_id => @filt[:country]) unless @filt[:country].blank?
+				@cities = City.where(:region_id => @filt[:region]) unless @filt[:region].blank?
+
 				if @filt[:no_date].to_i == 0
 					if @filt[:flexibility].to_i > 0
 						unless @filt[:arrival].blank?
@@ -81,12 +79,18 @@ class ListController < ApplicationController
 
 				if @filt[:price].to_i > 0
 					price = @filt[:price].to_s
-					@price_checked[price.to_sym] = true
-					c << ("travel_times.price <= #{price}")
+					p = price.split("-")
+
+					if p[1]
+						@price_checked[p[1].to_sym] = true
+						c << ("travel_times.price BETWEEN #{p[0]} AND #{p[1]}")
+					else
+						@price_checked[p[0].to_sym] = true
+						c << ("travel_times.price > #{p[0]}")
+					end
 				end
 			end
 			#Filterek
-
 		
 		end
 

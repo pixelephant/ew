@@ -18,7 +18,7 @@ class ApplicationController < ActionController::Base
 		end
 
   	@program_types = ProgramType.all
-		@price_checked = {'50000'.to_sym => false,'150000'.to_sym => false,'250000'.to_sym => false,'550000'.to_sym => false}
+		@price_checked = {'100000'.to_sym => false,'250000'.to_sym => false,'500000'.to_sym => false,'500001'.to_sym => false}
 		@no_date_checked = false
 		@regions = []
 		@cities = []

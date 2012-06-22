@@ -1,3 +1,4 @@
+#encoding: utf-8
 class AjaxController < ApplicationController
 
 	include Rack::Utils
@@ -41,7 +42,7 @@ class AjaxController < ApplicationController
 		city = form_vals["city"]
 		arrival = form_vals["arrival"]
 		departure = form_vals["departure"]
-		max_price = form_vals["max_price"]
+		price = form_vals["price"]
 		flexibility = form_vals["flexibility"]
 		no_date = form_vals["no_date"]
 		imprecise = form_vals["imprecise"]
@@ -84,9 +85,19 @@ class AjaxController < ApplicationController
 			c << ("travel_times.to_date < '" + dend.to_s + "'")
 		end
 
-		if max_price.to_i > 0
-			price = max_price.to_s
-			c << ("travel_times.price <= #{price}")
+		if price.to_i > 0
+			p = price.split("-")
+			if p[1]
+				p_eur = []
+				p_eur[0] = p[0].to_i / EURHUF
+				p_eur[1] = p[1].to_i / EURHUF
+				@price_checked[p[1].to_sym] = true
+				c << ("((travel_times.price BETWEEN #{p[0]} AND #{p[1]} AND price_measure IN ('Ft/fő','Ft/szoba')) OR (travel_times.price BETWEEN #{p_eur[0]} AND #{p_eur[1]} AND price_measure IN ('EUR/fő','EUR/szoba')))")
+			else
+				@price_checked[p[0].to_sym] = true
+				p_eur = p[0].to_i / EURHUF
+				c << ("((travel_times.price > #{p[0]} AND price_measure IN ('Ft/fő','Ft/szoba')) OR (travel_times.price > #{p_eur} AND price_measure IN ('EUR/fő','EUR/szoba')))")
+			end
 		end
 
 		(c << ('destinations.city_id = ' + city)) unless (city.blank? || city.to_i == 0)
