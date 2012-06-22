@@ -12,19 +12,94 @@
 	background:rgba(0,0,0,0.2);
 }
 
+#barca-slide{
+	img{
+		text-align:center;
+		margin-top:-20px;
+		margin-bottom:10px;
+	}
+	h1{
+		display:block !important;
+		font-family: 'Bree Serif', serif !important;
+		font-size:30px !important;
+		color:#172b9b !important;
+		font-style:normal !important;
+		margin-bottom:20px !important;
+		span{
+			color:#82143b !important;
+		}
+	}
+	p{
+		color:#172b9b !important;
+		margin-bottom:30px !important;
+	}
+	a{
+		@include big-red;
+	}
+}
+
+#hungaroring-slide{
+	img{
+		text-align:center;
+		margin-top:-20px;
+		margin-bottom:10px;
+	}
+	h1{
+		display:block !important;
+		font-style:normal;
+		font-size:30px !important;
+		color:#cf2122 !important;
+		font-family: 'PT Sans', sans-serif !important;
+		margin-bottom:20px !important;
+	}
+	p{
+		color:white !important;
+		margin-bottom:30px !important;
+	}
+	a{
+		@include big-red;
+	}	
+}
+
 #slide-wrap{
 	width:980px;
 	height:380px;	
 	margin:0 auto;
 	text-align:center;
-	line-height:380px;
+	
 	.slide{
 		width:980px;
-		height:380px;
+		height:320px;
 		position: absolute;
 		top: 0px;
 		left:0;
     	display:none;
+    	h1{
+    			margin-bottom:20px;
+    			color:#3fa1ca;
+    			font-size:40px;
+    			@include font-lobster;
+    			font-weight:bold;
+    			font-style:italic;
+    	}
+		h2{
+			margin-top:0;
+			margin-bottom:40px;
+			margin-top:10px;
+			color:#3fa1ca;
+			@include font-bree;
+			font-size:25px;
+			color:white;
+			@include t-shadow;
+		}
+		p{
+			color:#7d579A;
+			line-height:1.2;
+			font-style:italic;
+			@include font-pt;
+			width:500px;
+			margin:0 auto;
+		}
     	.price{
     		&.big{
     			margin-top:10px;
@@ -40,79 +115,50 @@
     	}
     	line-height:1;
     	padding-top:60px;
-    	&.one,&.three{
-    		h1{
-    			margin-bottom:20px;
-    			color:#3fa1ca;
-    			font-size:40px;
-    			@include font-lobster;
-    			font-weight:bold;
-    			font-style:italic;
-    		}
-    		h2{
-    			margin-top:0;
-    			margin-bottom:40px;
-    			margin-top:10px;
-    			color:#3fa1ca;
-    			@include font-bree;
-    			font-size:25px;
-    			color:white;
-    		}
-    		p{
-    			color:#7d579A;
-    			line-height:1.2;
-    			font-style:italic;
-    			@include font-pt;
-    			width:500px;
-    			margin:0 auto;
-    		}
-    	}
-    	&.two{
-    		h1{
-    			@include font-bree;
-    			color:#3fa1ca;
-    			font-size:30px;
-    			margin-bottom:20px;
-    		}
-    		img.decor{
-    			width:395px;
-    			margin:20px auto 0 auto;
-    			display:block;
-    		}
     		.clearfix{
     			margin:0 auto;
-    			width:336px;
+    			width:366px;
     			overflow:hidden;
-    		}
-    		span{
-    			display:block;
-    			clear:both;
-    			width:102px;
-    			padding-left:5px;
-    			color:#7d579A;
-    			font-style:italic;
-    			text-align:center;
-    			font-size:12px;
-    			margin-bottom:5px;
-    			&.price{
-    				font-weight:bold;
+    			span{
+	    			display:block;
+	    			clear:both;
+	    			width:112px;
+	    			padding-left:5px;
+	    			color:white;
+	    			font-style:italic;
+	    			text-align:center;
+	    			font-size:16px;
+	    			margin-bottom:5px;
+	    			@include t-shadow;
+	    			&.price{
+	    				font-weight:bold;
+	    			}
     			}
     		}
-    	}
-    	&.three{
-    		p{
-    			margin-top:20px;
-    		}
-    	}
 	}
 }
+
+#kuba-slide{
+	p{
+		width:600px;
+		margin:0 auto 30px auto !important;
+		font-size:18px;
+	}
+	h2{
+
+	}
+	a{
+		@include big-blue;
+	}
+}
+
 
 .slide-control{
 	position:absolute;
 	text-indent:-9999em;
 	width:22px;
 	height:100%;
-	z-index:4;
+	z-index:1000;
 	background: url(arrow_sprite.png) no-repeat;
 	opacity:0.6;
 		  -webkit-transition: all 0.4s ease;  /* Saf3.2+, Chrome */
@@ -194,6 +240,10 @@
 	float:left;
 	position:relative;
 	&.small{
+		img{
+			width:82px;
+			height:82px;
+		}
 		float:left;
 		width:82px;
 		padding:5px;

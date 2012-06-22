@@ -108,6 +108,10 @@ aside{
 	.collapse{
 		display:none;
 	}
+
+	input[type="submit"]{
+		@include small-blue;
+	}
 }
 
 #filter-imprecise-row{
@@ -250,12 +254,11 @@ aside{
 			-webkit-transform-style: preserve-3d;
 			text-align:center;
 			font-size:16px;
-			padding:2px;
+			padding:3px;
 			height:20px;
 			line-height:16px;
 			border:1px solid $red;
 			border-left:0;
-			width:50px;
 			@include font-bree;
 			color:#fff;
 			position:absolute;
@@ -313,7 +316,7 @@ aside{
 
 .arrow_box {
 	position: relative;
-	background: #ea5d32;
+	background: #EA5D32;
 	border: 1px solid #B4303D;
 }
 .arrow_box:after, .arrow_box:before {
@@ -327,16 +330,16 @@ aside{
 }
 
 .arrow_box:after {
-	border-left-color: #ea5d32;
-	border-width: 12px;
-	top: 50%;
-	margin-top: -12px;
-}
-.arrow_box:before {
-	border-left-color: #B4303D;
+	border-left-color: #EA5D32;
 	border-width: 13px;
 	top: 50%;
 	margin-top: -13px;
+}
+.arrow_box:before {
+	border-left-color: #B4303D;
+	border-width: 14px;
+	top: 50%;
+	margin-top: -14px;
 }
 
 .price{
