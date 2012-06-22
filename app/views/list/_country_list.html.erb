@@ -4,7 +4,7 @@
 	<a href="/list" class="country<%= t %>">Összes <span class="count"><%= @travelofferscount %></span></a>
 	<% @p_countries.each do |country| %>
 		<% params[:country_name] == country.name ? t = ' active' : t = '' %>
-		<a href="/uticelok/<%= country.name %>" class="country<%= t %>"><%= country.name %> <span class="count"><%= country.travel_offers_count %></span></a>
+		<a href="/uticelok/<%= country.slug %>" class="country<%= t %>"><%= country.name %> <span class="count"><%= country.travel_offers_count %></span></a>
 	<% end %>
 	<a href="#" id="more-countries">Továbbiak <span>&#9660;</span></a>
 </div>
@@ -14,7 +14,7 @@
 	<% @countries_europe.each do |country| %>
 		<% if (c = country.travel_offers_count) > 0 %>
 			<% params[:country_name] == country.name ? t = ' active' : t = '' %>
-			<a href="/uticelok/<%= country.name %>" class="country<%= t %>"><%= country.name %> <span class="count"><%= country.travel_offers_count %></span></a>
+			<a href="/uticelok/<%= country.slug %>" class="country<%= t %>"><%= country.name %> <span class="count"><%= country.travel_offers_count %></span></a>
 		<% end %>		
 	<% end %>
 	</div>
@@ -23,7 +23,7 @@
 	<% @countries_namerica.each do |country| %>
 		<% if (c = country.travel_offers_count) > 0 %>
 			<% params[:country_name] == country.name ? t = ' active' : t = '' %>
-			<a href="/uticelok/<%= country.name %>" class="country<%= t %>"><%= country.name %> <span class="count"><%= c %></span></a>
+			<a href="/uticelok/<%= country.slug %>" class="country<%= t %>"><%= country.name %> <span class="count"><%= c %></span></a>
 		<% end %>
 	<% end %>
 	</div>
@@ -32,7 +32,7 @@
 	<% @countries_samerica.each do |country| %>
 		<% if (c = country.travel_offers_count) > 0 %>
 			<% params[:country_name] == country.name ? t = ' active' : t = '' %>
-			<a href="/uticelok/<%= country.name %>" class="country<%= t %>"><%= country.name %> <span class="count"><%= country.travel_offers_count %></span></a>
+			<a href="/uticelok/<%= country.slug %>" class="country<%= t %>"><%= country.name %> <span class="count"><%= country.travel_offers_count %></span></a>
 		<% end %>
 	<% end %>
 	</div>
@@ -41,7 +41,7 @@
 	<% @countries_asia.each do |country| %>
 		<% if (c = country.travel_offers_count) > 0 %>
 			<% params[:country_name] == country.name ? t = ' active' : t = '' %>
-			<a href="/uticelok/<%= country.name %>" class="country<%= t %>"><%= country.name %> <span class="count"><%= country.travel_offers_count %></span></a>
+			<a href="/uticelok/<%= country.slug %>" class="country<%= t %>"><%= country.name %> <span class="count"><%= country.travel_offers_count %></span></a>
 		<% end %>
 	<% end %>
 	</div>
@@ -50,7 +50,7 @@
 	<% @countries_australia.each do |country| %>
 		<% if (c = country.travel_offers_count) > 0 %>
 			<% params[:country_name] == country.name ? t = ' active' : t = '' %>
-			<a href="/uticelok/<%= country.name %>" class="country<%= t %>"><%= country.name %> <span class="count"><%= country.travel_offers_count %></span></a>
+			<a href="/uticelok/<%= country.slug %>" class="country<%= t %>"><%= country.name %> <span class="count"><%= country.travel_offers_count %></span></a>
 		<% end %>
 	<% end %>
 	</div>				

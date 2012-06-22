@@ -97,7 +97,8 @@ class ListController < ApplicationController
 		conditions = ''
 		conditions = c.join(" AND ") unless c.blank?
 
-		traveloffers_array = TravelOffer.find(:all, :joins => [:travel_times, :destinations, :program_types], :select => "travel_offers.*", :order => @order_by + " " + @ord, :group => "travel_offers.id", :conditions => conditions )
+		toa = TravelOffer.find(:all, :joins => [:travel_times, :destinations, :program_types], :select => "DISTINCT travel_offers.id", :order => @order_by + " " + @ord, :group => "travel_offers.id", :conditions => conditions )
+		traveloffers_array = TravelOffer.where(:id => toa)
 		#@traveloffers = Kaminari.paginate_array(@traveloffers_array).page(params[:page])
 		@traveloffers = Kaminari.paginate_array(traveloffers_array).page(params[:page])
 		
@@ -105,7 +106,12 @@ class ListController < ApplicationController
 	end
 
 	def naszutak
-		traveloffers_array = TravelOffer.joins(:travel_attributes).where(:travel_attributes => {:id => 19}).order(@order_by + " " + @ord)
+		if @order_by == 'travel_times.price'
+			toa = TravelOffer.joins(:travel_attributes).joins(:travel_times).select("DISTINCT travel_offers.id").where(:travel_attributes => {:id => 19}).order(@order_by + " " + @ord)
+			traveloffers_array = TravelOffer.where(:id => toa)
+		else
+			traveloffers_array = TravelOffer.joins(:travel_attributes).where(:travel_attributes => {:id => 19}).order(@order_by + " " + @ord)
+		end
 		@traveloffers = Kaminari.paginate_array(traveloffers_array).page(params[:page])
 		@h2 = "Nászutak"
 		@img = "/assets/category_headers/naszutak.jpg"
@@ -115,7 +121,8 @@ class ListController < ApplicationController
 
 	def hajoutak
 		if @order_by == 'travel_times.price'
-			traveloffers_array = TravelOffer.joins(:travel_attributes).joins(:travel_times).where(:travel_attributes => {:id => 19}).order(@order_by + " " + @ord)
+			toa = TravelOffer.joins(:travel_attributes).joins(:travel_times).select("DISTINCT travel_offers.id").where(:travel_attributes => {:id => 19}).order(@order_by + " " + @ord)
+			traveloffers_array = TravelOffer.where(:id => toa)
 		else
 			traveloffers_array = TravelOffer.joins(:travel_attributes).where(:travel_attributes => {:id => 19}).order(@order_by + " " + @ord)
 		end
@@ -128,7 +135,8 @@ class ListController < ApplicationController
 
 	def sieles
 		if @order_by == 'travel_times.price'
-			traveloffers_array = TravelOffer.joins(:program_types).joins(:travel_times).where(:program_types => {:id => [7,19]}).order(@order_by + " " + @ord)
+			toa = TravelOffer.joins(:program_types).joins(:travel_times).select("DISTINCT travel_offers.id").where(:program_types => {:id => [7,19]}).order(@order_by + " " + @ord)
+			traveloffers_array = TravelOffer.where(:id => toa)
 		else
 			traveloffers_array = TravelOffer.joins(:program_types).where(:program_types => {:id => [7,19]}).order(@order_by + " " + @ord)
 		end
@@ -141,7 +149,8 @@ class ListController < ApplicationController
 
 	def egzotikusutak
 		if @order_by == 'travel_times.price'
-			traveloffers_array = TravelOffer.joins(:program_types).joins(:travel_times).where(:program_types => {:id => 5}).order(@order_by + " " + @ord)
+			toa = TravelOffer.joins(:program_types).joins(:travel_times).select("DISTINCT travel_offers.id").where(:program_types => {:id => 5}).order(@order_by + " " + @ord)
+			traveloffers_array = TravelOffer.where(:id => toa)
 		else
 			traveloffers_array = TravelOffer.joins(:program_types).where(:program_types => {:id => 5}).order(@order_by + " " + @ord)
 		end
@@ -154,7 +163,8 @@ class ListController < ApplicationController
 
 	def korutazasok
 		if @order_by == 'travel_times.price'
-			traveloffers_array = TravelOffer.joins(:program_types).joins(:travel_times).where(:program_types => {:id => [6,8]}).order(@order_by + " " + @ord)
+			toa = TravelOffer.joins(:program_types).joins(:travel_times).select("DISTINCT travel_offers.id").where(:program_types => {:id => [6,8]}).order(@order_by + " " + @ord)
+			traveloffers_array = TravelOffer.where(:id => toa)
 		else
 			traveloffers_array = TravelOffer.joins(:program_types).where(:program_types => {:id => [6,8]}).order(@order_by + " " + @ord)
 		end
@@ -167,7 +177,8 @@ class ListController < ApplicationController
 
 	def varoslatogatasok
 		if @order_by == 'travel_times.price'
-			traveloffers_array = TravelOffer.joins(:program_types).joins(:travel_times).where(:program_types => {:id => 2}).order(@order_by + " " + @ord)
+			toa = TravelOffer.joins(:program_types).joins(:travel_times).select("DISTINCT travel_offers.id").where(:program_types => {:id => 2}).order(@order_by + " " + @ord)
+			traveloffers_array = TravelOffer.where(:id => toa)
 		else
 			traveloffers_array = TravelOffer.joins(:program_types).where(:program_types => {:id => 2}).order(@order_by + " " + @ord)
 		end
@@ -180,7 +191,8 @@ class ListController < ApplicationController
 
 	def sportutak
 		if @order_by == 'travel_times.price'
-			traveloffers_array = TravelOffer.joins(:program_types).joins(:travel_times).where(:program_types => {:id => 23}).order(@order_by + " " + @ord)
+			toa = TravelOffer.joins(:program_types).joins(:travel_times).select("DISTINCT travel_offers.id").where(:program_types => {:id => 23}).order(@order_by + " " + @ord)
+			traveloffers_array = TravelOffer.where(:id => toa)
 		else
 			traveloffers_array = TravelOffer.joins(:program_types).where(:program_types => {:id => 23}).order(@order_by + " " + @ord)
 		end
@@ -193,7 +205,8 @@ class ListController < ApplicationController
 
 	def kulfoldiutazasok
 		if @order_by == 'travel_times.price'
-			traveloffers_array = TravelOffer.joins(:destinations).joins(:travel_times).where('destinations.country_id <> 132').order(@order_by + " " + @ord)
+			toa = TravelOffer.joins(:destinations).joins(:travel_times).select("DISTINCT travel_offers.id").where('destinations.country_id <> 132').order(@order_by + " " + @ord)
+			traveloffers_array = TravelOffer.where(:id => toa)
 		else
 			traveloffers_array = TravelOffer.joins(:destinations).where('destinations.country_id <> 132').order(@order_by + " " + @ord)
 		end
@@ -206,7 +219,8 @@ class ListController < ApplicationController
 
 	def belfoldiutazasok
 		if @order_by == 'travel_times.price'
-			traveloffers_array = TravelOffer.joins(:destinations).joins(:travel_times).where(:destinations => {:country_id => 132}).order(@order_by + " " + @ord)
+			toa = TravelOffer.joins(:destinations).joins(:travel_times).select("DISTINCT travel_offers.id").where(:destinations => {:country_id => 132}).order(@order_by + " " + @ord)
+			traveloffers_array = TravelOffer.where(:id => toa)
 		else
 			traveloffers_array = TravelOffer.joins(:destinations).where(:destinations => {:country_id => 132}).order(@order_by + " " + @ord)
 		end
@@ -225,7 +239,8 @@ class ListController < ApplicationController
 		end
 
 		if @order_by == 'travel_times.price'
-			traveloffers_array = TravelOffer.joins(:travel_times).where(:id => tt_id).order(@order_by + " " + @ord)
+			toa = TravelOffer.joins(:travel_times).select("DISTINCT travel_offers.id").where(:id => tt_id).order(@order_by + " " + @ord)
+			traveloffers_array = TravelOffer.where(:id => toa)
 		else
 			traveloffers_array = TravelOffer.where(:id => tt_id).order(@order_by + " " + @ord)
 		end
@@ -239,7 +254,7 @@ class ListController < ApplicationController
 	def lastminute
 		from = (Time.now + 1.day).to_date
 		to = (Time.now + 14.days).to_date
-		toa = TravelOffer.joins(:travel_times).select("DISTINCT travel_offer_id").where("travel_times.from_date BETWEEN '#{from}' AND '#{to}'").order(@order_by + " " + @ord)
+		toa = TravelOffer.joins(:travel_times).select("DISTINCT travel_offers.id").where("travel_times.from_date BETWEEN '#{from}' AND '#{to}'").order(@order_by + " " + @ord)
 		traveloffers_array = TravelOffer.where(:id => toa)
 		@traveloffers = Kaminari.paginate_array(traveloffers_array).page(params[:page])
 		@h2 = "Last-minute utazások"
@@ -252,7 +267,8 @@ class ListController < ApplicationController
 		word = params[:query]
 
 		if @order_by == 'travel_times.price'
-			traveloffers_array = TravelOffer.find(:all, :select => "DISTINCT travel_offers.*",:joins => [:descriptions, :travel_times], :order => @order_by + " " + @ord, :conditions => "descriptions.description LIKE '%#{word}%' OR travel_offers.travel_name LIKE '%#{word}%' OR travel_offers.szallas_name LIKE '%#{word}%'")
+			toa = TravelOffer.find(:all, :select => "DISTINCT travel_offers.id",:joins => [:descriptions, :travel_times], :order => @order_by + " " + @ord, :conditions => "descriptions.description LIKE '%#{word}%' OR travel_offers.travel_name LIKE '%#{word}%' OR travel_offers.szallas_name LIKE '%#{word}%'")
+			traveloffers_array = TravelOffer.where(:id => toa)
 		else
 			traveloffers_array = TravelOffer.find(:all, :select => "DISTINCT travel_offers.*",:joins => :descriptions, :order => @order_by + " " + @ord, :conditions => "descriptions.description LIKE '%#{word}%' OR travel_offers.travel_name LIKE '%#{word}%' OR travel_offers.szallas_name LIKE '%#{word}%'")
 		end
@@ -263,7 +279,7 @@ class ListController < ApplicationController
 	end
 
 	def uticelok
-		country = Country.where(:name => params[:country_name].to_s).first
+		country = Country.where(:slug => params[:country_name].to_s).first
 
 		if @order_by == 'travel_times.price'
 			traveloffers_array = TravelOffer.find(:all, :select => "DISTINCT travel_offers.*",:joins => [:destinations, :travel_times], :order => @order_by + " " + @ord, :conditions => "destinations.country_id = #{country.id}")

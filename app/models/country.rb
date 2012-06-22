@@ -1,4 +1,7 @@
 class Country < ActiveRecord::Base
+	extend FriendlyId
+  friendly_id :name, :use => :slugged
+
 	has_many :destinations
 
 	has_many :regions

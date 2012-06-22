@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120618095157) do
+ActiveRecord::Schema.define(:version => 20120622113028) do
 
   create_table "boards", :force => true do |t|
     t.string   "name"
@@ -52,7 +52,10 @@ ActiveRecord::Schema.define(:version => 20120618095157) do
     t.datetime "updated_at", :null => false
     t.string   "continent"
     t.integer  "position"
+    t.string   "slug"
   end
+
+  add_index "countries", ["slug"], :name => "index_countries_on_slug", :unique => true
 
   create_table "descriptions", :force => true do |t|
     t.string   "name"

@@ -38,6 +38,7 @@ Ewutazas::Application.routes.draw do
 
   match 'foglalas/koszonjuk' => 'order#thankyou'
   match 'foglalas/:id' => 'order#index'
+  match 'egyedi' => 'order#personalized'
   match 'egyedi/:id' => 'order#personalized'
 
   match 'list' => 'list#index', :method => 'POST'

@@ -17,8 +17,8 @@
 		</div>
 		<div id="list">
 			<%= render 'list/country_list' %>
-			<% @traveloffers.each do |traveloffer| %>
-				<% if traveloffer.travel_times.where("DATE(travel_times.from_date) > DATE(NOW())").any? %>
+			<% @traveloffers.each_with_index do |traveloffer, i| %>
+				<!-- if traveloffer.travel_times.where("DATE(travel_times.from_date) > DATE(NOW())").any? -->
 					<div class="trip">
 						<%= link_to traveloffer do %>
 							<div class="thumbnail">
@@ -43,7 +43,8 @@
 							<%= link_to 'Részletek', traveloffer, :class => "view" %>
 						<% end %>
 					</div>
-				<% end %>
+					<%= render :partial => 'custom_offer' if i == 3 %>
+				<!-- end -->
 			<% end %>
 		</div>
 		<div class="pagination" id="pagi-b">
