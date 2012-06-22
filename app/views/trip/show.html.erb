@@ -161,7 +161,7 @@
 		<% @similar_offers.each do |offer| %>
 			<%= link_to offer do %>
 				<div class="ribbon">
-					<%= Country.find(offer.destinations.first.country_id).name %> - <%= offer.min_price %>
+					<%= Country.find(offer.destinations.first.country_id).name %> - <%= offer.min_price %> <%= offer.min_price_measure %>
 				</div>
 				<%= image_tag(offer.gallery_url + offer.images.first.file_name.to_s, :alt => offer.travel_name, :width => 200, :height => 200) %>
 			<% end %>

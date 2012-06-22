@@ -71,7 +71,7 @@
 		<h2 class="orange">Legnépszerűbb úticélok</h2>
 		<div class="clearfix">
 				<% @popular.each do |country| %>
-					<%= link_to Country.find(country.country_id).name, "/uticelok/" + Country.find(country.country_id).name %>
+					<%= link_to country.name, "/uticelok/" + country.name %>
 				<% end %>
 		</div>
 	</div>

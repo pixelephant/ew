@@ -10,7 +10,7 @@ class ListController < ApplicationController
 		@text = ""
 
 		@filt = params[:filters]
-		@filt = params[:data][:search] if params[:data][:search]
+		@filt = params[:search] if params[:searcg]
 
 		unless @filt.blank? && params[:sort].blank?
 		
@@ -238,8 +238,9 @@ class ListController < ApplicationController
 
 	def lastminute
 		from = (Time.now + 1.day).to_date
-		to = (Time.now + 2.days).to_date
-		traveloffers_array = TravelOffer.joins(:travel_times).where("travel_times.from_date BETWEEN DATE(#{from}) AND DATE(#{to})").order(@order_by + " " + @ord)
+		to = (Time.now + 14.days).to_date
+		toa = TravelOffer.joins(:travel_times).select("DISTINCT travel_offer_id").where("travel_times.from_date BETWEEN '#{from}' AND '#{to}'").order(@order_by + " " + @ord)
+		traveloffers_array = TravelOffer.where(:id => toa)
 		@traveloffers = Kaminari.paginate_array(traveloffers_array).page(params[:page])
 		@h2 = "Last-minute utazások"
 		@img = "/assets/category_headers/lastminute.jpg"
