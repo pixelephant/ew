@@ -29,7 +29,7 @@
 			# if TravelOffer.where(:md5 => md5).any?
 			# 	unchanged_counter += 1
 			# else
-				TravelOffer.find(id).destroy
+				TravelOffer.find(id).destroy if TravelOffer.exists?(id)
 				t = TravelOffer.new
 				t.md5 = md5
 				#t.id = traveloffer.css("id").inner_text
@@ -82,7 +82,7 @@
 				end
 
 				traveloffer.css("attribute").each do |attribute|
-					(t.attributes << Attribute.find(attribute.inner_text)) if Attribute.exists?(attribute.inner_text)
+					(t.travel_attributes << TravelAttribute.find(attribute.inner_text)) if TravelAttribute.exists?(attribute.inner_text)
 				end
 
 				traveloffer.css("travelday").each do |travelday|

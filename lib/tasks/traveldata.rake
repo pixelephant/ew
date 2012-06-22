@@ -48,8 +48,8 @@ namespace :setup do
 		doc.css("attributes attribute").each_with_index do |attrib, i|
 			puts "Traffic: " + attrib.to_s
 			id = attrib.attribute("id").to_s
-			unless Attribute.exists?(id)
-				Attribute.new(:id => id, :name => attrib.css("name").inner_text).save!
+			unless TravelAttribute.exists?(id)
+				TravelAttribute.new(:id => id, :name => attrib.css("name").inner_text).save!
 			end
 			a_count += 1
 		end

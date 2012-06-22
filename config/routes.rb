@@ -25,6 +25,7 @@ Ewutazas::Application.routes.draw do
   match 'kulfoldiutazasok' => 'list#kulfoldiutazasok'
   match 'belfoldiutazasok' => 'list#belfoldiutazasok'
   match 'akciosutak' => 'list#akciosutak'
+  match 'lastminute' => 'list#lastminute'
 
   match 'kereses' => 'list#kereses'
 

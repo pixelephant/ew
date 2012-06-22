@@ -9,6 +9,8 @@ class OrderController < ApplicationController
 	end
 
 	def personalized
+		@travel_time = TravelTime.find(params[:id])
+		@travel_offer = TravelOffer.find(@travel_time.travel_offer_id)
 		render "personalized"
 	end
 
