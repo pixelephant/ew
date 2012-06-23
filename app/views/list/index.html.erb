@@ -17,6 +17,7 @@
 		</div>
 		<div id="list">
 			<%= render 'list/country_list' %>
+			<% count = 0 %>
 			<% @traveloffers.each_with_index do |traveloffer, i| %>
 				<!-- if traveloffer.travel_times.where("DATE(travel_times.from_date) > DATE(NOW())").any? -->
 					<div class="trip">
@@ -44,9 +45,10 @@
 						<% end %>
 					</div>
 					<%= render :partial => 'custom_offer' if i == 3 %>
+					<% count = i %>
 				<!-- end -->
 			<% end %>
-			<%= render :partial => 'custom_offer' if @traveloffers.count < 4 %>
+			<%= render :partial => 'custom_offer' if count < 4 %>
 		</div>
 		<div class="pagination" id="pagi-b">
 			<%= render "list/pagination_sort" %>

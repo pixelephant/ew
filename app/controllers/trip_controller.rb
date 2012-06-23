@@ -12,7 +12,7 @@ class TripController < ApplicationController
 		@country = Country.find(@travel_offer.destinations.first.country_id)
 		@region = Region.find(@travel_offer.destinations.first.region_id)
 		@skiregion = @travel_offer.skiregion
-		@departure_city = @closest_travel_time.city.name
+		@departure_city = @closest_travel_time.city ? @closest_travel_time.city.name : ''
 		@images = @travel_offer.images.limit(5)
 		@gallery = @travel_offer.gallery_url.to_s
 		@travel_times = @travel_offer.travel_times.where('(DATE(travel_times.from_date) > DATE(NOW())) AND travel_times.id <> ' + @closest_travel_time.id.to_s).order("travel_times.from_date ASC")

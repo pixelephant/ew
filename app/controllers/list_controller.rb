@@ -28,14 +28,14 @@ class ListController < ApplicationController
 							t = Time.parse(a)
 							tfrom = t - (@filt[:flexibility].to_i).days
 							tto = t + (@filt[:flexibility].to_i).days
-							c << "travel_times.from_date BETWEEN '" + tfrom.to_s + "' AND '" + tto.to_s + "'"
+							c << "((travel_times.from_date BETWEEN '" + tfrom.to_s + "' AND '" + tto.to_s + "') OR (DATEDIFF(travel_times.to_date,travel_times.from_date) > night+2))"
 						end
 						unless @filt[:departure].blank?
 							a = @filt[:departure]
 							t = Time.parse(a)
 							tfrom = t - (@filt[:flexibility].to_i).days
 							tto = t + (@filt[:flexibility].to_i).days
-							c << "travel_times.to_date BETWEEN '" + tfrom.to_s + "' AND '" + tto.to_s + "'"
+							c << "((travel_times.to_date BETWEEN '" + tfrom.to_s + "' AND '" + tto.to_s + "') OR (DATEDIFF(travel_times.to_date,travel_times.from_date) > night+2))"
 						end
 						session[:from] = tfrom
 						session[:to] = tto
@@ -77,16 +77,20 @@ class ListController < ApplicationController
 				# end
 				# c << ("program_types.id IN (#{prog_type})")
 
-				if @filt[:price].to_i > 0
+				unless @filt[:price].blank?
 					price = @filt[:price].to_s
 					p = price.split("-")
 
 					if p[1]
 						@price_checked[p[1].to_sym] = true
-						c << ("travel_times.price BETWEEN #{p[0]} AND #{p[1]}")
+						p_eur = []
+						p_eur[0] = p[0].to_i / EURHUF
+						p_eur[1] = p[1].to_i / EURHUF
+						c << ("((travel_times.price BETWEEN #{p[0]} AND #{p[1]} AND price_measure IN ('Ft/fő','Ft/szoba')) OR (travel_times.price BETWEEN #{p_eur[0]} AND #{p_eur[1]} AND price_measure IN ('EUR/fő','EUR/szoba')))")
 					else
 						@price_checked[p[0].to_sym] = true
-						c << ("travel_times.price > #{p[0]}")
+						p_eur = p[0].to_i / EURHUF
+						c << ("((travel_times.price > #{p[0]} AND price_measure IN ('Ft/fő','Ft/szoba')) OR (travel_times.price > #{p_eur} AND price_measure IN ('EUR/fő','EUR/szoba')))")
 					end
 				end
 			end
