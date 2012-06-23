@@ -9,8 +9,9 @@ Ewutazas::Application.routes.draw do
   match 'contact' => 'contact#index'
   match 'insurance' => 'insurance#index'
   
-  match 'exclusive' => 'exclusive#hungaroring'
+  # match 'exclusive' => 'exclusive#hungaroring'
   match 'hungaroring' => 'exclusive#hungaroring'
+  match 'fcbarcelona' => 'exclusive#fcbarcelona'
 
 
   match 'ajax/get_region' => 'ajax#get_region', :method => 'POST'

@@ -97,22 +97,21 @@ class ListController < ApplicationController
 		conditions = ''
 		conditions = c.join(" AND ") unless c.blank?
 
-		toa = TravelOffer.find(:all, :joins => [:travel_times, :destinations, :program_types], :select => "DISTINCT travel_offers.id", :order => @order_by + " " + @ord, :group => "travel_offers.id", :conditions => conditions )
-		traveloffers_array = TravelOffer.where(:id => toa)
-		#@traveloffers = Kaminari.paginate_array(@traveloffers_array).page(params[:page])
-		@traveloffers = Kaminari.paginate_array(traveloffers_array).page(params[:page])
+		traveloffers_array = TravelOffer.find(:all, :joins => [:travel_times, :destinations, :program_types], :select => "DISTINCT travel_offers.id", :order => @order_by + " " + @ord, :group => "travel_offers.id", :conditions => conditions )
+		# @traveloffers = Kaminari.paginate_array(traveloffers_array).page(params[:page])
+		@traveloffers = traveloffers_array.page(params[:page])
 		
 		render "index"
 	end
 
 	def naszutak
 		if @order_by == 'travel_times.price'
-			toa = TravelOffer.joins(:travel_attributes).joins(:travel_times).select("DISTINCT travel_offers.id").where(:travel_attributes => {:id => 19}).order(@order_by + " " + @ord)
-			traveloffers_array = TravelOffer.where(:id => toa)
+			@order_by = 'MIN(travel_times.price)'
+			traveloffers_array = TravelOffer.joins(:travel_attributes).joins(:travel_times).select("DISTINCT travel_offers.*").group("travel_offers.id").where(:travel_attributes => {:id => 19}).order(@order_by + " " + @ord)
 		else
 			traveloffers_array = TravelOffer.joins(:travel_attributes).where(:travel_attributes => {:id => 19}).order(@order_by + " " + @ord)
 		end
-		@traveloffers = Kaminari.paginate_array(traveloffers_array).page(params[:page])
+		@traveloffers = traveloffers_array.page(params[:page])
 		@h2 = "Nászutak"
 		@img = "/assets/category_headers/naszutak.jpg"
 		@text = "Awake to a new vista each morning as large windows frame everchanging views of the azure ocean and sky, emerald-topped islands edged in turquoise waters and brilliant white sand."
@@ -121,12 +120,12 @@ class ListController < ApplicationController
 
 	def hajoutak
 		if @order_by == 'travel_times.price'
-			toa = TravelOffer.joins(:travel_attributes).joins(:travel_times).select("DISTINCT travel_offers.id").where(:travel_attributes => {:id => 19}).order(@order_by + " " + @ord)
-			traveloffers_array = TravelOffer.where(:id => toa)
+			@order_by = 'MIN(travel_times.price)'
+			traveloffers_array= TravelOffer.joins(:travel_attributes).joins(:travel_times).select("DISTINCT travel_offers.*").group("travel_offers.id").where(:travel_attributes => {:id => 19}).order(@order_by + " " + @ord)
 		else
 			traveloffers_array = TravelOffer.joins(:travel_attributes).where(:travel_attributes => {:id => 19}).order(@order_by + " " + @ord)
 		end
-		@traveloffers = Kaminari.paginate_array(traveloffers_array).page(params[:page])
+		@traveloffers = traveloffers_array.page(params[:page])
 		@h2 = "Hajóutak"
 		@img = "/assets/category_headers/hajo.jpg"
 		@text = "Awake to a new vista each morning as large windows frame everchanging views of the azure ocean and sky, emerald-topped islands edged in turquoise waters and brilliant white sand."
@@ -135,12 +134,12 @@ class ListController < ApplicationController
 
 	def sieles
 		if @order_by == 'travel_times.price'
-			toa = TravelOffer.joins(:program_types).joins(:travel_times).select("DISTINCT travel_offers.id").where(:program_types => {:id => [7,19]}).order(@order_by + " " + @ord)
-			traveloffers_array = TravelOffer.where(:id => toa)
+			@order_by = 'MIN(travel_times.price)'
+			traveloffers_array= TravelOffer.joins(:program_types).joins(:travel_times).select("DISTINCT travel_offers.*").group("travel_offers.id").where(:program_types => {:id => [7,19]}).order(@order_by + " " + @ord)
 		else
 			traveloffers_array = TravelOffer.joins(:program_types).where(:program_types => {:id => [7,19]}).order(@order_by + " " + @ord)
 		end
-		@traveloffers = Kaminari.paginate_array(traveloffers_array).page(params[:page])
+		@traveloffers = traveloffers_array.page(params[:page])
 		@h2 = "Sielés"
 		@img = "/assets/category_headers/sieles.jpg"
 		@text = "Awake to a new vista each morning as large windows frame everchanging views of the azure ocean and sky, emerald-topped islands edged in turquoise waters and brilliant white sand."
@@ -149,12 +148,12 @@ class ListController < ApplicationController
 
 	def egzotikusutak
 		if @order_by == 'travel_times.price'
-			toa = TravelOffer.joins(:program_types).joins(:travel_times).select("DISTINCT travel_offers.id").where(:program_types => {:id => 5}).order(@order_by + " " + @ord)
-			traveloffers_array = TravelOffer.where(:id => toa)
+			@order_by = 'MIN(travel_times.price)'
+			traveloffers_array = TravelOffer.joins(:program_types).joins(:travel_times).select("DISTINCT travel_offers.*").group("travel_offers.id").where(:program_types => {:id => 5}).order(@order_by + " " + @ord)
 		else
 			traveloffers_array = TravelOffer.joins(:program_types).where(:program_types => {:id => 5}).order(@order_by + " " + @ord)
 		end
-		@traveloffers = Kaminari.paginate_array(traveloffers_array).page(params[:page])
+		@traveloffers = traveloffers_array.page(params[:page])
 		@h2 = "Egzotikus utak"
 		@img = "/assets/category_headers/egzotikus.jpg"
 		@text = "Awake to a new vista each morning as large windows frame everchanging views of the azure ocean and sky, emerald-topped islands edged in turquoise waters and brilliant white sand."
@@ -163,12 +162,12 @@ class ListController < ApplicationController
 
 	def korutazasok
 		if @order_by == 'travel_times.price'
-			toa = TravelOffer.joins(:program_types).joins(:travel_times).select("DISTINCT travel_offers.id").where(:program_types => {:id => [6,8]}).order(@order_by + " " + @ord)
-			traveloffers_array = TravelOffer.where(:id => toa)
+			@order_by = 'MIN(travel_times.price)'
+			traveloffers_array = TravelOffer.joins(:program_types).joins(:travel_times).select("DISTINCT travel_offers.*").group("travel_offers.id").where(:program_types => {:id => [6,8]}).order(@order_by + " " + @ord)
 		else
 			traveloffers_array = TravelOffer.joins(:program_types).where(:program_types => {:id => [6,8]}).order(@order_by + " " + @ord)
 		end
-		@traveloffers = Kaminari.paginate_array(traveloffers_array).page(params[:page])
+		@traveloffers = traveloffers_array.page(params[:page])
 		@h2 = "Körutazások"
 		@img = "/assets/category_headers/korut.jpg"
 		@text = "Awake to a new vista each morning as large windows frame everchanging views of the azure ocean and sky, emerald-topped islands edged in turquoise waters and brilliant white sand."
@@ -177,12 +176,12 @@ class ListController < ApplicationController
 
 	def varoslatogatasok
 		if @order_by == 'travel_times.price'
-			toa = TravelOffer.joins(:program_types).joins(:travel_times).select("DISTINCT travel_offers.id").where(:program_types => {:id => 2}).order(@order_by + " " + @ord)
-			traveloffers_array = TravelOffer.where(:id => toa)
+			@order_by = 'MIN(travel_times.price)'
+			traveloffers_array= TravelOffer.joins(:program_types).joins(:travel_times).select("DISTINCT travel_offers.*").group("travel_offers.id").where(:program_types => {:id => 2}).order(@order_by + " " + @ord)
 		else
 			traveloffers_array = TravelOffer.joins(:program_types).where(:program_types => {:id => 2}).order(@order_by + " " + @ord)
 		end
-		@traveloffers = Kaminari.paginate_array(traveloffers_array).page(params[:page])
+		@traveloffers = traveloffers_array.page(params[:page])
 		@h2 = "Városlátogatások"
 		@img = "/assets/category_headers/varos.jpg"
 		@text = "Awake to a new vista each morning as large windows frame everchanging views of the azure ocean and sky, emerald-topped islands edged in turquoise waters and brilliant white sand."
@@ -191,12 +190,12 @@ class ListController < ApplicationController
 
 	def sportutak
 		if @order_by == 'travel_times.price'
-			toa = TravelOffer.joins(:program_types).joins(:travel_times).select("DISTINCT travel_offers.id").where(:program_types => {:id => 23}).order(@order_by + " " + @ord)
-			traveloffers_array = TravelOffer.where(:id => toa)
+			@order_by = 'MIN(travel_times.price)'
+			traveloffers_array = TravelOffer.joins(:program_types).joins(:travel_times).select("DISTINCT travel_offers.*").group("travel_offers.id").where(:program_types => {:id => 23}).order(@order_by + " " + @ord)
 		else
 			traveloffers_array = TravelOffer.joins(:program_types).where(:program_types => {:id => 23}).order(@order_by + " " + @ord)
 		end
-		@traveloffers = Kaminari.paginate_array(traveloffers_array).page(params[:page])
+		@traveloffers = traveloffers_array.page(params[:page])
 		@h2 = "Sportutak"
 		@img = "/assets/category_headers/sport.jpg"
 		@text = "Awake to a new vista each morning as large windows frame everchanging views of the azure ocean and sky, emerald-topped islands edged in turquoise waters and brilliant white sand."
@@ -205,12 +204,12 @@ class ListController < ApplicationController
 
 	def kulfoldiutazasok
 		if @order_by == 'travel_times.price'
-			toa = TravelOffer.joins(:destinations).joins(:travel_times).select("DISTINCT travel_offers.id").where('destinations.country_id <> 132').order(@order_by + " " + @ord)
-			traveloffers_array = TravelOffer.where(:id => toa)
+			@order_by = 'MIN(travel_times.price)'
+			traveloffers_array = TravelOffer.joins([:destinations,:travel_times]).select("DISTINCT travel_offers.*").group("travel_offers.id").where('destinations.country_id <> 132').order(@order_by + " " + @ord)
 		else
 			traveloffers_array = TravelOffer.joins(:destinations).where('destinations.country_id <> 132').order(@order_by + " " + @ord)
 		end
-		@traveloffers = Kaminari.paginate_array(traveloffers_array).page(params[:page])
+		@traveloffers = traveloffers_array.page(params[:page])
 		@h2 = "Külföldi utazások"
 		@img = "/assets/category_headers/kulfold.jpg"
 		@text = "Awake to a new vista each morning as large windows frame everchanging views of the azure ocean and sky, emerald-topped islands edged in turquoise waters and brilliant white sand."
@@ -219,12 +218,12 @@ class ListController < ApplicationController
 
 	def belfoldiutazasok
 		if @order_by == 'travel_times.price'
-			toa = TravelOffer.joins(:destinations).joins(:travel_times).select("DISTINCT travel_offers.id").where(:destinations => {:country_id => 132}).order(@order_by + " " + @ord)
-			traveloffers_array = TravelOffer.where(:id => toa)
+			@order_by = 'MIN(travel_times.price)'
+			traveloffers_array = TravelOffer.joins(:destinations).joins(:travel_times).select("DISTINCT travel_offers.*").group("travel_offers.id").where(:destinations => {:country_id => 132}).order(@order_by + " " + @ord)
 		else
 			traveloffers_array = TravelOffer.joins(:destinations).where(:destinations => {:country_id => 132}).order(@order_by + " " + @ord)
 		end
-		@traveloffers = Kaminari.paginate_array(traveloffers_array).page(params[:page])
+		@traveloffers = traveloffers_array.page(params[:page])
 		@h2 = "Belföldi utazások"
 		@img = "/assets/category_headers/belfold.jpg"
 		@text = "Awake to a new vista each morning as large windows frame everchanging views of the azure ocean and sky, emerald-topped islands edged in turquoise waters and brilliant white sand."
@@ -239,12 +238,13 @@ class ListController < ApplicationController
 		end
 
 		if @order_by == 'travel_times.price'
-			toa = TravelOffer.joins(:travel_times).select("DISTINCT travel_offers.id").where(:id => tt_id).order(@order_by + " " + @ord)
-			traveloffers_array = TravelOffer.where(:id => toa)
+			@order_by = 'MIN(travel_times.price)'
+			traveloffers_array = TravelOffer.joins(:travel_times).select("travel_offers.*").group("travel_offers.id").where(:id => tt_id).order(@order_by + " " + @ord)
 		else
 			traveloffers_array = TravelOffer.where(:id => tt_id).order(@order_by + " " + @ord)
 		end
-		@traveloffers = Kaminari.paginate_array(traveloffers_array).page(params[:page])
+		#@traveloffers = Kaminari.paginate_array(traveloffers_array).page(params[:page])
+		@traveloffers = traveloffers_array.page(params[:page])
 		@h2 = "Akciós utak"
 		@img = "/assets/category_headers/akcios.jpg"
 		@text = "Awake to a new vista each morning as large windows frame everchanging views of the azure ocean and sky, emerald-topped islands edged in turquoise waters and brilliant white sand."
@@ -254,9 +254,14 @@ class ListController < ApplicationController
 	def lastminute
 		from = (Time.now + 1.day).to_date
 		to = (Time.now + 14.days).to_date
-		toa = TravelOffer.joins(:travel_times).select("DISTINCT travel_offers.id").where("travel_times.from_date BETWEEN '#{from}' AND '#{to}'").order(@order_by + " " + @ord)
-		traveloffers_array = TravelOffer.where(:id => toa)
-		@traveloffers = Kaminari.paginate_array(traveloffers_array).page(params[:page])
+
+		if @order_by == 'travel_times.price'
+			@order_by = 'MIN(travel_times.price)'
+		end
+
+		traveloffers_array = TravelOffer.joins(:travel_times).select("DISTINCT travel_offers.*").group("travel_offers.id").where("travel_times.from_date BETWEEN '#{from}' AND '#{to}'").order(@order_by + " " + @ord)
+		# @traveloffers = Kaminari.paginate_array(traveloffers_array).page(params[:page])
+		@traveloffers = traveloffers_array.page(params[:page])
 		@h2 = "Last-minute utazások"
 		@img = "/assets/category_headers/lastminute.jpg"
 		@text = "Awake to a new vista each morning as large windows frame everchanging views of the azure ocean and sky, emerald-topped islands edged in turquoise waters and brilliant white sand."
@@ -267,12 +272,13 @@ class ListController < ApplicationController
 		word = params[:query]
 
 		if @order_by == 'travel_times.price'
-			toa = TravelOffer.find(:all, :select => "DISTINCT travel_offers.id",:joins => [:descriptions, :travel_times], :order => @order_by + " " + @ord, :conditions => "descriptions.description LIKE '%#{word}%' OR travel_offers.travel_name LIKE '%#{word}%' OR travel_offers.szallas_name LIKE '%#{word}%'")
-			traveloffers_array = TravelOffer.where(:id => toa)
+			@order_by = 'MIN(travel_times.price)'
+			traveloffers_array = TravelOffer.find(:all, :group => "travel_offers.id", :select => "DISTINCT travel_offers.*",:joins => [:descriptions, :travel_times], :order => @order_by + " " + @ord, :conditions => "descriptions.description LIKE '%#{word}%' OR travel_offers.travel_name LIKE '%#{word}%' OR travel_offers.szallas_name LIKE '%#{word}%'")
 		else
 			traveloffers_array = TravelOffer.find(:all, :select => "DISTINCT travel_offers.*",:joins => :descriptions, :order => @order_by + " " + @ord, :conditions => "descriptions.description LIKE '%#{word}%' OR travel_offers.travel_name LIKE '%#{word}%' OR travel_offers.szallas_name LIKE '%#{word}%'")
 		end
 		@traveloffers = Kaminari.paginate_array(traveloffers_array).page(params[:page])
+		# @traveloffers = traveloffers_array.page(params[:page])
 		@h2 = "Keresés: #{word}"
 		
 		render "index"
@@ -282,10 +288,12 @@ class ListController < ApplicationController
 		country = Country.where(:slug => params[:country_name].to_s).first
 
 		if @order_by == 'travel_times.price'
-			traveloffers_array = TravelOffer.find(:all, :select => "DISTINCT travel_offers.*",:joins => [:destinations, :travel_times], :order => @order_by + " " + @ord, :conditions => "destinations.country_id = #{country.id}")
+			@order_by = 'MIN(travel_times.price)'
+			traveloffers_array = TravelOffer.find(:all, :group => "travel_offers.id" ,:select => "DISTINCT travel_offers.*",:joins => [:destinations, :travel_times], :order => @order_by + " " + @ord, :conditions => "destinations.country_id = #{country.id}")
 		else
 			traveloffers_array = TravelOffer.find(:all, :select => "DISTINCT travel_offers.*",:joins => :destinations, :order => @order_by + " " + @ord, :conditions => "destinations.country_id = #{country.id}")
 		end
+		# @traveloffers = traveloffers_array.page(params[:page])
 		@traveloffers = Kaminari.paginate_array(traveloffers_array).page(params[:page])
 		@h2 = "Úticél: " + country.name
 

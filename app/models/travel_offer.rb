@@ -34,7 +34,8 @@ class TravelOffer < ActiveRecord::Base
 	attr_protected
 
 	def closest_travel_time
-		TravelTime.where("travel_offer_id = #{self.id} AND DATE(from_date) > DATE(NOW())").order("from_date ASC").first
+		TravelTime.where("travel_offer_id = #{self.id}").order("from_date ASC").first
+		# TravelTime.where("travel_offer_id = #{self.id} AND DATE(from_date) > DATE(NOW())").order("from_date ASC").first
 	end
 
 	def closest_travel_time_to_date
@@ -42,12 +43,14 @@ class TravelOffer < ActiveRecord::Base
 	end
 
 	def min_price
-		t = TravelTime.where("travel_offer_id = #{self.id} AND DATE(from_date) > DATE(NOW())").order("price ASC").first
+		# t = TravelTime.where("travel_offer_id = #{self.id} AND DATE(from_date) > DATE(NOW())").order("price ASC").first
+		t = TravelTime.where("travel_offer_id = #{self.id}").order("price ASC").first
 		t.nil? ? 0 : t.price
 	end
 
 	def min_price_measure
-		t = TravelTime.where("travel_offer_id = #{self.id} AND DATE(from_date) > DATE(NOW())").order("price ASC").first
+		# t = TravelTime.where("travel_offer_id = #{self.id} AND DATE(from_date) > DATE(NOW())").order("price ASC").first
+		t = TravelTime.where("travel_offer_id = #{self.id}").order("price ASC").first
 		t.price_measure
 	end
 

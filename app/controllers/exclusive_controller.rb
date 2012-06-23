@@ -5,4 +5,8 @@ class ExclusiveController < ApplicationController
 		render "hungaroring"
 	end
 
+	def fcbarcelona
+		render "barcelona"
+	end
+
 end

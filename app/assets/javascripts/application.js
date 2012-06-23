@@ -87,7 +87,9 @@ $(document).ready(function(){
       onSelect: function( selectedDate ) {
         var d1=new Date($("#search_arrival").val());
         var d2=new Date($('#search_departure').val());
-        $('#search_between').html((Math.abs((d2-d1)/86400000))-1);
+        if($("#search_arrival").val() != '' && $('#search_departure').val() != ''){
+          $('#search_between').html((Math.abs((d2-d1)/86400000))-1);
+        }
 
         var option = this.id == "search_arrival" ? "minDate" : "maxDate",
           instance = $( this ).data( "datepicker" ),
