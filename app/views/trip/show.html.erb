@@ -92,6 +92,16 @@
 				</ul>
 			</div>
 		<% end %>
+		<% unless @traveldays.blank? %>
+			<div class="tri">
+				<h3>Utazási napok</h3>
+				<ul>
+					<% @traveldays.each do |travelday| %>
+						<li><%= travelday.name %></li>
+					<% end %>
+				</ul>
+			</div>
+		<% end %>
 	</div>
 	<div id="additional-time">
 		<h2>További időpontok és változatok</h2>

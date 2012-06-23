@@ -20,6 +20,7 @@ class TripController < ApplicationController
 		@inprices = @travel_offer.inprices
 		@outprices = @travel_offer.outprices
 		@fakultativs = @travel_offer.fakultativs
+		@traveldays = @travel_offer.traveldays
 
 		@prebooking = @closest_travel_time.pre_bookings.where("end_date > DATE(NOW())").order("end_date ASC")
 		@child_prices = @closest_travel_time.child_prices

@@ -4,5 +4,5 @@
 <%= link_to 'Ár &darr;'.html_safe, url_for(params.merge(:sort => "arcsokkeno", :ord => 'csokkeno')), :class => 'pill' %>
 <%= link_to 'A-Z', url_for(params.merge(:sort => "utneve", :ord => 'novekvo')), :class => 'pill' %>
 <div class="pagi">
-	<%= paginate @traveloffers, :window => 2 %>
+	<%= paginate @traveloffers, :window => 1 %>
 </div>
