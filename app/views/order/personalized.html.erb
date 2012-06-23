@@ -1,9 +1,13 @@
 <section id="content">
 <h2>Egyéni útszervezés</h2>
 <form id="personalized-form" action="/foglalas/koszonjuk" method="POST">
+<% unless @full_personalized %>
+	<div class="row"><h3><%= @travel_offer.travel_name %></h3> <span class="dates"><%= @travel_time.from_date.to_s(:year_month_day) %> - <%= @travel_time.to_date.to_s(:year_month_day) %></span> <span class="price"><%= @travel_time.price %> <%= @travel_time.price_measure %>, <%= @travel_time.night %> éjszaka</span></div>
 
-<input type="hidden" value="<%= @travel_time %>" name="traveltime" id="traveltime" />
-
+	<input type="hidden" value="<%= @travel_time %>" name="traveltime" id="traveltime" />
+<% else %>
+	<input type="hidden" value="0" name="traveltime" id="traveltime" />
+<% end %>
 <fieldset>
 <div class="r">
 	<label for="name">Név</label>

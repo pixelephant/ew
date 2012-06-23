@@ -10,11 +10,11 @@ class OrderController < ApplicationController
 
 	def personalized
 		if params[:id]
-			@travel_time = TravelTime.find(params[:id]).id
+			@full_personalized = false
+			@travel_time = TravelTime.find(params[:id])
 			@travel_offer = TravelOffer.find(@travel_time.travel_offer_id)
 		else
-			@travel_time = 0
-			@travel_offer = 0
+			@full_personalized = true
 		end
 		render "personalized"
 	end
