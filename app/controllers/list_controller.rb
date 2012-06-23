@@ -97,9 +97,9 @@ class ListController < ApplicationController
 		conditions = ''
 		conditions = c.join(" AND ") unless c.blank?
 
-		traveloffers_array = TravelOffer.find(:all, :joins => [:travel_times, :destinations, :program_types], :select => "DISTINCT travel_offers.id", :order => @order_by + " " + @ord, :group => "travel_offers.id", :conditions => conditions )
-		# @traveloffers = Kaminari.paginate_array(traveloffers_array).page(params[:page])
-		@traveloffers = traveloffers_array.page(params[:page])
+		traveloffers_array = TravelOffer.find(:all, :joins => [:travel_times, :destinations, :program_types], :select => "DISTINCT travel_offers.*", :order => @order_by + " " + @ord, :group => "travel_offers.id", :conditions => conditions )
+		@traveloffers = Kaminari.paginate_array(traveloffers_array).page(params[:page])
+		# @traveloffers = traveloffers_array.page(params[:page])
 		
 		render "index"
 	end

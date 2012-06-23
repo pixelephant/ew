@@ -17,4 +17,30 @@ module ApplicationHelper
 		return TravelOffer.find(travel_offer_id).own_image_file.to_s
 	end
 
+	#
+	# Converts the given HASH array like 'params' to a flat
+	# HASH array that's compatible with url_for and link_to
+	#
+	def flatten_param_hash( params )
+	  found = true
+
+	  while found
+	    found = false
+	    new_hash = {}
+
+	    params.each do |key,value|
+	      if value.is_a?( Hash )
+	        found = true
+	        value.each do |key2,value2|
+	          new_hash[ key.to_s + '[' + key2.to_s + ']' ] = value2
+	        end
+	      else
+	        new_hash[ key.to_s ] = value
+	      end
+	    end
+	    params = new_hash
+	  end
+	  params
+	end
+
 end

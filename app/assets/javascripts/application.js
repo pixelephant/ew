@@ -125,7 +125,7 @@ $(document).ready(function(){
 
 
 
-  $("#advanced-search :input,advanced-search select").change(function(){
+  $("#advanced-search :input,#advanced-search select").change(function(){
     var formData = $("#advanced-search").serialize();
     $.post("/ajax/search_estimate",{
       data : formData
