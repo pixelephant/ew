@@ -10,7 +10,7 @@ class ListController < ApplicationController
 		@text = ""
 
 		@filt = params[:filters]
-		@filt = params[:search] if params[:searcg]
+		@filt = params[:search] if params[:search]
 
 		unless @filt.blank? && params[:sort].blank?
 		
