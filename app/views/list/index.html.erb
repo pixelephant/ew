@@ -46,6 +46,7 @@
 					<%= render :partial => 'custom_offer' if i == 3 %>
 				<!-- end -->
 			<% end %>
+			<%= render :partial => 'custom_offer' if @traveloffers.count < 4 %>
 		</div>
 		<div class="pagination" id="pagi-b">
 			<%= render "list/pagination_sort" %>
