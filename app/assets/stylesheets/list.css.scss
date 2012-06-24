@@ -48,6 +48,7 @@ aside{
 		line-height:50px !important;
 		padding:0 20px !important;
 		text-shadow:none !important;
+		overflow:hidden;
 	}
 }
 
@@ -86,6 +87,7 @@ aside{
 	}
 	input,select{
 		float:none;
+		width:200px;
 	}
 	.left{
 		float:none;

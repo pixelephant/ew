@@ -7,7 +7,7 @@ $(document).ready(function(){
 	//$('#page-header').anystretch("http://dev.virtualearth.net/REST/V1/Imagery/Map/AerialWithLabels/space%20needle%20seattle?mapLayer=TrafficFlow&mapSize=900,260&zoomLevel=21&key=Av6Kw-8aShNgPZa-xG8X_Xt_m3uoVBSF4vfq21lymtZ7iYmYHxFVFO8svAUOThu5", {speed: 1000, positionY: "center"});
 
 	 $('#additional-time table').tablePagination({
-	 	rowsPerPage : 2,
+	 	rowsPerPage : 5,
 	 	firstArrow : (new Image()).src="/assets/first.png",
         prevArrow : (new Image()).src="/assets/prev.png",
 		lastArrow : (new Image()).src="/assets/last.png",

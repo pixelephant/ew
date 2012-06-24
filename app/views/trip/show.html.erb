@@ -1,12 +1,4 @@
-<section id="page-header">
-	<div id="page-header-inner">
-		<% if @travel_offer.special? %>
-			<h1>Csak akkor látszom, ha kiemelt vagyok</h1>
-		<% end %>
-	</div>
-</section>
-
-<section id="content">
+<section id="content" data-positionx="" data-positiony="">
 	<div id="main">
 		<div id="trip-images">
 			<%= link_to image_tag(@gallery + @images.first.file_name.to_s), (@gallery + @images.first.file_name.to_s), :class => 'fancybox', :id => 'curr', :alt => @travel_offer.travel_name, :rel => 'gallery' %>

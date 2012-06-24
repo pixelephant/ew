@@ -29,10 +29,10 @@
 	<fieldset>
 		<legend>Utazás max. ára/fő</legend>
 		<div>
-			<%= f.label "price_100000", ("100.000 Ft/fő-ig " + (f.radio_button "price", '0-100000', {:checked => @price_checked['100000'.to_sym]})).html_safe %>
-			<%= f.label "price_250000", ("100.000-250.000 Ft/fő-ig " + (f.radio_button "price", '100000-250000', {:checked => @price_checked['250000'.to_sym]})).html_safe %>
-			<%= f.label "price_500000", ("250.000-500.000 Ft/fő-ig " + (f.radio_button "price", '250000-500000', {:checked => @price_checked['500000'.to_sym]})).html_safe %>
-			<%= f.label "price_500001", ("500.000 Ft/fő fölött " + (f.radio_button "price", '500001', {:checked => @price_checked['500001'.to_sym]})).html_safe %>
+			<%= f.label "price_100000", ("100.000 Ft-ig" + (f.radio_button "price", '0-100000', {:checked => @price_checked['100000'.to_sym]})).html_safe %>
+			<%= f.label "price_250000", ("100.000-250.000 Ft " + (f.radio_button "price", '100000-250000', {:checked => @price_checked['250000'.to_sym]})).html_safe %>
+			<%= f.label "price_500000", ("250.000-500.000 Ft " + (f.radio_button "price", '250000-500000', {:checked => @price_checked['500000'.to_sym]})).html_safe %>
+			<%= f.label "price_500001", ("500.000 Ft-tól " + (f.radio_button "price", '500001', {:checked => @price_checked['500001'.to_sym]})).html_safe %>
 		</div>
 	</fieldset>
 	<fieldset>

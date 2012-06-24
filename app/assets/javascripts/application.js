@@ -175,6 +175,22 @@ $(document).ready(function(){
       }
    });
 
+   function init(){
+      var checked = $("#search_no_date").is(":checked");
+      if(checked){
+        $("#precise-row").slideUp("300",function(){
+          $("#imprecise-row").slideDown();
+        });
+      }
+      else{
+        $("#imprecise-row").slideUp("300",function(){
+          $("#precise-row").slideDown();
+        });
+      }
+   }
+
+   init();
+
   $("#filters_country, #search_country").change(function(){
     $.ajax({
       type: 'POST',
@@ -223,5 +239,8 @@ $(document).ready(function(){
     }});
     return false;
   });
+
+
+
 
 });

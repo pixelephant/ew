@@ -338,7 +338,7 @@ color:rgba(255,255,255,0.8) !important;
 			padding-left:15px;
 		}
 		fieldset{
-			padding:0px 0 15px 15px;
+			padding:0px 0 15px 15px !important;
 		}
 	}
 
@@ -385,7 +385,9 @@ color:rgba(255,255,255,0.8) !important;
 		margin-top:20px;
 		font-size:18px;
 	}
-
+	small,fieldset{
+		padding-left:15px;
+	}
 	fieldset,.row{
 		padding-left:0;
 	}
@@ -398,6 +400,7 @@ color:rgba(255,255,255,0.8) !important;
 #content{
 	width:980px;
 	margin:0 auto;
+	margin-top:20px;
 }
 
 #content h2{

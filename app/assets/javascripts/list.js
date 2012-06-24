@@ -26,6 +26,22 @@ $("#filters_no_date").change(function(){
       }
    });
 
+function list_init(){
+    var checked = $("#filters_no_date").is(":checked");
+      if(checked){
+        $("#filter-precise-row").slideUp("300",function(){
+          $("#filter-imprecise-row").slideDown();
+        });
+      }
+      else{
+        $("#filter-imprecise-row").slideUp("300",function(){
+          $("#filter-precise-row").slideDown();
+        });
+      }
+   }
+
+   list_init();
+
 $(".only").change(function(){
   var checked = $(this).is(":checked");
   var boxes = $(this).parent().parent().find("input[type='checkbox']");
