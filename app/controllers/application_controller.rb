@@ -37,19 +37,19 @@ class ApplicationController < ActionController::Base
 		@sieles_menu = ''
 
 		case request.fullpath.split("?")[0]
-			when '/naszutak'
+			when '/utjaink/naszutak'
 				@naszutak_menu = 'active'
-			when '/sieles'
+			when '/utjaink/sieles'
 				@sieles_menu = 'active'
-			when '/lastminute'
+			when '/utjaink/lastminute'
 				@lastminute_menu = 'active'
-			when '/kulfoldiutazasok'
+			when '/utjaink/kulfoldiutazasok'
 				@kulfoldiutazasok_menu = 'active'
-			when '/akciosutak'
+			when '/utjaink/akciosutak'
 				@akciosutak_menu = 'active'
-			when '/hajoutak'
+			when '/utjaink/hajoutak'
 				@hajoutak_menu = 'active'
-		end		
+		end
 
   	# @program_types = ProgramType.all
 		@price_checked = {'100000'.to_sym => false,'250000'.to_sym => false,'500000'.to_sym => false,'500001'.to_sym => false}
@@ -58,10 +58,18 @@ class ApplicationController < ActionController::Base
 		@cities = []
 
 		@travelofferscount = TravelOffer.find_by_sql("SELECT count(DISTINCT travel_offers.id) AS travel_offers_count FROM travel_offers INNER JOIN travel_times ON travel_times.travel_offer_id = travel_offers.id").first.travel_offers_count
+		@sportut = (params[:travel_type] == 'sportutak' ? '1' : '0')
 
 		# t_countries = Destination.find_by_sql("SELECT destinations.country_id AS id, SUM(travel_offers.click) AS click FROM destinations INNER JOIN destinations_travel_offers ON destinations.id = destinations_travel_offers.destination_id INNER JOIN travel_offers ON travel_offers.id = destinations_travel_offers.travel_offer_id GROUP BY destinations.country_id ORDER BY SUM(travel_offers.click) LIMIT 4")
 		# top_countries = t_countries.collect {|p| [p.id]}.join(",")
-		selected_country = params[:country_name] ? Country.find(params[:country_name]).id : '150'
+		
+		if params[:filters]
+			filt = params[:filters]
+			@selected_country = (filt[:country] ? filt[:country] : '')
+			selected_country = @selected_country
+		else
+			selected_country = '150'
+		end
 
 		top_countries = '51,81,82,' + selected_country.to_s
 		@p_countries = Country.find_by_sql("SELECT * FROM countries WHERE id IN (#{top_countries})")

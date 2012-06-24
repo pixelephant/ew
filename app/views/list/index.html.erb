@@ -29,25 +29,20 @@
 								</div>
 								<p><%= (strip_tags(truncate(traveloffer.descriptions.where(:name => "Fekvese").first.description, :length => 255))) if traveloffer.descriptions.any? %></p>
 							</div>
-							<!-- <div class="icons">
-								<img src="http://www.placehold.it/30x30" alt="">
-								<img src="http://www.placehold.it/30x30" alt="">
-								<img src="http://www.placehold.it/30x30" alt="">
-							</div> -->
 							<%= link_to 'Részletek', traveloffer, :class => "view" %>
 							<% if traveloffer.travel_times.count.to_i > 1 %>
 								<p>További <strong><%= traveloffer.travel_times.count.to_i - 1 %></strong> időpont és változat</p> 
 							<% end %>
 						<% end %>
 					</div>
-					<%= render :partial => 'custom_offer' if i == 3 && params[:action] != 'sportutak' %>
-					<%= render :partial => 'sport_offer' if i == 3 && params[:action] == 'sportutak' %>
+					<%= render :partial => 'custom_offer' if i == 3 && @sportut == '0' %>
+					<%= render :partial => 'sport_offer' if i == 3 && @sportut == '1' %>
 					<% count = i %>
 				<!-- end -->
 			<% end %>
-			<%= render :partial => 'custom_offer' if count < 4 && count > 0 && params[:action] != 'sportutak'%>
-			<%= render :partial => 'sport_offer' if count < 4 && count > 0 && params[:action] == 'sportutak'%>
-			<%= render :partial => 'no_result' if count == 4 %>
+			<%= render :partial => 'custom_offer' if count < 3 && count > 0 && @sportut == '0' %>
+			<%= render :partial => 'sport_offer' if count < 3 && count > 0 && @sportut == '1' %>
+			<%= render :partial => 'no_result' if count == 0 %>
 		</div>
 		<div class="pagination" id="pagi-b">
 			<%= render "list/pagination_sort" %>

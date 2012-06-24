@@ -4,6 +4,31 @@ class ListController < ApplicationController
 
 	def index
 
+		c = []
+
+		case params[:travel_type]
+			when 'naszutak'
+				c << "(travel_attributes.id = 1)"
+			when 'hajoutak'
+				c << "(travel_attributes.id = 19)"
+			when 'sieles'
+				c << "(program_types.id IN (7,19))"
+			when 'egzotikusutak'
+				c << "(program_types.id = 5)"
+			when 'korutazasok'
+				c << "(program_types.id IN (6,8))"
+			when 'varoslatogatasok'
+				c << "(program_types.id = 2)"
+			when 'sportutak'
+				c << "(program_types.id = 23)"
+			when 'kulfoldiutazasok'
+				c << "(destinations.country_id <> 132)"
+			when 'belfoldiutazasok'
+				c << "(destinations.country_id = 132)"
+			when 'akciosutak'
+				c << "(travel_times.discount = 1)"
+		end		
+
 		@h2 = "Utazási ajánlataink"
 		@h2 = @h2 + " - " + params[:country_name] if params[:country_name]
 		@img = ""
@@ -13,60 +38,60 @@ class ListController < ApplicationController
 		@filt = params[:search] if params[:search]
 
 		unless @filt.blank? && params[:sort].blank?
-		
-			c = []
 
 			#Filterek
 			unless @filt.blank?
 				@regions = Region.where(:country_id => @filt[:country]) unless @filt[:country].blank?
 				@cities = City.where(:region_id => @filt[:region]) unless @filt[:region].blank?
 
-				if @filt[:no_date].to_i == 0
-					if @filt[:flexibility].to_i > 0
-						unless @filt[:arrival].blank?
-							a = @filt[:arrival]
-							t = Time.parse(a)
-							tfrom = t - (@filt[:flexibility].to_i).days
-							tto = t + (@filt[:flexibility].to_i).days
-							c << "((travel_times.from_date BETWEEN '" + tfrom.to_s + "' AND '" + tto.to_s + "') OR (DATEDIFF(travel_times.to_date,travel_times.from_date) > night+2))"
-						end
-						unless @filt[:departure].blank?
-							a = @filt[:departure]
-							t = Time.parse(a)
-							tfrom = t - (@filt[:flexibility].to_i).days
-							tto = t + (@filt[:flexibility].to_i).days
-							c << "((travel_times.to_date BETWEEN '" + tfrom.to_s + "' AND '" + tto.to_s + "') OR (DATEDIFF(travel_times.to_date,travel_times.from_date) > night+2))"
-						end
-						session[:from] = tfrom
-						session[:to] = tto
-					else
-						(c << ('travel_times.from_date = ' + @filt[:arrival])) unless @filt[:arrival].blank?
-						(c << ('travel_times.to_date = ' + @filt[:departure])) unless @filt[:departure].blank?
-						session[:from] = @filt[:arrival]
-						session[:to] = @filt[:departure]
-					end
-
-					(c << ('destinations.city_id = ' + @filt[:city])) unless (@filt[:city].blank? || @filt[:city].to_i == 0)
-					(c << ('destinations.region_id = ' + @filt[:region])) unless (@filt[:region].blank? || @filt[:region].to_i == 0)
-					(c << ('destinations.country_id = ' + @filt[:country])) unless (@filt[:country].blank? || @filt[:country].to_i == 0)
-				end
-				if @filt[:no_date].to_i == 1
-					@no_date_checked = true
-					im = @filt[:imprecise].to_i
-					if im > 0 && im < 13
-						if Date.today.month.to_i > im
-							d = (Date.today.year.to_i + 1).to_s + "-" + im.to_s
+				if @filt[:no_date]
+					if @filt[:no_date].to_i == 0
+						if @filt[:flexibility].to_i > 0
+							unless @filt[:arrival].blank?
+								a = @filt[:arrival]
+								t = Time.parse(a)
+								tfrom = t - (@filt[:flexibility].to_i).days
+								tto = t + (@filt[:flexibility].to_i).days
+								c << "((travel_times.from_date BETWEEN '" + tfrom.to_s + "' AND '" + tto.to_s + "') OR (DATEDIFF(travel_times.to_date,travel_times.from_date) > night+2))"
+							end
+							unless @filt[:departure].blank?
+								a = @filt[:departure]
+								t = Time.parse(a)
+								tfrom = t - (@filt[:flexibility].to_i).days
+								tto = t + (@filt[:flexibility].to_i).days
+								c << "((travel_times.to_date BETWEEN '" + tfrom.to_s + "' AND '" + tto.to_s + "') OR (DATEDIFF(travel_times.to_date,travel_times.from_date) > night+2))"
+							end
+							session[:from] = tfrom
+							session[:to] = tto
 						else
-							d = Date.today.year.to_s + "-" + im.to_s
+							(c << ('travel_times.from_date = ' + @filt[:arrival])) unless @filt[:arrival].blank?
+							(c << ('travel_times.to_date = ' + @filt[:departure])) unless @filt[:departure].blank?
+							session[:from] = @filt[:arrival]
+							session[:to] = @filt[:departure]
 						end
-						dstart = d + "-01"
-						dend = d + "-31"
 					end
-					c << ("travel_times.from_date > '" + dstart.to_s + "'")
-					c << ("travel_times.to_date < '" + dend.to_s + "'")
-					session[:from] = dstart
-					session[:to] = dend
+					if @filt[:no_date].to_i == 1
+						@no_date_checked = true
+						im = @filt[:imprecise].to_i
+						if im > 0 && im < 13
+							if Date.today.month.to_i > im
+								d = (Date.today.year.to_i + 1).to_s + "-" + im.to_s
+							else
+								d = Date.today.year.to_s + "-" + im.to_s
+							end
+							dstart = d + "-01"
+							dend = d + "-31"
+						end
+						c << ("travel_times.from_date > '" + dstart.to_s + "'")
+						c << ("travel_times.to_date < '" + dend.to_s + "'")
+						session[:from] = dstart
+						session[:to] = dend
+					end
 				end
+
+				(c << ('destinations.city_id = ' + @filt[:city])) unless (@filt[:city].blank? || @filt[:city].to_i == 0)
+				(c << ('destinations.region_id = ' + @filt[:region])) unless (@filt[:region].blank? || @filt[:region].to_i == 0)
+				(c << ('destinations.country_id = ' + @filt[:country])) unless (@filt[:country].blank? || @filt[:country].to_i == 0)
 
 				# p = []
 				# @filt[:program_type].each do |ptype|
@@ -101,7 +126,7 @@ class ListController < ApplicationController
 		conditions = ''
 		conditions = c.join(" AND ") unless c.blank?
 
-		traveloffers_array = TravelOffer.find(:all, :joins => [:travel_times, :destinations, :program_types], :select => "DISTINCT travel_offers.*", :order => @order_by + " " + @ord, :group => "travel_offers.id", :conditions => conditions )
+		traveloffers_array = TravelOffer.find(:all, :joins => [:travel_times, :destinations, :program_types, :travel_attributes], :select => "DISTINCT travel_offers.*", :order => @order_by + " " + @ord, :group => "travel_offers.id", :conditions => conditions )
 		@traveloffers = Kaminari.paginate_array(traveloffers_array).page(params[:page])
 		# @traveloffers = traveloffers_array.page(params[:page])
 		
@@ -113,7 +138,7 @@ class ListController < ApplicationController
 			@order_by = 'MIN(travel_times.price)'
 			traveloffers_array = TravelOffer.joins(:travel_attributes).joins(:travel_times).select("DISTINCT travel_offers.*").group("travel_offers.id").where(:travel_attributes => {:id => 19}).order(@order_by + " " + @ord)
 		else
-			traveloffers_array = TravelOffer.joins(:travel_attributes).where(:travel_attributes => {:id => 19}).order(@order_by + " " + @ord)
+			traveloffers_array = TravelOffer.joins(:travel_attributes).where(:travel_attributes => {:id => 1}).order(@order_by + " " + @ord)
 		end
 		@traveloffers = traveloffers_array.page(params[:page])
 		@h2 = "Nászutak"
