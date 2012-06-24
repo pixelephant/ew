@@ -45,11 +45,13 @@
 							<p>További <strong></strong> időpont és változat</p>
 						<% end %>
 					</div>
-					<%= render :partial => 'custom_offer' if i == 3 %>
+					<%= render :partial => 'custom_offer' if i == 3 && params[:action] != 'sportutak' %>
+					<%= render :partial => 'sport_offer' if i == 3 && params[:action] == 'sportutak' %>
 					<% count = i %>
 				<!-- end -->
 			<% end %>
-			<%= render :partial => 'custom_offer' if count < 4 %>
+			<%= render :partial => 'custom_offer' if count < 4 && params[:action] != 'sportutak'%>
+			<%= render :partial => 'sport_offer' if count < 4 && params[:action] == 'sportutak'%>
 		</div>
 		<div class="pagination" id="pagi-b">
 			<%= render "list/pagination_sort" %>
