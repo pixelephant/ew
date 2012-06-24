@@ -17,6 +17,7 @@ class TripController < ApplicationController
 		@gallery = @travel_offer.gallery_url.to_s
 		@travel_times = @travel_offer.travel_times.where('(DATE(travel_times.from_date) > DATE(NOW())) AND travel_times.id <> ' + @closest_travel_time.id.to_s).order("travel_times.from_date ASC")
 		@leiras = @travel_offer.descriptions.where(:name => 'Fekvese').first.description.to_s.html_safe
+		@artablazat = @travel_offer.descriptions.where(:name => 'Artablazat').first.description.to_s.html_safe
 		@inprices = @travel_offer.inprices
 		@outprices = @travel_offer.outprices
 		@fakultativs = @travel_offer.fakultativs
@@ -40,6 +41,9 @@ class TripController < ApplicationController
 
 		@travel_offer.click = (@travel_offer.click.to_i + 1)
 		@travel_offer.save
+
+		@title = @travel_offer.travel_name + ", " + @country.name
+		@description = @leiras
 
 		render "show"
 	end
