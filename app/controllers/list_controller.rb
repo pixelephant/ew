@@ -6,57 +6,81 @@ class ListController < ApplicationController
 
 		c = []
 
+		@h2 = "Utazási ajánlataink"
+		@title = "Utazási ajánlataink"
+		@description = "Utazási ajánlataink"
+
 		case params[:travel_type]
 			when 'naszutak'
 				c << "(travel_attributes.id = 1)"
 				@h2 = "Nászutak"
 				@img = "/assets/category_headers/naszutak.jpg"
 				@text = "Esküvő letudva? Irány pihenni! Az East-West nászút ajánlataival a közös élet kezdete igazán pihentető lesz."
+				@title = @h2
+				@description = @text
 			when 'hajoutak'
 				c << "(travel_attributes.id = 19)"
 				@h2 = "Hajóutak"
 				@img = "/assets/category_headers/hajo.jpg"
 				@text = "Különleges hajóutak, luxus óceánjárók. Szervezze meg tengeri élményeit az East-West-nél!"
+				@title = @h2
+				@description = @text
 			when 'sieles'
 				c << "(program_types.id IN (7,19))"
 				@h2 = "Sielés"
 				@img = "/assets/category_headers/sieles.jpg"
 				@text = "Síutak, snowboard utak és sítúrák; az East-West pénztárcabarát utakat kínál a legtöbb európai síparadicsomba."
+				@title = @h2
+				@description = @text
 			when 'egzotikusutak'
 				c << "(program_types.id = 5)"
 				@h2 = "Egzotikus utak"
 				@img = "/assets/category_headers/egzotikus.jpg"
 				@text = "Tegye feledhetetlenné pihenését egy egzotikus nyaralással. Az East-West az év minden időszakában elérhetővé teszi a legszebb egzotikus utakat."
+				@title = @h2
+				@description = @text
 			when 'korutazasok'
 				c << "(program_types.id IN (6,8))"
 				@h2 = "Körutazások"
 				@img = "/assets/category_headers/korut.jpg"
 				@text = "Az East-West körutazásai olyan turistáknak, akik, ha már kimozdulnak nem elégszenek meg egy kultúra megismerésével."
+				@title = @h2
+				@description = @text
 			when 'varoslatogatasok'
 				c << "(program_types.id = 2)"
 				@h2 = "Városlátogatások"
 				@img = "/assets/category_headers/varos.jpg"
 				@text = "Elege van a tengerpartokból? Az aktív üdülés híve? Az East-West városlátogatásai a népszerű célpontok mellett a kevésbé zsúfolt városokat is elérhetővé teszik."
+				@title = @h2
+				@description = @text
 			when 'sportutak'
 				c << "(program_types.id = 23)"
 				@h2 = "Sportutak"
 				@img = "/assets/category_headers/sport.jpg"
 				@text = "Football meccsek és egyéb sportesemények a világ minden tájáról. Egyedi ajánlatok az igazán aktívan pihenőknek-"
+				@title = @h2
+				@description = @text
 			when 'kulfoldiutazasok'
 				c << "(destinations.country_id <> 132)"
 				@h2 = "Külföldi utazások"
 				@img = "/assets/category_headers/kulfold.jpg"
 				@text = "Fedezze fel a világ csodálatos helyeit. Az East-West külföldi utazásaival eljuthat a világ midnen pontjára."
+				@title = @h2
+				@description = @text
 			when 'belfoldiutazasok'
 				c << "(destinations.country_id = 132)"
 				@h2 = "Belföldi utazások"
 				@img = "/assets/category_headers/belfold.jpg"
 				@text = "Magyarország csodálatos hely. Belföldi utazásainkkal felfedezheti Magyarország tájait, gyönyörű üdülőhelyeit."
+				@title = @h2
+				@description = @text
 			when 'akciosutak'
 				c << "(travel_times.discount = 1)"
 				@h2 = "Akciós utak"
 				@img = "/assets/category_headers/akcios.jpg"
 				@text = "Az East-West pénztárcabarát utazásai. Akciós útjaink naponta frissülnek így érdemes gyakran rájuk pillantani."
+				@title = @h2
+				@description = @text
 			when 'lastminute'
 				from = (Time.now + 1.day).to_date
 				to = (Time.now + 14.days).to_date
@@ -64,12 +88,9 @@ class ListController < ApplicationController
 				@h2 = "Last-minute utazások"
 				@img = "/assets/category_headers/lastminute.jpg"
 				@text = "Last minute utazások a gyors csomagolóknak. Az East-West legjobb külföldi és belföldi last minute utazásai egy helyen."
+				@title = @h2
+				@description = @text
 		end		
-
-		@h2 = "Utazási ajánlataink"
-		@h2 = @h2 + " - " + params[:country_name] if params[:country_name]
-		@img = ""
-		@text = ""
 
 		@filt = params[:filters]
 		@filt = params[:search] if params[:search]
@@ -346,6 +367,9 @@ class ListController < ApplicationController
 		@traveloffers = Kaminari.paginate_array(traveloffers_array).page(params[:page])
 		# @traveloffers = traveloffers_array.page(params[:page])
 		@h2 = "#{word}"
+
+		@title = "Utazások az alábbi kifejezésre: " + @h2
+		@description = "Keresési találatok az alábbi kifejezésre: " + @h2
 		
 		render "index"
 	end
@@ -362,6 +386,9 @@ class ListController < ApplicationController
 		# @traveloffers = traveloffers_array.page(params[:page])
 		@traveloffers = Kaminari.paginate_array(traveloffers_array).page(params[:page])
 		@h2 = country.name
+
+		@title = "Uticél: " + @h2
+		@description = "Az utazás célja: " + @h2
 
 		render "index"
 	end

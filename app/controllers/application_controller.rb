@@ -59,7 +59,7 @@ class ApplicationController < ActionController::Base
 		@regions = []
 		@cities = []
 
-		@travelofferscount = TravelOffer.find_by_sql("SELECT count(DISTINCT travel_offers.id) AS travel_offers_count FROM travel_offers INNER JOIN travel_times ON travel_times.travel_offer_id = travel_offers.id").first.travel_offers_count
+		#@travelofferscount = TravelOffer.find_by_sql("SELECT count(DISTINCT travel_offers.id) AS travel_offers_count FROM travel_offers INNER JOIN travel_times ON travel_times.travel_offer_id = travel_offers.id").first.travel_offers_count
 		@sportut = (params[:travel_type] == 'sportutak' ? '1' : '0')
 
 		# t_countries = Destination.find_by_sql("SELECT destinations.country_id AS id, SUM(travel_offers.click) AS click FROM destinations INNER JOIN destinations_travel_offers ON destinations.id = destinations_travel_offers.destination_id INNER JOIN travel_offers ON travel_offers.id = destinations_travel_offers.travel_offer_id GROUP BY destinations.country_id ORDER BY SUM(travel_offers.click) LIMIT 4")

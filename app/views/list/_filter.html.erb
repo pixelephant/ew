@@ -35,7 +35,7 @@
 			<%= f.label "price_500001", ("500.000 Ft-tól " + (f.radio_button "price", '500001', {:checked => @price_checked['500001'.to_sym]})).html_safe %>
 		</div>
 	</fieldset>
-	<% unless @belfoldiutazasok_menu == 'active' %>
+	<% unless @belfoldiutazasok_menu == 'active' || params[:action] == 'uticelok' %>
 		<fieldset>
 			<legend>Úticél</legend>
 			<div>
