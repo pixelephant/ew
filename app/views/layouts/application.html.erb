@@ -28,16 +28,16 @@
 		<div id="logo" class=""><a href="/"><%= image_tag "logo.png", :alt => "East-West Utazási és Sport Iroda" %></a></div>
 		<div id="ul-wrap">
 			<ul id="primary-nav">
-				<li id="lastminute" class="active"><a href="/lastminute">Last minute</a></li>
-				<li id="abroad"><a href="/kulfoldiutazasok">Külföldi utazások</a></li>
-				<li id="sale"><a href="/akciosutak">Akciós utak</a></li>
-				<li id="ski"><a href="/sieles">Síelés</a></li>
-				<li id="boat"><a href="/hajoutak">Hajóutak</a></li>
+				<li id="lastminute" class="<%= @lastminute_menu %>"><a href="/lastminute">Last minute</a></li>
+				<li id="abroad" class="<%= @kulfoldiutazasok_menu %>"><a href="/kulfoldiutazasok">Külföldi utazások</a></li>
+				<li id="sale" class="<%= @akciosutak_menu %>"><a href="/akciosutak">Akciós utak</a></li>
+				<li id="ski" class="<%= @sieles_menu %>"><a href="/sieles">Síelés</a></li>
+				<li id="boat" class="<%= @hajoutak_menu %>"><a href="/hajoutak">Hajóutak</a></li>
 			</ul>
 			<ul id="secondary-nav">
 				<li><a href="/egzotikusutak">Egzotikus utak</a></li>
 				<li><a href="/belfoldiutazasok">Belföldi utazások</a></li>
-				<li><a href="/naszutak">Nászutak</a></li>
+				<li><a href="/naszutak" class="<%= @naszutak_menu %>">Nászutak</a></li>
 				<li><a href="/korutazasok">Körutazások</a></li>
 				<li><a href="/varoslatogatasok">Városlátogatások</a></li>
 				<li><a href="/sportutak">Sportutak</a></li>

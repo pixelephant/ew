@@ -33,7 +33,25 @@ class ApplicationController < ActionController::Base
 				@utneve = ' active'
 		end
 
-  	@program_types = ProgramType.all
+		@naszutak_menu = ''
+		@sieles_menu = ''
+
+		case request.fullpath.split("?")[0]
+			when '/naszutak'
+				@naszutak_menu = 'active'
+			when '/sieles'
+				@sieles_menu = 'active'
+			when '/lastminute'
+				@lastminute_menu = 'active'
+			when '/kulfoldiutazasok'
+				@kulfoldiutazasok_menu = 'active'
+			when '/akciosutak'
+				@akciosutak_menu = 'active'
+			when '/hajoutak'
+				@hajoutak_menu = 'active'
+		end		
+
+  	# @program_types = ProgramType.all
 		@price_checked = {'100000'.to_sym => false,'250000'.to_sym => false,'500000'.to_sym => false,'500001'.to_sym => false}
 		@no_date_checked = false
 		@regions = []
