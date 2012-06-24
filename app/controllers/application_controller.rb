@@ -9,12 +9,28 @@ class ApplicationController < ActionController::Base
 			
 		params[:ord] == 'csokkeno' ? @ord = 'desc' : @ord = 'asc'
 
+		@legnepszerubbek = ''
+		@legujabbak = ''
+		@arnovekvo = ''
+		@arcsokkeno = ''
+		@utneve = ''
+
 		case params[:sort]
-			when 'legnepszerubbek' then @order_by = 'travel_offers.click'
-			when 'legujabbak' then @order_by = 'travel_offers.created_at'
-			when 'arnovekvo' then @order_by = 'travel_times.price'
-			when 'arcsokkeno' then @order_by = 'travel_times.price'
-			when 'utneve' then @order_by = 'travel_offers.travel_name'
+			when 'legnepszerubbek'
+				@order_by = 'travel_offers.click'
+				@legnepszerubbek = ' active'
+			when 'legujabbak'
+				@order_by = 'travel_offers.created_at'
+				@legujabbak = ' active'
+			when 'arnovekvo'
+				@order_by = 'travel_times.price'
+				@arnovekvo = ' active'
+			when 'arcsokkeno'
+				@order_by = 'travel_times.price'
+				@arcsokkeno = ' active'
+			when 'utneve'
+				@order_by = 'travel_offers.travel_name'
+				@utneve = ' active'
 		end
 
   	@program_types = ProgramType.all
