@@ -49,6 +49,8 @@ class ApplicationController < ActionController::Base
 				@akciosutak_menu = 'active'
 			when '/utjaink/hajoutak'
 				@hajoutak_menu = 'active'
+			when '/utjaink/belfoldiutazasok'
+				@belfoldiutazasok_menu = 'active'
 		end
 
   	# @program_types = ProgramType.all

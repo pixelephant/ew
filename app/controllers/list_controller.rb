@@ -9,24 +9,61 @@ class ListController < ApplicationController
 		case params[:travel_type]
 			when 'naszutak'
 				c << "(travel_attributes.id = 1)"
+				@h2 = "Nászutak"
+				@img = "/assets/category_headers/naszutak.jpg"
+				@text = "Esküvő letudva? Irány pihenni! Az East-West nászút ajánlataival a közös élet kezdete igazán pihentető lesz."
 			when 'hajoutak'
 				c << "(travel_attributes.id = 19)"
+				@h2 = "Hajóutak"
+				@img = "/assets/category_headers/hajo.jpg"
+				@text = "Különleges hajóutak, luxus óceánjárók. Szervezze meg tengeri élményeit az East-West-nél!"
 			when 'sieles'
 				c << "(program_types.id IN (7,19))"
+				@h2 = "Sielés"
+				@img = "/assets/category_headers/sieles.jpg"
+				@text = "Síutak, snowboard utak és sítúrák; az East-West pénztárcabarát utakat kínál a legtöbb európai síparadicsomba."
 			when 'egzotikusutak'
 				c << "(program_types.id = 5)"
+				@h2 = "Egzotikus utak"
+				@img = "/assets/category_headers/egzotikus.jpg"
+				@text = "Tegye feledhetetlenné pihenését egy egzotikus nyaralással. Az East-West az év minden időszakában elérhetővé teszi a legszebb egzotikus utakat."
 			when 'korutazasok'
 				c << "(program_types.id IN (6,8))"
+				@h2 = "Körutazások"
+				@img = "/assets/category_headers/korut.jpg"
+				@text = "Az East-West körutazásai olyan turistáknak, akik, ha már kimozdulnak nem elégszenek meg egy kultúra megismerésével."
 			when 'varoslatogatasok'
 				c << "(program_types.id = 2)"
+				@h2 = "Városlátogatások"
+				@img = "/assets/category_headers/varos.jpg"
+				@text = "Elege van a tengerpartokból? Az aktív üdülés híve? Az East-West városlátogatásai a népszerű célpontok mellett a kevésbé zsúfolt városokat is elérhetővé teszik."
 			when 'sportutak'
 				c << "(program_types.id = 23)"
+				@h2 = "Sportutak"
+				@img = "/assets/category_headers/sport.jpg"
+				@text = "Football meccsek és egyéb sportesemények a világ minden tájáról. Egyedi ajánlatok az igazán aktívan pihenőknek-"
 			when 'kulfoldiutazasok'
 				c << "(destinations.country_id <> 132)"
+				@h2 = "Külföldi utazások"
+				@img = "/assets/category_headers/kulfold.jpg"
+				@text = "Fedezze fel a világ csodálatos helyeit. Az East-West külföldi utazásaival eljuthat a világ midnen pontjára."
 			when 'belfoldiutazasok'
 				c << "(destinations.country_id = 132)"
+				@h2 = "Belföldi utazások"
+				@img = "/assets/category_headers/belfold.jpg"
+				@text = "Magyarország csodálatos hely. Belföldi utazásainkkal felfedezheti Magyarország tájait, gyönyörű üdülőhelyeit."
 			when 'akciosutak'
 				c << "(travel_times.discount = 1)"
+				@h2 = "Akciós utak"
+				@img = "/assets/category_headers/akcios.jpg"
+				@text = "Az East-West pénztárcabarát utazásai. Akciós útjaink naponta frissülnek így érdemes gyakran rájuk pillantani."
+			when 'lastminute'
+				from = (Time.now + 1.day).to_date
+				to = (Time.now + 14.days).to_date
+				c << "(travel_times.from_date BETWEEN '#{from}' AND '#{to}')"
+				@h2 = "Last-minute utazások"
+				@img = "/assets/category_headers/lastminute.jpg"
+				@text = "Last minute utazások a gyors csomagolóknak. Az East-West legjobb külföldi és belföldi last minute utazásai egy helyen."
 		end		
 
 		@h2 = "Utazási ajánlataink"
@@ -185,7 +222,7 @@ class ListController < ApplicationController
 		@traveloffers = traveloffers_array.page(params[:page])
 		@h2 = "Egzotikus utak"
 		@img = "/assets/category_headers/egzotikus.jpg"
-		@text = "Tegye feledhetetlénné pihenését egy egzotikus nyaralással. Az East-West az év minden időszakában elérhetővé teszi a legszebb egzotikus utakat."
+		@text = "Tegye feledhetetlenné pihenését egy egzotikus nyaralással. Az East-West az év minden időszakában elérhetővé teszi a legszebb egzotikus utakat."
 		render "index"
 	end
 
