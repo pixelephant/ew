@@ -23,8 +23,14 @@ $(document).ready(function(){
 	    closeEffect : 'elastic'
   	});
 
+	var minx= parseFloat($("#section").data("positionx"))-1;
+	var maxx= parseFloat($("#section").data("positionx"))+1;
 
-	$.getJSON("http://www.panoramio.com/map/get_panoramas.php?set=public&from=0&to=6&miny=48.87933648812424&minx=2.2969794273376465&maxy=49.87933648812424&maxx=3.2969794273376465&size=square&mapfilter=true&callback=?",function(resp){
+	var miny= parseFloat($("#section").data("positiony"))-1;
+	var maxy= parseFloat($("#section").data("positiony"))+1;
+
+
+	$.getJSON("http://www.panoramio.com/map/get_panoramas.php?set=public&from=0&to=6&miny="+miny+"&minx="+minx+"&maxy="+maxy+"&maxx="+maxx+"&size=square&mapfilter=true&callback=?",function(resp){
 		$.each(resp.photos,function(i){
 			$("#sights img").eq(i).attr("src",this.photo_file_url);
 			$("#sights img").eq(i).parent().parent().attr("title",this.photo_title);

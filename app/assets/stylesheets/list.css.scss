@@ -87,6 +87,11 @@ aside{
 	}
 	input,select{
 		float:none;
+	}
+	input[type="radio"]{
+		margin-left:10px;
+	}
+	select{
 		width:200px;
 	}
 	.left{

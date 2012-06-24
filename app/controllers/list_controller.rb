@@ -118,7 +118,7 @@ class ListController < ApplicationController
 		@traveloffers = traveloffers_array.page(params[:page])
 		@h2 = "Nászutak"
 		@img = "/assets/category_headers/naszutak.jpg"
-		@text = "Awake to a new vista each morning as large windows frame everchanging views of the azure ocean and sky, emerald-topped islands edged in turquoise waters and brilliant white sand."
+		@text = "Esküvő letudva? Irány pihenni! Az East-West nászút ajánlataival a közös élet kezdete igazán pihentető lesz."
 		render "index"
 	end
 
@@ -132,7 +132,7 @@ class ListController < ApplicationController
 		@traveloffers = traveloffers_array.page(params[:page])
 		@h2 = "Hajóutak"
 		@img = "/assets/category_headers/hajo.jpg"
-		@text = "Awake to a new vista each morning as large windows frame everchanging views of the azure ocean and sky, emerald-topped islands edged in turquoise waters and brilliant white sand."
+		@text = "Különleges hajóutak, luxus óceánjárók. Szervezze meg tengeri élményeit az East-West-nél!"
 		render "index"
 	end
 
@@ -146,7 +146,7 @@ class ListController < ApplicationController
 		@traveloffers = traveloffers_array.page(params[:page])
 		@h2 = "Sielés"
 		@img = "/assets/category_headers/sieles.jpg"
-		@text = "Awake to a new vista each morning as large windows frame everchanging views of the azure ocean and sky, emerald-topped islands edged in turquoise waters and brilliant white sand."
+		@text = "Síutak, snowboard utak és sítúrák; az East-West pénztárcabarát utakat kínál a legtöbb európai síparadicsomba."
 		render "index"
 	end
 
@@ -160,7 +160,7 @@ class ListController < ApplicationController
 		@traveloffers = traveloffers_array.page(params[:page])
 		@h2 = "Egzotikus utak"
 		@img = "/assets/category_headers/egzotikus.jpg"
-		@text = "Awake to a new vista each morning as large windows frame everchanging views of the azure ocean and sky, emerald-topped islands edged in turquoise waters and brilliant white sand."
+		@text = "Tegye feledhetetlénné pihenését egy egzotikus nyaralással. Az East-West az év minden időszakában elérhetővé teszi a legszebb egzotikus utakat."
 		render "index"
 	end
 
@@ -174,7 +174,7 @@ class ListController < ApplicationController
 		@traveloffers = traveloffers_array.page(params[:page])
 		@h2 = "Körutazások"
 		@img = "/assets/category_headers/korut.jpg"
-		@text = "Awake to a new vista each morning as large windows frame everchanging views of the azure ocean and sky, emerald-topped islands edged in turquoise waters and brilliant white sand."
+		@text = "Az East-West körutazásai olyan turistáknak, akik, ha már kimozdulnak nem elégszenek meg egy kultúra megismerésével."
 		render "index"
 	end
 
@@ -188,7 +188,7 @@ class ListController < ApplicationController
 		@traveloffers = traveloffers_array.page(params[:page])
 		@h2 = "Városlátogatások"
 		@img = "/assets/category_headers/varos.jpg"
-		@text = "Awake to a new vista each morning as large windows frame everchanging views of the azure ocean and sky, emerald-topped islands edged in turquoise waters and brilliant white sand."
+		@text = "Elege van a tengerpartokból? Az aktív üdülés híve? Az East-West városlátogatásai a népszerű célpontok mellett a kevésbé zsúfolt városokat is elérhetővé teszik."
 		render "index"
 	end
 
@@ -202,7 +202,7 @@ class ListController < ApplicationController
 		@traveloffers = traveloffers_array.page(params[:page])
 		@h2 = "Sportutak"
 		@img = "/assets/category_headers/sport.jpg"
-		@text = "Awake to a new vista each morning as large windows frame everchanging views of the azure ocean and sky, emerald-topped islands edged in turquoise waters and brilliant white sand."
+		@text = "Football meccsek és egyéb sportesemények a világ minden tájáról. Egyedi ajánlatok az igazán aktívan pihenőknek-"
 		render "index"
 	end
 
@@ -216,7 +216,7 @@ class ListController < ApplicationController
 		@traveloffers = traveloffers_array.page(params[:page])
 		@h2 = "Külföldi utazások"
 		@img = "/assets/category_headers/kulfold.jpg"
-		@text = "Awake to a new vista each morning as large windows frame everchanging views of the azure ocean and sky, emerald-topped islands edged in turquoise waters and brilliant white sand."
+		@text = "Fedezze fel a világ csodálatos helyeit. Az East-West külföldi utazásaival eljuthat a világ midnen pontjára."
 		render "index"
 	end
 
@@ -230,7 +230,7 @@ class ListController < ApplicationController
 		@traveloffers = traveloffers_array.page(params[:page])
 		@h2 = "Belföldi utazások"
 		@img = "/assets/category_headers/belfold.jpg"
-		@text = "Awake to a new vista each morning as large windows frame everchanging views of the azure ocean and sky, emerald-topped islands edged in turquoise waters and brilliant white sand."
+		@text = "Magyarország csodálatos hely. Belföldi utazásainkkal felfedezheti Magyarország tájait, gyönyörű üdülőhelyeit."
 		render "index"
 	end
 
@@ -251,7 +251,7 @@ class ListController < ApplicationController
 		@traveloffers = traveloffers_array.page(params[:page])
 		@h2 = "Akciós utak"
 		@img = "/assets/category_headers/akcios.jpg"
-		@text = "Awake to a new vista each morning as large windows frame everchanging views of the azure ocean and sky, emerald-topped islands edged in turquoise waters and brilliant white sand."
+		@text = "Az East-West pénztárcabarát utazásai. Akciós útjaink naponta frissülnek így érdemes gyakran rájuk pillantani."
 		render "index"
 	end
 
@@ -268,7 +268,7 @@ class ListController < ApplicationController
 		@traveloffers = traveloffers_array.page(params[:page])
 		@h2 = "Last-minute utazások"
 		@img = "/assets/category_headers/lastminute.jpg"
-		@text = "Awake to a new vista each morning as large windows frame everchanging views of the azure ocean and sky, emerald-topped islands edged in turquoise waters and brilliant white sand."
+		@text = "Last minute utazások a gyors csomagolóknak. Az East-West legjobb külföldi és belföldi last minute utazásai egy helyen."
 		render "index"
 	end
 
@@ -283,7 +283,7 @@ class ListController < ApplicationController
 		end
 		@traveloffers = Kaminari.paginate_array(traveloffers_array).page(params[:page])
 		# @traveloffers = traveloffers_array.page(params[:page])
-		@h2 = "Keresés: #{word}"
+		@h2 = "#{word}"
 		
 		render "index"
 	end
@@ -299,7 +299,7 @@ class ListController < ApplicationController
 		end
 		# @traveloffers = traveloffers_array.page(params[:page])
 		@traveloffers = Kaminari.paginate_array(traveloffers_array).page(params[:page])
-		@h2 = "Úticél: " + country.name
+		@h2 = country.name
 
 		render "index"
 	end
