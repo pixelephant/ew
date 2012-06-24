@@ -1,4 +1,4 @@
-<section id="content" data-positionx="" data-positiony="">
+<section id="content" data-positionx="<%= @lat %>" data-positiony="<%= @long %>">
 	<div id="main">
 		<div id="trip-images">
 			<%= link_to image_tag(@gallery + @images.first.file_name.to_s), (@gallery + @images.first.file_name.to_s), :class => 'fancybox', :id => 'curr', :alt => @travel_offer.travel_name, :rel => 'gallery' %>
@@ -165,7 +165,7 @@
 				<div class="ribbon">
 					<%= Country.find(offer.destinations.first.country_id).name %> - <%= offer.min_price %> <%= offer.min_price_measure %>
 				</div>
-				<%= image_tag(offer.gallery_url + offer.images.first.file_name.to_s, :alt => offer.travel_name, :width => 200, :height => 200) %>
+				<%= (image_tag(offer.gallery_url + offer.images.first.file_name.to_s, :alt => offer.travel_name, :width => 200, :height => 200)) if offer.images.any? %>
 			<% end %>
 		<% end %>
 	</div>

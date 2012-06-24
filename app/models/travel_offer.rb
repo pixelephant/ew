@@ -1,3 +1,5 @@
+#encoding: utf-8
+
 class TravelOffer < ActiveRecord::Base
 	extend FriendlyId
   friendly_id :name_and_id, :use => :slugged
@@ -61,4 +63,25 @@ class TravelOffer < ActiveRecord::Base
 	def name_and_id
     "#{travel_name}-#{id}"
   end
+
+  def ribbon
+  	ribbon = []
+  	if self.special == 1
+  		ribbon[0] = 'special '
+  		ribbon[1] = 'Akciós'
+  	end
+
+  	if self.updated_at > (Time.now - 7.days).to_date
+  		ribbon[0] = 'new '
+  		ribbon[1] = 'Új'
+  	end
+
+  	if self.closest_travel_time && self.closest_travel_time.from_date.to_date < (Time.now + 14.days).to_date
+  		ribbon[0] = 'lastminute '
+  		ribbon[1] = 'Last minute'
+  	end
+
+  	return ribbon
+  end
+
 end

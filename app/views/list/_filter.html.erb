@@ -35,28 +35,30 @@
 			<%= f.label "price_500001", ("500.000 Ft-tól " + (f.radio_button "price", '500001', {:checked => @price_checked['500001'.to_sym]})).html_safe %>
 		</div>
 	</fieldset>
-	<fieldset>
-		<legend>Úticél</legend>
-		<div>
-			<%= f.label "country", "Ország" %>
-			<%= f.select "country", [['-- Mindegy --', 0]] + Country.all.collect {|p| [ p.name, p.id ] }, {:selected => (@filt[:country] if @filt)} %>
-		</div>
-		<div>
-			<!-- Ajaxosan -->
-			<label for="filters_region">Régió</label>
-			<select name="filters[region]" id="filters_region">
-				<option value="0">-- Mindegy --</option>
-				<%= options_for_select @regions.collect {|p| [p.name, p.id]}, {:selected => (@filt[:region] if @filt)} %>
-			</select>
-		</div>
-		<div>
-			<label for="filters_city">Város</label>
-			<select name="filters[city]" id="filters_city">
-				<option value="0">-- Mindegy --</option>
-				<%= options_for_select @cities.collect {|p| [p.name, p.id]}, {:selected => (@filt[:city] if @filt)} %>
-			</select>
-			<!-- Ajaxosan -->
-		</div>
-	</fieldset>
+	<% unless params[:action] == 'belfoldiutazasok' %>
+		<fieldset>
+			<legend>Úticél</legend>
+			<div>
+				<%= f.label "country", "Ország" %>
+				<%= f.select "country", [['-- Mindegy --', 0]] + Country.all.collect {|p| [ p.name, p.id ] }, {:selected => (@filt[:country] if @filt)} %>
+			</div>
+			<div>
+				<!-- Ajaxosan -->
+				<label for="filters_region">Régió</label>
+				<select name="filters[region]" id="filters_region">
+					<option value="0">-- Mindegy --</option>
+					<%= options_for_select @regions.collect {|p| [p.name, p.id]}, {:selected => (@filt[:region] if @filt)} %>
+				</select>
+			</div>
+			<div>
+				<label for="filters_city">Város</label>
+				<select name="filters[city]" id="filters_city">
+					<option value="0">-- Mindegy --</option>
+					<%= options_for_select @cities.collect {|p| [p.name, p.id]}, {:selected => (@filt[:city] if @filt)} %>
+				</select>
+				<!-- Ajaxosan -->
+			</div>
+		</fieldset>
+	<% end %>
 	<%= f.submit 'Frissítés' %>
 <% end %>

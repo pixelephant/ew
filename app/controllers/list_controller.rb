@@ -299,7 +299,7 @@ class ListController < ApplicationController
 		end
 		# @traveloffers = traveloffers_array.page(params[:page])
 		@traveloffers = Kaminari.paginate_array(traveloffers_array).page(params[:page])
-		@h2 = "Úticél: " + country.name
+		@h2 = country.name
 
 		render "index"
 	end

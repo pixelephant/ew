@@ -1,10 +1,3 @@
-<section id="page-header">
-	<div data-image="<%= @img.html_safe unless @img.blank? %>" id="page-header-inner">
-		<h1><%=  @h2  %></h1>
-		<p><%=  @text  %></p>
-	</div>
-</section>
-
 <section id="content">
 	<aside>
 		<h2><%= @h2 %></h2>
@@ -16,14 +9,14 @@
 			<%= render "list/pagination_sort" %>
 		</div>
 		<div id="list">
-			<%= render 'list/country_list' %>
+			<%= render 'list/country_list' unless params[:action] == 'belfoldiutazasok' %>
 			<% count = 0 %>
 			<% @traveloffers.each_with_index do |traveloffer, i| %>
 				<!-- if traveloffer.travel_times.where("DATE(travel_times.from_date) > DATE(NOW())").any? -->
 					<div class="trip">
 						<%= link_to traveloffer do %>
 							<div class="thumbnail">
-								<span class="ribbon lastminute arrow_box">Last minute</span>
+								<span class="ribbon <%= traveloffer.ribbon[0] %>arrow_box"><%= traveloffer.ribbon[1] %></span>
 								<%= (image_tag traveloffer.gallery_url + traveloffer.images.first.file_name.to_s, :height => 140, :width => 140, :alt => traveloffer.travel_name) if traveloffer.images.any? %>
 							</div>
 							<div class="data">
@@ -42,7 +35,9 @@
 								<img src="http://www.placehold.it/30x30" alt="">
 							</div> -->
 							<%= link_to 'Részletek', traveloffer, :class => "view" %>
-							<p>További <strong></strong> időpont és változat</p>
+							<% if traveloffer.travel_times.count.to_i > 1 %>
+								<p>További <strong><%= traveloffer.travel_times.count.to_i - 1 %></strong> időpont és változat</p> 
+							<% end %>
 						<% end %>
 					</div>
 					<%= render :partial => 'custom_offer' if i == 3 && params[:action] != 'sportutak' %>
@@ -50,8 +45,9 @@
 					<% count = i %>
 				<!-- end -->
 			<% end %>
-			<%= render :partial => 'custom_offer' if count < 4 && params[:action] != 'sportutak'%>
-			<%= render :partial => 'sport_offer' if count < 4 && params[:action] == 'sportutak'%>
+			<%= render :partial => 'custom_offer' if count < 4 && count > 0 && params[:action] != 'sportutak'%>
+			<%= render :partial => 'sport_offer' if count < 4 && count > 0 && params[:action] == 'sportutak'%>
+			<%= render :partial => 'no_result' if count == 4 %>
 		</div>
 		<div class="pagination" id="pagi-b">
 			<%= render "list/pagination_sort" %>
