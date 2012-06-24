@@ -1,10 +1,11 @@
 <div id="country-selector" class="selector">
 	<h3>Országok</h3>
-	<% params[:country_name] ? t = '' : t = ' active' %>
+	<% @selected_country ? t = '' : t = ' active' %>
 	<a href="/list" class="country<%= t %>">Összes <span class="count"><%= @travelofferscount %></span></a>
 	<% @p_countries.each do |country| %>
-		<% params[:country_name] == country.slug ? t = ' active' : t = '' %>
-		<a href="/uticelok/<%= country.slug %>" class="country<%= t %>"><%= country.name %> <span class="count"><%= country.travel_offers_count %></span></a>
+		<% @selected_country == country.id.to_s ? t = ' active' : t = '' %>
+		<!-- <a href="/uticelok/<%= country.slug %>" class="country<%= t %>"><%= country.name %> <span class="count"><%= country.travel_offers_count %></span></a> -->
+		<a href="<%= url_for(params.merge(:filters => {:country => country.id})) %>" class="country<%= t %>"><%= country.name %> <span class="count"><%= country.travel_offers_count %></span></a>
 	<% end %>
 	<a href="#" id="more-countries">Továbbiak <span>&#9660;</span></a>
 </div>
@@ -13,8 +14,8 @@
 		<h3>Európa</h3>
 	<% @countries_europe.each do |country| %>
 		<% if (c = country.travel_offers_count) > 0 %>
-			<% params[:country_name] == country.slug ? t = ' active' : t = '' %>
-			<a href="/uticelok/<%= country.slug %>" class="country<%= t %>"><%= country.name %> <span class="count"><%= country.travel_offers_count %></span></a>
+			<% @selected_country == country.id.to_s ? t = ' active' : t = '' %>
+			<a href="<%= url_for(params.merge(:filters => {:country => country.id})) %>" class="country<%= t %>"><%= country.name %> <span class="count"><%= country.travel_offers_count %></span></a>
 		<% end %>		
 	<% end %>
 	</div>
@@ -22,8 +23,8 @@
 		<h3>Észak-Amerika</h3>
 	<% @countries_namerica.each do |country| %>
 		<% if (c = country.travel_offers_count) > 0 %>
-			<% params[:country_name] == country.slug ? t = ' active' : t = '' %>
-			<a href="/uticelok/<%= country.slug %>" class="country<%= t %>"><%= country.name %> <span class="count"><%= c %></span></a>
+			<% @selected_country == country.id.to_s ? t = ' active' : t = '' %>
+			<a href="<%= url_for(params.merge(:filters => {:country => country.id})) %>" class="country<%= t %>"><%= country.name %> <span class="count"><%= c %></span></a>
 		<% end %>
 	<% end %>
 	</div>
@@ -31,8 +32,8 @@
 		<h3>Dél-Amerika</h3>
 	<% @countries_samerica.each do |country| %>
 		<% if (c = country.travel_offers_count) > 0 %>
-			<% params[:country_name] == country.slug ? t = ' active' : t = '' %>
-			<a href="/uticelok/<%= country.slug %>" class="country<%= t %>"><%= country.name %> <span class="count"><%= country.travel_offers_count %></span></a>
+			<% @selected_country == country.id.to_s ? t = ' active' : t = '' %>
+			<a href="<%= url_for(params.merge(:filters => {:country => country.id})) %>" class="country<%= t %>"><%= country.name %> <span class="count"><%= country.travel_offers_count %></span></a>
 		<% end %>
 	<% end %>
 	</div>
@@ -40,8 +41,8 @@
 		<h3>Ázsia</h3>
 	<% @countries_asia.each do |country| %>
 		<% if (c = country.travel_offers_count) > 0 %>
-			<% params[:country_name] == country.slug ? t = ' active' : t = '' %>
-			<a href="/uticelok/<%= country.slug %>" class="country<%= t %>"><%= country.name %> <span class="count"><%= country.travel_offers_count %></span></a>
+			<% @selected_country == country.id.to_s ? t = ' active' : t = '' %>
+			<a href="<%= url_for(params.merge(:filters => {:country => country.id})) %>" class="country<%= t %>"><%= country.name %> <span class="count"><%= country.travel_offers_count %></span></a>
 		<% end %>
 	<% end %>
 	</div>
@@ -49,8 +50,8 @@
 		<h3>Ausztrália</h3>
 	<% @countries_australia.each do |country| %>
 		<% if (c = country.travel_offers_count) > 0 %>
-			<% params[:country_name] == country.slug ? t = ' active' : t = '' %>
-			<a href="/uticelok/<%= country.slug %>" class="country<%= t %>"><%= country.name %> <span class="count"><%= country.travel_offers_count %></span></a>
+			<% @selected_country == country.id.to_s ? t = ' active' : t = '' %>
+			<a href="<%= url_for(params.merge(:filters => {:country => country.id})) %>" class="country<%= t %>"><%= country.name %> <span class="count"><%= country.travel_offers_count %></span></a>
 		<% end %>
 	<% end %>
 	</div>				

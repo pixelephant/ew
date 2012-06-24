@@ -22,6 +22,15 @@ class TripController < ApplicationController
 		@fakultativs = @travel_offer.fakultativs
 		@traveldays = @travel_offer.traveldays
 
+		if @travel_offer.gmap.blank?
+			@lat = @travel_offer.destinations.first.city.lat if @travel_offer.destinations.first.city
+			@long = @travel_offer.destinations.first.city.long if @travel_offer.destinations.first.city
+		else
+			coor = @travel_offer.gmap.split(",")
+			@lat = coor[0]
+			@long = coor[1]
+		end
+
 		@prebooking = @closest_travel_time.pre_bookings.where("end_date > DATE(NOW())").order("end_date ASC")
 		@child_prices = @closest_travel_time.child_prices
 		@good_to_knows = @country.goods

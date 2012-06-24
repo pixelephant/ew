@@ -1,4 +1,4 @@
-<%= form_for 'filters', :url => '/list', :html => {:id => 'filter-form'} do |f| %>
+<%= form_for 'filters', :url => '', :method => "get", :html => {:id => 'filter-form'} do |f| %>
 	<h3>Szűkítse az utakat</h3>
 	<fieldset>
 		<legend>Utazás időpontja</legend>
@@ -19,7 +19,7 @@
 		</div>
 		<div id="filter-imprecise-row">
 			<%= f.label "imprecise", "Körülbelül mikor utaznék" %>
-			<%= f.select "imprecise", (grouped_options_for_select([['Hónapok', monthsForSelect],['Időszakok', periodsForSelect]], (@filt[:imprecise] if @filt)) + options_for_select([['Nem tudom', 0]], (@filt[:imprecise] if @filt))) %>
+			<%= f.select "imprecise", (grouped_options_for_select([['Hónapok', monthsForSelect]], (@filt[:imprecise] if @filt)) + options_for_select([['Nem tudom', 0]], (@filt[:imprecise] if @filt))) %>
 		</div>
 		<div>
 			<%= f.label "no_date", "Nincs pontos dátumom" %>
@@ -35,28 +35,30 @@
 			<%= f.label "price_500001", ("500.000 Ft-tól " + (f.radio_button "price", '500001', {:checked => @price_checked['500001'.to_sym]})).html_safe %>
 		</div>
 	</fieldset>
-	<fieldset>
-		<legend>Úticél</legend>
-		<div>
-			<%= f.label "country", "Ország" %>
-			<%= f.select "country", [['-- Mindegy --', 0]] + Country.all.collect {|p| [ p.name, p.id ] }, {:selected => (@filt[:country] if @filt)} %>
-		</div>
-		<div>
-			<!-- Ajaxosan -->
-			<label for="filters_region">Régió</label>
-			<select name="filters[region]" id="filters_region">
-				<option value="0">-- Mindegy --</option>
-				<%= options_for_select @regions.collect {|p| [p.name, p.id]}, {:selected => (@filt[:region] if @filt)} %>
-			</select>
-		</div>
-		<div>
-			<label for="filters_city">Város</label>
-			<select name="filters[city]" id="filters_city">
-				<option value="0">-- Mindegy --</option>
-				<%= options_for_select @cities.collect {|p| [p.name, p.id]}, {:selected => (@filt[:city] if @filt)} %>
-			</select>
-			<!-- Ajaxosan -->
-		</div>
-	</fieldset>
+	<% unless params[:action] == 'belfoldiutazasok' %>
+		<fieldset>
+			<legend>Úticél</legend>
+			<div>
+				<%= f.label "country", "Ország" %>
+				<%= f.select "country", [['-- Mindegy --', 0]] + Country.all.collect {|p| [ p.name, p.id ] }, {:selected => (@filt[:country] if @filt)} %>
+			</div>
+			<div>
+				<!-- Ajaxosan -->
+				<label for="filters_region">Régió</label>
+				<select name="filters[region]" id="filters_region">
+					<option value="0">-- Mindegy --</option>
+					<%= options_for_select @regions.collect {|p| [p.name, p.id]}, {:selected => (@filt[:region] if @filt)} %>
+				</select>
+			</div>
+			<div>
+				<label for="filters_city">Város</label>
+				<select name="filters[city]" id="filters_city">
+					<option value="0">-- Mindegy --</option>
+					<%= options_for_select @cities.collect {|p| [p.name, p.id]}, {:selected => (@filt[:city] if @filt)} %>
+				</select>
+				<!-- Ajaxosan -->
+			</div>
+		</fieldset>
+	<% end %>
 	<%= f.submit 'Frissítés' %>
 <% end %>

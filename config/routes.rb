@@ -20,17 +20,20 @@ Ewutazas::Application.routes.draw do
 
   # match 'uticelok/:country_name' => 'list#uticelok'
 
-  match 'naszutak' => 'list#naszutak'
-  match 'hajoutak' => 'list#hajoutak'
-  match 'sieles' => 'list#sieles'
-  match 'egzotikusutak' => 'list#egzotikusutak'
-  match 'korutazasok' => 'list#korutazasok'
-  match 'varoslatogatasok' => 'list#varoslatogatasok'
-  match 'sportutak' => 'list#sportutak'
-  match 'kulfoldiutazasok' => 'list#kulfoldiutazasok'
-  match 'belfoldiutazasok' => 'list#belfoldiutazasok'
-  match 'akciosutak' => 'list#akciosutak'
-  match 'lastminute' => 'list#lastminute'
+  match 'utjaink/:travel_type' => "list#index"
+  match 'utjaink' => 'list#index'
+
+  # match 'naszutak' => 'list#index'
+  # match 'hajoutak' => 'list#hajoutak'
+  # match 'sieles' => 'list#index'
+  # match 'egzotikusutak' => 'list#index'
+  # match 'korutazasok' => 'list#index'
+  # match 'varoslatogatasok' => 'list#index'
+  # match 'sportutak' => 'list#index'
+  # match 'kulfoldiutazasok' => 'list#kulfoldiutazasok'
+  # match 'belfoldiutazasok' => 'list#belfoldiutazasok'
+  # match 'akciosutak' => 'list#akciosutak'
+  # match 'lastminute' => 'list#lastminute'
 
   match 'kereses' => 'list#kereses'
 

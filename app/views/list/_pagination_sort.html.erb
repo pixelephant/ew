@@ -1,8 +1,8 @@
-<%= link_to 'Legnépszerűbbek', url_for(params.merge(:sort => "legnepszerubbek", :ord => 'csokkeno')), :class => 'pill' %>
-<%= link_to 'Legújabbak', url_for(params.merge(:sort => "legujabbak", :ord => 'csokkeno')), :class => 'pill' %>
-<%= link_to 'Ár &uarr;'.html_safe, url_for(params.merge(:sort => "arnovekvo", :ord => 'novekvo')), :class => 'pill' %>
-<%= link_to 'Ár &darr;'.html_safe, url_for(params.merge(:sort => "arcsokkeno", :ord => 'csokkeno')), :class => 'pill' %>
-<%= link_to 'A-Z', url_for(params.merge(:sort => "utneve", :ord => 'novekvo')), :class => 'pill' %>
+<%= link_to 'Legnépszerűbbek', url_for(params.merge(:sort => "legnepszerubbek", :ord => 'csokkeno')), :class => 'pill' + @legnepszerubbek %>
+<%= link_to 'Legújabbak', url_for(params.merge(:sort => "legujabbak", :ord => 'csokkeno')), :class => 'pill' + @legujabbak %>
+<%= link_to 'Ár &uarr;'.html_safe, url_for(params.merge(:sort => "arnovekvo", :ord => 'novekvo')), :class => 'pill' + @arnovekvo %>
+<%= link_to 'Ár &darr;'.html_safe, url_for(params.merge(:sort => "arcsokkeno", :ord => 'csokkeno')), :class => 'pill' + @arcsokkeno %>
+<%= link_to 'A-Z', url_for(params.merge(:sort => "utneve", :ord => 'novekvo')), :class => 'pill' + @utneve %>
 <div class="pagi">
 	<%= paginate @traveloffers, :window => 1 %>
 </div>

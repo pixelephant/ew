@@ -20,7 +20,7 @@
 		<div id="imprecise-row" class="row">
 			<div class="group">
 				<%= f.label "imprecise", "Körülbelül mikor utaznék" %>
-				<%= f.select "imprecise", (grouped_options_for_select([['Hónapok', monthsForSelect],['Időszakok', periodsForSelect]], (@filt[:imprecise] if @filt)) + options_for_select([['Nem tudom', 0]], (@filt[:imprecise] if @filt))) %>
+				<%= f.select "imprecise", (grouped_options_for_select([['Hónapok', monthsForSelect]], (@filt[:imprecise] if @filt)) + options_for_select([['Nem tudom', 0]], (@filt[:imprecise] if @filt))) %>
 			</div>
 		</div>
 		<div class="row">
