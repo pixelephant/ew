@@ -1,0 +1,16 @@
+Kedves <%= @order.name %>
+===================================================
+Megrendelő adatai:
+Név: <%= @order.name %>
+Telefonszám: <%= @order.phone %>
+Email cím: <%= @order.email %>
+===================================================
+Foglalás:
+<%= @order.adult %> felnőtt
+<%= @order.children %> gyermek
+===================================================
+Utazás leírása:
+<%= @order.travel_text %>
+===================================================
+Megjegyzés:
+<%= @order.note %>

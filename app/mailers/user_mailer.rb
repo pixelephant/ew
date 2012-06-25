@@ -8,6 +8,12 @@ class UserMailer < ActionMailer::Base
     # @travel_time = @order.travel_time
     # @travel_offer = @travel_time.travel_offer
     mail(:to => email, :subject => "Megrendelés a weboldalról")
-    mail(:to => @order.email, :subject => "East-West utazási iroda - Megrendelés")
+  end
+
+  def travel_order_thankyou(order_id)
+    @order = Order.find(order_id)
+    # @travel_time = @order.travel_time
+    # @travel_offer = @travel_time.travel_offer
+    mail(:to => @order.email, :subject => "Megrendelés a weboldalról")
   end
 end

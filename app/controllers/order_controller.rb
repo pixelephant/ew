@@ -72,7 +72,8 @@ class OrderController < ApplicationController
 		note = ("EGYEDI: " + note) if tt == 0
 
 		if o = Order.create(:name => name, :adult => adult, :children => children, :email => email, :note => note, :phone => phone, :travel_time_id => tt_id, :partner_name => partner_name, :travel_text => travel_text)
-			UserMailer.travel_order(o.id).deliver			
+			UserMailer.travel_order(o.id).deliver	
+			UserMailer.travel_order_thankyou(o.id).deliver
 			render "thankyou"
 		else
 			flash[:notice] = "Nem sikerült rögzíteni a megrendelést, kérjük próbálja újra!"
