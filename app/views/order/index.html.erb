@@ -4,7 +4,10 @@
 <%= flash[:notice] unless flash[:notice].blank? %>
 
 <form id="order-form" action="/foglalas/koszonjuk" method="POST">
-<div class="row"><h3><%= @travel_offer.travel_name %></h3> <span class="dates"><%= @travel_time.from_date.to_s(:year_month_day) %> - <%= @travel_time.from_date.to_s(:year_month_day) %></span> <span class="price"><%= @travel_time.price %> Ft</span></div>
+<div class="row top">
+	<h3><%= @travel_offer.travel_name %></h3>
+	<p><span class="dates"><%= @travel_time.from_date.to_s(:year_month_day) %> - <%= @travel_time.from_date.to_s(:year_month_day) %></span> <span class="price"><%= @travel_time.price %> Ft</span></p>
+</div>
 
 <input type="hidden" value="<%= @travel_time.id %>" name="traveltime" id="traveltime" />
 
@@ -30,11 +33,11 @@
 	</div>
 	<div class="r">
 		<label for="head">Felnőtt</label>
-		<input type="number" min=1 id="head" name="head" value="2">
+		<input type="number" min=0 id="head" name="head" value="2">
 	</div>
 	<div class="r">
 		<label for="head">Gyermek (14 év alatt)</label>
-		<input type="number" min=1 id="children" name="children" value="2">
+		<input type="number" min=0 id="children" name="children" value="2">
 	</div>
 </fieldset>
 

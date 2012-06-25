@@ -269,10 +269,10 @@ ActiveRecord::Schema.define(:version => 20120622113028) do
     t.string   "category_aleph"
     t.integer  "board_id"
     t.integer  "traffic_id"
-    t.string   "gallery_url",       :default => "http://localhost:3000/uploads/", :null => false
+    t.string   "gallery_url"
     t.text     "gmap"
-    t.datetime "created_at",                                                      :null => false
-    t.datetime "updated_at",                                                      :null => false
+    t.datetime "created_at",        :null => false
+    t.datetime "updated_at",        :null => false
     t.integer  "skiregion_id"
     t.integer  "click"
     t.string   "slug"

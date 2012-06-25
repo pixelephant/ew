@@ -2,7 +2,10 @@
 <h2>Egyéni útszervezés</h2>
 <form id="personalized-form" action="/foglalas/koszonjuk" method="POST">
 <% unless @full_personalized %>
-	<div class="row"><h3><%= @travel_offer.travel_name %></h3> <span class="dates"><%= @travel_time.from_date.to_s(:year_month_day) %> - <%= @travel_time.to_date.to_s(:year_month_day) %></span> <span class="price"><%= @travel_time.price %> <%= @travel_time.price_measure %>, <%= @travel_time.night %> éjszaka</span></div>
+	<div class="row top">
+		<h3><%= @travel_offer.travel_name %></h3>
+		<p><span class="dates"><%= @travel_time.from_date.to_s(:year_month_day) %> - <%= @travel_time.to_date.to_s(:year_month_day) %></span> <span class="price"><%= @travel_time.price %> <%= @travel_time.price_measure %>, <%= @travel_time.night %> éjszaka</span></p>
+	</div>
 
 	<input type="hidden" value="<%= @travel_time %>" name="traveltime" id="traveltime" />
 <% else %>
@@ -38,7 +41,7 @@
 <div id="comment">
 	<div class="sidebox" id="services">
 		<h3>Egyéni útszervezés</h3>
-		<p>Egyedi útszervezésünk segítségével lehetősége nyílik egy út bizonyos paramétereinek módosítására, vagy teljesen egyedi út szervezésére. Kérjük minél pontosabban írja le elképzeléseit, hogy munkatársaink a lehető legjobb megoldást tudják adni.</p>
+		<p>Egyéni útszervezésünk segítségével lehetősége nyílik egy út bizonyos paramétereinek módosítására, vagy teljesen egyedi út szervezésére. Kérjük minél pontosabban írja le elképzeléseit, hogy munkatársaink a lehető legjobb megoldást tudják adni.</p>
 	</div>
 </div>
 

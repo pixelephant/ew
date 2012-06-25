@@ -79,73 +79,62 @@
 	<div id="special-offers">
 		<h2 class="blue">Kiemelt ajánlataink</h2>
 		<!-- Lehetőségek: quarter, half, full -->
-		<% @specials.each_with_index do |offer, i| %>
-			<%= '<div class="box-wrap third">'.html_safe if i == 0 || i == 4 || i == 5 %>
-			<a href="/<%= offer.slug %>" class="box <%= i == 4 ? 'full' : 'quarter' %>">
+		<div class="box-wrap third">
+			<a href="/utjaink/sportutak" class="box quarter">
 				<div class="inner">
-					<div class="ribbon"><%= offer.travel_name %></div>
-					<%= image_tag special_image(offer.id), :alt => offer.travel_name %>
+					<div class="ribbon">Sportutak</div>
+					<% image_tag "specials/sport.png", :alt => "Sportutak" %>
 				</div>
 			</a>
-			<%= '</div>'.html_safe if i == 3 || i == 4 || i == 8 %>
-		<% end %>
-		<!-- <div class="box-wrap third">
-			<a href="#" class="box quarter">
+			<a href="/utjaink/varoslatogatasok" class="box quarter">
 				<div class="inner">
-					<div class="ribbon">Hawaii</div>
-					<img src="http://www.mountainsphoto.com/albums/Hawaii/thumb_Hawaii_voley.JPG" alt="">
+					<div class="ribbon">Városlátogatások</div>
+					<% image_tag "specials/varos.png", :alt => "Városlátogatások" %>
 				</div>
 			</a>
-			<a href="#" class="box quarter">
+			<a href="/utjaink/lastminute" class="box half">
 				<div class="inner">
-					<div class="ribbon">Hawaii</div>
-					<img src="http://universe-beauty.com/albums/astronomy_photo/thumb_The-Belt-of-Venus-over-Elwood-Beach.jpg" alt="">
-				</div>
-			</a>
-			<a href="#" class="box half">
-				<div class="inner">
-					<div class="ribbon">Hawaii</div>
-					<img src="http://www.soitec.com/images/photos/fab_paris.jpg" alt="">
+					<div class="ribbon">Last minute</div>
+					<% image_tag "specials/lastminute.png", :alt => "Last minute utak" %>
 				</div>
 			</a>
 		</div>
 		<div class="box-wrap third">
-			<a href="#" class="box full">
+			<a href="/utjaink/hajoutak" class="box full">
 				<div class="inner">
 					<div class="ribbon">
-						Párizs
-						<span class="price">199 000 Ft-tól</span>
+						Hajóutak
 					</div>
-					<img width=280 height=300 src="http://www.study-paris.com/blog/wp-content/themes/WothejourNMal09/thumb.php?src=http://www.study-paris.com/blog/wp-content/woo_custom/4-z203045753.jpg&h=380&w=280&zc=1&q=90" alt="">
+					<% image_tag "specials/hajo.png", :alt => "Hajóutak" %>
 				</div>
 			</a>
 		</div>
 		<div class="box-wrap third">
-			<a href="#" class="box quarter">
+			<a href="/utjaink/akciosutak" class="box quarter">
 				<div class="inner">
-					<div class="ribbon">Hawaii</div>
-					<img src="http://landscapephoto.info/albums/Australia/Malay%20Archipelago/thumb_Mountain_Gunung_Dempo.jpg" alt="">
+					<div class="ribbon">Akciós utak</div>
+					<% image_tag "specials/akcios.png", :alt => "Akciós utak" %>
 				</div>
 			</a>
-			<a href="#" class="box quarter">
+			<a href="/utjaink/sieles" class="box quarter">
 				<div class="inner">
-					<div class="ribbon">Hawaii</div>
-					<img src="http://www.landscapephoto.info/albums/Asia/China/thumb_Jade-Dragon-Snow-MountainYunnan-ProvinceChina.jpg" alt="">
+					<div class="ribbon">Síelés</div>
+					<% image_tag "specials/sieles.png", :alt => "Síelés" %>
 				</div>
 			</a>
-			<a href="#" class="box quarter">
+			<a href="/utjaink/kulfoldiutazasok" class="box quarter">
 				<div class="inner">
-					<div class="ribbon">Hawaii</div>
-					<img src="http://www.icvb.org/image/image/city%20of%20ist/city%20of%20ist_4_k.jpg" alt="">
+					<div class="ribbon">Külföldi utazások</div>
+					<% image_tag "specials/kulfold.png", :alt => "Külföldi utazások" %>
 				</div>
 			</a>
-			<a href="#" class="box quarter">
+			<a href="/utjaink/naszutak" class="box quarter">
 				<div class="inner">
-					<div class="ribbon">Hawaii</div>
-					<img src="http://static3.animeonly.org/albums/2007_02_02/Walls/thumb_v1s1-204-On-the-Edge-of-Sherwood-Forest-q75-1680x1050.jpg" alt="">
+					<div class="ribbon">Nászutak</div>
+					<% image_tag "specials/nasz.png", :alt => "Nászutak" %>
 				</div>
 			</a>
-		</div> -->
+		</div>
 	</div>
 	<div id="about-us">
 		<h2 class="blue">Rólunk</h2>
