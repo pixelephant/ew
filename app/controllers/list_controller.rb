@@ -7,7 +7,7 @@ class ListController < ApplicationController
 		c = []
 
 		@h2 = "Utazási ajánlataink"
-		@title = "Utazási ajánlataink"
+		@title = "Utazási ajánlataink - "
 		@description = "Utazási ajánlataink"
 
 		case params[:travel_type]

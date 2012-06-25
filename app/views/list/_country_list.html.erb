@@ -1,7 +1,7 @@
 <div id="country-selector" class="selector">
 	<h3>Országok</h3>
-	<% @selected_country ? t = '' : t = ' active' %>
-	<a href="<%= url_for(params.merge(:filters => {:country => 0})) %>" class="country<%= t %>">Összes</span></a>
+	<% @selected_country ? (@selected_country == '0' ? t = ' active' : t = '') : t = ' active' %>
+	<a href="<%= url_for(params.merge(:filters => {:country => 0})) %>" class="country<%= t %>">Összes</a>
 	<% @p_countries.each do |country| %>
 		<% @selected_country == country.id.to_s ? t = ' active' : t = '' %>
 		<!-- <a href="/uticelok/<%= country.slug %>" class="country<%= t %>"><%= country.name %> <span class="count"><%= country.travel_offers_count %></span></a> -->
@@ -15,7 +15,7 @@
 	<% @countries_europe.each do |country| %>
 		<% if (c = country.travel_offers_count) > 0 %>
 			<% @selected_country == country.id.to_s ? t = ' active' : t = '' %>
-			<a href="<%= url_for(params.merge(:filters => {:country => country.id})) %>" class="country<%= t %>"><%= country.name %>
+			<a href="<%= url_for(params.merge(:filters => {:country => country.id})) %>" class="country<%= t %>"><%= country.name %></a>
 		<% end %>		
 	<% end %>
 	</div>
