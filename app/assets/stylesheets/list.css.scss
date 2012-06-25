@@ -92,7 +92,7 @@ aside{
 		margin-left:10px;
 	}
 	select{
-		width:200px;
+		width:180px;
 	}
 	.left{
 		float:none;
@@ -232,12 +232,10 @@ aside{
 .trip{
 	&.alert{
 		text-align:center;
-		
-  background-color: transparent;
-  background-color: rgba(244, 213, 33, 0.2); 
-            filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#33F4D521,endColorstr=#33F4D521);
-            zoom: 1;
-
+		background-color: transparent;
+		background-color: rgba(244, 213, 33, 0.2); 
+        filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#33F4D521,endColorstr=#33F4D521);
+        zoom: 1;
 		padding:15px 20px;
 		p{
 			font-size:18px;

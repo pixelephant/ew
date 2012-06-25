@@ -151,6 +151,9 @@
 	height:60px;
 	line-height:60px;
 	bottom:0;
+	a{
+		color:$blue;
+	}
 	.view{
 		@include big-red;
 		margin-right:20px;
