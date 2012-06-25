@@ -74,13 +74,20 @@ class ApplicationController < ActionController::Base
 		end
 
 		top_countries = '51,81,82,' + selected_country.to_s
-		@p_countries = Country.find_by_sql("SELECT * FROM countries WHERE id IN (#{top_countries})")
+		#@p_countries = Country.find_by_sql("SELECT * FROM countries WHERE id IN (#{top_countries})")
+		@p_countries = Rails.cache.fetch("p_countries_#{top_countries}", :expires_in => 24.hours) { Country.find_by_sql("SELECT * FROM countries WHERE id IN (#{top_countries})") }
 
-		@countries_europe = Country.find_by_sql("SELECT * FROM countries WHERE continent='europa' AND id NOT IN (#{top_countries}) ORDER BY name")
-		@countries_asia = Country.find_by_sql("SELECT * FROM countries WHERE continent='azsia' AND id NOT IN (#{top_countries}) ORDER BY name")
-		@countries_africa = Country.find_by_sql("SELECT * FROM countries WHERE continent='afrika' AND id NOT IN (#{top_countries}) ORDER BY name")
-		@countries_namerica = Country.find_by_sql("SELECT * FROM countries WHERE continent='eszakamerika' AND id NOT IN (#{top_countries}) ORDER BY name")
-		@countries_samerica = Country.find_by_sql("SELECT * FROM countries WHERE continent='delamerika' AND id NOT IN (#{top_countries}) ORDER BY name")
-		@countries_australia = Country.find_by_sql("SELECT * FROM countries WHERE continent='ausztralia' AND id NOT IN (#{top_countries}) ORDER BY name")
+		#@countries_europe = Country.find_by_sql("SELECT * FROM countries WHERE continent='europa' AND id NOT IN (#{top_countries}) ORDER BY name")
+		@countries_europe = Rails.cache.fetch("europa_#{top_countries}", :expires_in => 24.hours) { Country.find_by_sql("SELECT * FROM countries WHERE continent='europa' AND id NOT IN (#{top_countries}) ORDER BY name") }
+		# @countries_asia = Country.find_by_sql("SELECT * FROM countries WHERE continent='azsia' AND id NOT IN (#{top_countries}) ORDER BY name")
+		@countries_asia = Rails.cache.fetch("azsia_#{top_countries}", :expires_in => 24.hours) { Country.find_by_sql("SELECT * FROM countries WHERE continent='azsia' AND id NOT IN (#{top_countries}) ORDER BY name") }
+		# @countries_africa = Country.find_by_sql("SELECT * FROM countries WHERE continent='afrika' AND id NOT IN (#{top_countries}) ORDER BY name")
+		@countries_africa = Rails.cache.fetch("afrika_#{top_countries}", :expires_in => 24.hours) { Country.find_by_sql("SELECT * FROM countries WHERE continent='afrika' AND id NOT IN (#{top_countries}) ORDER BY name") }
+		# @countries_namerica = Country.find_by_sql("SELECT * FROM countries WHERE continent='eszakamerika' AND id NOT IN (#{top_countries}) ORDER BY name")
+		@countries_namerica = Rails.cache.fetch("eamerika_#{top_countries}", :expires_in => 24.hours) { Country.find_by_sql("SELECT * FROM countries WHERE continent='eszakamerika' AND id NOT IN (#{top_countries}) ORDER BY name") }
+		# @countries_samerica = Country.find_by_sql("SELECT * FROM countries WHERE continent='delamerika' AND id NOT IN (#{top_countries}) ORDER BY name")
+		@countries_samerica = Rails.cache.fetch("damerika_#{top_countries}", :expires_in => 24.hours) { Country.find_by_sql("SELECT * FROM countries WHERE continent='delamerika' AND id NOT IN (#{top_countries}) ORDER BY name") }
+		# @countries_australia = Country.find_by_sql("SELECT * FROM countries WHERE continent='ausztralia' AND id NOT IN (#{top_countries}) ORDER BY name")
+		@countries_australia = Rails.cache.fetch("ausztralia_#{top_countries}", :expires_in => 24.hours) { Country.find_by_sql("SELECT * FROM countries WHERE continent='ausztralia' AND id NOT IN (#{top_countries}) ORDER BY name") }
   end
 end

@@ -364,9 +364,11 @@ class ListController < ApplicationController
 
 		if @order_by == 'travel_times.price'
 			@order_by = 'MIN(travel_times.price)'
-			traveloffers_array = TravelOffer.find(:all, :group => "travel_offers.id", :select => "DISTINCT travel_offers.*",:joins => [:descriptions, :travel_times], :order => @order_by + " " + @ord, :conditions => "descriptions.description LIKE '%#{word}%' OR travel_offers.travel_name LIKE '%#{word}%' OR travel_offers.szallas_name LIKE '%#{word}%'")
+			# traveloffers_array = TravelOffer.find(:all, :group => "travel_offers.id", :select => "DISTINCT travel_offers.*",:joins => [:descriptions, :travel_times], :order => @order_by + " " + @ord, :conditions => "descriptions.description LIKE '%#{word}%' OR travel_offers.travel_name LIKE '%#{word}%' OR travel_offers.szallas_name LIKE '%#{word}%'")
+			traveloffers_array = Rails.cache.fetch("kereses_tt_#{word}_#{@order_by}_#{@ord}", :expires_in => 24.hours) { TravelOffer.find(:all, :group => "travel_offers.id", :select => "DISTINCT travel_offers.*",:joins => [:descriptions, :travel_times], :order => @order_by + " " + @ord, :conditions => "descriptions.description LIKE '%#{word}%' OR travel_offers.travel_name LIKE '%#{word}%' OR travel_offers.szallas_name LIKE '%#{word}%'") }
 		else
-			traveloffers_array = TravelOffer.find(:all, :select => "DISTINCT travel_offers.*",:joins => :descriptions, :order => @order_by + " " + @ord, :conditions => "descriptions.description LIKE '%#{word}%' OR travel_offers.travel_name LIKE '%#{word}%' OR travel_offers.szallas_name LIKE '%#{word}%'")
+			# traveloffers_array = TravelOffer.find(:all, :select => "DISTINCT travel_offers.*",:joins => :descriptions, :order => @order_by + " " + @ord, :conditions => "descriptions.description LIKE '%#{word}%' OR travel_offers.travel_name LIKE '%#{word}%' OR travel_offers.szallas_name LIKE '%#{word}%'")
+			traveloffers_array = Rails.cache.fetch("kereses_#{word}_#{@order_by}_#{@ord}", :expires_in => 24.hours) { TravelOffer.find(:all, :select => "DISTINCT travel_offers.*",:joins => :descriptions, :order => @order_by + " " + @ord, :conditions => "descriptions.description LIKE '%#{word}%' OR travel_offers.travel_name LIKE '%#{word}%' OR travel_offers.szallas_name LIKE '%#{word}%'") }
 		end
 		@traveloffers = Kaminari.paginate_array(traveloffers_array).page(params[:page])
 		# @traveloffers = traveloffers_array.page(params[:page])

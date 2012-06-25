@@ -9,7 +9,7 @@
 			<%= render "list/pagination_sort" %>
 		</div>
 		<div id="list">
-			<%= render 'list/country_list' unless @belfoldiutazasok_menu == 'active' || params[:action] == 'uticelok' || @traveloffers.count == 0 %>
+			<%= render 'list/country_list' unless @belfoldiutazasok_menu == 'active' || params[:action] == 'uticelok' || (@traveloffers.count == 0 && params[:action] == 'kereses') %>
 			<% count = 0 %>
 			<% @traveloffers.each_with_index do |traveloffer, i| %>
 				<!-- if traveloffer.travel_times.where("DATE(travel_times.from_date) > DATE(NOW())").any? -->

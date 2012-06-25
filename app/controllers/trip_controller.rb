@@ -1,6 +1,8 @@
 class TripController < ApplicationController
 	layout "application"
 
+	caches_page :show
+
 	def index
 		render "index"
 	end
