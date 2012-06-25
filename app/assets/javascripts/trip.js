@@ -1,10 +1,7 @@
 //= require jquery.fancybox.pack
-
 //= require tablepag
 
 $(document).ready(function(){
-
-	//$('#page-header').anystretch("http://dev.virtualearth.net/REST/V1/Imagery/Map/AerialWithLabels/space%20needle%20seattle?mapLayer=TrafficFlow&mapSize=900,260&zoomLevel=21&key=Av6Kw-8aShNgPZa-xG8X_Xt_m3uoVBSF4vfq21lymtZ7iYmYHxFVFO8svAUOThu5", {speed: 1000, positionY: "center"});
 
 	 $('#additional-time table').tablePagination({
 	 	rowsPerPage : 5,
@@ -46,8 +43,4 @@ $(document).ready(function(){
 		$('html,body').animate({scrollTop: $("#additional-time").offset().top},'slow');
 	});
 
-	//$("a.thumb").click(function(){
-		//$(this).siblings().removeClass("active").removeClass("arrow_box").end().addClass("active").addClass("arrow_box");
-		//return false;
-	//});
 });
