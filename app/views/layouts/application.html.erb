@@ -19,6 +19,20 @@
 	</style>
 <![endif]-->
 
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-19954752-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+
 </head>
 <body>
 <div id="wrap">
@@ -79,6 +93,7 @@
 		<div class="three">
 			<h3>Kapcsolat</h3>
 			<p><strong>Cím</strong> <a href="http://g.co/maps/xm354">1126. Budapest, Dolgos utca 2/2. (MOM Park melletti sétány)</a></p>
+			<p><strong>Email</strong> <a href="mailto:info@ewutazas.hu">info@ewutazas.hu</a></p>
 			<p><strong>Tel.</strong> +36-1-225-13-45, +36-30-9-147-157</p>
 			<p><strong>Fax</strong> + 36-1-225-13-46</p>
 			<p><strong>Nyitvatartás</strong> H-P 08:00 - 16:00</p>
@@ -110,13 +125,5 @@
 
 <%= javascript_include_tag "application" %>
 <%= javascript_include_tag controller_name %>
-<!-- Asynchronous Google Analytics snippet. Change UA-XXXXX-X to be your site's ID.
-       mathiasbynens.be/notes/async-analytics-snippet -->
-  <script>
-    var _gaq=[['_setAccount','UA-XXXXX-X'],['_trackPageview']];
-    (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
-    g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
-    s.parentNode.insertBefore(g,s)}(document,'script'));
-  </script>
 </body>
 </html>

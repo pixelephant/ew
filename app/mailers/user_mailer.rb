@@ -1,9 +1,9 @@
 #encoding: utf-8
 class UserMailer < ActionMailer::Base
-  default :from => "pixelephant@pixelephant.hu"
+  default :from => "info@ewutazas.hu"
 
   def travel_order(order_id)
-    email = '0antalbalazs0@gmail.com'
+    email = 'info@ewutazas.hu'
     @order = Order.find(order_id)
     # @travel_time = @order.travel_time
     # @travel_offer = @travel_time.travel_offer
