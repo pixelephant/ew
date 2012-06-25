@@ -23,20 +23,24 @@ $(document).ready(function(){
 	    closeEffect : 'elastic'
   	});
 
-	var minx= parseFloat($("#section").data("positionx"))-1;
-	var maxx= parseFloat($("#section").data("positionx"))+1;
+	var minx= parseFloat($("#content").data("positionx"))-1;
+	var maxx= parseFloat($("#content").data("positionx"))+1;
 
-	var miny= parseFloat($("#section").data("positiony"))-1;
-	var maxy= parseFloat($("#section").data("positiony"))+1;
+	var miny= parseFloat($("#content").data("positiony"))-1;
+	var maxy= parseFloat($("#content").data("positiony"))+1;
 
-
-	$.getJSON("http://www.panoramio.com/map/get_panoramas.php?set=public&from=0&to=6&miny="+miny+"&minx="+minx+"&maxy="+maxy+"&maxx="+maxx+"&size=square&mapfilter=true&callback=?",function(resp){
+	if(isNan(minx)){
+		$("#sights").hide();
+	}
+	else{
+		$.getJSON("http://www.panoramio.com/map/get_panoramas.php?set=public&from=0&to=6&miny="+miny+"&minx="+minx+"&maxy="+maxy+"&maxx="+maxx+"&size=square&mapfilter=true&callback=?",function(resp){
 		$.each(resp.photos,function(i){
 			$("#sights img").eq(i).attr("src",this.photo_file_url);
 			$("#sights img").eq(i).parent().parent().attr("title",this.photo_title);
 			$("#sights img").eq(i).parent().parent().attr("href", "http://static.panoramio.com/photos/original/"+this.photo_id+".jpg");
 		});
 	});
+	}
 
 	$("#tablePagination_prevPage,#tablePagination_nextPage").click(function(){
 		$('html,body').animate({scrollTop: $("#additional-time").offset().top},'slow');
