@@ -1,6 +1,8 @@
 class ExclusiveController < ApplicationController
 	layout "application"
 
+	caches_page :hungaroring, :fcbarcelona
+
 	def hungaroring
 		@title = "Exkluzív hírdetési ajánlat a Hungaroringre - "
 		@description = "Exkluzív hírdetési ajánlat a Hungaroringre!"

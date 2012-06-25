@@ -184,7 +184,10 @@ class ListController < ApplicationController
 		conditions = ''
 		conditions = c.join(" AND ") unless c.blank?
 
-		traveloffers_array = TravelOffer.find(:all, :joins => [:travel_times, :destinations, :program_types, :travel_attributes], :select => "DISTINCT travel_offers.*", :order => @order_by + " " + @ord, :group => "travel_offers.id", :conditions => conditions )
+		hash = Digest::SHA1.hexdigest conditions
+
+		# traveloffers_array = TravelOffer.find(:all, :joins => [:travel_times, :destinations, :program_types, :travel_attributes], :select => "DISTINCT travel_offers.*", :order => @order_by + " " + @ord, :group => "travel_offers.id", :conditions => conditions )
+		traveloffers_array = Rails.cache.fetch("list_#{hash}_#{@order_by}_#{@ord}", :expires_in => 24.hours) { TravelOffer.find(:all, :joins => [:travel_times, :destinations, :program_types, :travel_attributes], :select => "DISTINCT travel_offers.*", :order => @order_by + " " + @ord, :group => "travel_offers.id", :conditions => conditions ) }
 		@traveloffers = Kaminari.paginate_array(traveloffers_array).page(params[:page])
 		# @traveloffers = traveloffers_array.page(params[:page])
 		
@@ -380,9 +383,10 @@ class ListController < ApplicationController
 
 		if @order_by == 'travel_times.price'
 			@order_by = 'MIN(travel_times.price)'
-			traveloffers_array = TravelOffer.find(:all, :group => "travel_offers.id" ,:select => "DISTINCT travel_offers.*",:joins => [:destinations, :travel_times], :order => @order_by + " " + @ord, :conditions => "destinations.country_id = #{country.id}")
+			traveloffers_array = Rails.cache.fetch("travel_offer_travelt_#{country.id}_#{@ord}_#{@order_by}", :expires_in => 24.hours) { TravelOffer.find(:all, :group => "travel_offers.id" ,:select => "DISTINCT travel_offers.*",:joins => [:destinations, :travel_times], :order => @order_by + " " + @ord, :conditions => "destinations.country_id = #{country.id}") }
 		else
-			traveloffers_array = TravelOffer.find(:all, :select => "DISTINCT travel_offers.*",:joins => :destinations, :order => @order_by + " " + @ord, :conditions => "destinations.country_id = #{country.id}")
+			traveloffers_array = Rails.cache.fetch("travel_offer_#{country.id}_#{@ord}_#{@order_by}", :expires_in => 24.hours) { TravelOffer.find(:all, :select => "DISTINCT travel_offers.*",:joins => :destinations, :order => @order_by + " " + @ord, :conditions => "destinations.country_id = #{country.id}") }
+			# traveloffers_array = TravelOffer.find(:all, :select => "DISTINCT travel_offers.*",:joins => :destinations, :order => @order_by + " " + @ord, :conditions => "destinations.country_id = #{country.id}")
 		end
 		# @traveloffers = traveloffers_array.page(params[:page])
 		@traveloffers = Kaminari.paginate_array(traveloffers_array).page(params[:page])
