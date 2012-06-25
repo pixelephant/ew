@@ -68,6 +68,9 @@ fieldset.right{
 		overflow:hidden;
 		height:30px;
 		line-height:30px;
+	&.top{
+		height:auto;
+	}
 	h3{
 		float:left;
 		color:$purple;
@@ -85,7 +88,8 @@ fieldset.right{
 		color:$blue;
 		font-weight:bold;
 		font-style:italic;
-		float:right;
+		float:left;
+		margin-left:15px;
 		padding-top:7px;
 	}
 
