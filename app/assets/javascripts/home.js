@@ -21,7 +21,7 @@ $(document).ready(function(){
 	 		slideExpr: ".slide",
 	 		pause: true,
 	 		speed : 1000,
-	 		timeout: 80000,
+	 		timeout: 4000,
 	 		next:   '#next-slide', 
     		prev:   '#prev-slide',
 	 		before : function(curr, next, opts){
