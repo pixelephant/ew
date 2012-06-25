@@ -1,4 +1,4 @@
-<section id="content" data-positionx="<%= @lat %>" data-positiony="<%= @long %>">
+<section id="content" data-positionx="<%= @long %>" data-positiony="<%= @lat %>">
 	<div id="main">
 		<div id="trip-images">
 			<%= link_to image_tag(@gallery + @images.first.file_name.to_s), (@gallery + @images.first.file_name.to_s), :class => 'fancybox', :id => 'curr', :alt => @travel_offer.travel_name, :rel => 'gallery' %>
@@ -74,16 +74,6 @@
 				</ul>
 			</div>
 		<% end %>
-		<% unless @good_to_knows.blank? %>
-			<div class="tri">
-				<h3>Jó tudni</h3>
-				<ul>
-					<% @good_to_knows.each do |good| %>
-						<li><%= good.content %></li>
-					<% end %>				
-				</ul>
-			</div>
-		<% end %>
 		<% unless @traveldays.blank? %>
 			<div class="tri">
 				<h3>Utazási napok</h3>
@@ -95,36 +85,38 @@
 			</div>
 		<% end %>
 	</div>
-	<div id="additional-time">
-		<h2>További időpontok és változatok</h2>
-		<table>
-			<thead>
-				<tr>
-					<th>Utazás időpontja</th>
-					<th>Szállás</th>
-					<th>Ellátás</th>
-					<th>Ár</th>
-					<th>&nbsp;</th>
-				</tr>
-			</thead>
-			<tfoot>
-				<tr>
-					<td colspan="5">Bizonyos árak csak a szállásra vonatkoznak, vagy nem tartalmaznak minden útiköltséget. Kérjük nézze meg az ajánlat részletes árinformációit.</td>
-				</tr>
-			</tfoot>
-			<tbody>
-				<% @travel_times.each do |traveltime| %>
+	<% if @travel_times.count > 0 %>
+		<div id="additional-time">
+			<h2>További időpontok és változatok</h2>
+			<table>
+				<thead>
 					<tr>
-						<td><%= traveltime.from_date.to_s(:year_month_day) %> - <%= traveltime.to_date.to_s(:year_month_day) %> (<%= traveltime.night.to_s %> éjszaka)</td>
-						<td><%= @travel_offer.board.name %></td>
-						<td><%= traveltime.travel_time_type_name %></td>
-						<td class="price"><%= number_to_currency(traveltime.price, :delimiter => " ", :unit => '', :precision => 0) %> <%= traveltime.price_measure %></td>
-						<td><a href="/<%= @travel_offer.slug %>/<%= traveltime.slug.to_s %>">Részletek &raquo;</a></td>
+						<th>Utazás időpontja</th>
+						<th>Szállás</th>
+						<th>Ellátás</th>
+						<th>Ár</th>
+						<th>&nbsp;</th>
 					</tr>
-				<% end %>
-			</tbody>
-		</table>
-	</div>
+				</thead>
+				<tfoot>
+					<tr>
+						<td colspan="5">Bizonyos árak csak a szállásra vonatkoznak, vagy nem tartalmaznak minden útiköltséget. Kérjük nézze meg az ajánlat részletes árinformációit.</td>
+					</tr>
+				</tfoot>
+				<tbody>
+					<% @travel_times.each do |traveltime| %>
+						<tr>
+							<td><%= traveltime.from_date.to_s(:year_month_day) %> - <%= traveltime.to_date.to_s(:year_month_day) %> (<%= traveltime.night.to_s %> éjszaka)</td>
+							<td><%= @travel_offer.board.name %></td>
+							<td><%= traveltime.travel_time_type_name %></td>
+							<td class="price"><%= number_to_currency(traveltime.price, :delimiter => " ", :unit => '', :precision => 0) %> <%= traveltime.price_measure %></td>
+							<td><a href="/<%= @travel_offer.slug %>/<%= traveltime.slug.to_s %>">Részletek &raquo;</a></td>
+						</tr>
+					<% end %>
+				</tbody>
+			</table>
+		</div>
+	<% end %>
 	<div id="trip-description">
 		<div id="text">
 			<h3>Részletes leírás</h3>

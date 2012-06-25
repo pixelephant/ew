@@ -107,14 +107,14 @@ class ListController < ApplicationController
 						if @filt[:flexibility].to_i > 0
 							unless @filt[:arrival].blank?
 								a = @filt[:arrival]
-								t = Time.parse(a)
+								t = Time.parse(a).to_date
 								tfrom = t - (@filt[:flexibility].to_i).days
 								tto = t + (@filt[:flexibility].to_i).days
 								c << "((travel_times.from_date BETWEEN '" + tfrom.to_s + "' AND '" + tto.to_s + "') OR (DATEDIFF(travel_times.to_date,travel_times.from_date) > night+2))"
 							end
 							unless @filt[:departure].blank?
 								a = @filt[:departure]
-								t = Time.parse(a)
+								t = Time.parse(a).to_date
 								tfrom = t - (@filt[:flexibility].to_i).days
 								tto = t + (@filt[:flexibility].to_i).days
 								c << "((travel_times.to_date BETWEEN '" + tfrom.to_s + "' AND '" + tto.to_s + "') OR (DATEDIFF(travel_times.to_date,travel_times.from_date) > night+2))"
