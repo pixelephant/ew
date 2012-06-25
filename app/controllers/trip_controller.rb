@@ -42,7 +42,7 @@ class TripController < ApplicationController
 		@travel_offer.click = (@travel_offer.click.to_i + 1)
 		@travel_offer.save
 
-		@title = @travel_offer.travel_name + ", " + @country.name
+		@title = @travel_offer.travel_name + ", " + @country.name + " - "
 		@description = @leiras
 
 		render "show"
