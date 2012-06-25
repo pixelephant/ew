@@ -20,13 +20,13 @@ $(document).ready(function(){
 	    closeEffect : 'elastic'
   	});
 
-	var minx= parseFloat($("#content").data("positionx"))-1;
-	var maxx= parseFloat($("#content").data("positionx"))+1;
+	var minx= parseFloat($("#content").data("positionx"))-0.2;
+	var maxx= parseFloat($("#content").data("positionx"))+0.2;
 
-	var miny= parseFloat($("#content").data("positiony"))-1;
-	var maxy= parseFloat($("#content").data("positiony"))+1;
+	var miny= parseFloat($("#content").data("positiony"))-0.2;
+	var maxy= parseFloat($("#content").data("positiony"))+0.2;
 
-	if(isNan(minx)){
+	if(isNaN(minx) || minx == ""){
 		$("#sights").hide();
 	}
 	else{

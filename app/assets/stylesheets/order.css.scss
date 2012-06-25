@@ -70,9 +70,11 @@ fieldset.right{
 		line-height:30px;
 	&.top{
 		height:auto;
+		p{
+			overflow:hidden;
+			margin:0;		}
 	}
 	h3{
-		float:left;
 		color:$purple;
 		margin:0;
 		margin-right:10px;
