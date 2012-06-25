@@ -30,7 +30,7 @@ fieldset.right{
 	}
 
 	fieldset{
-		width:290px;
+		width:285px;
 		float:left;
 		height:305px;
 	}
@@ -65,8 +65,8 @@ fieldset.right{
 		padding-left:0;
 	}
 	.row{
-	overflow:hidden;
-			height:30px;
+		overflow:hidden;
+		height:30px;
 		line-height:30px;
 	h3{
 		float:left;
@@ -124,6 +124,9 @@ fieldset.right{
 		h3{
 			color:$purple;
 			text-align:center;
+		}
+		a{
+			color:$blue;
 		}
 	}
 
