@@ -53,10 +53,10 @@ Ewutazas::Application.configure do
 
   config.action_mailer.delivery_method = :smtp
   config.action_mailer.smtp_settings = {
-    :address              => "pixelephant.hu",
+    :address              => "mail.ewutazas.hu",
     :port                 => 26,
-    :user_name            => 'pixelephant@pixelephant.hu',
-    :password             => 'pix3l3phant',
+    :user_name            => 'info@ewutazas.hu',
+    :password             => 'Iecae9neen',
     :authentication       => 'plain',
     :enable_starttls_auto => false}
 

@@ -29,7 +29,7 @@
 			# if TravelOffer.where(:md5 => md5).any?
 			# 	unchanged_counter += 1
 			# else
-				TravelOffer.find(id).destroy if TravelOffer.exists?(id)
+				TravelOffer.destroy(id) if TravelOffer.exists?(id)
 				t = TravelOffer.new
 				t.md5 = md5
 				#t.id = traveloffer.css("id").inner_text
