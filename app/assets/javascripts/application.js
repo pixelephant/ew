@@ -88,7 +88,7 @@ $(document).ready(function(){
         var d1=new Date($("#search_arrival").val());
         var d2=new Date($('#search_departure').val());
         if($("#search_arrival").val() != '' && $('#search_departure').val() != ''){
-          $('#search_between').html((Math.abs((d2-d1)/86400000))-1);
+          $('#search_between').html((Math.abs((d2-d1)/86400000)));
         }
 
         var option = this.id == "search_arrival" ? "minDate" : "maxDate",
@@ -111,7 +111,7 @@ $(document).ready(function(){
       onSelect: function( selectedDate ) {
         var d1=new Date($("#filters_arrival").val());
         var d2=new Date($('#filters_departure').val());
-        $('#filter-between').html((Math.abs((d2-d1)/86400000))-1);
+        $('#filter-between').html((Math.abs((d2-d1)/86400000)));
 
         var option = this.id == "filters_arrival" ? "minDate" : "maxDate",
           instance = $( this ).data( "datepicker" ),
