@@ -1,4 +1,7 @@
 class TravelTime < ActiveRecord::Base
+	after_save :expire_cache
+	after_destroy :expire_cache
+
 	extend FriendlyId
   friendly_id :travel_time_slug, :use => :slugged
 
@@ -22,5 +25,9 @@ class TravelTime < ActiveRecord::Base
 
 	def travel_time_slug
     "#{from_date}-#{id}"
+  end
+
+  def expire_cache
+  	Rails.cache.delete("my_object:#{self.id}")
   end
 end

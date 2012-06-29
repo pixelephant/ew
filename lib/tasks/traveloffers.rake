@@ -216,10 +216,11 @@
 
 		doc.css("traveloffers traveloffer").each_with_index do |traveloffer, i|
 			id = traveloffer.attribute("id").to_s
-			TravelOffer.destroy(id)
+			TravelOffer.destroy(id) if TravelOffer.exists?(id)
 			j = i
 		end
 		puts "Travel offers removed: " + (j+1).to_s
+		TravelTime.destroy_all("to_date < NOW()")
   end
 
 	task :updatedoffers => :environment do

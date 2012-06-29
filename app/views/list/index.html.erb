@@ -24,8 +24,8 @@
 									<h3><%= traveloffer.travel_name %></h3>
 								</div>
 								<div class="traveldata">
-									<span class="dates"><%= traveloffer.closest_travel_time.from_date.to_s(:year_month_day) + " - " + traveloffer.closest_travel_time.to_date.to_s(:year_month_day) %></span>
-									<span class="price"><%= number_to_currency(traveloffer.min_price, :precision => 0, :unit => '', :delimiter => " ") %> <%= traveloffer.min_price_measure %>-tól, <%= traveloffer.closest_travel_time.night %> éjszaka</span>
+									<span class="dates"><%= (traveloffer.closest_travel_time.from_date.to_s(:year_month_day) + " - " + traveloffer.closest_travel_time.to_date.to_s(:year_month_day)) unless traveloffer.closest_travel_time.blank? %></span>
+									<span class="price"><%= number_to_currency(traveloffer.min_price, :precision => 0, :unit => '', :delimiter => " ") %> <%= traveloffer.min_price_measure %>-tól, <%= traveloffer.closest_travel_time.night unless traveloffer.closest_travel_time.blank? %> éjszaka</span>
 								</div>
 								<p><%= (strip_tags(truncate(traveloffer.descriptions.where(:name => "Fekvese").first.description, :length => 255))) if traveloffer.descriptions.any? %></p>
 							</div>
