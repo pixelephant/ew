@@ -107,8 +107,8 @@
 					<% @travel_times.each do |traveltime| %>
 						<tr>
 							<td><%= traveltime.from_date.to_s(:year_month_day) %> - <%= traveltime.to_date.to_s(:year_month_day) %> (<%= traveltime.night.to_s %> éjszaka)</td>
-							<td><%= @travel_offer.board.name %></td>
 							<td><%= traveltime.travel_time_type_name %></td>
+							<td><%= @travel_offer.board.name %></td>
 							<td class="price"><%= number_to_currency(traveltime.price, :delimiter => " ", :unit => '', :precision => 0) %> <%= traveltime.price_measure %></td>
 							<td><a href="/<%= @travel_offer.slug %>/<%= traveltime.slug.to_s %>">Részletek &raquo;</a></td>
 						</tr>
@@ -124,14 +124,16 @@
 			<%= @artablazat %>
 		</div>
 		<div id="side">
-			<div class="sidebox" id="services">
-				<h3>Az utazás ára tartalmazza</h3>
-				<ul>
-					<% @inprices.each do |inprice| %>
-						<li><%= inprice.name %></li>
-					<% end %>
-				</ul>
-			</div>
+			<% unless @inprices.count == 0 %>
+				<div class="sidebox" id="services">
+					<h3>Az utazás ára tartalmazza</h3>
+					<ul>
+						<% @inprices.each do |inprice| %>
+							<li><%= inprice.name %></li>
+						<% end %>
+					</ul>
+				</div>
+			<% end %>
 			<div class="sidebox" id="sights">
 				<h3>Látnivalók a közelben</h3>
 				<div class="wrap">

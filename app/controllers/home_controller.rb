@@ -2,6 +2,8 @@
 class HomeController < ApplicationController
 	layout "application"
 
+	caches_page :index
+
 	def index
 		@regions = []
 		@cities = []

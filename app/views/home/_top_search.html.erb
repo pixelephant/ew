@@ -5,11 +5,11 @@
 		<div id="precise-row" class="row">
 			<div class="group">
 				<%= f.label "arrival", "Érkezés" %>
-				<%= f.text_field "arrival", :class => "datepicker", :type => "date", :value => (@filt[:arrival] if @filt) %>
+				<%= f.text_field "arrival", :class => "datepicker", :type => "text", :value => (@filt[:arrival] if @filt) %>
 			</div>
 			<div class="group">
 				<%= f.label "departure", "Távozás" %>
-				<%= f.text_field "departure", :class => "datepicker", :type => "date", :value => (@filt[:departure] if @filt) %>
+				<%= f.text_field "departure", :class => "datepicker", :type => "text", :value => (@filt[:departure] if @filt) %>
 				<span class="left">(<span id="search_between">-</span> éjszaka)</span>
 			</div>
 			<div class="group">
