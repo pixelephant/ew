@@ -1,3 +1,13 @@
+<script type="text/javascript" >function OpenBrWindow(theURL,winName,features, myWidth, myHeight, isCenter) { //v3.0
+  if(window.screen)if(isCenter)if(isCenter=="true"){
+    var myLeft = (screen.width-myWidth)/2;
+    var myTop = (screen.height-myHeight)/2;
+    features+=(features!='')?',':'';
+    features+=',left='+myLeft+',top='+myTop;
+  }
+window.open(theURL,winName,features+((features!='')?',':'')+'width='+myWidth+',height='+myHeight);
+}</script>
+
 <section id="content">
 	<h2>Utasbiztosítási ajánlatunk</h2>
 	<p>Utazásaink mellé a következő 3 biztosítási cég ajánlata közül választhat az érdeklődő. A feltüntetett adatok tájékoztató jellegűek, a biztosításokat személyre szabva ajánljuk az utasok igényeire szabva. Amennyiben teljesen egyedül akarja összeállítani a csomagot úgy a megrendelés során kérjük specifikálja azt.</p>
@@ -7,14 +17,14 @@
 			<%= image_tag "mondial.png" %>
 			<h3>Mondial Biztosító</h3>
 		</a>
-		<a href="#" class="insurance">
+		<a href="http://online.qbeatlasz.hu/utbizt.jsp?ref=p205315" class="insurance">
 			<%= image_tag "qbe.png" %>
-			<h3>Qbe Biztosító</h3>
+			<h3>Qbe Biztosító - online biztosításkötés itt</h3>
 		</a>
-		<a href="#">
+		<a href="javascript:;"
+onClick="OpenBrWindow('http://www.eub.hu/online/index.php?pkod=28038','','scrollbars=yes','1024','675')">
 			<%= image_tag "eub.png" %>
 			<h3>Eub Biztosító</h3>
-			
 		</a>
 	</div>
 </section>

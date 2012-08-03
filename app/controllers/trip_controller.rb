@@ -10,7 +10,8 @@ class TripController < ApplicationController
 	def show
 		@travel_offer = TravelOffer.find(params[:id])
 
-		params[:from_date] ? @closest_travel_time = @travel_offer.travel_times.find_by_slug(params[:from_date]) : @closest_travel_time = @travel_offer.closest_travel_time
+		# params[:from_date] ? @closest_travel_time = @travel_offer.travel_times.find_by_slug(params[:from_date]) : @closest_travel_time = @travel_offer.closest_travel_time
+		@closest_travel_time = (params[:from_date] ? @travel_offer.travel_times.find_by_slug(params[:from_date]) : @travel_offer.closest_travel_time)
 		@country = Country.find(@travel_offer.destinations.first.country_id)
 		@region = Region.find(@travel_offer.destinations.first.region_id)
 		@skiregion = @travel_offer.skiregion

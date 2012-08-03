@@ -44,7 +44,10 @@ body{
 }
 
 #content {overflow:auto;
-	padding-bottom: 450px;}
+	padding-bottom: 450px;
+	z-index: 2;
+	position: relative;
+}
 
 footer{
 	position: relative;
@@ -267,6 +270,8 @@ color:rgba(255,255,255,0.8) !important;
 	-webkit-box-shadow: inset 0px -10px 15px rgba(50, 50, 50, 0.24);
 	-moz-box-shadow:    inset 0px -10px 15px rgba(50, 50, 50, 0.24);
 	box-shadow:         inset 0px -10px 15px rgba(50, 50, 50, 0.24);
+	z-index: -1;
+	position: relative;
 }
 
 .lt-ie9{
@@ -277,12 +282,12 @@ color:rgba(255,255,255,0.8) !important;
 }
 
 #inner-search{
-		opacity:0;
 		overflow:hidden;
 		width:980px;
 		margin:0 auto;
 		position:relative;
 		z-index:1;
+		display:none;
 	}
 	form{
 		float:left;
@@ -309,8 +314,6 @@ color:rgba(255,255,255,0.8) !important;
 			float:left;
 			margin-right:10px;
 			font-size:16px;
-			height:24px;
-			line-height:24px;
 		}
 		input[type="text"],input[type="date"],input[type="range"],select{
 			float:left;

@@ -139,21 +139,18 @@ $(document).ready(function(){
 	 $("#search-button").toggle(function(){
 	 	$("#search").stop().animate({
 	 		top:0,
-      marginTop:0
+      marginTop:0,
+      zIndex: 1
 	 	},"slow",function(){
-	 		$("#inner-search").animate({
-	 			opacity: 1
-	 		});
+	 		$("#inner-search").show();
 	 	});
 	 },function(){
-	 	$("#inner-search").stop().animate({
-	 		opacity: 0
-	 	},"normal",function(){
-	 		$("#search").animate({
+	 	$("#inner-search").hide("normal",function(){
+      $("#search").animate({
         top:-searchHeight,
-	 			marginTop:-searchHeight
-	 		},"slow");
-	 	});
+        marginTop:-searchHeight
+      },"slow");
+    });
 	 });
 
 	 /*$("input[type='range']").change(function(){

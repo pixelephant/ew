@@ -187,7 +187,7 @@ class ListController < ApplicationController
 		hash = Digest::SHA1.hexdigest conditions
 
 		# traveloffers_array = TravelOffer.find(:all, :joins => [:travel_times, :destinations, :program_types, :travel_attributes], :select => "DISTINCT travel_offers.*", :order => @order_by + " " + @ord, :group => "travel_offers.id", :conditions => conditions )
-		traveloffers_array = Rails.cache.fetch("list_#{hash}_#{@order_by}_#{@ord}", :expires_in => 24.hours) { TravelOffer.find(:all, :joins => [:travel_times, :destinations, :program_types, :travel_attributes], :select => "DISTINCT travel_offers.*", :order => @order_by + " " + @ord, :group => "travel_offers.id", :conditions => conditions ) }
+		traveloffers_array = Rails.cache.fetch("list_#{hash}_#{@order_by}_#{@ord}", :expires_in => 24.hours) { TravelOffer.find(:all, :joins => [:travel_times, :destinations, :program_types, "LEFT JOIN travel_attributes_travel_offers ON travel_attributes_travel_offers.travel_offer_id = travel_offers.id LEFT JOIN travel_attributes ON travel_attributes_travel_offers.travel_attribute_id = travel_attributes.id"], :select => "DISTINCT travel_offers.*", :order => @order_by + " " + @ord, :group => "travel_offers.id", :conditions => conditions ) }
 		@traveloffers = Kaminari.paginate_array(traveloffers_array).page(params[:page])
 		# @traveloffers = traveloffers_array.page(params[:page])
 		

@@ -7,18 +7,22 @@ $gray: #d1d3d2;
 @mixin font-pt{
   font-family: 'PT Sans', sans-serif;
   font-weight: 400;
+  font-weight: normal !important;
 }
 
 @mixin font-lobster{
   font-family: 'Lobster Two', cursive;
+  font-weight: normal !important;
 }
 
 @mixin font-bree{
   font-family: 'Bree Serif', serif;
+  font-weight: normal !important;
 }
 
 @mixin font-bree-i{
   font-family: 'Bree Serif', serif !important;
+  font-weight: normal !important;
 }
 
 @mixin t-shadow{

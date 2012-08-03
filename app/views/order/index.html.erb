@@ -6,7 +6,7 @@
 <form id="order-form" action="/foglalas/koszonjuk" method="POST">
 <div class="row top">
 	<h3><%= @travel_offer.travel_name %></h3>
-	<p><span class="dates"><%= @travel_time.from_date.to_s(:year_month_day) %> - <%= @travel_time.from_date.to_s(:year_month_day) %></span> <span class="price"><%= @travel_time.price %> Ft</span></p>
+	<p><span class="dates"><%= @travel_time.from_date.to_s(:year_month_day) %> - <%= @travel_time.from_date.to_s(:year_month_day) %></span> <span class="price"><%= @travel_time.price %> <%= @travel_time.price_measure %></span></p>
 </div>
 
 <input type="hidden" value="<%= @travel_time.id %>" name="traveltime" id="traveltime" />

@@ -1,0 +1,548 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]> <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
+<!--[if IE 7]>    <html class="no-js lt-ie9 lt-ie8" lang="en"> <![endif]-->
+<!--[if IE 8]>    <html class="no-js lt-ie9" lang="en"> <![endif]-->
+<!-- Consider adding a manifest.appcache: h5bp.com/d/Offline -->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="description" content="">
+  <title>East-West Utazási és Sport Iroda</title>
+  <link href="/assets/application-eebd668a9435877fea6584d4aa14e896.css" media="screen" rel="stylesheet" type="text/css" />
+<link href="/assets/home-5a13281e7e86950eb31ca595c77cebc7.css" media="screen" rel="stylesheet" type="text/css" />
+  <link href='http://fonts.googleapis.com/css?family=PT+Sans:400,700,400italic,700italic|Lobster+Two:700italic|Bree+Serif&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+  <script src="/assets/modernizr-2.5.3.min-cac509f34339e1d1e6f3c3ed6e268700.js" type="text/javascript"></script>
+  <meta content="authenticity_token" name="csrf-param" />
+<meta content="5BhxJg0Sfa7zbJN1Apg7uScGNYMtgvpOYslQzUZjQIc=" name="csrf-token" />
+  <!--[if !IE 7]>
+	<style type="text/css">
+		#wrap {display:table;height:100%}
+	</style>
+<![endif]-->
+
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-19954752-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+
+</head>
+<body>
+<div id="wrap">
+		
+<header id="header">
+	<nav class="clearfix">
+		<div id="logo" class=""><a href="/"><img alt="East-West Utazási és Sport Iroda" src="/assets/logo-85f26b46b831e81c53dda536b59520d0.png" /></a></div>
+		<div id="ul-wrap">
+			<ul id="primary-nav">
+				<li id="lastminute" class=""><a href="/utjaink/lastminute">Last minute</a></li>
+				<li id="abroad" class=""><a href="/utjaink/kulfoldiutazasok">Külföldi utazások</a></li>
+				<li id="sale" class=""><a href="/utjaink/akciosutak">Akciós utak</a></li>
+				<li id="ski" class=""><a href="/utjaink/sieles">Síelés</a></li>
+				<li id="boat" class=""><a href="/utjaink/hajoutak">Hajóutak</a></li>
+			</ul>
+			<ul id="secondary-nav">
+				<li><a href="/utjaink/egzotikusutak">Egzotikus utak</a></li>
+				<li><a href="/utjaink/belfoldiutazasok">Belföldi utazások</a></li>
+				<li><a href="/utjaink/naszutak" class="">Nászutak</a></li>
+				<li><a href="/utjaink/korutazasok">Körutazások</a></li>
+				<li><a href="/utjaink/varoslatogatasok">Városlátogatások</a></li>
+				<li><a href="/utjaink/sportutak">Sportutak</a></li>
+				<span> | </span>
+				<li><a href="/kapcsolat">Kapcsolat</a></li>
+				<li><a href="/biztositasok">Biztosítás</a></li>
+				<!--<li><a href="#">Sportirodánk</a></li>-->
+			</ul>
+			<a class="animated bounceIn" href="#" id="search-button">Útkereső</a>
+		</div>
+	</nav>
+</header>
+<section id="search" class="clearfix">
+	<div id="inner-search">
+		<form accept-charset="UTF-8" action="/list" id="advanced-search" method="get"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="&#x2713;" /></div>
+	<h2>Összetett keresés</h2>
+	<fieldset>
+		<legend>Utazás időpontja</legend>
+		<div id="precise-row" class="row">
+			<div class="group">
+				<label for="search_arrival">Érkezés</label>
+				<input class="datepicker" id="search_arrival" name="search[arrival]" size="30" type="text" />
+			</div>
+			<div class="group">
+				<label for="search_departure">Távozás</label>
+				<input class="datepicker" id="search_departure" name="search[departure]" size="30" type="text" />
+				<span class="left">(<span id="search_between">-</span> éjszaka)</span>
+			</div>
+			<div class="group">
+				<label for="search_flexibility">Rugalmasság</label>
+				<select id="search_flexibility" name="search[flexibility]"><option value="1">+/- 1 nap</option>
+<option value="3">+/- 3 nap</option>
+<option value="7">+/- 1 hét</option>
+<option value="0">Nincs</option></select>
+			</div>
+		</div>
+		<div id="imprecise-row" class="row">
+			<div class="group">
+				<label for="search_imprecise">Körülbelül mikor utaznék</label>
+				<select id="search_imprecise" name="search[imprecise]"><optgroup label="Hónapok"><option value="1">Január</option>
+<option value="2">Február</option>
+<option value="3">Március</option>
+<option value="4">Április</option>
+<option value="5">Május</option>
+<option value="6">Június</option>
+<option value="7">Július</option>
+<option value="8">Augusztus</option>
+<option value="9">Szeptember</option>
+<option value="10">Október</option>
+<option value="11">November</option>
+<option value="12">December</option></optgroup><option value="0">Nem tudom</option></select>
+			</div>
+		</div>
+		<div class="row">
+			<div class="group">
+				<label for="search_no_date">Nincs pontos dátumom</label>
+				<input name="search[no_date]" type="hidden" value="0" /><input id="search_no_date" name="search[no_date]" type="checkbox" value="1" />
+			</div>
+		</div>
+	</fieldset>
+	<fieldset>
+			<legend>Úticél</legend>
+			<div class="row">
+				<div class="group">
+					<label for="search_country">Ország</label>
+					<select id="search_country" name="search[country]"><option value="0">-- Mindegy --</option>
+<option value="1">Franciaország</option>
+<option value="129">Alaszka</option>
+<option value="79">Albánia</option>
+<option value="143">Algéria</option>
+<option value="60">Amerikai Egyesült Államok</option>
+<option value="180">Antigua és Barbuda</option>
+<option value="21">Argentína</option>
+<option value="80">Ausztrália</option>
+<option value="17">Ausztria</option>
+<option value="188">Azerbajdzsán</option>
+<option value="149">Bahama-szigetek</option>
+<option value="83">Bahrain</option>
+<option value="4">Belgium</option>
+<option value="37">Belize</option>
+<option value="38">Bermuda</option>
+<option value="61">Bermuda(NBr.)</option>
+<option value="172">Bhután</option>
+<option value="23">Bolívia</option>
+<option value="12">Bosznia- Hercegovina</option>
+<option value="182">Botswana</option>
+<option value="24">Brazília</option>
+<option value="39">Brit Virgin- szigetek.</option>
+<option value="192">Brunei</option>
+<option value="8">Bulgária</option>
+<option value="126">Burma</option>
+<option value="25">Chile</option>
+<option value="9">Ciprus</option>
+<option value="191">Comore-szigetek</option>
+<option value="163">Cook-szigetek</option>
+<option value="40">Costa Rica</option>
+<option value="19">Csehország</option>
+<option value="73">Dánia</option>
+<option value="93">Dél Korea</option>
+<option value="108">Dél-Afrikai Köztársaság</option>
+<option value="41">Dominikai Köztársaság</option>
+<option value="26">Ecuador</option>
+<option value="82">Egyesült Arab Emirátusok</option>
+<option value="81">Egyiptom</option>
+<option value="42">El Salvador</option>
+<option value="94">Észak Korea</option>
+<option value="104">Észtország</option>
+<option value="88">Etiópia</option>
+<option value="27">Falkland- szigetek(Malvinas)</option>
+<option value="158">Fiji</option>
+<option value="77">Finnország</option>
+<option value="28">Francia Guyana</option>
+<option value="71">Francia Polinézia</option>
+<option value="130">Fülöp-szigetek</option>
+<option value="181">Gabon</option>
+<option value="177">Gambia</option>
+<option value="10">Görögország</option>
+<option value="43">Grenada</option>
+<option value="189">Grúzia</option>
+<option value="44">Guatemala</option>
+<option value="29">Guyana</option>
+<option value="45">Haiti</option>
+<option value="186">Hajóutak</option>
+<option value="46">Holland Antillák</option>
+<option value="110">Hollandia</option>
+<option value="47">Honduras</option>
+<option value="5">Horvátország</option>
+<option value="146">Húsvét-szigetek (Chile)</option>
+<option value="78">India</option>
+<option value="90">Indonézia</option>
+<option value="161">Irán</option>
+<option value="69">Írország</option>
+<option value="70">Izland</option>
+<option value="112">Izrael</option>
+<option value="48">Jamaika</option>
+<option value="92">Japán</option>
+<option value="107">Jemen</option>
+<option value="84">Jordánia</option>
+<option value="49">Kajmán- szigetek(GBr.)</option>
+<option value="139">Kambodzsa</option>
+<option value="178">Kamerun</option>
+<option value="62">Kanada</option>
+<option value="50">Karib-szigetek</option>
+<option value="117">Kenya</option>
+<option value="85">Kína</option>
+<option value="30">Kolumbia</option>
+<option value="51">Kuba</option>
+<option value="148">Laosz</option>
+<option value="65">Lengyelország</option>
+<option value="103">Lettország</option>
+<option value="95">Libanon</option>
+<option value="97">Líbia</option>
+<option value="96">Litvánia</option>
+<option value="118">Luxembeurg</option>
+<option value="194">Macedónia</option>
+<option value="98">Madagaszkár</option>
+<option value="132">Magyarország</option>
+<option value="101">Malajzia</option>
+<option value="174">Malawi</option>
+<option value="100">Maldív-szigetek</option>
+<option value="187">Mali</option>
+<option value="11">Málta</option>
+<option value="75">Marokkó</option>
+<option value="164">Martinique</option>
+<option value="150">Mauritius</option>
+<option value="52">Mexikó</option>
+<option value="171">Monaco</option>
+<option value="144">Mongólia</option>
+<option value="145">Montenegro</option>
+<option value="53">Montserrat</option>
+<option value="184">Mozambik</option>
+<option value="68">Nagy-Britannia</option>
+<option value="76">Namíbia</option>
+<option value="2">Németország</option>
+<option value="102">Nepál</option>
+<option value="54">Nicaragua</option>
+<option value="87">Norvégia</option>
+<option value="6">Olaszország</option>
+<option value="170">Omán Szultánság</option>
+<option value="173">Örményország</option>
+<option value="64">Oroszország</option>
+<option value="128">Pakisztán</option>
+<option value="193">Palau</option>
+<option value="55">Panama</option>
+<option value="162">Pápua Új-Guinea</option>
+<option value="31">Paraguay</option>
+<option value="32">Peru</option>
+<option value="153">Polinézia</option>
+<option value="13">Portugália</option>
+<option value="56">Puerto Rico</option>
+<option value="176">Qatar</option>
+<option value="20">Románia</option>
+<option value="57">Saint Kitts és Nevis</option>
+<option value="179">Saint Lucia</option>
+<option value="58">Saint Vincent</option>
+<option value="165">Salvador</option>
+<option value="154">Seychelle szigetek</option>
+<option value="134">Skandinávia</option>
+<option value="7">Spanyolország</option>
+<option value="91">Sri Lanka</option>
+<option value="33">Suriname</option>
+<option value="3">Svájc</option>
+<option value="74">Svédország</option>
+<option value="190">Szaúd-Arábia</option>
+<option value="183">Szenegál</option>
+<option value="89">Szerbia</option>
+<option value="151">Szingapúr</option>
+<option value="105">Szíria</option>
+<option value="16">Szlovákia</option>
+<option value="18">Szlovénia</option>
+<option value="185">Szváziföld</option>
+<option value="131">Tajvan</option>
+<option value="113">Tanzánia</option>
+<option value="99">Thaiföld</option>
+<option value="116">Tibet</option>
+<option value="168">Tonga</option>
+<option value="15">Törökország</option>
+<option value="59">Trinidad és Tobago</option>
+<option value="86">Tunézia</option>
+<option value="106">Uganda</option>
+<option value="169">Új-Kaledonia</option>
+<option value="140">Új-Zéland</option>
+<option value="63">Ukrajna</option>
+<option value="34">Uruguay</option>
+<option value="109">Üzbegisztán</option>
+<option value="167">Vanuatu</option>
+<option value="35">Venezuela</option>
+<option value="72">Vietnám</option>
+<option value="166">Zambia</option>
+<option value="156">Zimbabwe</option>
+<option value="160">Zöld-Foki Köztársaság</option></select>
+				</div>
+				<div class="group">
+					<label for="search_region">Régió</label>
+					<select name="search[region]" id="search_region">
+						<option value="0">-- Mindegy --</option>
+						
+					</select>
+				</div>
+				<div class="group">
+					<label for="search_city">Város</label>
+					<select name="search[city]" id="search_city">
+						<option value="0">-- Mindegy --</option>
+						
+					</select>
+				</div>
+			</div>
+	</fieldset>
+	<fieldset>
+		<legend>Utazás ára/fő</legend>
+		<div class="row">
+			<div class="group">
+				<label for="search_price">ár/fő</label>
+				<select name="search[price]" id="price">
+					<option value="0-100000">100 000 Ft-ig</option>
+					<option value="100000-250000">100 000-250 000</option>
+					<option value="250000-500000">250 000-500 000</option>
+					<option value="500000">500 000 Ft-tól</option>
+				</select>
+			</div>
+		</div>
+	</fieldset>
+	<fieldset id="submit-set">
+		<div class="row">
+			<input name="commit" type="submit" value="Keresés" /> ( ~ <span id="estimate">10628</span> út felel meg )
+		</div>
+	</fieldset>
+</form>
+		<form id="simple-search" action="/kereses">
+			<h2>Egyszerű keresés</h2>
+			<small>Keresés az utazások szövegében</small>
+			<fieldset>
+				<div class="row">
+					<input type="search" name="query" id="query" placeholder="pl.: előfoglalás">
+				</div>
+				<div class="row">
+					<input type="submit" value="Keresés">
+				</div>
+			</fieldset>
+		</form>
+	</div>
+</section>
+
+<section id="promo-slider">
+	<div id="slide-wrap">
+		<a href="#" id="prev-slide" class="slide-control">prev</a>
+		<div class="slide" id="barca-slide" data-background="assets/slider/camp_nou.jpg">
+			<img alt="Barcelona" src="/assets/slider/barcelona-13c4ab2f545fafa899dbbf5f0f1941c3.png" />
+			<h1>5 napon át eddzhet az <span>FC Barcelona</span> trénereivel</h1>
+			<p>5 napon át, 90 perces edzés (reggel) az FC Barcelona profi edzőivel. A program tartalmazza a hivatalos csoport képeket, az FC Barcelona Stadion és Múzeum látogatását idegenvezetéssel. Szállás: 3*,4* illetve 5* hotelekben (minden szálloda a stadion mellett, vagy néhány perc sétára található).</p>
+			<p><a href="/fcbarcelona">Részletek &raquo;</a></p>
+		</div>
+		<div class="slide" id="dubai-slide" data-background="assets/slider/dubai_blurred.jpg">
+			<h1 class="">Dubai</h1>
+			<h2>Fedezze fel az Egyesült Arab Emírségek csodáit!</h2>
+			<div class="clearfix">
+				<div class="small-wrap">
+					<a href="/oasis-beach-tower-171892">
+						<div class="box small">
+							<img src="http://backend.aleph.hu/travelmax/public_html/gallery/600120/Tower.jpg" alt="Oasis Beach Tower">
+						</div>
+						<span>Oasis Beach Tower</span>
+						<span class="price">78 000 Ft-tól</span>
+					</a>
+				</div>
+				<div class="small-wrap">
+					<a href="/atlantis-the-palm-99109">
+						<div class="box small">
+							<img src="http://backend.aleph.hu/travelmax/public_html/gallery/86293/28.jpg" alt="Atlantis, The Palm">
+						</div>
+						<span>Atlantis, The Palm</span>
+						<span class="price">56 000 Ft-tól</span>
+					</a>
+				</div>
+				<div class="small-wrap">
+					<a href="/dubai-maldiv-szigetek-udules-150205">
+						<div class="box small">
+							<img src="http://backend.aleph.hu/travelmax/public_html/gallery/582435/Fushi.jpg" alt="Dubai + Maldív-szigetek 9 éjszaka">
+						</div>
+						<span>Dubai+Maldív-szigetek 11 nap</span>
+						<span class="price">629 000 Ft-tól</span>
+					</a>
+				</div>		
+			</div>
+		</div>
+
+		<div class="slide" id="kuba-slide" data-background="assets/slider/kuba_blurred.jpg">
+			<h1 class="">Kuba</h1>
+			<h2>Egy igazi Mojito-t egyszer mindenkinek innia kell!</h2>
+			<p>Csodálatos tengerpartjaival és elképesztő hangulatával Kuba az egyik legkedveltebb üdülőhely. Üdüléseink közt mindenki megtalálhatja a pénztárcájának megfelelő Kubai nyaralást. </p>
+			<p><a href="/uticelok/kuba">Kubai útjaink &raquo;</a></p>
+		</div>
+		
+		<div class="slide" id="hungaroring-slide" data-background="assets/slider/hungaroring.jpg">
+			<img alt="Hungaroring_logo" src="/assets/slider/hungaroring_logo-45a586a3c2c1e501e27bbe2bfb4aab67.png" />
+			<h1 class="">Exkluzív hírdetési ajánlat a Hungaroringre</h1>
+			<p>Az East-West Utazási és Sport Iroda számos hírdetési és promóciós lehetőséget kínál minden büdzsé számára elérhetően. Legyen szó <strong>csapatépítő programok</strong>, <strong>esküvők</strong>, <strong>catering</strong>, <strong>szponzoráció</strong>, <strong>céges rendezvények</strong> vagy <strong>reklámfelületek</strong> értékesítéséről a Hungaroringen, velünk ezt megteheti.</p>
+			<p>
+				<a href="/hungaroring">Részletek &raquo;</a>
+			</p>
+		</div>
+		<div class="slide" id="kuba-slide" data-background="assets/slider/turkey_blurred.jpg">
+			<h1 class="">Törökország</h1>
+			<h2>A Török riviéra</h2>
+			<p>A Török Riviéra végtelen strandjai, a csodálatos öblök látványa és a kellemes éghajlat megadja egy kellemes családi nyaralás alapjait. A kínálatunkban szereplő utazások programjai pedig megadják a feledhetetlen élményeket hozzá, melyek a kikapcsolódásból örök élményt varázsolnak.</p>
+			<p><a href="/uticelok/torokorszag">Török utak &raquo;</a></p>
+		</div>
+		<a href="#" id="next-slide" class="slide-control">next</a>
+	</div>
+</section>
+
+<section id="content">
+	<div id="popular-destinations">
+		<h2 class="orange">Legnépszerűbb úticélok</h2>
+		<div class="clearfix">
+					<a href="/uticelok/amerikai-egyesult-allamok">Amerikai Egyesült Államok</a>
+					<a href="/uticelok/egyiptom">Egyiptom</a>
+					<a href="/uticelok/gorogorszag">Görögország</a>
+					<a href="/uticelok/horvatorszag">Horvátország</a>
+					<a href="/uticelok/kuba">Kuba</a>
+					<a href="/uticelok/maldiv-szigetek">Maldív-szigetek</a>
+					<a href="/uticelok/mauritius">Mauritius</a>
+					<a href="/uticelok/olaszorszag">Olaszország</a>
+					<a href="/uticelok/seychelle-szigetek">Seychelle szigetek</a>
+					<a href="/uticelok/spanyolorszag">Spanyolország</a>
+					<a href="/uticelok/thaifold">Thaiföld</a>
+					<a href="/uticelok/torokorszag">Törökország</a>
+					<a href="/uticelok/tunezia">Tunézia</a>
+		</div>
+	</div>
+
+	<div id="special-offers">
+		<h2 class="blue">Kiemelt ajánlataink</h2>
+		<!-- Lehetőségek: quarter, half, full -->
+		<div class="box-wrap third">
+			<a href="/utjaink/sportutak" class="box quarter">
+				<div class="inner">
+					<div class="ribbon">Sportutak</div>
+					<img alt="Sportutak" src="/assets/specials/sport-9f332eecc02638f34bba0e4506a6b260.png" />
+				</div>
+			</a>
+			<a href="/utjaink/varoslatogatasok" class="box quarter">
+				<div class="inner">
+					<div class="ribbon">Város látogatások</div>
+					<img alt="Városlátogatások" src="/assets/specials/varos-691070ec4d0e1fb44cd444f626af4ac8.png" />
+				</div>
+			</a>
+			<a href="/utjaink/lastminute" class="box half">
+				<div class="inner">
+					<div class="ribbon">Last minute</div>
+					<img alt="Last minute utak" src="/assets/specials/lastminute-1fbffb8c78a792db48f794616052aa0f.png" />
+				</div>
+			</a>
+		</div>
+		<div class="box-wrap third">
+			<a href="/utjaink/hajoutak" class="box full">
+				<div class="inner">
+					<div class="ribbon">
+						Hajóutak
+					</div>
+					<img alt="Hajóutak" src="/assets/specials/hajo-5666b4d5a4a5a46fd23595c41b15129a.png" />
+				</div>
+			</a>
+		</div>
+		<div class="box-wrap third">
+			<a href="/utjaink/akciosutak" class="box quarter">
+				<div class="inner">
+					<div class="ribbon">Akciós utak</div>
+					<img alt="Akciós utak" src="/assets/specials/akcios-8a4af0186c71678c1e1fa1b4297e9faa.png" />
+				</div>
+			</a>
+			<a href="/utjaink/sieles" class="box quarter">
+				<div class="inner">
+					<div class="ribbon">Síelés</div>
+					<img alt="Síelés" src="/assets/specials/sieles-13f36221a5dd4cd0624154f282b94082.png" />
+				</div>
+			</a>
+			<a href="/utjaink/kulfoldiutazasok" class="box quarter">
+				<div class="inner">
+					<div class="ribbon">Külföldi utazások</div>
+					<img alt="Külföldi utazások" src="/assets/specials/kulfold-e7831543acc19472e73575a9bdbeb2bf.png" />
+				</div>
+			</a>
+			<a href="/utjaink/naszutak" class="box quarter">
+				<div class="inner">
+					<div class="ribbon">Nászutak</div>
+					<img alt="Nászutak" src="/assets/specials/nasz-1390cf5fb3fd447b9de61cb4c4813b33.png" />
+				</div>
+			</a>
+		</div>
+	</div>
+	<div id="about-us">
+		<h2 class="blue">Rólunk</h2>
+		<h3>Az East-West Utazási és Sport Irodáról</h3>
+
+		<p>
+			A ma működő cég elődje a Hungasport iroda 1997-ben alakult. Sikeres 12 év tevékenykedés után váltás történt, és 2009 év elejétől immár East-West Utazási és Sport Iroda néven folytatjuk tevékenységünket. A sportutak szervezése mellett szolgáltatásainkat kibővítettük <a href="/kulfoldiutazasok">nyaralások és üdülések </a>szervezésével, amelyeket a sportutazások lebonyolításában megszerzett kapcsolatok és tapasztalatoknak köszönehtően exkluzív <a href="/sportutak">sportos, aktív pihenésekkel</a> fűszereztünk meg. Emellett az <a href="/uticelok/egyesult-arab-emiratusok">Egyesült Arab Emirátusok</a>, <a href="/uticelok/kuba">Kuba</a> valamint a <a href="/uticelok/torokorszag">Török</a> régiókban rendelkezünk kiemelkedő utakkal.
+		</p>
+
+		<p>
+			<a href="http://www.ewsport.hu/">Sportirodánk</a> a sport minden szegmensében vállal szerepet. Fő tevékenységünk az edzőtáborok szervezése Magyarországon és külföldön egyaránt. Elsősorban labdarúgó csapatoknak szervezünk edzőtáborokat, de más sportágak versenyzőinek is bonyolítottuk már a felkészülésüket. Mint például, atlétika, röplabda, kosárlabda.		
+		</p>
+	
+		<p>
+			Továbbá foglalkozunk reklámfelületek értékesítésével, szponzorok közvetítésével különböző klubokhoz, sport szervezetekhez.
+			A tevékenységeink körébe tartozik még, játékosok, edzők, gyúrók, orvosok menedzselése, magyarországi és külföldi munkalehetőségek közvetítése. A szolgáltatásokról bővebben az <a href="http://www.ewsport.hu/">www.ewsport.hu</a> oldalon érdeklődhet.
+		</p>
+	</div>
+</section>
+</div>
+<footer>
+	<div id="footer-inner">
+		<div class="three">
+			<h3>Partnereink</h3>
+			<a href="http://www.ewsport.hu"><img src="/assets/sportiroda.png" alt="East-West Sportiroda"></a>
+		</div>
+		<div class="three">
+			<h3>Kapcsolat</h3>
+			<p><strong>Cím</strong> <a href="http://g.co/maps/xm354">1126. Budapest, Dolgos utca 2/2. (MOM Park melletti sétány)</a></p>
+			<p><strong>Email</strong> <a href="mailto:info@ewutazas.hu">info@ewutazas.hu</a></p>
+			<p><strong>Tel.</strong> +36-1-225-13-45, +36-30-9-147-157</p>
+			<p><strong>Fax</strong> + 36-1-225-13-46</p>
+			<p><strong>Nyitvatartás</strong> H-P 10:00 - 18:00</p>
+		</div>
+		<div class="three">
+			<h3>Utazások</h3>
+			<ul>
+				<li><a href="/lastminute">Last minute</a></li>
+				<li><a href="/kulfoldiutazasok">Külföldi utazások</a></li>
+				<li><a href="/akciosutak">Akciós utak</a></li>
+				<li><a href="/sieles">Síelés</a></li>
+				<li><a href="/hajoutak">Hajóutak</a></li>
+				<li><a href="/egzotikusutak">Egzotikus utak</a></li>
+				<li><a href="/belfoldiutazasok">Belföldi utazások</a></li>
+				<li><a href="/naszutak">Nászutak</a></li>
+				<li><a href="/korutazasok">Körutazások</a></li>
+				<li><a href="/varoslatogatasok">Városlátogatások</a></li>
+				<li><a href="/sportutak">Sportutak</a></li>
+			</ul>
+		</div>
+		<div id="misc-links">
+			<a href="/kapcsolat">Kapcsolat</a>
+			<a href="http://www.ewsport.hu">Sportirodánk</a>
+			<a href="/biztositasok">Biztosítás</a>
+		</div>
+	</div>
+</footer>
+
+<script src="/assets/application-b2c412db1b812b4aa8c1bcce8de0f3c0.js" type="text/javascript"></script>
+<script src="/assets/home-dcf211249c9392159eb0448fd81bcfe8.js" type="text/javascript"></script>
+</body>
+</html>

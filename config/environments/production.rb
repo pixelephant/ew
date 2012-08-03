@@ -46,7 +46,9 @@ Ewutazas::Application.configure do
   # config.action_controller.asset_host = "http://assets.example.com"
 
   # Precompile additional assets (application.js, application.css, and all non-JS/CSS are already added)
-  config.assets.precompile += %w( contact.js, exclusive.js, home.js, insurance.js, jquery-ui.js, jquery.anystretch.min.js, jquery.cycle.min.js, jquery.easing.min.js, jquery.fancybox.pack.js, list.js, modernizr-2.5.3.min.js, order.js, tablepag.js, trip.js )
+  # config.assets.precompile += %w( contact.js, exclusive.js, home.js, insurance.js, jquery-ui.js, jquery.anystretch.min.js, jquery.cycle.min.js, jquery.easing.min.js, jquery.fancybox.pack.js, list.js, modernizr-2.5.3.min.js, order.js, tablepag.js, trip.js )
+  config.assets.precompile += ['contact.js', 'exclusive.js', 'home.js', 'insurance.js', 'jquery-ui.js', 'jquery.anystretch.min.js', 'jquery.cycle.min.js', 'jquery.easing.min.js', 'jquery.fancybox.pack.js', 'list.js', 'modernizr-2.5.3.min.js', 'order.js', 'tablepag.js', 'trip.js']
+  config.assets.precompile += ['_animate.css', 'contact.css', 'exclusive.css', 'home.css', 'insurance.css', 'jquery.fancybox.css', 'list.css', 'normalize.css','order.css', 'trip.css', 'ui-lightness/style.css']
 
   # Disable delivery errors, bad email addresses will be ignored
   # config.action_mailer.raise_delivery_errors = false

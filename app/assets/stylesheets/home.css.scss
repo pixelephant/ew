@@ -12,6 +12,7 @@
 	background:rgba(0,0,0,0.2);
 }
 
+
 #barca-slide{
 	img{
 		text-align:center;
@@ -137,7 +138,7 @@
 	}
 }
 
-#kuba-slide{
+#kuba-slide, #maldiv-slide{
 	p{
 		width:600px;
 		margin:0 auto 30px auto !important;
@@ -148,6 +149,15 @@
 	}
 	a{
 		@include big-blue;
+	}
+}
+
+#maldiv-slide{
+	h1{
+		color: #FA7602 !important;
+	}
+	p{
+		color: white !important;
 	}
 }
 
