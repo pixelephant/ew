@@ -78,3 +78,37 @@
 		margin-bottom:20px;
 	}
 }
+
+.gyorieto{
+	text-align:center;
+	h1{
+		display:block !important;
+		font-family: 'Bree Serif', serif !important;
+		font-size:30px !important;
+		color:#fffdff !important;
+		font-style:normal !important;
+		margin-bottom:20px !important;
+		span{
+			color:#19864c !important;
+		}
+	}
+	p{
+		color:#19864c !important;
+		margin-bottom:30px !important;
+	}
+	img{
+		margin-bottom:20px;
+	}
+}
+
+.gyorieto_inner{
+	.center{
+		text-align:center;
+	}
+	.half img{
+		float:left;
+		width:48%;
+		max-height: 270px;
+		padding: 1%;
+	}
+}

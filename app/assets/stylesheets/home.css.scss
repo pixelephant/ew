@@ -12,6 +12,32 @@
 	background:rgba(0,0,0,0.2);
 }
 
+#eto-slide{
+	img{
+		text-align:center;
+		margin-top:-20px;
+		margin-bottom:10px;
+	}
+	h1{
+		display:block !important;
+		font-family: 'Bree Serif', serif !important;
+		font-size:30px !important;
+		color:#fffdff !important;
+		font-style:normal !important;
+		margin-bottom:20px !important;
+		span{
+			color:#19864c !important;
+		}
+	}
+	p{
+		color:#fffdff !important;
+		margin-bottom:30px !important;
+	}
+	a{
+		@include big-red;
+	}
+}
+
 
 #barca-slide{
 	img{
