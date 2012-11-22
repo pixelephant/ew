@@ -11,7 +11,8 @@ Ewutazas::Application.routes.draw do
   
   # match 'exclusive' => 'exclusive#hungaroring'
   match 'hungaroring' => 'exclusive#hungaroring'
-  match 'fcbarcelona' => 'exclusive#fcbarcelona'
+  match 'fcbarcelona' => redirect("/")
+  match 'gyorietovip' => 'exclusive#gyorietovip'
 
 
   match 'ajax/get_region' => 'ajax#get_region', :method => 'POST'
